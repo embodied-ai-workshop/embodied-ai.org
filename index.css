@@ -1,0 +1,492 @@
+body {
+	margin: 0px;
+	font-family: "Noto Sans", sans-serif;
+	color: #333;
+	font-size: 1em;
+	line-height: 1.8em;
+}
+
+a {
+	text-decoration: underline;
+	font-weight: bold;
+	color: inherit;
+	transition-duration: 0.3s;
+}
+
+a:hover {
+	opacity: 0.7;
+	cursor: pointer !important;
+}
+
+#pageContent {
+	margin: auto;
+}
+
+header {
+	background-color: hsl(0, 0%, 93%);
+	margin-bottom: 50px;
+	z-index: 99 !important;
+}
+
+#headerShadow,
+header {
+	width: 100%;
+	height: 70px;
+	position: sticky;
+	top: 0px;
+}
+
+#headerShadow {
+	border-bottom: 1px solid hsla(0, 0%, 0%, 40%);
+	box-shadow: 0px 0px 10px 0px hsla(0, 0%, 0%, 30%);
+	z-index: 999 !important;
+	top: 0px !important;
+	position: fixed;
+	pointer-events: none;
+}
+
+#headerContent,
+header {
+	height: 70px;
+}
+
+#headerContent,
+#pageContent {
+	width: 70%;
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+}
+
+#headerOptions li {
+	list-style-type: none;
+	display: inline-block;
+	font-size: .85em;
+	font-family: "Montserrat", sans-serif;
+	text-transform: uppercase;
+}
+
+#headerOptions li:hover {
+	cursor: pointer;
+}
+
+#headerOptions li:not(:first-child) {
+	margin-left: 20px;
+}
+
+#headerOptions {
+	position: absolute;
+	right: 0px;
+	top: 21px;
+}
+
+#seattleCover {
+	width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Montserrat", sans-serif;
+	line-height: 1.5em;
+	margin: 2.5rem 0 .9375rem 0;
+}
+
+h2 {
+	font-size: 2em;
+	font-weight: 700;
+	padding-bottom: .5rem;
+	transition-duration: 0.3s;
+	display: inline-block;
+}
+
+h2:before {
+	content: '#';
+	position: absolute;
+	left: -25px;
+	opacity: 0.25;
+	pointer-events: none;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 300;
+}
+
+h2:before;hover {
+	cursor: move;
+}
+
+h2:hover {
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+#locationIcon {
+	width: 9px;
+}
+
+#locationText {
+	text-align: center;
+	margin-bottom: 80px;
+}
+
+/* Cover Images */
+#ai2 .challengeCoverImage,
+#fair .challengeCoverImage,
+#stanford .challengeCoverImage {
+	background-image: url('images/cover_image.jpg');
+	width: 100%;
+	height: 200px;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+}
+
+#challenge_cover2 {
+	width: 96.5%;
+	margin-left: 1.25%;
+}
+.challengeCover {
+	width: 30%;
+	height: 210px;
+	display: inline-block;
+	margin-left: 1.25%;
+	margin-right: 1.25%;
+	border: 1px solid hsla(0, 0% ,0%, 30%);
+	box-shadow: 0px 0px 20px 0px hsla(0, 0%, 0%, 5.5%);
+	transition-duration: 0.3s;
+	background-color: hsl(0, 0%, 97%);
+	margin-bottom: 20px;
+	vertical-align: top;
+	position: relative;
+	background-image: url('images/light_challenge_cover.svg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto 100%;
+}
+
+#thorCover {
+	background-color: #1b4596;
+	color: white;
+}
+
+#habCover {
+	background-color: #478cc4;
+	color: white;
+}
+
+#gibCover {
+	background-color: #8e0d0d;
+	color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+	.challengeCover {
+		width: 100%;
+		margin-left: 0px;
+	}
+
+	#challenge_cover2 {
+		width: 100%;
+		margin-left: 0px;
+	}
+}
+
+.nostyleA {
+	font-weight: normal;
+	text-decoration: none;
+	border-bottom: 0px;
+}
+
+.challengeCover:hover {
+	transform: translateY(-2px);
+	cursor: pointer;
+}
+
+.challengeCover:after {
+	content: 'Learn More \02197';
+	position: absolute;
+	opacity: 0.8;
+	bottom: 10px;
+	left: 5%;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.speakerImage {
+	background-image: url('images/leonard.jpg');
+	width: 70px;
+	height: 70px;
+	border-radius: 1500px; /* some arbitrary large number since width/height may change, but want images to remain circle */
+	background-size: cover;
+	margin: auto;
+	margin-bottom: 10px;
+	transition-duration: 0.3s;
+}
+
+.inv {
+	width: 200px;
+	height: 200px;
+}
+
+.invName {
+	font-size: 25px !important;
+}
+
+.invBio {
+	font-size: 17px !important;
+	line-height: 22px;
+}
+
+
+.speakerImage:hover {
+	cursor: pointer;
+	transform: scale(1.02);
+	opacity: 0.8;
+}
+
+.challengeLogo {
+	width: 200px;
+
+
+	/*float: right;*/
+}
+
+.speaker {
+	margin-bottom: 55px;
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.speaker div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#speakerSection {
+	text-align: center;
+}
+
+.speakerText {
+	width: calc(100% - 180px);
+	margin-left: 20px;
+}
+
+.organizer {
+	vertical-align: top;
+	text-align: center;
+	width: 85px;
+	display: inline-block;
+	margin-bottom: 25px;
+	line-height: 13px;
+	transition-duration: 0.3s;
+}
+
+#organizersSection {
+	text-align: center;
+}
+
+#shannon {
+	background-image: url('images/shannon.jpg');
+}
+
+.speakerIcons div {
+	margin: auto;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+	transition-duration: 0.3s;
+}
+
+.speakerIcons {
+	margin-top: 5px;
+}
+
+.speakerIcons div:hover {
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.speakerIcons div {
+	display: inline-block;
+}
+
+.site {
+	background-image: url('images/globe.svg');
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	transition-duration: 0.3s;
+}
+
+.site:hover,
+.semanticScholar:hover,
+.googleScholar:hover {
+	cursor: pointer;
+}
+
+.speakerName {
+	font-weight: bold;
+	font-size: 10px;
+}
+
+.speakerEmail {
+}
+
+.semanticScholar {
+	background-image: url('images/sem_scholar.svg');
+	width: 26px;
+	height: 20px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	transition-duration: 0.3s;
+	margin-top: 10px;
+}
+
+.googleScholar {
+	background-image: url('images/scholar.svg');
+	width: 25px;
+	height: 20px;
+	display: inline-block;
+	background-repeat: no-repeat;
+	transition-duration: 0.3s;
+}
+
+#submit {
+	width: 100%;
+	background-color: #232323;
+	color: #e0e0e0;
+	text-align: center;
+	padding: 10px;
+	transition-duration: 0.3s;
+	font-family: "Montserrat", sans-serif;
+	font-size: .875em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#submit:hover {
+	cursor: pointer !important;
+	opacity: 0.8;
+}
+
+.challengeTitle {
+	/*text-align: center;*/
+	margin-top: 5px;
+	/*font-weight: bold;*/
+	width: 90%;
+	margin: auto;
+	margin-bottom: 5px;
+	font-size: 2.2em;
+	line-height: 42px;
+	margin-top: 22px;
+	opacity: 0.9;
+}
+
+.challengeDesc {
+	width: 90%;
+	margin: auto;
+	font-style: italic;
+	opacity: 0.8;
+}
+
+#headerIcon {
+	font-size: 25px;
+	position: absolute;
+	top: 20px;
+	line-height: 0.7em;
+}
+
+#click {
+	width: 25px;
+	position: absolute;
+	right: -15px;
+	top: 5px;
+	transition-duration: 0.5s;
+	padding: 15px;
+	opacity: 0.8;
+	display: none;
+}
+
+@media only screen and (max-width: 900px) {
+	#headerContent,
+	#pageContent {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-width: 1100px) {
+	.challengeCover {
+		/*width: 100%;*/
+		/*height: 200px;*/
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	h2:before {
+		content: '';
+	}
+}
+
+@media only screen and (max-width: 1300px) {
+	#headerOptions {
+		display: none;
+		position: absolute;
+		width: calc(100% - 50px);
+		top: 70px;
+		padding-left: 25px;
+		padding-right: 25px;
+		background-color: #1b1b1b;
+		z-index: 90;
+		color: white;
+		padding-bottom: 15px;
+		box-shadow: 0px 0px 1500px 0px hsl(0, 0%, 100%);
+	}
+
+	#headerOptions li {
+		padding-top: 8px;
+		padding-bottom: 8px;
+		width: 100%;
+		border-bottom: 1px solid #ffffff3d;
+	}
+
+	#headerOptions li:not(:first-child) {
+		margin: 0px;
+	}
+
+	#click {
+		display: block;
+	}
+}
+
+#subIcon {
+	font-size: 13px;
+}
+
+#click:hover {
+	cursor: pointer;
+	/*transform: rotate(-90deg);*/
+	opacity: 0.6;
+}
+
+#headerOptions {
+	display: block;
+}
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	height: 50px;
+	line-height: 50px;
+	background-color: #efefef;
+	color: #4e4e4e;
+	vertical-align: middle;
+	text-align: center;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+}
