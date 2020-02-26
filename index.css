@@ -78,6 +78,7 @@ header {
 	position: absolute;
 	right: 0px;
 	top: 21px;
+	display: block;
 }
 
 #seattleCover {
@@ -470,10 +471,6 @@ h2:hover {
 	cursor: pointer;
 	/*transform: rotate(-90deg);*/
 	opacity: 0.6;
-}
-
-#headerOptions {
-	display: block;
 }
 
 footer {
