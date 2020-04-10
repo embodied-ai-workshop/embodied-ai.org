@@ -527,7 +527,6 @@ table {
 
 .ispeaker {
 	width: 270px;
-	/*background-color: green;*/
 	height: 335px;
 	display: inline-block;
 	vertical-align: middle;
@@ -535,14 +534,13 @@ table {
 	border-radius: 15px;
 	box-shadow: 0px 0px 50px 0px #0000001a;
 	background-color: white;
-	border: 1px solid #d2d2d2;
+	border: 1px solid #d2d2d27a;
 	transition-duration: 0.3s;
 }
 
 .ispeakerImg {
 	width: 200px;
 	height: 200px;
-	/*background-color: green;*/
 	margin: auto;
 	margin-top: 20px;
 	background-size: cover;
@@ -554,7 +552,6 @@ table {
 .ispeakerImg:hover {
 	cursor: pointer;
 	opacity: 0.8;
-	/*background-size: auto 103%;*/
 }
 
 .speakerContainer {
