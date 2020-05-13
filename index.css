@@ -97,6 +97,8 @@ h2 {
 	padding-bottom: .5rem;
 	transition-duration: 0.3s;
 	display: inline-block;
+	padding-left: 40px;
+	margin-left: -40px;
 }
 
 h2:before {
