@@ -101,6 +101,23 @@ h2 {
 	margin-left: -40px;
 }
 
+.sponsorContainer {
+	text-align: center;
+	border: 2px solid rgba(0, 0, 0, 0.4);
+	border-radius: 25px;
+	padding: 25px;
+	background-color: black;
+}
+
+.nvidia {
+	width: 100px;
+}
+
+#sponsors {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
 h2:before {
 	content: '#';
 	position: absolute;
