@@ -585,3 +585,27 @@ table {
 .ispeakerAffiliations {
 	font-weight: normal !important;
 }
+
+@media only screen and (max-width: 690px) {
+	.organizer {
+		width: 55px;
+		line-height: 9.5px;
+	}
+
+	.speakerName {
+		font-size: 8px;
+	}
+
+	.speakerImage {
+		width: 48px;
+		height: 48px;
+	}
+}
+
+@media only screen and (max-width: 340px) {
+	#headerIcon {
+		font-size: 20px;
+		top: 16px;
+		line-height: 0.9;
+	}
+}
