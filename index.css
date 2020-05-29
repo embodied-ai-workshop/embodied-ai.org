@@ -545,20 +545,24 @@ table {
 }
 
 .ispeaker {
-	width: 260px;
-	height: 335px;
+	width: 130px;
 	display: inline-block;
-	vertical-align: middle;
-	margin: 20px;
+	margin: 15px;
 	border-radius: 15px;
 	box-shadow: 0px 0px 50px 0px #0000001a;
 	background-color: white;
 	transition-duration: 0.3s;
+	padding: 5px;
+	padding-bottom: 20px;
+	margin-left: 8px;
+	margin-right: 8px;
+	vertical-align: top;
+	text-align: center;
 }
 
 .ispeakerImg {
-	width: 200px;
-	height: 200px;
+	width: 100px;
+	height: 100px;
 	margin: auto;
 	margin-top: 20px;
 	background-size: cover;
@@ -574,16 +578,29 @@ table {
 
 .speakerContainer {
 	text-align: center;
+	display: inline-block;
+	margin: -7px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.speakerContainersContainer {
+	text-align: center;
 }
 
 .ispeakerName {
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 19px;
 	margin-top: 15px;
+	line-height: 22px;
+	margin-bottom: 5px;
 }
 
 .ispeakerAffiliations {
 	font-weight: normal !important;
+	font-size: 12px;
+	margin-top: -1px;
+	line-height: 21px;
 }
 
 @media only screen and (max-width: 690px) {
@@ -614,4 +631,39 @@ table {
 	.challengeCover {
 		background-image: none;
 	}
+}
+
+@media only screen and (max-width: 1030px) {
+	.ispeaker {
+		width: 100px;
+	}
+	.ispeakerAffiliations {
+		font-size: 9px;
+		line-height: 15px;
+	}
+	.ispeakerImg {
+		width: 80px;
+		height: 80px;
+	}
+	.ispeakerName {
+		font-size: 15px;
+		line-height: 18px;
+	}
+}
+
+@media only screen and (max-width: 667px) {
+	.speakerContainer {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	.ispeaker {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+
+h3 {
+	text-align: center;
+	margin-top: 14px;
+	margin-bottom: -4px;
 }
