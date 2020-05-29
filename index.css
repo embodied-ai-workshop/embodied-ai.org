@@ -609,3 +609,9 @@ table {
 		line-height: 0.9;
 	}
 }
+
+@media only screen and (max-width: 750px) {
+	.challengeCover {
+		background-image: none;
+	}
+}
