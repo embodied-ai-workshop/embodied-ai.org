@@ -18,6 +18,14 @@ a:hover {
 	cursor: pointer !important;
 }
 
+.liveSessContainer td, .liveSessContainer th {
+	text-align: left;
+}
+
+.liveImage {
+	width: 300px;
+}
+
 #pageContent {
 	margin: auto;
 }
