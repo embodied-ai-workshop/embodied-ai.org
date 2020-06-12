@@ -22,6 +22,83 @@ a:hover {
 	text-align: left;
 }
 
+.topTopJoin {
+	margin-top: -15px;
+}
+
+.topJoin {
+	background: linear-gradient(#ff2626, #c80000);
+	border-radius: 10px;
+	padding: 10px 15px;
+	color: white;
+}
+
+.aNoStyle {
+	font-weight: inherit !important;
+	text-decoration: inherit !important;
+}
+
+.botJoin {
+	margin-top: 12px;
+}
+
+.startsIn {
+	float: right;
+}
+
+.liveButtons {
+	display: inline-block;
+	width: calc(45% - 60px);
+	vertical-align: top;
+}
+
+.submitButton {
+	background: white;
+	color: #1dbeca;
+	border-radius: 5px;
+	border: 1px solid #4ac0c9;
+	text-decoration: none !important;
+	width: 100%;
+	padding: 20px 30px;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);
+	display: inline-block;
+}
+
+.dateSpan {
+	font-weight: normal;
+}
+
+.topics, .panelists {
+	margin-top: 10px;
+	display: block !important;
+}
+
+.submitButton:not(:first-child) {
+	margin-top: 20px;
+}
+
+.zoomDate {
+	font-weight: normal;
+}
+
+.meetingThumb {
+	width: 50%;
+	min-width: 200px;
+	margin-right: 10px;
+}
+
+@media only screen and (max-width: 680px) {
+	.meetingThumb {
+		width: 100%;
+	}
+
+	.liveButtons {
+		width: calc(100% - 60px);
+		margin-top: 25px;
+		margin-bottom: 15px;
+	}
+}
+
 .liveImage {
 	width: 300px;
 }
@@ -272,9 +349,6 @@ h2:hover {
 
 .challengeLogo {
 	width: 200px;
-
-
-	/*float: right;*/
 }
 
 .speaker {
