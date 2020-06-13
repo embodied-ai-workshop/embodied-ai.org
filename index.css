@@ -112,6 +112,15 @@ a:hover {
 	cursor: pointer;
 }
 
+.speakerPlayIcon {
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	left: max(100px, calc(15% - 17.5px));
+	margin-top: 80px;
+	opacity: 0.9;
+}
+
 .inlineBlock {
 	display: inline-block;
 }
@@ -121,6 +130,10 @@ a:hover {
 	min-width: 250px;
 	margin-right: 10px;
 	margin-top: 15px;
+}
+
+.speakerImContainer a:hover {
+	transition-duration: 0s !important;
 }
 
 .liveImage {
