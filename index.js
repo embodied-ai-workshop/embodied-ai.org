@@ -11,6 +11,8 @@ var relinks = {
 	'#eai2020sonia': 'https://www.youtube.com/watch?v=1DPXcXWBfsI&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
 	'#eai2020heidi': 'https://www.youtube.com/watch?v=8t9QPKWC2VI&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
 	'#eai2020rishabh': 'https://www.youtube.com/watch?v=3SoCElGefik&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
+	'#organizers-live-session': 'https://embodied-ai.org/#(new)_live_sessions',
+	'#speakers-live-session': 'https://embodied-ai.org/#livesess2',
 }
 
 $(function() {
