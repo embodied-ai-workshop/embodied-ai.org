@@ -3,7 +3,7 @@
 var relinks = {
 	'#eai2020thor': 'https://www.youtube.com/watch?v=5GXNvrVHByo&list=PL4XI7L9Xv5fVUMEb1eYOaH8y1b6j8xiMM',
 	'#eai2020gibson': 'https://www.youtube.com/watch?v=0BvUSjcc0jw&list=PL4XI7L9Xv5fVUMEb1eYOaH8y1b6j8xiMM',
-	'#eai2020habitat': 'https://www.youtube.com/watch?v=YK71Uu7T9gM&list=PL4XI7L9Xv5fVUMEb1eYOaH8y1b6j8xiMM',
+	'#eai2020habitat': 'https://www.youtube.com/watch?v=X5L0Nf5hYCI&list=PL4XI7L9Xv5fVUMEb1eYOaH8y1b6j8xiMM',
 	'#eai2020alison': 'https://www.youtube.com/watch?v=ZLIH9GPvS-8&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
 	'#eai2020linda': 'https://www.youtube.com/watch?v=dxli8qWJHLU&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
 	'#eai2020alex': 'https://www.youtube.com/watch?v=u5ayFwhLzfY&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
