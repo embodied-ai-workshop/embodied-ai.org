@@ -28,6 +28,8 @@ $(function() {
 		window.location.href = relinks[path];
 	}
 
+	updateLivePlayIcon();
+
 	// change the url on header click
 	$('h2').click(function() {moveToHeader(this);});
 	$('#headerOptions li').click(function() {moveToHeader(this);})
@@ -42,8 +44,6 @@ $(function() {
 			$('#click').css('transform', 'rotate(0deg)');
 		}
 	});
-
-	updateLivePlayIcon();
 
 	$(window).scroll(function() {updateHeader();});
 	$(window).resize(function() {
