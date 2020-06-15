@@ -7,6 +7,7 @@ var relinks = {
 	'#eai2020alison': 'https://www.youtube.com/watch?v=ZLIH9GPvS-8&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
 	'#eai2020linda': 'https://www.youtube.com/watch?v=dxli8qWJHLU&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
 	'#eai2020alex': 'https://www.youtube.com/watch?v=u5ayFwhLzfY&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
+	'#eai2020raquel': 'https://www.youtube.com/watch?v=7GIUBS-TEa0&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
 	'eai2020piotr': 'https://www.youtube.com/watch?v=mwjlRJeo3Ik&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
 	'eai2020deepak': 'https://www.youtube.com/watch?v=crxnghFA8Ww&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
 	'#eai2020dieter': 'https://www.youtube.com/watch?v=LJNFzE-VmzI&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq',
