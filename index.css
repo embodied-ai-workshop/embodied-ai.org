@@ -121,6 +121,14 @@ a:hover {
 	opacity: 0.9;
 }
 
+.nodrop {
+	filter: grayscale(1);
+}
+
+.nodrop:hover {
+	cursor: no-drop;
+}
+
 .inlineBlock {
 	display: inline-block;
 }
