@@ -28,7 +28,13 @@ $(function() {
 		window.location.href = relinks[path];
 	}
 
-	updateLivePlayIcon();
+	var livePlayInterval = setInterval(() => {
+		updateLivePlayIcon();
+	}, 500);
+
+	setTimeout(() => {
+		clearInterval(livePlayInterval);
+	}, 3500);
 
 	// change the url on header click
 	$('h2').click(function() {moveToHeader(this);});
