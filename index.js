@@ -43,9 +43,23 @@ $(function() {
 		}
 	});
 
+	updateLivePlayIcon();
+
 	$(window).scroll(function() {updateHeader();});
-	$(window).resize(function() {updateHeader();});
+	$(window).resize(function() {
+		updateHeader();
+		updateLivePlayIcon();
+	});
+	
 });
+
+function updateLivePlayIcon() {
+	// centers the play icon within the live session images
+	$('.livePlayIcon').each(function() {
+		$(this).css('left', $(this).parent().find('.meetingThumb').width() / 2 - 75/2 + 'px');
+		$(this).css('margin-top', $(this).parent().find('.meetingThumb').height() / 2 - 75/2 + 'px');
+	})
+}
 
 function updateHeader() {
 	if ($(window).width() < 1300) {

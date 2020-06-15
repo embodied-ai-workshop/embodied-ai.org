@@ -339,6 +339,12 @@ h2:hover {
 	}
 }
 
+.livePlayIcon {
+	left: 20%;
+	width: 75px;
+	height: 75px;
+}
+
 .nostyleA {
 	font-weight: normal;
 	text-decoration: none;
