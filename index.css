@@ -355,6 +355,31 @@ h2:hover {
 	margin-top: 100px;
 }
 
+.googleCloud {
+	width: 300px;
+}
+
+@media only screen and (max-width: 500px) {
+	.googleCloud {
+		width: 200px;
+	}
+}
+
+.sponsorSection {
+	text-align: center;
+	margin: auto;
+}
+
+.sponsorSection a {
+	vertical-align: middle;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.sponsorSection a img {
+	margin-bottom: 25px;
+}
+
 .nostyleA {
 	font-weight: normal;
 	text-decoration: none;
