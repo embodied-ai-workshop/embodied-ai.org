@@ -6,6 +6,15 @@ body {
 	line-height: 1.8em;
 }
 
+.smallIm {
+	width: 180px;
+	max-width: 48%;
+}
+
+.winnersSect {
+	vertical-align: top;
+}
+
 a {
 	text-decoration: underline;
 	font-weight: bold;
