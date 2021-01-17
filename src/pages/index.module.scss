@@ -1,0 +1,273 @@
+@import "../styles/global";
+
+.tableWrapper {
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    height: 0px;
+    width: 0px;
+    background: transparent;
+  }
+
+  .challengeTable {
+    width: 100%;
+
+    tr {
+      text-align: center;
+
+      th,
+      td {
+        padding: 13px 20px;
+        border: 1px solid #e8ecf2;
+      }
+
+      td:nth-child(1),
+      th:not(:first-child) {
+        background: #f0f4f7;
+        border: 1px solid #d5dae3;
+      }
+
+      td:nth-child(1) {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.liveSession {
+  .liveSessionInfo {
+    margin-bottom: 55px;
+    margin-top: 5px;
+  }
+
+  .liveSessionVideo {
+    @include no-select();
+    width: 60%;
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: top;
+
+    @include breakpoint(mobile) {
+      display: block;
+      width: 100%;
+      margin-left: 0px;
+    }
+  }
+
+  .sessionBoxContainer {
+    width: 37%;
+    margin-left: 3%;
+    display: inline-block;
+    vertical-align: top;
+
+    @include breakpoint(mobile) {
+      display: block;
+      width: 100%;
+      margin-left: 0px;
+    }
+
+    .liveSessionBox {
+      width: 100%;
+      padding: 10px 20px;
+      background: white;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #aeb7c4;
+      color: #616c7a;
+
+      &:hover {
+        cursor: no-drop;
+      }
+    }
+
+    a .liveSessionBox {
+      color: #616c7a !important;
+      transition-duration: 0.3s;
+
+      &:hover {
+        color: #616c7a !important;
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.challengeCover {
+  background: linear-gradient(
+    to top right,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  border-radius: 3px;
+  transition-duration: 0.3s;
+  width: 32%;
+  padding-bottom: 18%;
+  color: white;
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  margin: 0.66%;
+  min-height: 130px;
+
+  @include breakpoint(mobile) {
+    width: 100%;
+    padding-bottom: 22%;
+    min-height: 80px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 15px;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 25px 0px #aeb7c4;
+  }
+
+  .challengeName {
+    position: absolute;
+    top: 15px;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    font-size: 2em;
+    line-height: 1.2em;
+
+    @include breakpoint(tablet) {
+      font-size: 1.75em;
+    }
+  }
+
+  .challengeHostname {
+    position: absolute;
+    bottom: 13;
+    left: 18;
+    font-size: 12px;
+  }
+}
+
+.organizerContainer {
+  margin-top: 15px;
+  text-align: center;
+
+  .organizer {
+    width: 75px;
+    display: inline-block;
+    line-height: 13px;
+    text-align: center;
+    font-size: 10px;
+    vertical-align: top;
+    margin-bottom: 25px;
+    margin-left: 3px;
+    margin-right: 3px;
+
+    .organizerPic {
+      width: 68px;
+      height: 68px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin: auto;
+      margin-bottom: 5px;
+      transition-duration: 0.3s;
+
+      &:hover {
+        box-shadow: 0px 0px 18px 0px #d5dae3;
+        transform: scale(1.03);
+      }
+    }
+
+    @include breakpoint(mobile) {
+      width: 55px;
+      font-size: 8px;
+      line-height: 9.5px;
+      .organizerPic {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+}
+
+.challengeOrganizerVideo {
+  width: 50%;
+}
+
+.winnerVideo {
+  width: 24%;
+  margin-right: 1%;
+  display: inline-block;
+}
+
+.videoWrapper {
+  perspective: 1000px;
+
+  .video {
+    transition-duration: 0.3s;
+    position: relative;
+
+    &:hover {
+      cursor: pointer;
+      transform: rotateY(10deg);
+    }
+
+    .videoPlay {
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition-duration: 0.3s;
+    }
+  }
+}
+
+.speaker {
+  margin-bottom: 25px;
+
+  .speakerInfo,
+  .speakerThumbnailWrapper {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .speakerInfo {
+    margin: 15px;
+    @include breakpoint("mobile") {
+      display: block;
+      margin-left: 0px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.sponsorContainer {
+  text-align: center;
+
+  a:hover {
+    opacity: 0.9;
+  }
+
+  .googleCloud {
+    height: 50px;
+    padding: 0px 25px;
+  }
+
+  .nvidia {
+    height: 85px;
+    padding: 0px 25px;
+  }
+
+  @include breakpoint(mobile) {
+    .nvidia {
+      width: 30%;
+    }
+
+    .googleCloud {
+      width: 60%;
+    }
+  }
+}

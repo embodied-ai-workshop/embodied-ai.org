@@ -1,0 +1,85 @@
+@import "../styles/global";
+
+$contentWidth: 1050px;
+$tocWidth: 230px;
+$tocMargin: 50px;
+
+.contentWrapper {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 100px;
+
+  @include breakpoint(tablet) {
+    width: 90%;
+  }
+
+  .coverGraphic {
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+
+  .mainContent {
+    max-width: $contentWidth - $tocWidth - $tocMargin;
+
+    @include breakpoint(laptop) {
+      width: 100%;
+    }
+
+    p {
+      color: #47515c;
+      line-height: 1.45em;
+    }
+  }
+
+  .toc {
+    @include no-select();
+    width: $tocWidth;
+    position: sticky;
+    top: 25px;
+    padding-left: 50px;
+    margin-left: $tocMargin;
+    margin-top: 25px;
+
+    @include breakpoint(laptop) {
+      display: none !important;
+    }
+
+    .tocHeader {
+      border-left: 2px solid #d5dae3;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      color: #616c7a;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .mainContent,
+  .toc {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+footer {
+  width: 100%;
+  background: linear-gradient(to top, #f8f9fa, lighten(#f0f4f7, 2.5%));
+  text-align: center;
+
+  .footerIcon {
+    font-size: 25px;
+    color: #aeb7c4;
+    transition-duration: 0.3s;
+    vertical-align: middle;
+    margin: 20px 10px;
+    &:hover {
+      color: #8c96a3 !important;
+    }
+  }
+}

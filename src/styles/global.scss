@@ -1,0 +1,84 @@
+// These are breakpoints that override the default desktop styles
+@mixin breakpoint($point) {
+  @if $point == "mobile" {
+    @media (max-width: 580px) {
+      @content;
+    }
+  } @else if $point == "tablet" {
+    @media (max-width: 775px) {
+      @content;
+    }
+  } @else if $point == "laptop" {
+    @media (max-width: 1120px) {
+      @content;
+    }
+  } @else if $point == "desktop" {
+    @media (min-width: 1120px) {
+      @content;
+    }
+  }
+}
+
+// Don't allow some text to be selectable.
+// Just looks weird with CTRL/CMD + A.
+@mixin no-select() {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+// Override some of the default styles everywhere that are particularly bad.
+body {
+  font-family: Montserrat, sans-serif;
+  margin: 0px;
+
+  ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-top: 8px;
+
+    li {
+      position: relative;
+      padding-left: 1.875rem;
+      margin-bottom: 0.3125rem;
+
+      &::before {
+        content: "\2014";
+        color: #a0a0a0;
+        left: 0;
+        position: absolute;
+      }
+    }
+  }
+
+  button:focus,
+  input:focus {
+    outline: none;
+  }
+
+  button {
+    @include no-select();
+    padding: 4px 15px;
+    border: none;
+  }
+
+  // remove ugly default anchor styling
+  a {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+
+    &:visited {
+      text-decoration: inherit;
+      color: inherit;
+      cursor: auto;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

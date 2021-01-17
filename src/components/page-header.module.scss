@@ -1,0 +1,50 @@
+$lightBlue: #83cef8;
+$darkBlue: #2a3476;
+
+.header {
+  width: 100%;
+  background: linear-gradient(to bottom, $lightBlue, $darkBlue);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: $darkBlue;
+
+  .headerContent {
+    max-width: 1020px;
+    margin: auto;
+
+    .workshopTitle {
+      font-size: 25px;
+      line-height: 1.15em;
+      font-family: "Noto Sans", sans-serif;
+    }
+
+    .conference {
+      font-family: "Noto Sans", sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .middle,
+    .left,
+    .right {
+      vertical-align: middle;
+    }
+
+    .middle {
+      text-align: center;
+      width: 50%;
+      display: inline-block;
+    }
+
+    .right,
+    .left {
+      width: 25%;
+      display: inline-block;
+      font-size: 15px;
+    }
+
+    .right {
+      text-align: right;
+    }
+  }
+}
