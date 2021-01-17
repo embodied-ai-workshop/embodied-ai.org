@@ -2,15 +2,15 @@
 
 This repository contains the development of [embodied-ai.org](https://embodied-ai.org/).
 
-### Development
+## Development
 
-#### Quick Fixes
+### Quick Fixes
 
-**Organizer Info**. Organizer info is stored in `gatsby-config.js`, where the imageId's correspond to those found in `images/organizers`.
+**Organizer Info**. Organizer info is stored in [gatsby-config.js](https://github.com/embodied-ai-workshop-cvpr2020/website/blob/main/gatsby-config.js), where the imageId's correspond to those found in [static/images/organizers](https://github.com/embodied-ai-workshop-cvpr2020/website/tree/main/static/images/organizers).
 
-#### Local Development
+### Local Development
 
-The website is developed using Gatsby and relies on React, TypeScript, SCSS, and GraphQL, among other things. It's then statically transformed and optimized into HTML, CSS, and JavaScript, which ultimately gets displayed to the user.
+The website is developed using Gatsby and relies on React, TypeScript, SCSS, and GraphQL, among other things. It's then statically transformed and optimized into HTML, CSS, and JavaScript (on the `generated-static-pages` branch), which ultimately gets displayed to the user.
 
 To avoid locally developing, feel free to simply create an issue. But, if you're up for it:
 
