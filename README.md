@@ -40,7 +40,7 @@ yarn install
 6. Invoke gatsby from the root of the directory to build locally:
 
 ```
-gatsby-develop
+gatsby develop
 ```
 
 This should then create a local server which shows the live website at http://localhost:8000/.
