@@ -1,15 +1,25 @@
+@import "../styles/global";
+
 $lightBlue: #83cef8;
 $darkBlue: #2a3476;
 
+a {
+  &:hover {
+    color: $lightBlue !important;
+  }
+}
+
 .header {
   width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
   background: linear-gradient(to bottom, $lightBlue, $darkBlue);
   padding-top: 15px;
   padding-bottom: 15px;
   color: $darkBlue;
 
   .headerContent {
-    max-width: 1020px;
+    max-width: 1280px;
     margin: auto;
 
     .workshopTitle {
@@ -45,6 +55,28 @@ $darkBlue: #2a3476;
 
     .right {
       text-align: right;
+
+      .comingSoonText {
+        vertical-align: middle;
+      }
+    }
+
+    // Hides the elements, but keeps their width/height
+    // so that .middle doesn't end up left skewed.
+    @include breakpoint(tablet) {
+      .left,
+      .right {
+        opacity: 0;
+        z-index: -99 !important;
+        pointer-events: none;
+      }
     }
   }
+}
+
+// This is a bit dangerous when more than 1 emoji gets used.
+:global(span.emoji-mart-emoji) {
+  display: inline-block;
+  margin-bottom: -3px;
+  vertical-align: middle;
 }
