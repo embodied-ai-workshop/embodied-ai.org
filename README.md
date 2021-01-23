@@ -16,31 +16,39 @@ To avoid locally developing, feel free to simply create an issue. But, if you're
 
 1. Install [Node.js](https://www.npmjs.com/get-npm).
 
+The installation can be confirmed by typing:
+
+```
+npm -v
+```
+
+into a command line.
+
 2. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable), which makes it easiest to install gatsby dependencies (in my experience, over using NPM directly).
 
-3. Install gatsby-cli with
+3. Clone and move into the repo:
+
+```
+git clone https://github.com/embodied-ai-workshop-cvpr2020/embodied-ai-website.git
+cd embodied-ai-website/
+```
+
+4. Install gatsby-cli with
 
 ```
 yarn add gatsby-cli
 ```
 
-4. Clone the repo:
+5. Install other dependencies (e.g., scss, TypeScript, etc.):
 
 ```
-git clone <...>
-cd <...>
-```
-
-5. Install all the package other dependencies (e.g., scss, tsx, etc.) with
-
-```
-yarn install
+yarn add
 ```
 
 6. Invoke gatsby from the root of the directory to build locally:
 
 ```
-gatsby develop
+yarn run develop
 ```
 
 This should then create a local server which shows the live website at http://localhost:8000/.
