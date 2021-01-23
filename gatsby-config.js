@@ -229,5 +229,11 @@ module.exports = {
         path: path.join(__dirname, `static`, `images`),
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["UA-120916510-7"],
+      },
+    },
   ],
 };

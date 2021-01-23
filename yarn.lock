@@ -6599,6 +6599,14 @@ gatsby-plugin-antd@^2.2.0:
     antd "^4.0.0"
     babel-plugin-import "^1.13.0"
 
+gatsby-plugin-google-gtag@^2.7.0:
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-2.7.0.tgz#322f1d7cdefa4e9c45a77ad70e569685369944d4"
+  integrity sha512-9BvJRlHHknQaoOsPiZQJrZ3IuBP1iuj701kFIYzUQV0BA/3sDDEn2MeiAsyjguhR8+bJ6bYZZXHjX/UAEhD8Lw==
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    minimatch "^3.0.4"
+
 gatsby-plugin-page-creator@^2.3.28:
   version "2.3.28"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.3.28.tgz#871b08155616b3e3fb5c6dd29188f5d615154a3c"
