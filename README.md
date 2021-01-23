@@ -33,19 +33,13 @@ git clone https://github.com/embodied-ai-workshop-cvpr2020/embodied-ai-website.g
 cd embodied-ai-website/
 ```
 
-4. Install gatsby-cli with
-
-```
-yarn add gatsby-cli
-```
-
-5. Install other dependencies (e.g., scss, TypeScript, etc.):
+4. Install other dependencies (e.g., scss, TypeScript, etc.):
 
 ```
 yarn install
 ```
 
-6. Invoke gatsby from the root of the directory to build locally:
+5. Invoke gatsby from the root of the directory to build locally:
 
 ```
 yarn run develop
