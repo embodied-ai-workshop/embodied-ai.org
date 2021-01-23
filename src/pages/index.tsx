@@ -465,12 +465,12 @@ export default function Home({ data }) {
           </h3>
           <div style={{ marginBottom: "40px" }}>
             <WinnerVideo
-              fluid={data.teamEgo.childImageSharp.fluid}
-              url="https://www.youtube.com/watch?v=4n_Po0uCdU0&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
-            />
-            <WinnerVideo
               fluid={data.teamOant.childImageSharp.fluid}
               url="https://www.youtube.com/watch?v=v1pXHom9JnU&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
+            />
+            <WinnerVideo
+              fluid={data.teamEgo.childImageSharp.fluid}
+              url="https://www.youtube.com/watch?v=4n_Po0uCdU0&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
             />
           </div>
         </SubSection>
