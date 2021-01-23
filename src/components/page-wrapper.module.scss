@@ -1,6 +1,6 @@
 @import "../styles/global";
 
-$contentWidth: 1050px;
+$contentWidth: 1320px;
 $tocWidth: 230px;
 $tocMargin: 50px;
 
@@ -9,10 +9,6 @@ $tocMargin: 50px;
   margin: auto;
   padding-bottom: 100px;
 
-  @include breakpoint(tablet) {
-    width: 90%;
-  }
-
   .coverGraphic {
     margin-bottom: 25px;
     margin-top: 25px;
@@ -20,6 +16,9 @@ $tocMargin: 50px;
 
   .mainContent {
     max-width: $contentWidth - $tocWidth - $tocMargin;
+    width: calc(100% - #{$tocWidth} - #{$tocMargin} - 50px);
+    padding-left: 20px;
+    padding-right: 20px;
 
     @include breakpoint(laptop) {
       width: 100%;
