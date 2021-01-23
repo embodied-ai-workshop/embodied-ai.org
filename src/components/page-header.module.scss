@@ -1,7 +1,7 @@
 @import "../styles/global";
 
-$lightBlue: #83cef8;
-$darkBlue: #2a3476;
+$lightBlue: #b5f0ff;
+$darkBlue: #1d3d7e;
 
 a {
   &:hover {
@@ -13,10 +13,24 @@ a {
   width: 100%;
   padding-left: 25px;
   padding-right: 25px;
-  background: linear-gradient(to bottom, $lightBlue, $darkBlue);
   padding-top: 15px;
   padding-bottom: 15px;
   color: $darkBlue;
+  background: linear-gradient(175deg, $lightBlue, $darkBlue);
+  background-size: 150% 150%;
+  animation: gradientAnimation 10s ease infinite;
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 30%;
+    }
+    50% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 0% 30%;
+    }
+  }
 
   .headerContent {
     max-width: 1280px;
