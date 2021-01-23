@@ -1,9 +1,8 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 import style from "./page-header.module.scss";
 import { Popover, Button } from "antd";
 import { DownOutlined, LeftOutlined } from "@ant-design/icons";
+import SeattleCover from "../../static/images/cvpr2020/cover-transparent.svg";
 
 // This will eventually show the 2021 challenges as a dropdown
 // on the header row. 2021 info coming soon!
@@ -51,26 +50,12 @@ export const Header = (props: { conference: string }) => (
           <div className={style.conference}>{props.conference}</div>
         </div>
         <Challenges />
-        <StaticQuery
-          query={graphql`
-            query {
-              cover: file(
-                relativePath: { eq: "cvpr2020/transparent-cover.png" }
-              ) {
-                childImageSharp {
-                  fluid(quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-            }
-          `}
-          render={data => (
-            <Img
-              fluid={data.cover.childImageSharp.fluid}
-              style={{ marginTop: "15px", marginBottom: "15px" }}
-            />
-          )}
+        <div
+          style={{
+            width: "100%",
+            paddingTop: "56.25%",
+            backgroundImage: `url(${SeattleCover})`,
+          }}
         />
       </div>
     </div>
