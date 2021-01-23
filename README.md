@@ -42,7 +42,7 @@ yarn add gatsby-cli
 5. Install other dependencies (e.g., scss, TypeScript, etc.):
 
 ```
-yarn add
+yarn install
 ```
 
 6. Invoke gatsby from the root of the directory to build locally:
