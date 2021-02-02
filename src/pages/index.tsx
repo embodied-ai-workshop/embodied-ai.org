@@ -234,7 +234,7 @@ export default function Home({ data }) {
           <LiveSession
             fluidImage={data.researchLive.childImageSharp.fluid}
             questionLink="https://app.sli.do/event/wjgsmgxt"
-            date="June 14th | 5-6 PM PST"
+            date="June 15th | 9-10 AM PST"
             panel="The panel consists of speakers at this workshop"
             topics="The topics are based on questions, likely involving cognitive
               development in humans, progress in embodied AI tasks, sim-2-real transfer,
