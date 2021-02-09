@@ -406,9 +406,9 @@ export default function Home({ data }) {
               </tr>
               <tr>
                 <td>Actions</td>
-                <td>Discrete, Continuous</td>
+                <td>Continuous</td>
                 <td>Discrete</td>
-                <td>Discrete, Continuous</td>
+                <td>Discrete</td>
               </tr>
             </tbody>
           </table>
