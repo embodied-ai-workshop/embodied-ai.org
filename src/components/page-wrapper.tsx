@@ -65,7 +65,7 @@ export default class PageWrapper extends React.Component<
         (section: any) =>
           document
             .getElementById(headerId(section.props.title))
-            .getBoundingClientRect().top
+            .getBoundingClientRect().top + window.scrollY
       ),
     });
   }
