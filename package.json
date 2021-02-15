@@ -18,7 +18,7 @@
     "@types/emoji-mart": "^3.0.4",
     "antd": "^4.6.5",
     "emoji-mart": "^3.0.0",
-    "gatsby": "^2.24.63",
+    "gatsby": "^2.25.0",
     "gatsby-image": "^2.9.0",
     "gatsby-plugin-antd": "^2.2.0",
     "gatsby-plugin-google-gtag": "^2.7.0",
