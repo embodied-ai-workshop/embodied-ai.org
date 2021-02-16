@@ -59,10 +59,30 @@ export default function Home({ data }) {
         The Embodied AI 2021 workshop is a joint effort by a large set of
         researchers from a variety of organizations. They are listed below in
         alphabetical order.
-        <OrganizerPics
-          organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers}
-          data={data}
-        />
+        <SubSection title="Organizing Committee">
+          <OrganizerPics
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers.filter(
+              (organizer: any) => organizer.oc === true
+            )}
+            data={data}
+          />
+        </SubSection>
+        <SubSection title="Challenge Organizers">
+          <OrganizerPics
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers.filter(
+              (organizer: any) => organizer.challenge === true
+            )}
+            data={data}
+          />
+        </SubSection>
+        <SubSection title="Scientific Advisory Board">
+          <OrganizerPics
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers.filter(
+              (organizer: any) => organizer.sab === true
+            )}
+            data={data}
+          />
+        </SubSection>
       </Section>
     </PageWrapper>
   );
@@ -97,6 +117,9 @@ export const query = graphql`
               imageId
               organization
               site
+              sab
+              oc
+              challenge
             }
           }
         }
