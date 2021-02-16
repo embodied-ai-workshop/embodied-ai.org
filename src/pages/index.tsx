@@ -1,19 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
-import Img, { FixedObject, FluidObject } from "gatsby-image";
-import style from "./cvpr2020.module.scss";
 import { Section, SubSection } from "../components/text-helpers";
 import PageWrapper from "../components/page-wrapper";
-import { Challenges, OtherYear } from "../components/page-header";
-import { ArrowRightOutlined, PlayCircleFilled } from "@ant-design/icons";
+import { Challenges } from "../components/page-header";
 import { Table, Steps } from "antd";
 const { Step } = Steps;
 import { Emoji } from "emoji-mart";
-
-// SVG images (imported, instead of path referenced, for faster loading)
-import ChallengeSVG from "../../static/images/cvpr2021/cover.svg";
-import NVIDIA from "../../static/images/sponsors/nvidia.svg";
-import GoogleCloud from "../../static/images/sponsors/google-cloud.svg";
 
 import { OrganizerPics } from "./cvpr2020";
 import { css } from "@emotion/react";
@@ -107,9 +99,9 @@ const challengeData = [
     stochasticAcuation: "",
   },
   {
-    challenge: challengePageMap["ALFRED"],
+    challenge: challengePageMap["Habitat"],
     key: "habitat-objectNav",
-    task: "Objectnav",
+    task: "ObjectNav",
     interactiveActions: "",
     simulationPlatform: "Habitat",
     sceneDataset: "Matterport3D",
@@ -118,7 +110,7 @@ const challengeData = [
     stochasticAcuation: "",
   },
   {
-    challenge: challengePageMap["ALFRED"],
+    challenge: challengePageMap["Habitat"],
     key: "habitat-pointnav",
     task: "PointNav v2",
     interactiveActions: "",
@@ -359,9 +351,22 @@ function EmailSubscription(props: {
   );
 }
 
+function getWindowWidth() {
+  const { innerWidth: width } = window;
+  return width;
+}
+
 // And finally, we add all the content into their respective sections.
 import TennesseeCover from "../../static/images/cvpr2021/cover.svg";
 export default function Home({ data }) {
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+
+  useEffect(() => {
+    const resizeWindow = () => setWindowWidth(getWindowWidth());
+    window.addEventListener("resize", resizeWindow);
+    return () => window.removeEventListener("resize", resizeWindow);
+  });
+
   return (
     <PageWrapper
       headerGradient="linear-gradient(to bottom, #ebdc38, #49c3cd)"
@@ -491,9 +496,6 @@ export default function Home({ data }) {
               dataIndex: "challenge",
               key: "challenge",
               fixed: "left",
-              sorter: (a, b) => a.challenge.localeCompare(b.challenge),
-              sortDirections: ["descend", "ascend"],
-              // width: 150,
             },
             {
               title: (
@@ -503,7 +505,7 @@ export default function Home({ data }) {
               ),
               dataIndex: "task",
               key: "task",
-              // fixed: "left",
+              fixed: windowWidth > 650 ? "left" : "",
               sorter: (a, b) => a.task.localeCompare(b.task),
               sortDirections: ["ascend", "descend"],
             },
