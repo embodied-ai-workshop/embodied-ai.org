@@ -61,7 +61,7 @@ const challengePageMap = {
   ),
   "RxR-Habitat": <a href="//ai.google.com/research/rxr/habitat" target="_blank">RxR-Habitat</a>,
   SoundSpaces: <a href="//soundspaces.org/challenge" target="_blank">SoundSpaces</a>,
-  "TDW-Transport": <a href="//www.threedworld.org/" target="_blank">TDW-Transport</a>,
+  "TDW-Transport": <a href="//tdw-transport.csail.mit.edu/" target="_blank">TDW-Transport</a>,
 };
 
 const challengeData = [
