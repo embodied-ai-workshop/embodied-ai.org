@@ -375,7 +375,7 @@ export default function Home({ data }) {
           width: 120%;
           background-repeat: no-repeat;
           padding-top: 50.25%;
-          margin-left: -5%;
+          margin-left: -6%;
           margin-top: 50px;
           margin-bottom: -15px;
           background-image: url(${TennesseeCover});
