@@ -64,6 +64,13 @@ module.exports = {
           sab: true,
         },
         {
+          name: "Claudia D'Arpino",
+          organization: "Stanford",
+          imageId: "claudia",
+          site: "//ai.stanford.edu/~cdarpino/",
+          challenge: true,
+        },
+        {
           name: "Feras Dayoub",
           organization: "QUT, ACRV, QCR",
           imageId: "feras",

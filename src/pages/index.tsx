@@ -68,11 +68,7 @@ const challengePageMap = {
     </a>
   ),
   "RxR-Habitat": <a href="//ai.google.com/research/rxr/habitat">RxR-Habitat</a>,
-  SoundSpaces: (
-    <a href="//vision.cs.utexas.edu/projects/soundspaces-challenge">
-      SoundSpaces
-    </a>
-  ),
+  SoundSpaces: <a href="//soundspaces.org/challenge">SoundSpaces</a>,
   "TDW-Transport": <a href="//www.threedworld.org/">TDW-Transport</a>,
 };
 
@@ -713,6 +709,9 @@ export const query = graphql`
     }
 
     # organizer pictures
+    claudiaOrg: file(relativePath: { eq: "organizers/claudia.jpg" }) {
+      ...FluidImage
+    }
     apoorvOrg: file(relativePath: { eq: "organizers/apoorv.jpg" }) {
       ...FluidImage
     }
