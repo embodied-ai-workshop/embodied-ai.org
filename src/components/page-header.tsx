@@ -21,7 +21,13 @@ export const Challenges = (props: {
       content={
         <div>
           {props.challengeData.map((challenge: React.ReactNode) => (
-            <div>{challenge}</div>
+            <div
+              css={css`
+                text-align: ${props.onLeft === true ? "left" : "right"};
+              `}
+            >
+              {challenge}
+            </div>
           ))}
         </div>
       }
