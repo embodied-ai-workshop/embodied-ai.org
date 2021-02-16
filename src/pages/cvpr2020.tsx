@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import Img, { FixedObject, FluidObject } from "gatsby-image";
 import style from "./cvpr2020.module.scss";
 import { Section, SubSection } from "../components/text-helpers";
+import { Challenges, OtherYear } from "../components/page-header";
 import PageWrapper from "../components/page-wrapper";
 import { ArrowRightOutlined, PlayCircleFilled } from "@ant-design/icons";
 
@@ -10,6 +11,8 @@ import { ArrowRightOutlined, PlayCircleFilled } from "@ant-design/icons";
 import ChallengeSVG from "../../static/images/cvpr2020/challenge-cover.svg";
 import NVIDIA from "../../static/images/sponsors/nvidia.svg";
 import GoogleCloud from "../../static/images/sponsors/google-cloud.svg";
+
+import { css } from "@emotion/react";
 
 // These are for each organizer pic. They encompass the image,
 // name, organizations, and external URL when clicked.
@@ -175,9 +178,39 @@ const WinnerVideo = (props: { fluid: FluidObject; url: string }) => (
 );
 
 // And finally, we add all the content into their respective sections.
+import SeattleCover from "../../static/images/cvpr2020/cover-transparent.svg";
 export default function Home({ data }) {
   return (
-    <PageWrapper conference="CVPR 2020">
+    <PageWrapper
+      imageContent={{
+        css: css`
+          width: 100%;
+          padding-top: 56.25%;
+          background-image: url(${SeattleCover});
+        `,
+      }}
+      headerGradient="linear-gradient(175deg, #b5f0ff, #1d3d7e)"
+      conference="CVPR 2020"
+      rightSide={
+        <Challenges
+          conference="CVPR 2020"
+          challengeData={[
+            <a href="//svl.stanford.edu/igibson/challenge.html" target="_blank">
+              iGibson
+            </a>,
+            <a href="https://aihabitat.org/challenge/2020/" target="_blank">
+              Habitat
+            </a>,
+            <a
+              href="https://ai2thor.allenai.org/robothor/challenge"
+              target="_blank"
+            >
+              RoboTHOR
+            </a>,
+          ]}
+        />
+      }
+    >
       <Section title="Overview">
         <p>
           There is an emerging paradigm shift from ‘Internet AI’ towards
