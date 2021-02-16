@@ -5,6 +5,7 @@ import style from "./cvpr2020.module.scss";
 import { Section, SubSection } from "../components/text-helpers";
 import PageWrapper from "../components/page-wrapper";
 import { ArrowRightOutlined, PlayCircleFilled } from "@ant-design/icons";
+import { Table } from "antd";
 
 // SVG images (imported, instead of path referenced, for faster loading)
 import ChallengeSVG from "../../static/images/cvpr2020/challenge-cover.svg";

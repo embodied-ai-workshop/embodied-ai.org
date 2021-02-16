@@ -168,6 +168,7 @@ module.exports = {
           organization: "AI2",
           imageId: "apoorv",
           site: "//apoorvkh.com/",
+          challenge: true,
         },
         {
           name: "Vladlen Koltun",
