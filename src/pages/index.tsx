@@ -55,13 +55,13 @@ const challengePageMap = {
     </a>
   ),
   "Robotic Vision Scene Understanding": (
-    <a href="//cvpr2021.roboticvisionchallenge.org/">
+    <a href="//cvpr2021.roboticvisionchallenge.org/" target="_blank">
       Robotic Vision Scene Understanding
     </a>
   ),
-  "RxR-Habitat": <a href="//ai.google.com/research/rxr/habitat">RxR-Habitat</a>,
-  SoundSpaces: <a href="//soundspaces.org/challenge">SoundSpaces</a>,
-  "TDW-Transport": <a href="//www.threedworld.org/">TDW-Transport</a>,
+  "RxR-Habitat": <a href="//ai.google.com/research/rxr/habitat" target="_blank">RxR-Habitat</a>,
+  SoundSpaces: <a href="//soundspaces.org/challenge" target="_blank">SoundSpaces</a>,
+  "TDW-Transport": <a href="//www.threedworld.org/" target="_blank">TDW-Transport</a>,
 };
 
 const challengeData = [
