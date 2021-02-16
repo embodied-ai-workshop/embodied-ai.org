@@ -369,7 +369,7 @@ export default function Home({ data }) {
 
   return (
     <PageWrapper
-      headerGradient="linear-gradient(to bottom, #ebdc38, #49c3cd)"
+      headerGradient="linear-gradient(to bottom, #ebdfa5, #49c3cd)"
       imageContent={{
         css: css`
           width: 120%;
