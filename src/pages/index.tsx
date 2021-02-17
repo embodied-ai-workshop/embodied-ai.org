@@ -55,7 +55,7 @@ const challengePageMap = {
     </a>
   ),
   "Robotic Vision Scene Understanding": (
-    <a href="//cvpr2021.roboticvisionchallenge.org/" target="_blank">
+    <a href="http://cvpr2021.roboticvisionchallenge.org/" target="_blank">
       Robotic Vision Scene Understanding
     </a>
   ),
