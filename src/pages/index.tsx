@@ -59,9 +59,21 @@ const challengePageMap = {
       Robotic Vision Scene Understanding
     </a>
   ),
-  "RxR-Habitat": <a href="//ai.google.com/research/rxr/habitat" target="_blank">RxR-Habitat</a>,
-  SoundSpaces: <a href="//soundspaces.org/challenge" target="_blank">SoundSpaces</a>,
-  "TDW-Transport": <a href="//tdw-transport.csail.mit.edu/" target="_blank">TDW-Transport</a>,
+  "RxR-Habitat": (
+    <a href="//ai.google.com/research/rxr/habitat" target="_blank">
+      RxR-Habitat
+    </a>
+  ),
+  SoundSpaces: (
+    <a href="//soundspaces.org/challenge" target="_blank">
+      SoundSpaces
+    </a>
+  ),
+  "TDW-Transport": (
+    <a href="//tdw-transport.csail.mit.edu/" target="_blank">
+      TDW-Transport
+    </a>
+  ),
 };
 
 const challengeData = [
@@ -352,6 +364,10 @@ function EmailSubscription(props: {
 }
 
 function getWindowWidth() {
+  if (typeof window === undefined) {
+    // this only happens when statically building.
+    return 800;
+  }
   const { innerWidth: width } = window;
   return width;
 }
