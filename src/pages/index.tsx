@@ -50,7 +50,7 @@ const challengePageMap = {
     </a>
   ),
   MultiOn: (
-    <a href="//aspis.cmpt.sfu.ca/projects/multion/" target="_blank">
+    <a href="//multion-challenge.github.io/" target="_blank">
       MultiOn
     </a>
   ),
