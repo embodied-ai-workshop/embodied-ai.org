@@ -138,7 +138,7 @@ module.exports = {
           name: "Jose A. Iglesias-Guitian",
           organization: "UDC-CITIC",
           imageId: "joseA",
-          site: "//www.j4lley.com/",
+          site: "http://www.j4lley.com/",
           sab: true,
         },
         {
@@ -392,7 +392,7 @@ module.exports = {
           organization: "Stanford",
           imageId: "fei",
           challenge: true,
-          site: "//fxia.me/",
+          site: "http://fxia.me/",
         },
         {
           name: "Haoyang Zhang",
@@ -463,7 +463,7 @@ module.exports = {
           name: "Jose A. Iglesias-Guitian",
           imageId: "joseA",
           organization: "UDC, CITIC",
-          site: "//www.j4lley.com/",
+          site: "http://www.j4lley.com/",
         },
         {
           name: "Abhishek Kadian",
@@ -595,7 +595,7 @@ module.exports = {
           name: "Fei Xia",
           imageId: "fei",
           organization: "Stanford",
-          site: "//fxia.me/",
+          site: "http://fxia.me/",
         },
         {
           name: "Erik Wijmans",
