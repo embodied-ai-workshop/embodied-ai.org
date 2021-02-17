@@ -45,7 +45,7 @@ const challengePageMap = {
     </a>
   ),
   iGibson: (
-    <a href="//svl.stanford.edu/igibson/challenge.html" target="_blank">
+    <a href="http://svl.stanford.edu/igibson/challenge.html" target="_blank">
       iGibson
     </a>
   ),
