@@ -364,7 +364,7 @@ function EmailSubscription(props: {
 }
 
 function getWindowWidth() {
-  if (typeof window === undefined) {
+  if (typeof window === "undefined") {
     // this only happens when statically building.
     return 800;
   }
