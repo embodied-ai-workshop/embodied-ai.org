@@ -231,7 +231,7 @@ module.exports = {
           name: "Antonio M. Lopez",
           organization: "UAB-CVC",
           imageId: "antonio",
-          site: "//www.cvc.uab.es/~antonio/",
+          site: "http://www.cvc.uab.es/~antonio/",
           sab: true,
         },
         {
@@ -262,6 +262,7 @@ module.exports = {
           organization: "AI2, UW",
           imageId: "roozbeh",
           site: "//roozbehm.info/",
+          challenge: true,
           sab: true,
         },
         {
