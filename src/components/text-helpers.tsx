@@ -22,8 +22,9 @@ export const SubSection = (props: {
 
 // headerId is used to convert a header string into its hash
 // (i.e., embodied-ai.org/#header-hash-name).
-export const headerId = (header: string) =>
-  header.replace(/\s/g, "-").toLowerCase();
+export function headerId(header: string) {
+  return header.replace(/\s/g, "-").toLowerCase();
+}
 
 // Sections can be thought of similar to their LaTeX counterparts,
 // except that the { children } are encompassed inside the body

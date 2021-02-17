@@ -59,6 +59,19 @@ body {
     outline: none;
   }
 
+  tr td,
+  tr th,
+  tr {
+    text-align: center !important;
+  }
+
+  tr th:nth-child(1),
+  tr th:nth-child(2),
+  tr td:nth-child(1),
+  tr td:nth-child(2) {
+    text-align: left !important;
+  }
+
   button {
     @include no-select();
     padding: 4px 15px;
@@ -68,12 +81,12 @@ body {
   // remove ugly default anchor styling
   a {
     text-decoration: inherit;
-    color: inherit;
+    // color: inherit;
     cursor: auto;
 
     &:visited {
       text-decoration: inherit;
-      color: inherit;
+      // color: inherit;
       cursor: auto;
     }
 

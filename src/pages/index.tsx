@@ -1,188 +1,406 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
-import Img, { FixedObject, FluidObject } from "gatsby-image";
-import style from "./index.module.scss";
 import { Section, SubSection } from "../components/text-helpers";
 import PageWrapper from "../components/page-wrapper";
-import { ArrowRightOutlined, PlayCircleFilled } from "@ant-design/icons";
+import { Challenges } from "../components/page-header";
+import { Table, Steps } from "antd";
+const { Step } = Steps;
+import { Emoji } from "emoji-mart";
 
-// SVG images (imported, instead of path referenced, for faster loading)
-import ChallengeSVG from "../../static/images/cvpr2020/challenge-cover.svg";
-import NVIDIA from "../../static/images/sponsors/nvidia.svg";
-import GoogleCloud from "../../static/images/sponsors/google-cloud.svg";
+import { OrganizerPics } from "./cvpr2020";
+import { css } from "@emotion/react";
 
-// These are for each organizer pic. They encompass the image,
-// name, organizations, and external URL when clicked.
-const OrganizerPics = (props: { organizers: any; data: any }) => (
-  <div className={style.organizerContainer}>
-    {props.organizers.map(organizer => (
-      <div className={style.organizer}>
-        <div className={style.organizerPic}>
-          <a href={organizer.site} target="_blank">
-            <Img
-              fluid={
-                props.data[organizer.imageId + "Org"].childImageSharp.fluid
-              }
-            />
-          </a>
-        </div>
-        <b>{organizer.name}</b>
-        <br />
-        {organizer.organization}
-      </div>
-    ))}
-  </div>
-);
+/**
+ * Return true if an email is formatted correctly, otherwise false.
+ * Taken from https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+ * @param email the input email
+ */
+function validateEmail(email: string) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
 
-// Wrapper for any generic video that is linked to an external page.
-// Note that @fontSize sets the size of the play icon.
-function Video(props: {
-  fontSize: string;
-  url: string;
-  children: React.ReactNode;
-}) {
-  const [videoHovered, setVideoHovered] = useState(false);
-  return (
-    <a href={props.url} target="_blank">
-      <div className={style.videoWrapper}>
-        <div
-          onMouseOver={() => setVideoHovered(true)}
-          onMouseOut={() => setVideoHovered(false)}
-          className={style.video}
-        >
-          {props.children}
-          <PlayCircleFilled
-            style={{
-              fontSize: props.fontSize,
-              opacity: videoHovered ? 0.15 : 0.9,
-            }}
-            className={style.videoPlay}
-          />
-        </div>
-      </div>
+const challengePageMap = {
+  "AI2-THOR ObjectNav": (
+    <a
+      href="//ai2thor.allenai.org/robothor/cvpr-2021-challenge"
+      target="_blank"
+    >
+      AI2-THOR ObjectNav
     </a>
+  ),
+  "AI2-THOR Rearrangement": (
+    <a href="//ai2thor.allenai.org/rearrangement" target="_blank">
+      AI2-THOR Rearrangement
+    </a>
+  ),
+  ALFRED: (
+    <a href="//askforalfred.com/EAI21/" target="_blank">
+      ALFRED
+    </a>
+  ),
+  Habitat: (
+    <a href="//aihabitat.org/challenge/2021" target="_blank">
+      Habitat
+    </a>
+  ),
+  iGibson: (
+    <a href="//svl.stanford.edu/igibson/challenge.html" target="_blank">
+      iGibson
+    </a>
+  ),
+  MultiOn: (
+    <a href="//aspis.cmpt.sfu.ca/projects/multion/" target="_blank">
+      MultiOn
+    </a>
+  ),
+  "Robotic Vision Scene Understanding": (
+    <a href="//cvpr2021.roboticvisionchallenge.org/" target="_blank">
+      Robotic Vision Scene Understanding
+    </a>
+  ),
+  "RxR-Habitat": <a href="//ai.google.com/research/rxr/habitat" target="_blank">RxR-Habitat</a>,
+  SoundSpaces: <a href="//soundspaces.org/challenge" target="_blank">SoundSpaces</a>,
+  "TDW-Transport": <a href="//tdw-transport.csail.mit.edu/" target="_blank">TDW-Transport</a>,
+};
+
+const challengeData = [
+  {
+    challenge: challengePageMap["AI2-THOR ObjectNav"],
+    key: "ai2thor-objectnav",
+    task: "ObjectNav",
+    interactiveActions: "",
+    simulationPlatform: "AI2-THOR",
+    sceneDataset: "RoboTHOR",
+    actionSpace: "Discrete",
+    observations: "RGB-D",
+    stochasticAcuation: "✓",
+  },
+  {
+    challenge: challengePageMap["AI2-THOR Rearrangement"],
+    key: "ai2thor-rearrangement",
+    task: "Rearrangement",
+    interactiveActions: "✓",
+    simulationPlatform: "AI2-THOR",
+    sceneDataset: "iTHOR",
+    actionSpace: "Discrete",
+    observations: "RGB-D, Localization",
+    stochasticAcuation: "",
+  },
+  {
+    challenge: challengePageMap["ALFRED"],
+    key: "alfred",
+    task: "Vision-and-Language Interaction",
+    interactiveActions: "✓",
+    simulationPlatform: "AI2-THOR",
+    sceneDataset: "iTHOR",
+    actionSpace: "Discrete",
+    observations: "RGB",
+    stochasticAcuation: "",
+  },
+  {
+    challenge: challengePageMap["Habitat"],
+    key: "habitat-objectNav",
+    task: "ObjectNav",
+    interactiveActions: "",
+    simulationPlatform: "Habitat",
+    sceneDataset: "Matterport3D",
+    actionSpace: "Discrete",
+    observations: "RGB-D, Localization",
+    stochasticAcuation: "",
+  },
+  {
+    challenge: challengePageMap["Habitat"],
+    key: "habitat-pointnav",
+    task: "PointNav v2",
+    interactiveActions: "",
+    simulationPlatform: "Habitat",
+    sceneDataset: "Gibson",
+    actionSpace: "Discrete",
+    observations: "Noisy RGB-D",
+    stochasticAcuation: "✓",
+  },
+  {
+    challenge: challengePageMap["iGibson"],
+    key: "igibson-in",
+    task: "Interactive Navigation",
+    interactiveActions: "✓",
+    simulationPlatform: "iGibson",
+    sceneDataset: "iGibson",
+    actionSpace: "Continuous",
+    observations: "RGB-D",
+    stochasticAcuation: "✓",
+  },
+  {
+    challenge: challengePageMap["iGibson"],
+    key: "igibson-social-navigation",
+    task: "Social Navigation",
+    interactiveActions: "✓",
+    simulationPlatform: "iGibson",
+    sceneDataset: "iGibson",
+    actionSpace: "Continuous",
+    observations: "RGB-D",
+    stochasticAcuation: "✓",
+  },
+  {
+    challenge: challengePageMap["MultiOn"],
+    key: "multion",
+    task: "Multi-Object Navigation",
+    interactiveActions: "",
+    simulationPlatform: "Habitat",
+    sceneDataset: "Matterport3D",
+    actionSpace: "Discrete",
+    observations: "RGB-D, Localization",
+    stochasticAcuation: "",
+  },
+  {
+    challenge: challengePageMap["Robotic Vision Scene Understanding"],
+    key: "rvsu",
+    task: "Rearrangement (SCD)",
+    interactiveActions: "",
+    simulationPlatform: "Isaac Sim",
+    sceneDataset: "Active Scene Understanding",
+    observations: "RGB-D, Pose Data, Flatscan Laser",
+    actionSpace: "Discrete",
+    stochasticAcuation: "✓",
+  },
+  {
+    challenge: challengePageMap["Robotic Vision Scene Understanding"],
+    key: "rvsu-2",
+    task: "Semantic SLAM",
+    interactiveActions: "",
+    simulationPlatform: "Isaac Sim",
+    sceneDataset: "Active Scene Understanding",
+    observations: "RGB-D, Pose Data, Flatscan Laser",
+    actionSpace: "Discrete",
+    stochasticAcuation: "Partially",
+  },
+  {
+    challenge: challengePageMap["RxR-Habitat"],
+    key: "rxr",
+    task: "Vision-and-Language Navigation",
+    interactiveActions: "",
+    simulationPlatform: "Habitat",
+    sceneDataset: "Matterport3D",
+    observations: "RGB-D",
+    actionSpace: "Discrete",
+    stochasticAcuation: "",
+  },
+  {
+    challenge: challengePageMap["SoundSpaces"],
+    key: "soundspaces",
+    task: "Audio Visual Navigation",
+    interactiveActions: "",
+    simulationPlatform: "Habitat",
+    sceneDataset: "Matterport3D",
+    observations: "RGB-D, Audio Waveform",
+    actionSpace: "Discrete",
+    stochasticAcuation: "",
+  },
+  {
+    challenge: challengePageMap["TDW-Transport"],
+    key: "tdw",
+    task: "Rearrangement",
+    interactiveActions: "✓",
+    simulationPlatform: "TDW",
+    sceneDataset: "TDW",
+    observations: "RGB-D, Metadata",
+    actionSpace: "Discrete",
+    stochasticAcuation: "✓",
+  },
+];
+
+function EmailSubscription(props: {
+  actionIdentifier: string;
+  entryNumber: number;
+}) {
+  const [submitted, setSubmitted] = useState(false),
+    [emailFocused, setEmailFocused] = useState(false),
+    [inputEmail, setInputEmail] = useState("");
+
+  const emailIsValid = validateEmail(inputEmail);
+
+  return (
+    <div
+      css={css`
+        text-align: center;
+        margin-top: 60px;
+        margin-bottom: 60px;
+      `}
+    >
+      <form
+        encType="text/plain"
+        action={
+          emailIsValid
+            ? `https://docs.google.com/forms/d/e/${props.actionIdentifier}/formResponse?usp=pp_url&entry.${props.entryNumber}=${inputEmail}`
+            : ``
+        }
+        target={`hidden_iframe${props.actionIdentifier}`}
+        onSubmit={() => (emailIsValid ? setSubmitted(true) : false)}
+        method="post"
+      >
+        <div
+          css={css`
+            margin-bottom: 10px;
+          `}
+        >
+          <div
+            css={css`
+              font-weight: bold;
+              font-size: 25px;
+              color: "#2b4acb";
+              vertical-align: middle;
+              display: inline-block;
+            `}
+          >
+            Sign Up for Updates
+          </div>
+          <div
+            css={css`
+              vertical-align: middle;
+              display: inline-block;
+              margin-top: 6px;
+              margin-left: 5px;
+            `}
+          >
+            <Emoji emoji="nerd_face" size={32} />
+          </div>
+        </div>
+        {submitted ? (
+          <div>Thanks for signing up!</div>
+        ) : (
+          <>
+            <div
+              css={css`
+                border-radius: 5px;
+                box-shadow: 0px 0px 2px 0px #2b4acb;
+                display: inline-block;
+                margin: auto;
+                * {
+                  padding-top: 3px;
+                  padding-bottom: 5px;
+                }
+              `}
+            >
+              <input
+                type="email"
+                autoComplete="off"
+                placeholder="email"
+                name={`entry.${props.entryNumber}`}
+                id={`entry.${props.entryNumber}`}
+                onFocus={() => setEmailFocused(true)}
+                onBlur={() => setEmailFocused(false)}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setInputEmail(event.target.value)
+                }
+                value={inputEmail}
+                css={css`
+                  background-color: transparent;
+                  transition-duration: 0.3s;
+                  box-shadow: 0px 0px 1px 2px
+                    ${!emailFocused && !emailIsValid && inputEmail != ""
+                      ? "#ff7875"
+                      : "transparent"};
+                  border: none;
+                  width: 350px;
+                  @media (max-width: 500px) {
+                    width: 55vw;
+                  }
+                  border-radius: 5px;
+                  padding-left: 8px;
+                `}
+              />
+              <input
+                type={emailIsValid ? "submit" : "button"}
+                value="Sign Up"
+                onClick={() => (emailIsValid ? true : false)}
+                css={css`
+                  background-color: transparent;
+                  border: none;
+                  font-weight: 600;
+                  transition-duration: 0.3s;
+                  color: ${emailIsValid ? "#2b4acb" : "#2b4acb" + "88"};
+                  padding-top: 3px;
+                  padding-right: 12px;
+                  padding-left: 10px;
+                  &:hover {
+                    cursor: ${emailIsValid ? "pointer" : "default"};
+                  }
+                `}
+              />
+            </div>
+            <div
+              css={css`
+                margin-top: 5px;
+                color: ${"#8c8c8c"};
+              `}
+            >
+              You can unsubscribe at any time.
+            </div>
+          </>
+        )}
+      </form>
+      <iframe
+        name={`hidden_iframe${props.actionIdentifier}`}
+        id={`hidden_iframe${props.actionIdentifier}`}
+        css={css`
+          display: none !important;
+        `}
+      />
+    </div>
   );
 }
 
-// The speakers of the workshop are all displayed in a similar style,
-// and this component encompasses that style.
-const Speaker = (props: {
-  url: string;
-  fixedImg: FixedObject;
-  name: string;
-  organizations: string[];
-}) => (
-  <div className={style.speaker}>
-    <div className={style.speakerThumbnailWrapper}>
-      <Video fontSize="45px" url={props.url}>
-        <Img fixed={props.fixedImg} />
-      </Video>
-    </div>
-    <div className={style.speakerInfo}>
-      <b>{props.name}</b>
-      {props.organizations.map(org => (
-        <>
-          <br />
-          {org}
-        </>
-      ))}
-    </div>
-  </div>
-);
-
-// There were 2 live sessions, each with questions that could be
-// submitted ahead of time, a zoom link, panelist info, topic info,
-// and a reference to the recorded session.
-const LiveSession = (props: {
-  videoURL: string;
-  fluidImage: FluidObject;
-  questionLink: string;
-  date: string;
-  panel: string;
-  topics: string;
-}) => (
-  <div className={style.liveSession}>
-    <div className={style.liveSessionVideo}>
-      <Video fontSize="70px" url={props.videoURL}>
-        <Img fluid={props.fluidImage} />
-      </Video>
-    </div>
-    <div className={style.sessionBoxContainer}>
-      <a href={props.questionLink} target="_blank">
-        <div className={style.liveSessionBox}>Submit Questions</div>
-      </a>
-      <div className={style.liveSessionBox}>
-        <div>Join Zoom Meeting</div>
-        <div>{props.date}</div>
-      </div>
-    </div>
-    <div className={style.liveSessionInfo}>
-      <p>
-        <b>Panel.</b> {props.panel}
-      </p>
-      <p>
-        <b>Topics.</b> {props.topics}
-      </p>
-    </div>
-  </div>
-);
-
-// References to the iGibson, Habitat, and RoboTHOR challenge
-// boxes, which link to the external challenge pages. Also note,
-// that the hostname is something like ai2thor.allenai.org or
-// svl.stanford.edu.
-const ChallengeCover = (props: {
-  url: string;
-  name: string;
-  hostname: string;
-  bg: string;
-}) => (
-  <a href={props.url} target="_blank">
-    <div
-      style={{
-        backgroundColor: props.bg,
-      }}
-      className={style.challengeCover}
-    >
-      <div className={style.challengeName}>{props.name}</div>
-      <div className={style.challengeHostname}>
-        {props.hostname} <ArrowRightOutlined style={{ fontSize: 11 }} />
-      </div>
-    </div>
-  </a>
-);
-
-// Each challenge had an organizer video, which just provided
-// an overview for the challenge.
-const OrganizerVideo = (props: { url: string; fluid: FluidObject }) => (
-  <div className={style.challengeOrganizerVideo}>
-    <Video fontSize="45px" url={props.url}>
-      <Img fluid={props.fluid} />
-    </Video>
-  </div>
-);
-
-// Challenges had winner videos, which were a bit smaller than
-// the organizer videos.
-const WinnerVideo = (props: { fluid: FluidObject; url: string }) => (
-  <div className={style.winnerVideo}>
-    <Video fontSize="25px" url={props.url}>
-      <Img fluid={props.fluid} />
-    </Video>
-  </div>
-);
+function getWindowWidth() {
+  const { innerWidth: width } = window;
+  return width;
+}
 
 // And finally, we add all the content into their respective sections.
+import TennesseeCover from "../../static/images/cvpr2021/cover.svg";
 export default function Home({ data }) {
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+
+  useEffect(() => {
+    const resizeWindow = () => setWindowWidth(getWindowWidth());
+    window.addEventListener("resize", resizeWindow);
+    return () => window.removeEventListener("resize", resizeWindow);
+  });
+
   return (
-    <PageWrapper conference="CVPR 2020">
+    <PageWrapper
+      headerGradient="linear-gradient(to bottom, #ebdfa5, #49c3cd)"
+      imageContent={{
+        css: css`
+          width: 120%;
+          background-repeat: no-repeat;
+          padding-top: 50.25%;
+          margin-left: -6%;
+          margin-top: 50px;
+          margin-bottom: -15px;
+          background-image: url(${TennesseeCover});
+        `,
+      }}
+      conference="CVPR 2021"
+      rightSide={
+        <Challenges
+          conference="CVPR 2021"
+          challengeData={Object.values(challengePageMap)}
+        />
+      }
+    >
       <Section title="Overview">
         <p>
-          There is an emerging paradigm shift from ‘Internet AI’ towards
-          ‘Embodied AI’ in the computer vision, NLP, and broader AI communities.
-          In contrast to Internet AI’s focus on learning from datasets of
-          images, videos, and text curated from the internet, embodied AI
-          enables learning through interaction with the surrounding environment.
+          Within the last decade, advances in deep learning, coupled with the
+          creation of large, freely available datasets (e.g., ImageNet), have
+          resulted in remarkable progress in the computer vision, NLP, and
+          broader AI communities. This progress has enabled models to begin to
+          obtain superhuman performance on a wide variety of passive tasks.
+          However, this progress has also enabled a paradigm shift that a
+          growing collection of researchers take aim at: the creation of an
+          embodied agent (e.g., a robot) which learns, through interaction and
+          exploration, to creatively solve challenging tasks within its
+          environment.
         </p>
         <p>
           The goal of this workshop is to bring together researchers from the
@@ -191,319 +409,264 @@ export default function Home({ data }) {
         </p>
         <ul>
           <li>
-            <b>See</b>: perceive their environment through vision or other
-            senses.
+            <b>
+              <Emoji emoji="eye" size={18} /> See
+            </b>
+            : perceive their environment through vision or other senses.
           </li>
           <li>
-            <b>Talk</b>: hold a natural language dialog grounded in their
-            environment.
+            <b>
+              <Emoji emoji="microphone" size={18} /> Talk
+            </b>
+            : hold a natural language dialog grounded in their environment.
           </li>
           <li>
-            <b>Act</b>: navigate and interact with their environment to
-            accomplish goals.
+            <b>
+              <Emoji emoji="ear" size={18} />
+              Listen
+            </b>
+            : understand and react to audio input anywhere in a scene.
           </li>
           <li>
-            <b>Reason</b>: consider and plan for the long-term consequences of
-            their actions.
+            <b>
+              <Emoji emoji="joystick" size={18} /> Act
+            </b>
+            : navigate and interact with their environment to accomplish goals.
+          </li>
+          <li>
+            <b>
+              <Emoji emoji="thinking_face" size={18} /> Reason
+            </b>
+            : consider and plan for the long-term consequences of their actions.
           </li>
         </ul>
         <p>
-          The Embodied AI 2020 workshop will be held in conjunction with CVPR
-          2020 in Seattle, WA over two days, Jun 14 and Jun 15. It will feature
-          a host of invited talks covering a variety of topics in Embodied AI,
-          three exciting challenges, and two live panel discussions.
+          The Embodied AI 2021 workshop will be held virtually in conjunction
+          with CVPR 2021. It will feature a host of invited talks covering a
+          variety of topics in Embodied AI, many exciting challenges, a poster
+          session, and live panel discussions.
         </p>
+        <EmailSubscription
+          actionIdentifier="1FAIpQLSeIZrn-tk7Oain2R8gc_Q0HzLMLQ9XXwqu3KecK_E5kALpiug"
+          entryNumber={1834823104}
+        />
       </Section>
-      <Section title="Live Sessions">
-        <SubSection title="Simulated Environments">
-          <LiveSession
-            fluidImage={data.simLive.childImageSharp.fluid}
-            questionLink="https://app.sli.do/event/wjgsmgxt"
-            date="June 14th | 5-6 PM PST"
-            panel="The panel consists of researchers who have built various
-              simulation environments and physics engines."
-            topics="The topics are based on questions, likely involving the
-              need for simulation, progress in developing AI agents in simulation,
-              need for photo-realism, physics engines for simulation, multi-agent
-              capabilities, sim-to-real, the future of simulators, accessibility of
-              simulation environments, and more!"
-            videoURL="https://www.youtube.com/watch?v=nBF3QJd2t50&list=PL4XI7L9Xv5fWxObV8eDWP4APN1V5Xd6QN"
+      <Section title="Timeline">
+        <Steps progressDot current={0} direction="vertical">
+          <Step title="Workshop Announced" description="Feb 17, 2021" />
+          <Step
+            title="Paper Submission Deadline"
+            description="March 15, 2021"
           />
-        </SubSection>
-        <SubSection title="Embodied AI Research">
-          <LiveSession
-            fluidImage={data.researchLive.childImageSharp.fluid}
-            questionLink="https://app.sli.do/event/wjgsmgxt"
-            date="June 15th | 9-10 AM PST"
-            panel="The panel consists of speakers at this workshop"
-            topics="The topics are based on questions, likely involving cognitive
-              development in humans, progress in embodied AI tasks, sim-2-real transfer,
-              robotics, embodied AI for all, and more!"
-            videoURL="https://www.youtube.com/watch?v=EX8HYsmZN4w&list=PL4XI7L9Xv5fWxObV8eDWP4APN1V5Xd6QN"
+          <Step
+            title="Challenge Submission Deadlines"
+            description="May 2021. Check each challenge for the specific date."
           />
-        </SubSection>
-      </Section>
-      <Section title="Invited Talks">
-        <SubSection title="Motivation for Embodied AI Research">
-          <Speaker
-            fixedImg={data.alisonTalk.childImageSharp.fixed}
-            name="Alison Gopnik"
-            organizations={["UC Berkeley"]}
-            url="https://www.youtube.com/watch?v=ZLIH9GPvS-8&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-          <Speaker
-            fixedImg={data.lindaTalk.childImageSharp.fixed}
-            name="Linda Smith"
-            organizations={["Indiana"]}
-            url="https://www.youtube.com/watch?v=dxli8qWJHLU&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-        </SubSection>
-        <SubSection title="Embodied Navigation">
-          <Speaker
-            fixedImg={data.raquelTalk.childImageSharp.fixed}
-            name="Raquel Urtasun"
-            organizations={["Uber ATG Toronto", "University of Toronto"]}
-            url="https://www.youtube.com/watch?v=7GIUBS-TEa0&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-          <Speaker
-            fixedImg={data.piotrTalk.childImageSharp.fixed}
-            name="Piotr Mirowski"
-            organizations={["DeepMind"]}
-            url="https://www.youtube.com/watch?v=mwjlRJeo3Ik&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-        </SubSection>
-        <SubSection title="Embodied Perception">
-          <Speaker
-            fixedImg={data.alexTalk.childImageSharp.fixed}
-            name="Alex Schwing"
-            organizations={["UIUC"]}
-            url="https://www.youtube.com/watch?v=u5ayFwhLzfY&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-          <Speaker
-            fixedImg={data.deepakTalk.childImageSharp.fixed}
-            name="Deepak Pathak"
-            organizations={["FAIR, UC Berkeley", "CMU (Starting Fall 2020)"]}
-            url="https://www.youtube.com/watch?v=crxnghFA8Ww&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-        </SubSection>
-        <SubSection title="Robotics">
-          <Speaker
-            fixedImg={data.dieterTalk.childImageSharp.fixed}
-            name="Dieter Fox"
-            organizations={["NVIDIA, UW"]}
-            url="https://www.youtube.com/watch?v=LJNFzE-VmzI&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-          <Speaker
-            fixedImg={data.franziskaTalk.childImageSharp.fixed}
-            name="Franziska Meier"
-            organizations={["FAIR"]}
-            url="https://www.youtube.com/watch?v=UpjXMmZtxvY&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-        </SubSection>
-        <SubSection title="Sim-2-Real Transfer">
-          <Speaker
-            fixedImg={data.judyTalk.childImageSharp.fixed}
-            name="Judy Hoffman"
-            organizations={["Georgia Tech"]}
-            url="https://www.youtube.com/watch?v=eNcMHOTpWJA&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-          <Speaker
-            fixedImg={data.soniaTalk.childImageSharp.fixed}
-            name="Sonia Chernova"
-            organizations={["Georgia Tech"]}
-            url="https://www.youtube.com/watch?v=1DPXcXWBfsI&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-        </SubSection>
-        <SubSection title="Embodied AI for All">
-          <Speaker
-            fixedImg={data.heidiTalk.childImageSharp.fixed}
-            name="Heidi Hysell"
-            organizations={["Alpha Drive"]}
-            url="https://www.youtube.com/watch?v=LOImoR7gZB8&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-          <Speaker
-            fixedImg={data.rishabhTalk.childImageSharp.fixed}
-            name="Rishabh Jain"
-            organizations={["Eval AI", "Georgia Tech"]}
-            url="https://www.youtube.com/watch?v=3SoCElGefik&list=PL4XI7L9Xv5fX2nIAx8-ldtgaRh5u2yObq"
-          />
-        </SubSection>
+          <Step title="CVPR Workshop" description="June 2021" />
+        </Steps>
       </Section>
       <Section title="Challenges">
-        <img
-          src={ChallengeSVG}
-          alt="Challenge Cover Graphic"
-          style={{
-            marginBottom: "15px",
-            marginLeft: "0.66%",
-            marginRight: "0.66%",
-          }}
+        <p>
+          The Embodied AI 2021 workshop is hosting many exciting challenges
+          covering a wide range of topics such as rearrangement, visual
+          navigation, and vision-and-language, and audio-visual navigation. More
+          details regarding data, submission instructions, and timelines can be
+          found on the individual challenge websites.
+        </p>
+        <p>
+          Challenge winners will be given the opportunity to present a talk at
+          the workshop. Since many challenges can be grouped into similar tasks,
+          we encourage participants to submit models to more than 1 challenge.
+          The table below describes, compares, and links each challenge.
+        </p>
+        <Table
+          scroll={{ x: "1550px" }}
+          css={css`
+            margin-top: 25px;
+            margin-bottom: 50px;
+          `}
+          sticky={true}
+          columns={[
+            {
+              title: (
+                <>
+                  <Emoji emoji="mechanical_arm" size={18} /> Challenge
+                </>
+              ),
+              dataIndex: "challenge",
+              key: "challenge",
+              fixed: "left",
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="microscope" size={18} /> Task
+                </>
+              ),
+              dataIndex: "task",
+              key: "task",
+              fixed: windowWidth > 650 ? "left" : "",
+              sorter: (a, b) => a.task.localeCompare(b.task),
+              sortDirections: ["ascend", "descend"],
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="cooking" size={18} /> Interactive Actions?
+                </>
+              ),
+              dataIndex: "interactiveActions",
+              key: "interactiveActions",
+              sorter: (a, b) =>
+                a.interactiveActions.localeCompare(b.interactiveActions),
+              sortDirections: ["descend", "ascend"],
+              width: 200,
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="earth_americas" size={18} /> Simulation Platform
+                </>
+              ),
+              dataIndex: "simulationPlatform",
+              key: "simulationPlatform",
+              sorter: (a, b) =>
+                a.simulationPlatform.localeCompare(b.simulationPlatform),
+              sortDirections: ["ascend", "descend"],
+              width: 200,
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="house" size={18} /> Scene Dataset
+                </>
+              ),
+              dataIndex: "sceneDataset",
+              key: "sceneDataset",
+              sorter: (a, b) => a.sceneDataset.localeCompare(b.sceneDataset),
+              sortDirections: ["ascend", "descend"],
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="eye" size={18} /> Observations
+                </>
+              ),
+              key: "observations",
+              dataIndex: "observations",
+              sorter: (a, b) => a.observations.localeCompare(b.observations),
+              sortDirections: ["ascend", "descend"],
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="tophat" size={18} /> Stochastic Acuation?
+                </>
+              ),
+              key: "stochasticAcuation",
+              dataIndex: "stochasticAcuation",
+              sorter: function (a, b) {
+                // let's favor the checks over any text.
+                let aActuation =
+                  a.stochasticAcuation === "✓" ? "Z" : a.stochasticAcuation;
+                let bActuation =
+                  b.stochasticAcuation === "✓" ? "Z" : b.stochasticAcuation;
+                return aActuation.localeCompare(bActuation);
+              },
+              sortDirections: ["descend", "ascend"],
+              width: 205,
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="joystick" size={18} /> Action Space
+                </>
+              ),
+              key: "actionSpace",
+              dataIndex: "actionSpace",
+              sorter: (a, b) => a.actionSpace.localeCompare(b.actionSpace),
+              sortDirections: ["ascend", "descend"],
+            },
+          ]}
+          dataSource={challengeData}
+          pagination={false}
         />
-        <div style={{ position: "relative", marginBottom: "15px" }}>
-          <ChallengeCover
-            name="iGibson Challenge"
-            bg="#8e0d0d"
-            hostname="svl.stanford.edu"
-            url="http://svl.stanford.edu/igibson/challenge.html"
-          />
-          <ChallengeCover
-            name="Habitat Challenge"
-            bg="#478cc4"
-            hostname="aihabitat.org"
-            url="https://aihabitat.org/challenge/2020/"
-          />
-          <ChallengeCover
-            name="RoboTHOR Challenge"
-            bg="#265ED4"
-            hostname="ai2thor.allenai.org"
-            url="https://ai2thor.allenai.org/robothor/challenge"
-          />
-        </div>
-        <p>
-          The Embodied AI 2020 workshop will host three exciting challenges
-          focusing on the problems of point navigation, object navigation, and
-          the transfer of models from simulated environments to the real world.
-          More details regarding data, submission instructions, and timelines
-          can be found on the individual challenge websites.
-        </p>
-        <p>
-          Although these challenges use three different simulation engines, the
-          APIs, action, observation spaces, and agent models are unified! Thus,
-          participants are encouraged to participate in all challenges as these
-          can use identical setups.
-        </p>
-        <p>In more detail, the challenges relate to each other as follows:</p>
-        <div className={style.tableWrapper}>
-          <table className={style.challengeTable}>
-            <thead>
-              <tr>
-                <th></th>
-                <th>iGibson</th>
-                <th>Habitat</th>
-                <th>RoboTHOR</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Problem</td>
-                <td>PointNav</td>
-                <td>PointNav, ObjNav</td>
-                <td>ObjNav</td>
-              </tr>
-              <tr>
-                <td>Test Environment</td>
-                <td>Real</td>
-                <td>Simulation</td>
-                <td>Real</td>
-              </tr>
-              <tr>
-                <td>Agent</td>
-                <td colSpan={3}>LoCoBot</td>
-              </tr>
-              <tr>
-                <td>Observations</td>
-                <td colSpan={3}>RGB-D</td>
-              </tr>
-              <tr>
-                <td>Actions</td>
-                <td>Continuous</td>
-                <td>Discrete</td>
-                <td>Discrete</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
       </Section>
-      <Section title="Challenge Results">
-        <SubSection title="iGibson Challenge">
-          <h3>Organizer Video</h3>
-          <OrganizerVideo
-            fluid={data.igibsonResultVid.childImageSharp.fluid}
-            url="https://www.youtube.com/watch?v=0BvUSjcc0jw&list=PL4XI7L9Xv5fVUMEb1eYOaH8y1b6j8xiMM"
-          />
-          <h3 style={{ marginTop: "15px", marginBottom: "5px" }}>Winners</h3>
-          <div style={{ marginBottom: "40px" }}>
-            <WinnerVideo
-              fluid={data.teamInspirai.childImageSharp.fluid}
-              url="https://www.youtube.com/watch?v=NBE-iXpyCCU&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
-            />
-            <WinnerVideo
-              fluid={data.teamDan.childImageSharp.fluid}
-              url="https://www.youtube.com/watch?v=q9puBO4Gyhs&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
-            />
-            <WinnerVideo
-              fluid={data.teamJoanne.childImageSharp.fluid}
-              url="https://www.youtube.com/watch?v=nCDcsNUxi_k&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
-            />
-            <WinnerVideo
-              fluid={data.teamVGAI.childImageSharp.fluid}
-              url="https://www.youtube.com/watch?v=pmsfEoUCHTM&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
-            />
-          </div>
-        </SubSection>
-        <SubSection title="Habitat Challenge">
-          <h3>Organizer Video</h3>
-          <OrganizerVideo
-            fluid={data.habitatResultVid.childImageSharp.fluid}
-            url="https://www.youtube.com/watch?v=X5L0Nf5hYCI&list=PL4XI7L9Xv5fVUMEb1eYOaH8y1b6j8xiMM"
-          />
-          <h3 style={{ marginTop: "15px", marginBottom: "5px" }}>
-            ObjectNav Winners
-          </h3>
-          <div>
-            <WinnerVideo
-              fluid={data.teamArnold.childImageSharp.fluid}
-              url="https://www.youtube.com/watch?v=QNTs6cdxOoU&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
-            />
-            <WinnerVideo
-              fluid={data.teamSRCB.childImageSharp.fluid}
-              url="https://www.youtube.com/watch?v=a9q1Bj8omKE&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
-            />
-          </div>
-          <h3 style={{ marginTop: "15px", marginBottom: "5px" }}>
-            PointNav Winners
-          </h3>
-          <div style={{ marginBottom: "40px" }}>
-            <WinnerVideo
-              fluid={data.teamOant.childImageSharp.fluid}
-              url="https://www.youtube.com/watch?v=v1pXHom9JnU&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
-            />
-            <WinnerVideo
-              fluid={data.teamEgo.childImageSharp.fluid}
-              url="https://www.youtube.com/watch?v=4n_Po0uCdU0&list=PL4XI7L9Xv5fVULPNAqiGQ2yK07k78-02h"
-            />
-          </div>
-        </SubSection>
-        <SubSection title="RoboTHOR Challenge">
-          <h3>Organizer Video</h3>
-          <OrganizerVideo
-            fluid={data.robothorResultVid.childImageSharp.fluid}
-            url="https://www.youtube.com/watch?v=5GXNvrVHByo&list=PL4XI7L9Xv5fVUMEb1eYOaH8y1b6j8xiMM"
-          />
+      <Section title="Call for Papers">
+        <p>
+          We invite high-quality 2-page extended abstracts in relevant areas,
+          such as:
+          <ul>
+            <li>
+              <Emoji emoji="mountain_railway" size={16} /> Simulation
+              Environments
+            </li>
+            <li>
+              <Emoji emoji="footprints" size={16} /> Visual Navigation
+            </li>
+            <li>
+              <Emoji emoji="chair" size={16} /> Rearrangement
+            </li>
+            <li>
+              <Emoji emoji="raising_hand" size={16} /> Embodied Question
+              Answering
+            </li>
+            <li>
+              <Emoji emoji="world_map" size={16} /> Simulation-to-Real Transfer
+            </li>
+            <li>
+              <Emoji emoji="speak_no_evil" size={16} /> Embodied Vision &amp;
+              Language
+            </li>
+          </ul>
+          Accepted papers will be presented as posters. These papers will be
+          made publicly available in a non-archival format, allowing future
+          submission to archival journals or conferences.
+        </p>
+        <p></p>
+        <SubSection title="Submission">
+          <p
+            css={css`
+              margin-bottom: 45px;
+            `}
+          >
+            The submission deadline is March 15th. Papers should be no longer
+            than 2 pages (excluding references) and styled in the{" "}
+            <a href="http://cvpr2021.thecvf.com/node/33" target="_blank">
+              CVPR format
+            </a>
+            . The link for submissions will be available soon!
+          </p>
         </SubSection>
       </Section>
       <Section title="Organizers">
-        The Embodied AI 2020 workshop is a joint effort by a large set of
+        The Embodied AI 2021 workshop is a joint effort by a large set of
         researchers from a variety of organizations. They are listed below in
         alphabetical order.
-        <OrganizerPics
-          organizers={data.allSite.nodes[0].siteMetadata.cvpr2020.organizers}
-          data={data}
-        />
-      </Section>
-      <Section title="Sponsors">
-        <div className={style.sponsorContainer} style={{ textAlign: "center" }}>
-          <a href="https://www.nvidia.com/" target="_blank">
-            <img src={NVIDIA} alt="NVIDIA" className={style.nvidia} />
-          </a>
-          <a href="https://cloud.google.com/" target="_blank">
-            <img
-              src={GoogleCloud}
-              alt="Google Cloud"
-              className={style.googleCloud}
-            />
-          </a>
-        </div>
+        <SubSection title="Organizing Committee">
+          <OrganizerPics
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers.filter(
+              (organizer: any) => organizer.oc === true
+            )}
+            data={data}
+          />
+        </SubSection>
+        <SubSection title="Challenge Organizers">
+          <OrganizerPics
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers.filter(
+              (organizer: any) => organizer.challenge === true
+            )}
+            data={data}
+          />
+        </SubSection>
+        <SubSection title="Scientific Advisory Board">
+          <OrganizerPics
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers.filter(
+              (organizer: any) => organizer.sab === true
+            )}
+            data={data}
+          />
+        </SubSection>
       </Section>
     </PageWrapper>
   );
@@ -532,208 +695,122 @@ export const query = graphql`
     allSite {
       nodes {
         siteMetadata {
-          cvpr2020 {
+          cvpr2021 {
             organizers {
               name
               imageId
               organization
               site
+              sab
+              oc
+              challenge
             }
           }
         }
       }
     }
 
-    # live session thumbnails
-    simLive: file(relativePath: { eq: "cvpr2020/video-covers/sim-panel.jpg" }) {
-      ...FluidImage
-    }
-    researchLive: file(
-      relativePath: { eq: "cvpr2020/video-covers/research-panel.jpg" }
-    ) {
-      ...FluidImage
-    }
-
-    # challenge results
-    igibsonResultVid: file(
-      relativePath: { eq: "cvpr2020/video-covers/igibson.jpg" }
-    ) {
-      ...FluidImage
-    }
-    habitatResultVid: file(
-      relativePath: { eq: "cvpr2020/video-covers/habitat.jpg" }
-    ) {
-      ...FluidImage
-    }
-    robothorResultVid: file(
-      relativePath: { eq: "cvpr2020/video-covers/robothor.jpg" }
-    ) {
-      ...FluidImage
-    }
-    teamInspirai: file(
-      relativePath: { eq: "cvpr2020/video-covers/team-inspirai.jpg" }
-    ) {
-      ...FluidImage
-    }
-    teamDan: file(relativePath: { eq: "cvpr2020/video-covers/team-dan.jpg" }) {
-      ...FluidImage
-    }
-    teamJoanne: file(
-      relativePath: { eq: "cvpr2020/video-covers/team-joanne.jpg" }
-    ) {
-      ...FluidImage
-    }
-    teamVGAI: file(
-      relativePath: { eq: "cvpr2020/video-covers/team-vgai.jpg" }
-    ) {
-      ...FluidImage
-    }
-    teamArnold: file(
-      relativePath: { eq: "cvpr2020/video-covers/team-arnold.jpg" }
-    ) {
-      ...FluidImage
-    }
-    teamSRCB: file(
-      relativePath: { eq: "cvpr2020/video-covers/team-srcb.jpg" }
-    ) {
-      ...FluidImage
-    }
-    teamEgo: file(
-      relativePath: { eq: "cvpr2020/video-covers/team-ego-location.jpg" }
-    ) {
-      ...FluidImage
-    }
-    teamOant: file(
-      relativePath: { eq: "cvpr2020/video-covers/team-oant.jpg" }
-    ) {
-      ...FluidImage
-    }
-
-    # video talk thumbnails
-    alisonTalk: file(relativePath: { eq: "cvpr2020/video-covers/alison.jpg" }) {
-      ...VideoThumbnail
-    }
-    lindaTalk: file(relativePath: { eq: "cvpr2020/video-covers/linda.jpg" }) {
-      ...VideoThumbnail
-    }
-    raquelTalk: file(relativePath: { eq: "cvpr2020/video-covers/raquel.jpg" }) {
-      ...VideoThumbnail
-    }
-    piotrTalk: file(relativePath: { eq: "cvpr2020/video-covers/piotr.jpg" }) {
-      ...VideoThumbnail
-    }
-    alexTalk: file(relativePath: { eq: "cvpr2020/video-covers/alex.jpg" }) {
-      ...VideoThumbnail
-    }
-    deepakTalk: file(relativePath: { eq: "cvpr2020/video-covers/deepak.jpg" }) {
-      ...VideoThumbnail
-    }
-    dieterTalk: file(relativePath: { eq: "cvpr2020/video-covers/dieter.jpg" }) {
-      ...VideoThumbnail
-    }
-    franziskaTalk: file(
-      relativePath: { eq: "cvpr2020/video-covers/franziska.jpg" }
-    ) {
-      ...VideoThumbnail
-    }
-    judyTalk: file(relativePath: { eq: "cvpr2020/video-covers/judy.jpg" }) {
-      ...VideoThumbnail
-    }
-    soniaTalk: file(relativePath: { eq: "cvpr2020/video-covers/sonia.jpg" }) {
-      ...VideoThumbnail
-    }
-    heidiTalk: file(relativePath: { eq: "cvpr2020/video-covers/heidi.jpg" }) {
-      ...VideoThumbnail
-    }
-    rishabhTalk: file(
-      relativePath: { eq: "cvpr2020/video-covers/rishabh.jpg" }
-    ) {
-      ...VideoThumbnail
-    }
-
     # organizer pictures
-    aaronOrg: file(relativePath: { eq: "organizers/aaron.jpg" }) {
+    claudiaOrg: file(relativePath: { eq: "organizers/claudia.jpg" }) {
       ...FluidImage
     }
-    abhishekOrg: file(relativePath: { eq: "organizers/abhishek.jpg" }) {
-      ...FluidImage
-    }
-    aleksandraOrg: file(relativePath: { eq: "organizers/aleksandra.jpg" }) {
-      ...FluidImage
-    }
-    alexanderOrg: file(relativePath: { eq: "organizers/alexander.jpg" }) {
-      ...FluidImage
-    }
-    aliOrg: file(relativePath: { eq: "organizers/ali.jpg" }) {
-      ...FluidImage
-    }
-    amirOrg: file(relativePath: { eq: "organizers/amir.jpg" }) {
-      ...FluidImage
-    }
-    aneliaOrg: file(relativePath: { eq: "organizers/anelia.jpg" }) {
-      ...FluidImage
-    }
-    angelOrg: file(relativePath: { eq: "organizers/angel.jpg" }) {
-      ...FluidImage
-    }
-    aniOrg: file(relativePath: { eq: "organizers/ani.jpg" }) {
-      ...FluidImage
-    }
-    antonioOrg: file(relativePath: { eq: "organizers/antonio.jpg" }) {
-      ...FluidImage
-    }
-    chengshuOrg: file(relativePath: { eq: "organizers/chengshu.jpg" }) {
-      ...FluidImage
-    }
-    deviOrg: file(relativePath: { eq: "organizers/devi.jpg" }) {
-      ...FluidImage
-    }
-    dhruvOrg: file(relativePath: { eq: "organizers/dhruv.jpg" }) {
-      ...FluidImage
-    }
-    dustinOrg: file(relativePath: { eq: "organizers/dustin.jpg" }) {
-      ...FluidImage
-    }
-    ericOrg: file(relativePath: { eq: "organizers/eric.jpg" }) {
-      ...FluidImage
-    }
-    erikOrg: file(relativePath: { eq: "organizers/erik.jpg" }) {
-      ...FluidImage
-    }
-    jitendraOrg: file(relativePath: { eq: "organizers/jitendra.png" }) {
-      ...FluidImage
-    }
-    feiOrg: file(relativePath: { eq: "organizers/fei.jpg" }) {
-      ...FluidImage
-    }
-    germanOrg: file(relativePath: { eq: "organizers/german.jpg" }) {
-      ...FluidImage
-    }
-    jieOrg: file(relativePath: { eq: "organizers/jie.jpg" }) {
+    apoorvOrg: file(relativePath: { eq: "organizers/apoorv.jpg" }) {
       ...FluidImage
     }
     joseAOrg: file(relativePath: { eq: "organizers/joseA.jpg" }) {
       ...FluidImage
     }
-    joseMOrg: file(relativePath: { eq: "organizers/joseM.jpg" }) {
+    peterOrg: file(relativePath: { eq: "organizers/peter.jpg" }) {
       ...FluidImage
     }
-    julianOrg: file(relativePath: { eq: "organizers/julian.jpg" }) {
+    dhruvOrg: file(relativePath: { eq: "organizers/dhruv.jpg" }) {
       ...FluidImage
     }
-    manolisOrg: file(relativePath: { eq: "organizers/manolis.jpg" }) {
+    yonatanOrg: file(relativePath: { eq: "organizers/yonatan.jpg" }) {
+      ...FluidImage
+    }
+    sumanOrg: file(relativePath: { eq: "organizers/suman.jpg" }) {
+      ...FluidImage
+    }
+    angelOrg: file(relativePath: { eq: "organizers/angel.jpg" }) {
+      ...FluidImage
+    }
+    changanOrg: file(relativePath: { eq: "organizers/changan.jpg" }) {
+      ...FluidImage
+    }
+    soniaOrg: file(relativePath: { eq: "organizers/sonia.jpg" }) {
+      ...FluidImage
+    }
+    ferasOrg: file(relativePath: { eq: "organizers/feras.jpg" }) {
       ...FluidImage
     }
     mattOrg: file(relativePath: { eq: "organizers/matt.jpg" }) {
       ...FluidImage
     }
-    oleksandrOrg: file(relativePath: { eq: "organizers/oleksandr.jpg" }) {
+    aliOrg: file(relativePath: { eq: "organizers/ali.jpg" }) {
       ...FluidImage
     }
-    philippOrg: file(relativePath: { eq: "organizers/philipp.jpg" }) {
+    anthonyOrg: file(relativePath: { eq: "organizers/anthony.jpg" }) {
+      ...FluidImage
+    }
+    chuangOrg: file(relativePath: { eq: "organizers/chuang.jpg" }) {
+      ...FluidImage
+    }
+    aaronOrg: file(relativePath: { eq: "organizers/aaron.jpg" }) {
+      ...FluidImage
+    }
+    kristenOrg: file(relativePath: { eq: "organizers/kristen.jpg" }) {
+      ...FluidImage
+    }
+    davidOrg: file(relativePath: { eq: "organizers/david.jpg" }) {
+      ...FluidImage
+    }
+    winsonOrg: file(relativePath: { eq: "organizers/winson.jpg" }) {
+      ...FluidImage
+    }
+    joseMOrg: file(relativePath: { eq: "organizers/joseM.jpg" }) {
       ...FluidImage
     }
     rishabhOrg: file(relativePath: { eq: "organizers/rishabh.jpg" }) {
+      ...FluidImage
+    }
+    unnatOrg: file(relativePath: { eq: "organizers/unnat.jpg" }) {
+      ...FluidImage
+    }
+    jaewooOrg: file(relativePath: { eq: "organizers/jaewoo.jpg" }) {
+      ...FluidImage
+    }
+    aniruddhaOrg: file(relativePath: { eq: "organizers/ani.jpg" }) {
+      ...FluidImage
+    }
+    vladlenOrg: file(relativePath: { eq: "organizers/vladlen.jpg" }) {
+      ...FluidImage
+    }
+    ericOrg: file(relativePath: { eq: "organizers/eric.jpg" }) {
+      ...FluidImage
+    }
+    jacobOrg: file(relativePath: { eq: "organizers/jacob.jpg" }) {
+      ...FluidImage
+    }
+    alexOrg: file(relativePath: { eq: "organizers/alex.jpg" }) {
+      ...FluidImage
+    }
+    stefanOrg: file(relativePath: { eq: "organizers/stefan.jpg" }) {
+      ...FluidImage
+    }
+    chengshuOrg: file(relativePath: { eq: "organizers/chengshu.jpg" }) {
+      ...FluidImage
+    }
+    feifeiOrg: file(relativePath: { eq: "organizers/feifei.jpg" }) {
+      ...FluidImage
+    }
+    antonioOrg: file(relativePath: { eq: "organizers/antonio.jpg" }) {
+      ...FluidImage
+    }
+    oleksandrOrg: file(relativePath: { eq: "organizers/oleksandr.jpg" }) {
+      ...FluidImage
+    }
+    jitendraOrg: file(relativePath: { eq: "organizers/jitendra.png" }) {
       ...FluidImage
     }
     robertoOrg: file(relativePath: { eq: "organizers/roberto.jpg" }) {
@@ -742,19 +819,61 @@ export const query = graphql`
     roozbehOrg: file(relativePath: { eq: "organizers/roozbeh.jpg" }) {
       ...FluidImage
     }
-    samyakOrg: file(relativePath: { eq: "organizers/samyak.jpg" }) {
+    deviOrg: file(relativePath: { eq: "organizers/devi.jpg" }) {
       ...FluidImage
     }
-    stefanOrg: file(relativePath: { eq: "organizers/stefan.jpg" }) {
+    shivanshOrg: file(relativePath: { eq: "organizers/shivansh.jpg" }) {
       ...FluidImage
     }
-    vangelisOrg: file(relativePath: { eq: "organizers/vangelis.jpg" }) {
+    germanOrg: file(relativePath: { eq: "organizers/german.jpg" }) {
       ...FluidImage
     }
-    vladlenOrg: file(relativePath: { eq: "organizers/vladlen.jpg" }) {
+    silvioOrg: file(relativePath: { eq: "organizers/silvio.jpg" }) {
       ...FluidImage
     }
-    yongjoonOrg: file(relativePath: { eq: "organizers/yongjoon.jpg" }) {
+    manolisOrg: file(relativePath: { eq: "organizers/manolis.jpg" }) {
+      ...FluidImage
+    }
+    mohitOrg: file(relativePath: { eq: "organizers/mohit.png" }) {
+      ...FluidImage
+    }
+    rohanOrg: file(relativePath: { eq: "organizers/rohan.jpg" }) {
+      ...FluidImage
+    }
+    nikoOrg: file(relativePath: { eq: "organizers/niko.jpg" }) {
+      ...FluidImage
+    }
+    benOrg: file(relativePath: { eq: "organizers/ben.jpg" }) {
+      ...FluidImage
+    }
+    joshOrg: file(relativePath: { eq: "organizers/josh.jpg" }) {
+      ...FluidImage
+    }
+    jesseOrg: file(relativePath: { eq: "organizers/jesse.jpg" }) {
+      ...FluidImage
+    }
+    alexanderOrg: file(relativePath: { eq: "organizers/alexander.jpg" }) {
+      ...FluidImage
+    }
+    joanneOrg: file(relativePath: { eq: "organizers/joanne.jpg" }) {
+      ...FluidImage
+    }
+    saimOrg: file(relativePath: { eq: "organizers/saim.jpg" }) {
+      ...FluidImage
+    }
+    lucaOrg: file(relativePath: { eq: "organizers/luca.jpg" }) {
+      ...FluidImage
+    }
+    andrewOrg: file(relativePath: { eq: "organizers/andrew.jpg" }) {
+      ...FluidImage
+    }
+    erikOrg: file(relativePath: { eq: "organizers/erik.jpg" }) {
+      ...FluidImage
+    }
+    feiOrg: file(relativePath: { eq: "organizers/fei.jpg" }) {
+      ...FluidImage
+    }
+    haoyangOrg: file(relativePath: { eq: "organizers/haoyang.jpg" }) {
       ...FluidImage
     }
   }

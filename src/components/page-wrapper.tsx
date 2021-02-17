@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./page-header";
+import Header, { OtherYears } from "./page-header";
 import { headerId } from "./text-helpers";
 import { Helmet } from "react-helmet";
 import style from "./page-wrapper.module.scss";
@@ -9,7 +9,13 @@ import { YoutubeFilled } from "@ant-design/icons";
 // in a way that they are clickable. Note, all children
 // must be sections: <Section></Section>.
 export default class PageWrapper extends React.Component<
-  { conference: string; children: any },
+  {
+    conference: string;
+    children: any;
+    rightSide: React.ReactNode;
+    imageContent: any;
+    headerGradient: string;
+  },
   { headerIdLocations: number[]; focusedHeaderI: number }
 > {
   updateSidebarScroll: { (): void };
@@ -90,7 +96,13 @@ export default class PageWrapper extends React.Component<
         <Helmet>
           <title>Embodied AI Workshop</title>
         </Helmet>
-        <Header conference={this.props.conference} />
+        <Header
+          conference={this.props.conference}
+          leftSide={<OtherYears onConference={this.props.conference} />}
+          rightSide={this.props.rightSide}
+          imageContent={this.props.imageContent}
+          headerGradient={this.props.headerGradient}
+        />
         <div className={style.contentWrapper}>
           <div className={style.mainContent}>{this.props.children}</div>
           <div className={style.toc}>
