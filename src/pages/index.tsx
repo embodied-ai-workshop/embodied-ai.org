@@ -51,7 +51,7 @@ const challengePageMap = {
   ),
   MultiOn: (
     <a href="//multion-challenge.github.io/" target="_blank">
-      MultiOn
+      MultiON
     </a>
   ),
   "Robotic Vision Scene Understanding": (
