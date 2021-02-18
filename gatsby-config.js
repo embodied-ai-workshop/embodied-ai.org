@@ -518,7 +518,7 @@ module.exports = {
           name: "Antonio Lopez",
           imageId: "antonio",
           organization: "CVC, UAB",
-          site: "//www.cvc.uab.es/~antonio/",
+          site: "http://www.cvc.uab.es/~antonio/",
         },
         {
           name: "Oleksandr Maksymets",
@@ -608,7 +608,7 @@ module.exports = {
           name: "Amir Zamir",
           imageId: "amir",
           organization: "EPFL",
-          site: "//cs.stanford.edu/~amirz/",
+          site: "//vilab.epfl.ch/zamir/",
         },
       ],
     },
