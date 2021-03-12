@@ -470,10 +470,7 @@ export default function Home({ data }) {
       <Section title="Timeline">
         <Steps progressDot current={0} direction="vertical">
           <Step title="Workshop Announced" description="Feb 17, 2021" />
-          <Step
-            title="Paper Submission Deadline"
-            description="March 15, 2021"
-          />
+          <Step title="Paper Submission Deadline" description="May 13, 2021" />
           <Step
             title="Challenge Submission Deadlines"
             description="May 2021. Check each challenge for the specific date."
@@ -646,8 +643,9 @@ export default function Home({ data }) {
               margin-bottom: 45px;
             `}
           >
-            The submission deadline is March 15th. Papers should be no longer
-            than 2 pages (excluding references) and styled in the{" "}
+            The submission deadline is May 13th (recently postponed from the
+            original March 15th deadline). Papers should be no longer than 2
+            pages (excluding references) and styled in the{" "}
             <a href="http://cvpr2021.thecvf.com/node/33" target="_blank">
               CVPR format
             </a>
