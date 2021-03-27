@@ -333,7 +333,7 @@ module.exports = {
           name: "Josh Tenenbaum",
           organization: "MIT",
           imageId: "josh",
-          site: "//web.mit.edu/cocosci/josh.html",
+          site: "//cocosci.mit.edu",
           challenge: true,
         },
         {
