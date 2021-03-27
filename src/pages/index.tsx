@@ -70,7 +70,7 @@ const challengePageMap = {
     </a>
   ),
   "TDW-Transport": (
-    <a href="//tdw-transport.csail.mit.edu/" target="_blank">
+    <a href="http://tdw-transport.csail.mit.edu/" target="_blank">
       TDW-Transport
     </a>
   ),
