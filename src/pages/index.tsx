@@ -6,6 +6,8 @@ import color from "../components/color";
 import { Challenges } from "../components/page-header";
 import { Table, Steps } from "antd";
 import LaunchIcon from "@material-ui/icons/Launch";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import moment from "moment-timezone";
 
 const { Step } = Steps;
 import { Emoji } from "emoji-mart";
@@ -386,6 +388,14 @@ export default function Home({ data }) {
     return () => window.removeEventListener("resize", resizeWindow);
   });
 
+  // using 4:59 since PST is 5 hours behind AoE.
+  const paperDeadline = moment.tz("2021-05-14 04:59", "America/Los_Angeles");
+  const currentTime = moment();
+  const duration = moment.duration(paperDeadline.diff(currentTime));
+
+  const hoursLeft = Math.ceil(duration.asHours() % 24);
+  const daysLeft = Math.floor(duration.asDays());
+
   return (
     <PageWrapper
       headerGradient="linear-gradient(to bottom, #ebdfa5, #49c3cd)"
@@ -473,7 +483,10 @@ export default function Home({ data }) {
       <Section title="Timeline">
         <Steps progressDot current={0} direction="vertical">
           <Step title="Workshop Announced" description="Feb 17, 2021" />
-          <Step title="Paper Submission Deadline" description="May 13, 2021" />
+          <Step
+            title="Paper Submission Deadline"
+            description="May 13, 2021 (Anywhere on Earth)"
+          />
           <Step
             title="Challenge Submission Deadlines"
             description="May 2021. Check each challenge for the specific date."
@@ -641,11 +654,7 @@ export default function Home({ data }) {
         </p>
         <p></p>
         <SubSection title="Submission">
-          <p
-            css={css`
-              /* margin-bottom: 45px; */
-            `}
-          >
+          <p>
             The submission deadline is May 13th (
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
@@ -653,11 +662,8 @@ export default function Home({ data }) {
             <a href="http://cvpr2021.thecvf.com/node/33" target="_blank">
               CVPR format
             </a>
-            .{" "}
-            <a href="//cmt3.research.microsoft.com/EAI2021">
-              Paper submissions
-            </a>{" "}
-            are now open.
+            . Paper submissions{" "}
+            <a href="//cmt3.research.microsoft.com/EAI2021">are now open</a>.
           </p>
           <a href="//cmt3.research.microsoft.com/EAI2021" target="_blank">
             <div
@@ -667,8 +673,6 @@ export default function Home({ data }) {
                   ${color.light.geekblue7},
                   ${color.light.geekblue9}
                 );
-                /* background-color: ${color.light.geekblue7}; */
-                /* border: 3px solid ${color.light.blue3}; */
                 padding: 15px 15px;
                 border: 10px 5px;
                 border-radius: 5px;
@@ -677,35 +681,51 @@ export default function Home({ data }) {
                 text-align: center;
               `}
             >
-              <span
-                css={css`
-                  font-weight: 500;
-                `}
-              >
-                Submit Paper
-              </span>
-              <div
-                css={css`
-                  color: white;
-                  font-size: 13px;
-                  font-family: monospace;
-                  /* font-weight: 500; */
-                  opacity: 1;
-                  mix-blend-mode: lighten;
-                  /* color: ${color.gray6}; */
-                `}
-              >
-                cmt3.research.microsoft.com/EAI2021
-                <LaunchIcon
+              <div>
+                <div
                   css={css`
-                    vertical-align: middle;
-                    /* margin-bottom: -5px; */
-                    margin-left: 5px;
-                    font-size: 13px !important;
-                    margin-bottom: 2px;
-                    color: ${color.gray5};
+                    display: block;
+                    font-weight: 500;
+                    -webkit-text-stroke: 0.35px white;
                   `}
-                />
+                >
+                  Submit Paper{" "}
+                  <ArrowForwardIcon
+                    css={css`
+                      vertical-align: middle;
+                      margin-top: -3px;
+                      font-size: 18px !important;
+                    `}
+                  />
+                </div>
+                <div
+                  css={css`
+                    color: white;
+                    font-size: 15px;
+                    font-family: monospace;
+                    opacity: 0.8;
+                    -webkit-text-stroke: 0.5px white;
+                  `}
+                >
+                  cmt3.research.microsoft.com/EAI2021
+                </div>
+                <div
+                  css={css`
+                    display: inline-block;
+                    background: ${color.light.geekblue4 + "44"};
+                    padding: 5px 15px;
+                    font-size: 15px;
+                    color: ${color.gray5};
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    /* margin-left: 10px; */
+                    border-radius: 5px;
+                    text-align: center;
+                    -webkit-text-stroke: 0.35px white;
+                  `}
+                >
+                  Deadline in {daysLeft} Days, {hoursLeft} Hours
+                </div>
               </div>
             </div>
           </a>
