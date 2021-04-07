@@ -664,8 +664,8 @@ export default function Home({ data }) {
               css={css`
                 background: linear-gradient(
                   to bottom,
-                  ${color.light.geekblue8},
-                  ${color.light.geekblue10}
+                  ${color.light.geekblue7},
+                  ${color.light.geekblue9}
                 );
                 /* background-color: ${color.light.geekblue7}; */
                 /* border: 3px solid ${color.light.blue3}; */
@@ -690,7 +690,8 @@ export default function Home({ data }) {
                   font-size: 13px;
                   font-family: monospace;
                   /* font-weight: 500; */
-                  opacity: 0.8;
+                  opacity: 1;
+                  mix-blend-mode: lighten;
                   /* color: ${color.gray6}; */
                 `}
               >
