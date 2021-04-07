@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { graphql } from "gatsby";
 import { Section, SubSection } from "../components/text-helpers";
 import PageWrapper from "../components/page-wrapper";
+import color from "../components/color";
 import { Challenges } from "../components/page-header";
 import { Table, Steps } from "antd";
+import LaunchIcon from "@material-ui/icons/Launch";
+
 const { Step } = Steps;
 import { Emoji } from "emoji-mart";
 
@@ -640,17 +643,71 @@ export default function Home({ data }) {
         <SubSection title="Submission">
           <p
             css={css`
-              margin-bottom: 45px;
+              /* margin-bottom: 45px; */
             `}
           >
-            The submission deadline is May 13th (recently postponed from the
-            original March 15th deadline). Papers should be no longer than 2
-            pages (excluding references) and styled in the{" "}
+            The submission deadline is May 13th (
+            <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
+            should be no longer than 2 pages (excluding references) and styled
+            in the{" "}
             <a href="http://cvpr2021.thecvf.com/node/33" target="_blank">
               CVPR format
             </a>
-            . The link for submissions will be available soon!
+            .{" "}
+            <a href="//cmt3.research.microsoft.com/EAI2021">
+              Paper submissions
+            </a>{" "}
+            are now open.
           </p>
+          <a href="//cmt3.research.microsoft.com/EAI2021" target="_blank">
+            <div
+              css={css`
+                background: linear-gradient(
+                  to bottom,
+                  ${color.light.geekblue8},
+                  ${color.light.geekblue10}
+                );
+                /* background-color: ${color.light.geekblue7}; */
+                /* border: 3px solid ${color.light.blue3}; */
+                padding: 15px 15px;
+                border: 10px 5px;
+                border-radius: 5px;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+              `}
+            >
+              <span
+                css={css`
+                  font-weight: 500;
+                `}
+              >
+                Submit Paper
+              </span>
+              <div
+                css={css`
+                  color: white;
+                  font-size: 13px;
+                  font-family: monospace;
+                  /* font-weight: 500; */
+                  opacity: 0.8;
+                  /* color: ${color.gray6}; */
+                `}
+              >
+                cmt3.research.microsoft.com/EAI2021
+                <LaunchIcon
+                  css={css`
+                    vertical-align: middle;
+                    /* margin-bottom: -5px; */
+                    margin-left: 5px;
+                    font-size: 13px !important;
+                    margin-bottom: 2px;
+                    color: ${color.gray5};
+                  `}
+                />
+              </div>
+            </div>
+          </a>
         </SubSection>
       </Section>
       <Section title="Organizers">
