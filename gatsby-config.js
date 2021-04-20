@@ -101,7 +101,7 @@ module.exports = {
         },
         {
           name: "Chuang Gan",
-          organization: "MIT",
+          organization: "MIT-IBM",
           imageId: "chuang",
           site: "//people.csail.mit.edu/ganchuang/",
           challenge: true,
