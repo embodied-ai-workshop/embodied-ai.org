@@ -685,7 +685,6 @@ export default function Home({ data }) {
                   css={css`
                     display: block;
                     font-weight: 500;
-                    -webkit-text-stroke: 0.35px white;
                   `}
                 >
                   Submit Paper{" "}
@@ -703,7 +702,6 @@ export default function Home({ data }) {
                     font-size: 15px;
                     font-family: monospace;
                     opacity: 0.8;
-                    -webkit-text-stroke: 0.5px white;
                   `}
                 >
                   cmt3.research.microsoft.com/EAI2021
@@ -717,10 +715,8 @@ export default function Home({ data }) {
                     color: ${color.gray5};
                     margin-top: 15px;
                     margin-bottom: 10px;
-                    /* margin-left: 10px; */
                     border-radius: 5px;
                     text-align: center;
-                    -webkit-text-stroke: 0.35px white;
                   `}
                 >
                   Deadline in {daysLeft} Days, {hoursLeft} Hours
