@@ -19,6 +19,14 @@
   }
 }
 
+.ant-steps-item-active .ant-steps-item-icon {
+  // display: none !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin-left: 1px !important;
+  margin-right: 15px !important;
+}
+
 // Don't allow some text to be selectable.
 // Just looks weird with CTRL/CMD + A.
 @mixin no-select() {

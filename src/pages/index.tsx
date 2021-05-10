@@ -481,17 +481,17 @@ export default function Home({ data }) {
         />
       </Section>
       <Section title="Timeline">
-        <Steps progressDot current={0} direction="vertical">
-          <Step title="Workshop Announced" description="Feb 17, 2021" />
-          <Step
-            title="Paper Submission Deadline"
-            description="May 13, 2021 (Anywhere on Earth)"
-          />
+        <Steps progressDot current={2} direction="vertical">
+          <Step title="CVPR Workshop" description="June 20, 2021" />
           <Step
             title="Challenge Submission Deadlines"
             description="May 2021. Check each challenge for the specific date."
           />
-          <Step title="CVPR Workshop" description="June 2021" />
+          <Step
+            title="Paper Submission Deadline"
+            description="May 13, 2021 (Anywhere on Earth)"
+          />
+          <Step title="Workshop Announced" description="Feb 17, 2021" />
         </Steps>
       </Section>
       <Section title="Challenges">
@@ -652,7 +652,6 @@ export default function Home({ data }) {
           made publicly available in a non-archival format, allowing future
           submission to archival journals or conferences.
         </p>
-        <p></p>
         <SubSection title="Submission">
           <p>
             The submission deadline is May 13th (
