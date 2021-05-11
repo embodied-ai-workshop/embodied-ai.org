@@ -389,7 +389,7 @@ export default function Home({ data }) {
   });
 
   // using 4:59 since PST is 5 hours behind AoE.
-  const paperDeadline = moment.tz("2021-05-14 04:59", "America/Los_Angeles");
+  const paperDeadline = moment.tz("2021-05-15 04:59", "America/Los_Angeles");
   const currentTime = moment();
   const duration = moment.duration(paperDeadline.diff(currentTime));
 
@@ -489,7 +489,7 @@ export default function Home({ data }) {
           />
           <Step
             title="Paper Submission Deadline"
-            description="May 13, 2021 (Anywhere on Earth)"
+            description="May 14, 2021 (Anywhere on Earth)"
           />
           <Step title="Workshop Announced" description="Feb 17, 2021" />
         </Steps>
@@ -654,7 +654,7 @@ export default function Home({ data }) {
         </p>
         <SubSection title="Submission">
           <p>
-            The submission deadline is May 13th (
+            The submission deadline is May 14th (
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
             in the{" "}
