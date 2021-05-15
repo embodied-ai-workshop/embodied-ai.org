@@ -481,7 +481,7 @@ export default function Home({ data }) {
         />
       </Section>
       <Section title="Timeline">
-        <Steps progressDot current={2} direction="vertical">
+        <Steps progressDot current={1} direction="vertical">
           <Step title="CVPR Workshop" description="June 20, 2021" />
           <Step
             title="Challenge Submission Deadlines"
@@ -661,69 +661,8 @@ export default function Home({ data }) {
             <a href="http://cvpr2021.thecvf.com/node/33" target="_blank">
               CVPR format
             </a>
-            . Paper submissions{" "}
-            <a href="//cmt3.research.microsoft.com/EAI2021">are now open</a>.
+            . Paper submissions are now closed.
           </p>
-          <a href="//cmt3.research.microsoft.com/EAI2021" target="_blank">
-            <div
-              css={css`
-                background: linear-gradient(
-                  to bottom,
-                  ${color.light.geekblue7},
-                  ${color.light.geekblue9}
-                );
-                padding: 15px 15px;
-                border: 10px 5px;
-                border-radius: 5px;
-                color: white;
-                font-size: 20px;
-                text-align: center;
-              `}
-            >
-              <div>
-                <div
-                  css={css`
-                    display: block;
-                    font-weight: 500;
-                  `}
-                >
-                  Submit Paper{" "}
-                  <ArrowForwardIcon
-                    css={css`
-                      vertical-align: middle;
-                      margin-top: -3px;
-                      font-size: 18px !important;
-                    `}
-                  />
-                </div>
-                <div
-                  css={css`
-                    color: white;
-                    font-size: 15px;
-                    font-family: monospace;
-                    opacity: 0.8;
-                  `}
-                >
-                  cmt3.research.microsoft.com/EAI2021
-                </div>
-                <div
-                  css={css`
-                    display: inline-block;
-                    background: ${color.light.geekblue4 + "44"};
-                    padding: 5px 15px;
-                    font-size: 15px;
-                    color: ${color.gray5};
-                    margin-top: 15px;
-                    margin-bottom: 10px;
-                    border-radius: 5px;
-                    text-align: center;
-                  `}
-                >
-                  Deadline in {daysLeft} Days, {hoursLeft} Hours
-                </div>
-              </div>
-            </div>
-          </a>
         </SubSection>
       </Section>
       <Section title="Organizers">
