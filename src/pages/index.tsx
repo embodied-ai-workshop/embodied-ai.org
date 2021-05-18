@@ -498,7 +498,7 @@ export default function Home({ data }) {
         <p>
           The Embodied AI 2021 workshop is hosting many exciting challenges
           covering a wide range of topics such as rearrangement, visual
-          navigation, and vision-and-language, and audio-visual navigation. More
+          navigation, vision-and-language, and audio-visual navigation. More
           details regarding data, submission instructions, and timelines can be
           found on the individual challenge websites.
         </p>
