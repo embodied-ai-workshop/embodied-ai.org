@@ -481,7 +481,7 @@ export default function Home({ data }) {
         />
       </Section>
       <Section title="Timeline">
-        <Steps progressDot current={1} direction="vertical">
+        <Steps progressDot current={0} direction="vertical">
           <Step title="CVPR Workshop" description="June 20, 2021" />
           <Step
             title="Challenge Submission Deadlines"
