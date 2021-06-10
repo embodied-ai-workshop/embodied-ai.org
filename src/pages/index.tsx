@@ -610,6 +610,9 @@ let acceptedPapers = [
     abstract="Multi-agent reinforcement learning in mixed-motive settings allows for the study of complex dynamics of agent interactions. Embodied agents in partially observable environments with the ability to communicate can share information, agree on strategies, or even lie to each other.In order to study this, we propose a simple environment where we can impose varying levels of cooperation, communication and competition as pre-requisites to reach an optimal outcome. Welcome to the jungle."
     authors={{
       "Kiran Ikram": [0],
+      "Esther Mondragon": [0],
+      "Eduardo Alonso": [0],
+      "Michaël Garcia Ortiz": [0],
     }}
     affiliations={["City University Artificial Intelligence Lab"]}
   />,
