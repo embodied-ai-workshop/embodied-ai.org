@@ -40,6 +40,14 @@
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+.ant-timeline-item {
+  margin-left: 0px !important;
+  padding-left: 0px !important;
+  &::before {
+    content: "";
+  }
+}
+
 // Override some of the default styles everywhere that are particularly bad.
 body {
   font-family: Montserrat, sans-serif;

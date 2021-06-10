@@ -4,7 +4,7 @@ import { Section, SubSection } from "../components/text-helpers";
 import PageWrapper from "../components/page-wrapper";
 import color from "../components/color";
 import { Challenges } from "../components/page-header";
-import { Table, Steps } from "antd";
+import { Table, Steps, Timeline } from "antd";
 import LaunchIcon from "@material-ui/icons/Launch";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import moment from "moment-timezone";
@@ -644,6 +644,16 @@ let acceptedPapers = [
   />,
 ];
 
+const Time = (props: { time: string }) => (
+  <span
+    css={css`
+      color: ${color.gray7};
+    `}
+  >
+    {props.time}
+  </span>
+);
+
 const paperOrder = shuffle([...Array(acceptedPapers.length).keys()]);
 
 // taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
@@ -779,7 +789,81 @@ export default function Home({ data }) {
       </Section>
       <Section title="Timeline">
         <Steps progressDot current={0} direction="vertical">
-          <Step title="CVPR Workshop" description="June 20, 2021" />
+          <Step
+            title="CVPR Workshop"
+            description={
+              <>
+                June 20, 2021.{" "}
+                <span
+                  css={css`
+                    color: ${color.gray7};
+                  `}
+                >
+                  Tentitative Schedule:
+                </span>
+                <div
+                  css={css`
+                    margin-left: 0px;
+                    margin-top: 20px;
+                    /* margin-bottom: -35px; */
+                  `}
+                >
+                  <Timeline>
+                    <Timeline.Item>
+                      Livestream
+                      <br />
+                      <Time time="8:00 AM PST" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Livestream
+                      <br />
+                      <Time time="9:00 AM PST" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Livestream
+                      <br />
+                      <Time time="10:00 AM PST" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Speaker Panel
+                      <br />
+                      <Time time="11:00 AM PST" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Lunch
+                      <br />
+                      <Time time="12:00 AM PST" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Poster Session
+                      <br />
+                      <Time time="1:00 PM PST" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Navigation Challenge Results
+                      <br />
+                      <Time time="2:00 PM PST" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Navigation Q&A
+                      <br />
+                      <Time time="3:00 PM PST" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Interaction Challenge Results
+                      <br />
+                      <Time time="4:00 PM PST" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Interaction Q&A
+                      <br />
+                      <Time time="5:00 PM PST" />
+                    </Timeline.Item>
+                  </Timeline>
+                </div>
+              </>
+            }
+          />
           <Step
             title="Challenge Submission Deadlines"
             description="May 2021. Check each challenge for the specific date."
