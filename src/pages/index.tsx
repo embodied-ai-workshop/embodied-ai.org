@@ -380,16 +380,310 @@ function getWindowWidth() {
   return width;
 }
 
+function Paper(props: {
+  title: string;
+  abstract: string;
+  authors: object;
+  affiliations: string[];
+}) {
+  const [showFullAbstract, setShowFullAbstract] = useState(false);
+
+  let abs;
+  if (props.abstract.indexOf(" ", 250) === -1) {
+    abs = <div>{props.abstract}</div>;
+  } else {
+    abs = (
+      <div>
+        {showFullAbstract
+          ? props.abstract + " "
+          : props.abstract.slice(0, props.abstract.indexOf(". ") + 2)}
+        <span
+          css={css`
+            color: ${color.light.blue6};
+            &:hover {
+              cursor: pointer;
+            }
+          `}
+          onClick={() => setShowFullAbstract(prev => !prev)}
+        >
+          [{!showFullAbstract ? "Expand" : "Collapse"}]
+        </span>
+      </div>
+    );
+  }
+
+  const emojis = ["diamonds", "clubs", "spades", "hearts"];
+
+  return (
+    <div
+      css={css`
+        padding: 20px;
+        background: ${color.gray1};
+        border: 1px solid ${color.gray5 + "cc"};
+        box-shadow: 0px 0px 100px 0px ${color.gray4};
+        border-radius: 0px;
+        text-align: left;
+        vertical-align: top;
+        display: inline-block;
+        @media (min-width: 601px) {
+          min-height: 250px;
+        }
+      `}
+    >
+      <div
+        css={css`
+          font-weight: 600;
+          line-height: 20px;
+          color: ${color.light.blue7};
+          font-size: 15px;
+        `}
+      >
+        {props.title}
+      </div>
+      <div
+        css={css`
+          margin-bottom: 10px;
+          color: ${color.gray8};
+          line-height: 20px;
+          font-size: 13px;
+        `}
+      >
+        {Object.keys(props.authors).map((name: string, i: number) => (
+          <>
+            <span>{name}</span>
+            <sup></sup>
+            {i !== Object.keys(props.authors).length - 1 ? ", " : ""}
+          </>
+        ))}
+      </div>
+      {abs}
+    </div>
+  );
+}
+
+let acceptedPapers = [
+  <Paper
+    title="Pathdreamer: A World Model for Indoor Navigation"
+    abstract="People navigating in unfamiliar buildings take advantage of myriad visual, spatial and semantic cues to efficiently achieve their navigation goals. Towards equipping computational agents with similar capabilities, we introduce Pathdreamer, a visual world model for agents navigating in novel indoor environments. Given one or more previous visual observations, Pathdreamer generates plausible high-resolution 360 degree visual observations (RGB, semantic segmentation and depth) for viewpoints that have not been visited, in buildings not seen during training. In regions of high uncertainty (e.g. predicting around corners, imagining the contents of an unseen room), Pathdreamer can predict diverse scenes, allowing an agent to sample multiple realistic outcomes for a given trajectory. In the downstream task of Vision-and-Language Navigation (VLN), planning ahead with Pathdreamer provides about half the benefit of looking ahead at unobserved parts of the environment."
+    authors={{
+      "Jing Yu Koh": [0],
+      "Honglak Lee": [1, 2],
+      "Yinfei Yang": [0],
+      "Jason Baldridge": [0],
+      "Peter Anderson": [0],
+    }}
+    affiliations={[
+      "Google Research",
+      "LG AI Research",
+      "University of Michigan",
+    ]}
+  />,
+  <Paper
+    title="A Neural-Symbolic Approach for Object Navigation"
+    abstract="Object navigation refers to the task of discovering and locating objects in an unknown environment. End-to-end deep learning methods struggle at this task due to sparse rewards. In this work, we propose a simple neural-symbolic approach for object navigation in the AI2-THOR environment. Our method takes raw RGB images as input and uses a spatial memory graph as memory to store object and location information. The architecture consists of both a convolutional neural network for object detection and a spatial graph to represent the environment. By having a discrete graph representation of the environment, the agent can directly use search or planning algorithms as high-level reasoning engines. Model performance is evaluated on both task completion rate and steps required to reach target objects. Empirical results demonstrate that our approach can achieve performance close to the optimal. Our work builds a foundation for a neural-symbolic approach that can reason via unstructured visual cues."
+    authors={{
+      "Xiaotian Liu": [0],
+      "Christian Muise": [0],
+    }}
+    affiliations={["Queen's University"]}
+  />,
+  <Paper
+    title="LegoTron: An Environment for Interactive Structural Understanding"
+    abstract="Visual reasoning about geometric structures with detailed spatial relationships is a fundamental component of human intelligence. As children, we learn how to reason about this structure not only from observation, but also by interacting with the world around us -- by taking things apart and putting them back together again. We introduce a new learning environment designed to explore the interplay between interactive reasoning, scene understanding and construction by mining a previously untapped high-quality data source: fan-made Lego creations that have been uploaded to the internet. To make use of this data we have built LegoTron, a fully interactive 3D environment that allows a learning agent to assemble, disassemble and manipulate these models. Our goal is to provide an interactive playground for agents to explore and manipulate complex scenes and recover their underlying structure."
+    authors={{
+      "Aaron T Walsman": [0],
+      "Muru Zhang": [0],
+      "Adam Fishman": [0],
+      "Karthik Desingh": [0],
+      "Dieter Fox": [0, 1],
+      "Ali Farhadi": [0, 2],
+    }}
+    affiliations={["University of Washington, Seattle", "NVIDIA", "Apple"]}
+  />,
+  <Paper
+    title="Success-Aware Visual Navigation Agent"
+    abstract="This work presents a method to improve the efficiency and robustness of the previous model-free Reinforcement Learning (RL) algorithms for the task of object-target visual navigation. Despite achieving the state-of-the-art results, one of the major drawbacks of those approaches is the lack of a forward model that informs the agent about the potential consequences if its actions, e.g. being model-free. In this work we take a step towards augmenting the model-free methods with a forward model that is trained along with the policy, using a replay buffer, and can predict a successful future state of an episode in a challenging 3D navigation environment. We develop a module that can predict a representation of a future state, from the beginning of a navigation episode, if the episode were to be successful; we call this ForeSIM module. ForeSIM is trained to imagine a future latent state that leads to success. Therefore, during navigation, the policy is able to take better actions leading to two main advantages: first, in the absence of an object detector, ForeSIM leads mainly to a more robust policy, e.g. about 5% absolute improvement on success rate; second, when combined with an off-the-shelf object detector to help better distinguish the target object, ForeSIM leads to about 3% absolute improvement on success rate and about 2% absolute improvement on Success weighted by inverse Path Length (SPL), e.g. higher efficiency."
+    authors={{
+      "Mahdi Kazemi Moghaddam": [0],
+      "Ehsan M Abbasnejad": [0],
+      "Qi Wu": [0],
+      "Javen Qinfeng Shi": [0],
+      "Anton van den Hengel": [0],
+    }}
+    affiliations={["University of Adelaide"]}
+  />,
+  <Paper
+    title="Learning to Explore, Navigate and Interact for Visual Room Rearrangement"
+    abstract="Intelligent agents for visual room rearrangement aim to reach a goal room configuration from a cluttered room configuration via a sequence of interactions. For successful visual room rearrangement, the agents need to learn to explore, navigate and interact within the surrounding environments. Contemporary methods for visual room rearrangement display unsatisfactory performance even with state-of-the-art techniques for embodied AI. One of the causes for the low performance arises from the expensive cost of learning in an end-to-end manner. To overcome the limitation, we design a three-phased modular architecture (TMA) for visual room rearrangement. TMA performs visual room rearrangement in three phases: the exploration phase, the inspection phase, and the rearrangement phase. The proposed TMA maximizes the performance by placing the learning modules along with hand-crafted feature engineering modules—retaining the advantage of learning while reducing the cost of learning."
+    authors={{
+      "Ue-Hwan Kim": [0],
+      "Youngho Kim": [0],
+      "Jin-Man Park": [0],
+      "Hwansoo Choi": [0],
+      "Jong-Hwan Kim": [0],
+    }}
+    affiliations={["KAIST"]}
+  />,
+  <Paper
+    title="Massively Parallel Robot Simulations with the HBP Neurorobotics Platform"
+    abstract="The success of deep learning in robotics hinges on the availability of physically accurate virtual training environments and simulation tools that accelerate learning by scaling to many parallel instances. However, most current AI frameworks do not integrate easily with common software stacks from robotics, while fully-fledged robot simulators lack capabilities for parallelization. In this paper, we introduce an extension for the Neurorobotics Platform of the Human Brain Project (HBP) that offers the full feature set of a robot simulation and at the same time is arbitrarily scalable for massively parallel robotics experiments."
+    authors={{
+      "Florian Walter": [0],
+      "Mahmoud Akl": [0],
+      "Fabrice O. Morin": [0],
+      "Alois Knoll": [0],
+    }}
+    affiliations={["Technical University of Munich"]}
+  />,
+  <Paper
+    title="BEyond observation: an approach for ObjectNav"
+    abstract="With the rise of automation, unmanned vehicles became a hot topic both as commercial products and as a scientific research topic. It composes a multi-disciplinary field of robotics that encompasses embedded systems, control theory, path planning, Simultaneous Localization and Mapping (SLAM), scene reconstruction, and pattern recognition. In this work, we present our exploratory research of how sensor data fusion and state-of-the-art machine learning algorithms can perform the Embodied Artificial Intelligence (E-AI) task called Visual Semantic Navigation. This task, a.k.a Object-Goal Navigation (ObjectNav) consists of autonomous navigation using egocentric visual observations to reach an object belonging to the target semantic class without prior knowledge of the environment. Our method reached second place on the Habitat Challenge 2021 ObjectNav on the Minival phase."
+    authors={{
+      "Daniel V Ruiz": [0],
+      "Eduardo Todt": [0],
+    }}
+    affiliations={["UFPR"]}
+  />,
+  <Paper
+    title="PiCoEDL: Discovery and Learning of Minecraft Navigation Goals from Pixels and Coordinates"
+    abstract="Defining a reward function in Reinforcement Learning (RL) is not always possible or very costly. For this reason, there is a great interest in training agents in a task-agnostic manner making use of intrinsic motivations and unsupervised techniques. Due to the complexity to learn useful behaviours in pixel-based domains, the results obtained in RL are still far from the remarkable results obtained in domains such as computer vision and natural language processing. We hypothesize that RL agents will also benefit from unsupervised pre-trainings with no extrinsic rewards, analogously to how humans mostly learn, especially in the early stages of life. Our main contribution is the deployment of the Explore, Discover and Learn (EDL) paradigm for unsupervised learning to the pixel space. In particular, our work focuses on the MineRL environment, where the observation of the agent is represented by: (a) its spatial coordinates in the Minecraft virtual world, and (b) an image from an egocentric viewpoint. Following the idea of empowerment, our goal is to learn latent-conditioned policies by maximizing the mutual information between states and some latent variables, instead of sequences of actions. This allows the agent to influence the environment while discovering available skills."
+    authors={{
+      "Juan José Nieto": [0],
+      "Roger Creus Castanyer": [0],
+      "Xavier Giró-i-Nieto": [0],
+    }}
+    affiliations={["Universitat Politecnica de Catalunya"]}
+  />,
+  <Paper
+    title="Agent with the Big Picture: Perceiving Surroundings for Interactive Instruction Following"
+    abstract="Performing simple household tasks based on language directives is very natural to humans, yet it remains an open challenge for an AI agent. The 'interactive instruction following' task attempts to make progress towards building an agent that can jointly navigate, interact, and reason in the environment at every step. Here, we propose to exploit surrounding views by perceiving observation from navigable directions for effective task completion with ample information, In addition, to address the multifaceted problem, we propose a model that factorizes the task into interactive perception and action policy streams with enhanced components. We empirically validate that our model outperforms prior arts by significant margins on the ALFRED benchmark with improved generalization."
+    authors={{
+      "Byeonghwi Kim": [0],
+      "Suvaansh Bhambri": [0],
+      "Kunal Pratap Singh": [1],
+      "Roozbeh Mottaghi": [1, 2],
+      "Jonghyun Choi": [0],
+    }}
+    affiliations={[
+      "GIST",
+      "Allen Institute for AI",
+      "University of Washington",
+    ]}
+  />,
+  <Paper
+    title="PixelEDL: Unsupervised Skill Discovery and Learning from Pixels"
+    abstract="We tackle embodied visual navigation in a task-agnostic set-up by putting the focus on the unsupervised discovery of skills (or options) that provide a good coverage of states. Our approach intersects with empowerment: we address the reward-free skill discovery and learning tasks to discover “what” can be done in an environment and “how”. For this reason, we adopt the existing Explore, Discover and Learn (EDL) paradigm, tested only in toy example mazes, and extend it to pixel-based state representations available for embodied AI agents."
+    authors={{
+      "Roger Creus Castanyer": [0],
+      "Juan José Nieto": [0],
+      "Xavier Giro-i-Nieto": [0],
+    }}
+    affiliations={["Universitat Politècnica de Catalunya"]}
+  />,
+  <Paper
+    title="URoboSim: A Simulation-Based Predictive Modelling Engine for Cognition-Enabled Robot Manipulation"
+    abstract="In a nutshell robot simulators are fully developed software systems that provide simulations as a substitute for real-world activity. They are primarily used for training modules of robot control programs, which are, after completing the learning process, deployed in real-world robots. In contrast, simulation in (artificial) cognitive systems is a core cognitive capability, which is assumed to provide a “small-scale model of external reality and of its own possible actions within its head, it is able to try out various alternatives, conclude which is the best of them, react to future situations before they arise, utilise the knowledge of past events in dealing with the present and future, and in every way to react in a much fuller, safer, and more competent manner to the emergencies which face it.” [8] This means that simulation can be considered as an embodied, online predictive modelling engine that enables robots to contextualize vague task requests such as “bring me the milk” into a concrete body motion that achieves the implicit goal and avoids unwanted side effects. In this setting a robot can run small-scale simulation and rendering processes for different reasoning tasks all the time and can continually compare simulation results with reality — it is a promising Sim2Real2Sim setup that has the potential to create much more powerful robot simulation engines. We introduce URoboSim, a robot simulation framework that is currently designed and developed with this vision in mind."
+    authors={{
+      "Roger Creus Castanyer": [0],
+      "Juan José Nieto": [0],
+      "Xavier Giro-i-Nieto": [0],
+    }}
+    affiliations={["Universitat Politècnica de Catalunya"]}
+  />,
+  <Paper
+    title="RobustNav: Towards Benchmarking Robustness in Embodied Navigation"
+    abstract="As an attempt towards assessing the robustness of embodied navigation agents, we propose RobustNav, a framework to quantify the performance of embodied navigation agents when exposed to a wide variety of visual – affecting RGB inputs – and dynamics – affecting transition dynamics – corruptions. Most recent efforts in visual navigation have typically focused on generalizing to novel target environments with similar appearance and dynamics characteristics. With RobustNav, we find that some standard embodied navigation agents significantly underperform (or fail) in the presence of visual or dynamics corruptions. We systematically analyze the kind of idiosyncrasies that emerge in the behavior of such agents when operating under corruptions. Finally, for visual corruptions in RobustNav, we show that while standard techniques to improve robustness such as data-augmentation and self-supervised adaptation offer some zero-shot resistance and improvements in navigation performance, there is still a long way to go in terms of recovering lost performance relative to clean “non-corrupt” settings, warranting more research in this direction."
+    authors={{
+      "Prithvijit Chattopadhyay": [0],
+      "Judy Hoffman": [0],
+      "Roozbeh Mottaghi": [1, 2],
+      "Aniruddha Kembhavi": [1, 2],
+    }}
+    affiliations={[
+      "Georgia Tech",
+      "Allen Institute for AI",
+      "University of Washington",
+    ]}
+  />,
+  <Paper
+    title="HexaJungle: a MARL Simulator to Study the Emergence of Language"
+    abstract="Multi-agent reinforcement learning in mixed-motive settings allows for the study of complex dynamics of agent interactions. Embodied agents in partially observable environments with the ability to communicate can share information, agree on strategies, or even lie to each other.In order to study this, we propose a simple environment where we can impose varying levels of cooperation, communication and competition as pre-requisites to reach an optimal outcome. Welcome to the jungle."
+    authors={{
+      "Kiran Ikram": [0],
+    }}
+    affiliations={["City University Artificial Intelligence Lab"]}
+  />,
+  <Paper
+    title="Modular Framework for Visuomotor Language Grounding"
+    abstract="Natural language instruction following tasks serve as a valuable test-bed for grounded language and robotics research. However, data collection for these tasks is expensive and end-to-end approaches suffer from data inefficiency. We propose the structuring of language, acting, and visual tasks into separate modules that can be trained independently. Using a Language, Action, and Vision (LAV) framework removes the dependence of action and vision modules on instruction following datasets, making them more efficient to train. We also present a preliminary evaluation of LAV on the ALFRED task for visual and interactive instruction following."
+    authors={{
+      "Kolby T Nottingham": [0],
+      "Litian Liang": [0],
+      "Daeyun Shin": [0],
+      "Charless Fowlkes": [0],
+      "Roy Fox": [0],
+      "Sameer Singh": [0],
+    }}
+    affiliations={["University of California Irvine"]}
+  />,
+  <Paper
+    title="PGDrive: Procedural Generation of Driving Environments for Generalization"
+    abstract="To better evaluate and improve the generalization of end-to-end driving, we introduce an open-ended and highly configurable driving simulator called PGDrive, following a key feature of procedural generation. We validate that training with the increasing number of procedurally generated scenes significantly improves the generalization of the agent across scenarios of different traffic densities and road networks. Many applications such as multi-agent traffic simulation and safe driving benchmark can be further built upon the simulator."
+    authors={{
+      "Quanyi Li": [0],
+      "Zhenghao Peng": [0],
+      "Qihang Zhang": [1],
+      "Chunxiao Liu": [2],
+      "Bolei Zhou": [0],
+    }}
+    affiliations={[
+      "Chinese University of Hong Kong",
+      "Zhejiang University",
+      "Sensetime",
+    ]}
+  />,
+];
+
+const paperOrder = shuffle([...Array(acceptedPapers.length).keys()]);
+
+// taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffle(array) {
+  var currentIndex = array.length,
+    randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex],
+      array[currentIndex],
+    ];
+  }
+
+  return array;
+}
+
 // And finally, we add all the content into their respective sections.
 import TennesseeCover from "../../static/images/cvpr2021/cover.svg";
 export default function Home({ data }) {
   const [windowWidth, setWindowWidth] = useState(getWindowWidth());
+  // [paperOrder, setPaperOrder] = useState([
+  //   ...Array(acceptedPapers.length).keys(),
+  // ]);
 
   useEffect(() => {
     const resizeWindow = () => setWindowWidth(getWindowWidth());
     window.addEventListener("resize", resizeWindow);
     return () => window.removeEventListener("resize", resizeWindow);
   });
+
+  // useEffect(() => {
+  //   setPaperOrder(prevOrder => shuffle(prevOrder));
+  // }, []);
 
   // using 4:59 since PST is 5 hours behind AoE.
   const paperDeadline = moment.tz("2021-05-15 04:59", "America/Los_Angeles");
@@ -716,6 +1010,25 @@ export default function Home({ data }) {
             </a>
             . Paper submissions are now closed.
           </p>
+        </SubSection>
+        <SubSection title="Accepted Papers">
+          <p>
+            <b>Note.</b> PDFs will be release soon. The order of the papers is
+            randomized each time the page is refreshed.
+          </p>
+          <div
+            css={css`
+              display: grid;
+              grid-gap: 2%;
+              grid-row-gap: 20px;
+              grid-template-columns: 49% 49%;
+              @media (max-width: 600px) {
+                grid-template-columns: 100%;
+              }
+            `}
+          >
+            {paperOrder.map((n: number) => acceptedPapers[n])}
+          </div>
         </SubSection>
       </Section>
       <Section title="Organizers">
