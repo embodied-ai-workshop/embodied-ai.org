@@ -8,9 +8,12 @@ import { Table, Steps } from "antd";
 import LaunchIcon from "@material-ui/icons/Launch";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import moment from "moment-timezone";
+import Img, { FixedObject, FluidObject } from "gatsby-image";
 
 const { Step } = Steps;
 import { Emoji } from "emoji-mart";
+
+import { Speaker } from "./cvpr2020";
 
 import { OrganizerPics } from "./cvpr2020";
 import { css } from "@emotion/react";
@@ -494,6 +497,56 @@ export default function Home({ data }) {
           <Step title="Workshop Announced" description="Feb 17, 2021" />
         </Steps>
       </Section>
+      <Section title="Invited Speakers">
+        <SubSection title="Motivation for Embodied AI Research">
+          <Speaker
+            organizations={["Stanford"]}
+            name="Hyowon Gweon"
+            fixedImg={data.hyowon.childImageSharp.fixed}
+          />
+        </SubSection>
+        <SubSection title="Embodied Navigation">
+          <Speaker
+            organizations={["Google"]}
+            name="Peter Anderson"
+            fixedImg={data.peter.childImageSharp.fixed}
+          />
+          <Speaker
+            organizations={["Google"]}
+            name="Aleksandra Faust"
+            fixedImg={data.aleksandra.childImageSharp.fixed}
+          />
+        </SubSection>
+        <SubSection title="Robotics">
+          <Speaker
+            organizations={["UC Berkeley"]}
+            name="Anca Dragan"
+            fixedImg={data.anca.childImageSharp.fixed}
+          />
+          <Speaker
+            organizations={["Stanford", "Google"]}
+            name="Chelsea Finn"
+            fixedImg={data.chelsea.childImageSharp.fixed}
+          />
+          <Speaker
+            organizations={["Facebook AI Research"]}
+            name="Akshara Rai"
+            fixedImg={data.akshara.childImageSharp.fixed}
+          />
+        </SubSection>
+        <SubSection title="Sim-2-Real Transfer">
+          <Speaker
+            organizations={["University of Toronto", "NVIDIA"]}
+            name="Sanja Fidler"
+            fixedImg={data.sanja.childImageSharp.fixed}
+          />
+          <Speaker
+            organizations={["Google"]}
+            name="Konstantinos Bousmalis"
+            fixedImg={data.konstantinos.childImageSharp.fixed}
+          />
+        </SubSection>
+      </Section>
       <Section title="Challenges">
         <p>
           The Embodied AI 2021 workshop is hosting many exciting challenges
@@ -734,6 +787,34 @@ export const query = graphql`
           }
         }
       }
+    }
+
+    # speaker pictures
+    akshara: file(relativePath: { eq: "cvpr2021/akshara-rai.jpg" }) {
+      ...VideoThumbnail
+    }
+    aleksandra: file(relativePath: { eq: "cvpr2021/aleksandra-faust.jpg" }) {
+      ...VideoThumbnail
+    }
+    anca: file(relativePath: { eq: "cvpr2021/anca-dragan.jpg" }) {
+      ...VideoThumbnail
+    }
+    chelsea: file(relativePath: { eq: "cvpr2021/chelsea-finn.jpg" }) {
+      ...VideoThumbnail
+    }
+    hyowon: file(relativePath: { eq: "cvpr2021/hyowon-gweon.jpg" }) {
+      ...VideoThumbnail
+    }
+    peter: file(relativePath: { eq: "cvpr2021/peter-anderson.jpg" }) {
+      ...VideoThumbnail
+    }
+    sanja: file(relativePath: { eq: "cvpr2021/sanja-fidler.jpg" }) {
+      ...VideoThumbnail
+    }
+    konstantinos: file(
+      relativePath: { eq: "cvpr2021/konstantinos-bousmalis.jpg" }
+    ) {
+      ...VideoThumbnail
     }
 
     # organizer pictures

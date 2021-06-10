@@ -71,17 +71,21 @@ function Video(props: {
 
 // The speakers of the workshop are all displayed in a similar style,
 // and this component encompasses that style.
-const Speaker = (props: {
-  url: string;
+export const Speaker = (props: {
+  url?: string;
   fixedImg: FixedObject;
   name: string;
   organizations: string[];
 }) => (
   <div className={style.speaker}>
     <div className={style.speakerThumbnailWrapper}>
-      <Video fontSize="45px" url={props.url}>
+      {props.url ? (
+        <Video fontSize="45px" url={props.url}>
+          <Img fixed={props.fixedImg} />
+        </Video>
+      ) : (
         <Img fixed={props.fixedImg} />
-      </Video>
+      )}
     </div>
     <div className={style.speakerInfo}>
       <b>{props.name}</b>
