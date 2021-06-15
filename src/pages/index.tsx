@@ -584,11 +584,11 @@ let acceptedPapers = [
     title="URoboSim: A Simulation-Based Predictive Modelling Engine for Cognition-Enabled Robot Manipulation"
     abstract="In a nutshell robot simulators are fully developed software systems that provide simulations as a substitute for real-world activity. They are primarily used for training modules of robot control programs, which are, after completing the learning process, deployed in real-world robots. In contrast, simulation in (artificial) cognitive systems is a core cognitive capability, which is assumed to provide a “small-scale model of external reality and of its own possible actions within its head, it is able to try out various alternatives, conclude which is the best of them, react to future situations before they arise, utilise the knowledge of past events in dealing with the present and future, and in every way to react in a much fuller, safer, and more competent manner to the emergencies which face it.” [8] This means that simulation can be considered as an embodied, online predictive modelling engine that enables robots to contextualize vague task requests such as “bring me the milk” into a concrete body motion that achieves the implicit goal and avoids unwanted side effects. In this setting a robot can run small-scale simulation and rendering processes for different reasoning tasks all the time and can continually compare simulation results with reality — it is a promising Sim2Real2Sim setup that has the potential to create much more powerful robot simulation engines. We introduce URoboSim, a robot simulation framework that is currently designed and developed with this vision in mind."
     authors={{
-      "Roger Creus Castanyer": [0],
-      "Juan José Nieto": [0],
-      "Xavier Giro-i-Nieto": [0],
+      "Michael Neumann": [0],
+      "Michael Beetz": [0],
+      "Andrei Haidu": [0],
     }}
-    affiliations={["Universitat Politècnica de Catalunya"]}
+    affiliations={["University Bremen"]}
   />,
   <Paper
     title="RobustNav: Towards Benchmarking Robustness in Embodied Navigation"
