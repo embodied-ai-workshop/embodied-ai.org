@@ -45,9 +45,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/embodied-ai-workshop-cvpr2020/website"
+    "url": "https://github.com/embodied-ai-workshop/embodied-ai.org"
   },
   "bugs": {
-    "url": "https://github.com/embodied-ai-workshop-cvpr2020/website/issues"
+    "url": "https://github.com/embodied-ai-workshop/embodied-ai.org/issues"
   }
 }

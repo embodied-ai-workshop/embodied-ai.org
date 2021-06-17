@@ -127,7 +127,7 @@ export default class PageWrapper extends React.Component<
         </div>
         <footer>
           <a
-            href="//github.com/embodied-ai-workshop-cvpr2020/embodied-ai-website"
+            href="//github.com/embodied-ai-workshop/embodied-ai.org"
             target="_blank"
           >
             <GithubFilled className={style.footerIcon} />

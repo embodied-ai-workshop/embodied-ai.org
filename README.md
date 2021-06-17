@@ -6,7 +6,7 @@ This repository contains the development of [embodied-ai.org](https://embodied-a
 
 ### Quick Fixes
 
-**Organizer Info**. Organizer info is stored in [gatsby-config.js](https://github.com/embodied-ai-workshop-cvpr2020/website/blob/main/gatsby-config.js), where the imageId's correspond to those found in [static/images/organizers](https://github.com/embodied-ai-workshop-cvpr2020/website/tree/main/static/images/organizers).
+**Organizer Info**. Organizer info is stored in [gatsby-config.js](https://github.com/embodied-ai-workshop/embodied-ai.org/blob/main/gatsby-config.js), where the imageId's correspond to those found in [static/images/organizers](https://github.com/embodied-ai-workshop/embodied-ai.org/tree/main/static/images/organizers).
 
 ### Local Development
 
@@ -29,7 +29,7 @@ into a command line.
 3. Clone and move into the repo:
 
 ```
-git clone https://github.com/embodied-ai-workshop-cvpr2020/embodied-ai-website.git
+git clone https://github.com/embodied-ai-workshop/embodied-ai.org.git
 cd embodied-ai-website/
 ```
 
