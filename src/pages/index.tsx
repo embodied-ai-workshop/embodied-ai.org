@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { Section, SubSection } from "../components/text-helpers";
 import PageWrapper from "../components/page-wrapper";
 import color from "../components/color";
 import { Challenges } from "../components/page-header";
 import { Table, Steps, Timeline } from "antd";
 import LaunchIcon from "@material-ui/icons/Launch";
+import ReceiptIcon from "@material-ui/icons/Receipt";
+import AttachFileIcon from "@material-ui/icons/AttachFile";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import moment from "moment-timezone";
 import Img, { FixedObject, FluidObject } from "gatsby-image";
@@ -388,6 +390,7 @@ function Paper(props: {
   abstract: string;
   authors: object;
   affiliations: string[];
+  pdf: string;
 }) {
   const [showFullAbstract, setShowFullAbstract] = useState(false);
 
@@ -425,9 +428,11 @@ function Paper(props: {
         border: 1px solid ${color.gray5 + "cc"};
         box-shadow: 0px 0px 100px 0px ${color.gray4};
         border-radius: 0px;
+        padding-bottom: 45px;
         text-align: left;
         vertical-align: top;
         display: inline-block;
+        position: relative;
         @media (min-width: 601px) {
           min-height: 250px;
         }
@@ -445,10 +450,11 @@ function Paper(props: {
       </div>
       <div
         css={css`
-          margin-bottom: 10px;
+          margin-bottom: 8px;
           color: ${color.gray8};
           line-height: 20px;
           font-size: 13px;
+          /* margin-top: 5px; */
         `}
       >
         {Object.keys(props.authors).map((name: string, i: number) => (
@@ -460,6 +466,48 @@ function Paper(props: {
         ))}
       </div>
       {abs}
+      <div
+        css={css`
+          position: absolute;
+          bottom: 10px;
+          /* border-top: 1px solid ${color.gray5}; */
+          width: calc(100% - 40px);
+          padding-top: 5px;
+
+          div > span {
+            vertical-align: middle;
+          }
+        `}
+      >
+        <a href={props.pdf} target="_blank">
+          <div
+            css={css`
+              display: inline-block;
+              border: 1px solid ${color.gray5};
+              background-color: ${color.gray2};
+              padding-left: 7px;
+              padding-right: 7px;
+              border-radius: 5px;
+              transition-duration: 0.15s;
+
+              &:hover {
+                background-color: ${color.gray4};
+                border: 1px solid ${color.gray6};
+              }
+            `}
+          >
+            <Emoji emoji="page_facing_up" size={14} />
+            <span
+              css={css`
+                margin-left: 5px;
+                color: ${color.gray10};
+              `}
+            >
+              PDF
+            </span>
+          </div>
+        </a>
+      </div>
     </div>
   );
 }
@@ -480,6 +528,7 @@ let acceptedPapers = [
       "LG AI Research",
       "University of Michigan",
     ]}
+    pdf="/papers/Pathdreamer.pdf"
   />,
   <Paper
     title="A Neural-Symbolic Approach for Object Navigation"
@@ -489,6 +538,7 @@ let acceptedPapers = [
       "Christian Muise": [0],
     }}
     affiliations={["Queen's University"]}
+    pdf="/papers/A-Neural-Symbolic-Approach-for-Object-Navigation.pdf"
   />,
   <Paper
     title="LegoTron: An Environment for Interactive Structural Understanding"
@@ -502,6 +552,7 @@ let acceptedPapers = [
       "Ali Farhadi": [0, 2],
     }}
     affiliations={["University of Washington, Seattle", "NVIDIA", "Apple"]}
+    pdf="/papers/LegoTron.pdf"
   />,
   <Paper
     title="Success-Aware Visual Navigation Agent"
@@ -514,6 +565,7 @@ let acceptedPapers = [
       "Anton van den Hengel": [0],
     }}
     affiliations={["University of Adelaide"]}
+    pdf="/papers/Success-Aware-Visual-Navigation-Agent.pdf"
   />,
   <Paper
     title="Learning to Explore, Navigate and Interact for Visual Room Rearrangement"
@@ -526,6 +578,7 @@ let acceptedPapers = [
       "Jong-Hwan Kim": [0],
     }}
     affiliations={["KAIST"]}
+    pdf="/papers/Learning-to-Explore-Navigate-and-Interact-for-Visual-Room-Rearrangement.pdf"
   />,
   <Paper
     title="Massively Parallel Robot Simulations with the HBP Neurorobotics Platform"
@@ -537,6 +590,7 @@ let acceptedPapers = [
       "Alois Knoll": [0],
     }}
     affiliations={["Technical University of Munich"]}
+    pdf="/papers/Massively-Parallel-NRP-Simulations.pdf"
   />,
   <Paper
     title="BEyond observation: an approach for ObjectNav"
@@ -546,6 +600,7 @@ let acceptedPapers = [
       "Eduardo Todt": [0],
     }}
     affiliations={["UFPR"]}
+    pdf="/papers/BEyond-observation-an-approach-for-ObjectNav.pdf"
   />,
   <Paper
     title="PiCoEDL: Discovery and Learning of Minecraft Navigation Goals from Pixels and Coordinates"
@@ -556,6 +611,7 @@ let acceptedPapers = [
       "Xavier Giró-i-Nieto": [0],
     }}
     affiliations={["Universitat Politecnica de Catalunya"]}
+    pdf="/papers/PiCoEDL.pdf"
   />,
   <Paper
     title="Agent with the Big Picture: Perceiving Surroundings for Interactive Instruction Following"
@@ -572,6 +628,7 @@ let acceptedPapers = [
       "Allen Institute for AI",
       "University of Washington",
     ]}
+    pdf="/papers/Agent-with-the-Big-Picture.pdf"
   />,
   <Paper
     title="PixelEDL: Unsupervised Skill Discovery and Learning from Pixels"
@@ -582,6 +639,7 @@ let acceptedPapers = [
       "Xavier Giro-i-Nieto": [0],
     }}
     affiliations={["Universitat Politècnica de Catalunya"]}
+    pdf="/papers/PixelEDL.pdf"
   />,
   <Paper
     title="URoboSim: A Simulation-Based Predictive Modelling Engine for Cognition-Enabled Robot Manipulation"
@@ -592,6 +650,7 @@ let acceptedPapers = [
       "Andrei Haidu": [0],
     }}
     affiliations={["University Bremen"]}
+    pdf="/papers/URoboSim.pdf"
   />,
   <Paper
     title="RobustNav: Towards Benchmarking Robustness in Embodied Navigation"
@@ -607,6 +666,7 @@ let acceptedPapers = [
       "Allen Institute for AI",
       "University of Washington",
     ]}
+    pdf="/papers/RobustNav.pdf"
   />,
   <Paper
     title="HexaJungle: a MARL Simulator to Study the Emergence of Language"
@@ -618,6 +678,7 @@ let acceptedPapers = [
       "Michaël Garcia Ortiz": [0],
     }}
     affiliations={["City University Artificial Intelligence Lab"]}
+    pdf="/papers/HexaJungle.pdf"
   />,
   <Paper
     title="Modular Framework for Visuomotor Language Grounding"
@@ -631,6 +692,7 @@ let acceptedPapers = [
       "Sameer Singh": [0],
     }}
     affiliations={["University of California Irvine"]}
+    pdf="/papers/Modular-Framework-for-Visuomotor-Language-Grounding.pdf"
   />,
   <Paper
     title="PGDrive: Procedural Generation of Driving Environments for Generalization"
@@ -647,6 +709,7 @@ let acceptedPapers = [
       "Zhejiang University",
       "Sensetime",
     ]}
+    pdf="/papers/PGDrive.pdf"
   />,
 ];
 
@@ -867,7 +930,6 @@ export default function Home({ data }) {
                   css={css`
                     margin-left: 0px;
                     margin-top: 20px;
-                    /* margin-bottom: -35px; */
                   `}
                 >
                   <Timeline>
