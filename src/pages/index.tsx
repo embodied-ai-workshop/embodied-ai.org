@@ -1334,8 +1334,8 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Accepted Papers">
           <p>
-            <b>Note.</b> PDFs will be release soon. The order of the papers is
-            randomized each time the page is refreshed.
+            <b>Note.</b> The order of the papers is randomized each time the
+            page is refreshed.
           </p>
           <div
             css={css`
