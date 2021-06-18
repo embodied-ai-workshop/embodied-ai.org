@@ -438,16 +438,22 @@ function Paper(props: {
         }
       `}
     >
-      <div
-        css={css`
-          font-weight: 600;
-          line-height: 20px;
-          color: ${color.light.blue7};
-          font-size: 15px;
-        `}
-      >
-        {props.title}
-      </div>
+      <a href={props.pdf} target="_blank">
+        <div
+          css={css`
+            font-weight: 600;
+            line-height: 20px;
+            color: ${color.light.blue7};
+            font-size: 15px;
+            transition-duration: 0.15s;
+            &:hover {
+              color: ${color.light.blue6};
+            }
+          `}
+        >
+          {props.title}
+        </div>
+      </a>
       <div
         css={css`
           margin-bottom: 8px;
