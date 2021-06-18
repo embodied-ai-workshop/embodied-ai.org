@@ -10,10 +10,13 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import moment from "moment-timezone";
 import Img, { FixedObject, FluidObject } from "gatsby-image";
 
+import TennesseeCover from "../../static/images/cvpr2021/cover.svg";
+import SlackLogo from "../../static/icons/slack.svg";
+
 const { Step } = Steps;
 import { Emoji } from "emoji-mart";
 
-import { Speaker } from "./cvpr2020";
+import { Speaker, LiveSession } from "./cvpr2020";
 
 import { OrganizerPics } from "./cvpr2020";
 import { css } from "@emotion/react";
@@ -680,8 +683,64 @@ function shuffle(array) {
   return array;
 }
 
+function Slack() {
+  return (
+    <a
+      href="//join.slack.com/t/embodied-aiworkshop/shared_invite/zt-s6amdv5c-gBZQZ7YSktrD_tMhQDjDfg"
+      target="_blank"
+    >
+      <div
+        css={css`
+          background-color: #4a154b;
+          color: white;
+          padding: 15px 15px;
+          border-radius: 10px 0px 10px 0px;
+          transition-duration: 0.15s;
+
+          &:hover {
+            cursor: pointer;
+            filter: contrast(1.25);
+            box-shadow: 0px 0px 15px 0px ${color.gray6};
+          }
+        `}
+      >
+        <img
+          src={SlackLogo}
+          css={css`
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 7px;
+          `}
+        />
+        <div
+          css={css`
+            display: inline-block;
+            vertical-align: middle;
+          `}
+        >
+          Ask Questions on <b>Slack</b>
+        </div>
+        <div
+          css={css`
+            background-color: white;
+            color: black;
+            padding: 5px;
+            padding-top: 6px;
+            padding-bottom: 3px;
+            padding-left: 5px;
+            margin-top: 12px;
+            border-radius: 10px 0px 10px 0px;
+          `}
+        >
+          <Emoji emoji="male-detective" size={20} /> Questions can be asked{" "}
+          <b>anonymously</b>.
+        </div>
+      </div>
+    </a>
+  );
+}
+
 // And finally, we add all the content into their respective sections.
-import TennesseeCover from "../../static/images/cvpr2021/cover.svg";
 export default function Home({ data }) {
   const [windowWidth, setWindowWidth] = useState(getWindowWidth());
   // [paperOrder, setPaperOrder] = useState([
@@ -783,7 +842,7 @@ export default function Home({ data }) {
           The Embodied AI 2021 workshop will be held virtually in conjunction
           with CVPR 2021. It will feature a host of invited talks covering a
           variety of topics in Embodied AI, many exciting challenges, a poster
-          session, and live panel discussions.
+          session, and panel discussions.
         </p>
         <EmailSubscription
           actionIdentifier="1FAIpQLSeIZrn-tk7Oain2R8gc_Q0HzLMLQ9XXwqu3KecK_E5kALpiug"
@@ -838,7 +897,7 @@ export default function Home({ data }) {
                       <Time time="2:00 PM PST" />
                     </Timeline.Item>
                     <Timeline.Item>
-                      Navigation Q&A
+                      Navigation Panel
                       <br />
                       <Time time="3:00 PM PST" />
                     </Timeline.Item>
@@ -848,7 +907,7 @@ export default function Home({ data }) {
                       <Time time="4:00 PM PST" />
                     </Timeline.Item>
                     <Timeline.Item>
-                      Interaction Q&A
+                      Interaction Panel
                       <br />
                       <Time time="5:00 PM PST" />
                     </Timeline.Item>
@@ -915,6 +974,128 @@ export default function Home({ data }) {
             organizations={["Google"]}
             name="Konstantinos Bousmalis"
             fixedImg={data.konstantinos.childImageSharp.fixed}
+          />
+        </SubSection>
+      </Section>
+      <Section title="Panel Sessions">
+        <SubSection title="Speaker Panel">
+          <LiveSession
+            fluidImage={data.speakerPanel.childImageSharp.fluid}
+            videoURL={undefined}
+            rhs={
+              <>
+                <Slack />
+                <div
+                  css={css`
+                    > p {
+                      margin-top: 5px;
+                      text-indent: -10px;
+                      margin-left: 10px;
+                      &:nth-of-type(1) {
+                        margin-top: 20px;
+                      }
+                    }
+                  `}
+                >
+                  <p>
+                    <b>Date.</b> June 20th, 11 AM PST.
+                  </p>
+                  <p>
+                    <b>Panel.</b> The panel consists of speakers at this
+                    workshop.
+                  </p>
+                  <p>
+                    <b>Moderator.</b> Erik Wijmans.
+                  </p>
+                  <p>
+                    <b>Topics.</b> The topics are based on questions, likely
+                    involving cognitive development in humans, progress in
+                    embodied AI tasks, sim-2-real transfer, robotics, embodied
+                    AI for all, and more!
+                  </p>
+                </div>
+              </>
+            }
+          />
+        </SubSection>
+        <SubSection title="Navigation Panel">
+          <LiveSession
+            fluidImage={data.navigationPanel.childImageSharp.fluid}
+            videoURL={undefined}
+            rhs={
+              <>
+                <Slack />
+                <div
+                  css={css`
+                    > p {
+                      margin-top: 5px;
+                      text-indent: -10px;
+                      margin-left: 10px;
+                      &:nth-of-type(1) {
+                        margin-top: 20px;
+                      }
+                    }
+                  `}
+                >
+                  <p>
+                    <b>Date.</b> June 20th, 3 PM PST.
+                  </p>
+                  <p>
+                    <b>Panel.</b> The panel consists challenge organizers who
+                    organized navigation tasks.
+                  </p>
+                  <p>
+                    <b>Moderator.</b> Luca Weihs.
+                  </p>
+                  <p>
+                    <b>Topics.</b> The topics are based on questions, likely
+                    involving navigation benchmarks and tasks, the "reality"
+                    gap, robotics, simulation platforms, and more!
+                  </p>
+                </div>
+              </>
+            }
+          />
+        </SubSection>
+        <SubSection title="Interaction Panel">
+          <LiveSession
+            fluidImage={data.interactionPanel.childImageSharp.fluid}
+            questionLink="YO"
+            videoURL={undefined}
+            rhs={
+              <>
+                <Slack />
+                <div
+                  css={css`
+                    > p {
+                      margin-top: 5px;
+                      text-indent: -10px;
+                      margin-left: 10px;
+                      &:nth-of-type(1) {
+                        margin-top: 20px;
+                      }
+                    }
+                  `}
+                >
+                  <p>
+                    <b>Date.</b> June 20th, 5 PM PST.
+                  </p>
+                  <p>
+                    <b>Panel.</b> The panel consists challenge organizers who
+                    organized interaction tasks.
+                  </p>
+                  <p>
+                    <b>Moderator.</b> Chengshu (Eric) Li.
+                  </p>
+                  <p>
+                    <b>Topics.</b> The topics are based on questions, likely
+                    involving interaction benchmarks and tasks,
+                    vision-and-language, rearrangement, leveraging audio, the
+                    "reality" gap, robotics, simulation platforms, and more!
+                  </p>
+                </div>
+              </>
+            }
           />
         </SubSection>
       </Section>
@@ -1044,6 +1225,7 @@ export default function Home({ data }) {
           dataSource={challengeData}
           pagination={false}
         />
+        <SubSection title="Challenge Results">Hello, world.</SubSection>
       </Section>
       <Section title="Call for Papers">
         <p>
@@ -1371,6 +1553,20 @@ export const query = graphql`
       ...FluidImage
     }
     haoyangOrg: file(relativePath: { eq: "organizers/haoyang.jpg" }) {
+      ...FluidImage
+    }
+
+    interactionPanel: file(
+      relativePath: { eq: "cvpr2021/interaction-panel.jpg" }
+    ) {
+      ...FluidImage
+    }
+    navigationPanel: file(
+      relativePath: { eq: "cvpr2021/navigation-panel.jpg" }
+    ) {
+      ...FluidImage
+    }
+    speakerPanel: file(relativePath: { eq: "cvpr2021/speaker-panel.jpg" }) {
       ...FluidImage
     }
   }

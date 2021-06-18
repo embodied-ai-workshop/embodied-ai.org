@@ -102,37 +102,55 @@ export const Speaker = (props: {
 // There were 2 live sessions, each with questions that could be
 // submitted ahead of time, a zoom link, panelist info, topic info,
 // and a reference to the recorded session.
-const LiveSession = (props: {
+export const LiveSession = (props: {
   videoURL: string;
   fluidImage: FluidObject;
-  questionLink: string;
-  date: string;
-  panel: string;
-  topics: string;
+  questionLink?: string;
+  date?: string;
+  panel?: string;
+  topics?: string;
+  rhs?: React.ReactNode;
 }) => (
-  <div className={style.liveSession}>
+  <div
+    className={style.liveSession}
+    css={css`
+      margin-bottom: ${props.rhs ? "40px" : "initial"};
+    `}
+  >
     <div className={style.liveSessionVideo}>
-      <Video fontSize="70px" url={props.videoURL}>
+      {props.videoURL ? (
+        <Video fontSize="70px" url={props.videoURL}>
+          <Img fluid={props.fluidImage} />
+        </Video>
+      ) : (
         <Img fluid={props.fluidImage} />
-      </Video>
+      )}
     </div>
-    <div className={style.sessionBoxContainer}>
-      <a href={props.questionLink} target="_blank">
-        <div className={style.liveSessionBox}>Submit Questions</div>
-      </a>
-      <div className={style.liveSessionBox}>
-        <div>Join Zoom Meeting</div>
-        <div>{props.date}</div>
+    {props.rhs ? (
+      <div className={style.sessionBoxContainer}>{props.rhs}</div>
+    ) : (
+      <div className={style.sessionBoxContainer}>
+        <a href={props.questionLink} target="_blank">
+          <div className={style.liveSessionBox}>Submit Questions</div>
+        </a>
+        <div className={style.liveSessionBox}>
+          <div>Join Zoom Meeting</div>
+          <div>{props.date}</div>
+        </div>
       </div>
-    </div>
-    <div className={style.liveSessionInfo}>
-      <p>
-        <b>Panel.</b> {props.panel}
-      </p>
-      <p>
-        <b>Topics.</b> {props.topics}
-      </p>
-    </div>
+    )}
+    {props.panel && props.topics ? (
+      <div className={style.liveSessionInfo}>
+        <p>
+          <b>Panel.</b> {props.panel}
+        </p>
+        <p>
+          <b>Topics.</b> {props.topics}
+        </p>
+      </div>
+    ) : (
+      <></>
+    )}
   </div>
 );
 
