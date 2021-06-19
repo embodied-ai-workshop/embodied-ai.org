@@ -1136,7 +1136,7 @@ export default function Home({ data }) {
                     <b>Date.</b> June 20th, 3 PM PST.
                   </p>
                   <p>
-                    <b>Panel.</b> The panel consists challenge organizers who
+                    <b>Panel.</b> The panel consists of challenge organizers who
                     organized navigation tasks.
                   </p>
                   <p>
@@ -1176,7 +1176,7 @@ export default function Home({ data }) {
                     <b>Date.</b> June 20th, 5 PM PST.
                   </p>
                   <p>
-                    <b>Panel.</b> The panel consists challenge organizers who
+                    <b>Panel.</b> The panel consists of challenge organizers who
                     organized interaction tasks.
                   </p>
                   <p>
