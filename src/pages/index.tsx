@@ -1293,7 +1293,7 @@ export default function Home({ data }) {
           dataSource={challengeData}
           pagination={false}
         />
-        <SubSection title="Challenge Results">Hello, world.</SubSection>
+        {/* <SubSection title="Challenge Results">Hello, world.</SubSection> */}
       </Section>
       <Section title="Call for Papers">
         <p>
