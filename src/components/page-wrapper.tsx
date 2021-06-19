@@ -132,7 +132,10 @@ export default class PageWrapper extends React.Component<
           >
             <GithubFilled className={style.footerIcon} />
           </a>
-          <a href="//www.youtube.com/c/EmbodiedAI" target="_blank">
+          <a
+            href="//www.youtube.com/channel/UCoMZfljfYHVWr1BCoQ9AGzA"
+            target="_blank"
+          >
             <YoutubeFilled className={style.footerIcon} />
           </a>
         </footer>
