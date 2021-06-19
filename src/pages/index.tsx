@@ -385,12 +385,55 @@ function getWindowWidth() {
   return width;
 }
 
+function PaperButton(props: { text: string; url: string; emoji: string }) {
+  return (
+    <a
+      href={props.url}
+      target="_blank"
+      css={css`
+        margin-right: 10px;
+      `}
+    >
+      <div
+        css={css`
+          display: inline-block;
+          border: 1px solid ${color.gray5};
+          background-color: ${color.gray2};
+          padding-left: 7px;
+          padding-right: 7px;
+          border-radius: 5px;
+          transition-duration: 0.15s;
+          > span {
+            vertical-align: middle;
+          }
+
+          &:hover {
+            background-color: ${color.gray4};
+            border: 1px solid ${color.gray6};
+          }
+        `}
+      >
+        <Emoji emoji={props.emoji} size={14} />
+        <span
+          css={css`
+            margin-left: 5px;
+            color: ${color.gray10};
+          `}
+        >
+          {props.text}
+        </span>
+      </div>
+    </a>
+  );
+}
+
 function Paper(props: {
   title: string;
   abstract: string;
   authors: object;
   affiliations: string[];
   pdf: string;
+  poster: string;
 }) {
   const [showFullAbstract, setShowFullAbstract] = useState(false);
 
@@ -476,43 +519,12 @@ function Paper(props: {
         css={css`
           position: absolute;
           bottom: 10px;
-          /* border-top: 1px solid ${color.gray5}; */
           width: calc(100% - 40px);
           padding-top: 5px;
-
-          div > span {
-            vertical-align: middle;
-          }
         `}
       >
-        <a href={props.pdf} target="_blank">
-          <div
-            css={css`
-              display: inline-block;
-              border: 1px solid ${color.gray5};
-              background-color: ${color.gray2};
-              padding-left: 7px;
-              padding-right: 7px;
-              border-radius: 5px;
-              transition-duration: 0.15s;
-
-              &:hover {
-                background-color: ${color.gray4};
-                border: 1px solid ${color.gray6};
-              }
-            `}
-          >
-            <Emoji emoji="page_facing_up" size={14} />
-            <span
-              css={css`
-                margin-left: 5px;
-                color: ${color.gray10};
-              `}
-            >
-              PDF
-            </span>
-          </div>
-        </a>
+        <PaperButton text="PDF" emoji="page_facing_up" url={props.pdf} />
+        <PaperButton text="Poster" emoji="page_with_curl" url={props.poster} />
       </div>
     </div>
   );
@@ -535,6 +547,7 @@ let acceptedPapers = [
       "University of Michigan",
     ]}
     pdf="/papers/Pathdreamer.pdf"
+    poster="/posters/Pathdreamer_poster.pdf"
   />,
   <Paper
     title="A Neural-Symbolic Approach for Object Navigation"
@@ -545,6 +558,7 @@ let acceptedPapers = [
     }}
     affiliations={["Queen's University"]}
     pdf="/papers/A-Neural-Symbolic-Approach-for-Object-Navigation.pdf"
+    poster="/posters/Neural-Symbolic-Approach-for-Object-Navigation.pdf"
   />,
   <Paper
     title="LegoTron: An Environment for Interactive Structural Understanding"
@@ -559,6 +573,7 @@ let acceptedPapers = [
     }}
     affiliations={["University of Washington, Seattle", "NVIDIA", "Apple"]}
     pdf="/papers/LegoTron.pdf"
+    poster="/posters/LegoTron.pdf"
   />,
   <Paper
     title="Success-Aware Visual Navigation Agent"
@@ -572,6 +587,7 @@ let acceptedPapers = [
     }}
     affiliations={["University of Adelaide"]}
     pdf="/papers/Success-Aware-Visual-Navigation-Agent.pdf"
+    poster="/posters/Success-Aware-Visual-Navigation-Agent.pdf"
   />,
   <Paper
     title="Learning to Explore, Navigate and Interact for Visual Room Rearrangement"
@@ -585,6 +601,7 @@ let acceptedPapers = [
     }}
     affiliations={["KAIST"]}
     pdf="/papers/Learning-to-Explore-Navigate-and-Interact-for-Visual-Room-Rearrangement.pdf"
+    poster="/posters/Learning-to-Explore.pdf"
   />,
   <Paper
     title="Massively Parallel Robot Simulations with the HBP Neurorobotics Platform"
@@ -597,6 +614,7 @@ let acceptedPapers = [
     }}
     affiliations={["Technical University of Munich"]}
     pdf="/papers/Massively-Parallel-NRP-Simulations.pdf"
+    poster="/posters/Massively-Parallel-NRP-Simulations.pdf"
   />,
   <Paper
     title="BEyond observation: an approach for ObjectNav"
@@ -607,6 +625,7 @@ let acceptedPapers = [
     }}
     affiliations={["UFPR"]}
     pdf="/papers/BEyond-observation-an-approach-for-ObjectNav.pdf"
+    poster="/posters/BEyond.pdf"
   />,
   <Paper
     title="PiCoEDL: Discovery and Learning of Minecraft Navigation Goals from Pixels and Coordinates"
@@ -618,6 +637,7 @@ let acceptedPapers = [
     }}
     affiliations={["Universitat Politecnica de Catalunya"]}
     pdf="/papers/PiCoEDL.pdf"
+    poster="/posters/PiCoEDL.pdf"
   />,
   <Paper
     title="Agent with the Big Picture: Perceiving Surroundings for Interactive Instruction Following"
@@ -635,6 +655,7 @@ let acceptedPapers = [
       "University of Washington",
     ]}
     pdf="/papers/Agent-with-the-Big-Picture.pdf"
+    poster="/posters/Agent-with-the-Big-Picture.pdf"
   />,
   <Paper
     title="PixelEDL: Unsupervised Skill Discovery and Learning from Pixels"
@@ -646,6 +667,7 @@ let acceptedPapers = [
     }}
     affiliations={["Universitat Politècnica de Catalunya"]}
     pdf="/papers/PixelEDL.pdf"
+    poster="/posters/PixelEDL.pdf"
   />,
   <Paper
     title="URoboSim: A Simulation-Based Predictive Modelling Engine for Cognition-Enabled Robot Manipulation"
@@ -657,6 +679,7 @@ let acceptedPapers = [
     }}
     affiliations={["University Bremen"]}
     pdf="/papers/URoboSim.pdf"
+    poster="/posters/URoboSim.pdf"
   />,
   <Paper
     title="RobustNav: Towards Benchmarking Robustness in Embodied Navigation"
@@ -673,6 +696,7 @@ let acceptedPapers = [
       "University of Washington",
     ]}
     pdf="/papers/RobustNav.pdf"
+    poster="/posters/RobustNav.pdf"
   />,
   <Paper
     title="HexaJungle: a MARL Simulator to Study the Emergence of Language"
@@ -685,6 +709,7 @@ let acceptedPapers = [
     }}
     affiliations={["City University Artificial Intelligence Lab"]}
     pdf="/papers/HexaJungle.pdf"
+    poster="/posters/HexaJungle.pdf"
   />,
   <Paper
     title="Modular Framework for Visuomotor Language Grounding"
@@ -699,6 +724,7 @@ let acceptedPapers = [
     }}
     affiliations={["University of California Irvine"]}
     pdf="/papers/Modular-Framework-for-Visuomotor-Language-Grounding.pdf"
+    poster="/posters/LAV.pdf"
   />,
   <Paper
     title="PGDrive: Procedural Generation of Driving Environments for Generalization"
@@ -716,6 +742,7 @@ let acceptedPapers = [
       "Sensetime",
     ]}
     pdf="/papers/PGDrive.pdf"
+    poster="/posters/pgdrive.pdf"
   />,
 ];
 

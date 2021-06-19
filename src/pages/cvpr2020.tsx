@@ -78,7 +78,12 @@ export const Speaker = (props: {
   organizations: string[];
 }) => (
   <div className={style.speaker}>
-    <div className={style.speakerThumbnailWrapper}>
+    <div
+      css={css`
+        vertical-align: middle;
+        display: inline-block;
+      `}
+    >
       {props.url ? (
         <Video fontSize="45px" url={props.url}>
           <Img fixed={props.fixedImg} />
