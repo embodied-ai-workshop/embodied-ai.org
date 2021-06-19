@@ -779,6 +779,52 @@ function shuffle(array) {
   return array;
 }
 
+function InlineSlack() {
+  return (
+    <div>
+      <a
+        href="//join.slack.com/t/embodied-aiworkshop/shared_invite/zt-s6amdv5c-gBZQZ7YSktrD_tMhQDjDfg"
+        target="_blank"
+      >
+        <div
+          css={css`
+            display: inline-block;
+            /* border: 1px solid ${color.gray6}; */
+            border-radius: 0px 10px 0px 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-top: 3px;
+            padding-top: 3px;
+            padding-bottom: 4px;
+            background-color: #4a154b;
+            transition-duration: 0.15s;
+            color: white;
+            &:hover {
+              cursor: pointer;
+              filter: contrast(1.25);
+            }
+            > span,
+            > img {
+              vertical-align: middle;
+            }
+          `}
+        >
+          <img
+            src={SlackLogo}
+            css={css`
+              width: 15px;
+              margin-right: 5px;
+            `}
+          />{" "}
+          <span>
+            Ask questions on <b>Slack</b>
+          </span>
+        </div>
+      </a>
+    </div>
+  );
+}
+
 function Slack() {
   return (
     <a
@@ -975,6 +1021,7 @@ export default function Home({ data }) {
                       Speaker Panel
                       <br />
                       <Time time="11:00 AM PST" />
+                      <InlineSlack />
                     </Timeline.Item>
                     <Timeline.Item>
                       Lunch
@@ -995,6 +1042,7 @@ export default function Home({ data }) {
                       Navigation Panel
                       <br />
                       <Time time="3:00 PM PST" />
+                      <InlineSlack />
                     </Timeline.Item>
                     <Timeline.Item>
                       Interaction Challenge Results
@@ -1005,6 +1053,7 @@ export default function Home({ data }) {
                       Interaction Panel
                       <br />
                       <Time time="5:00 PM PST" />
+                      <InlineSlack />
                     </Timeline.Item>
                   </Timeline>
                 </div>
