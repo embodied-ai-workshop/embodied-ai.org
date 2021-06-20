@@ -1001,21 +1001,22 @@ export default function Home({ data }) {
               <Slack />
               <div
                 css={css`
-                                > p {
-                                  margin-top: 5px;
-                                  text-indent: -10px;
-                                  margin-left: 10px;
-                                  &:nth-of-type(1) {
-                                    margin-top: 20px;
-                                  }
-                                }
-                              `}
+                  > p {
+                    margin-top: 5px;
+                    text-indent: -10px;
+                    margin-left: 10px;
+                    &:nth-of-type(1) {
+                      margin-top: 20px;
+                    }
+                  }
+                `}
               >
                 <p>
                   <b>Date.</b> June 20th, 6:30am to 6pm PST.
                 </p>
                 <p>
-                  <b>Content.</b> A live stream of all speaker/challenge videos as well as our Q&A panels.
+                  <b>Content.</b> A live stream of all speaker/challenge videos
+                  as well as our Q&A panels.
                 </p>
               </div>
             </>
@@ -1745,7 +1746,7 @@ export const query = graphql`
     speakerPanel: file(relativePath: { eq: "cvpr2021/speaker-panel.jpg" }) {
       ...FluidImage
     }
-    liveStream: file(relativePath: { eq: "cvpr2021/live-stream.jpg" }) {
+    liveStream: file(relativePath: { eq: "cvpr2021/live-stream21.jpg" }) {
       ...FluidImage
     }
   }
