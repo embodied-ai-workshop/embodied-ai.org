@@ -1094,7 +1094,7 @@ export default function Home({ data }) {
                             `}
                           >
                             <span>
-                              Join on <b>gather.town</b>.
+                              Join on <b>gather.town</b>
                             </span>
                           </div>
                         </a>
