@@ -1177,6 +1177,7 @@ export default function Home({ data }) {
             organizations={["Facebook AI Research"]}
             name="Akshara Rai"
             fixedImg={data.akshara.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=Z3RMJA1Nopw&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
           />
         </SubSection>
         <SubSection title="Sim-2-Real Transfer">
