@@ -1144,6 +1144,7 @@ export default function Home({ data }) {
             organizations={["Stanford"]}
             name="Hyowon Gweon"
             fixedImg={data.hyowon.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=1S8lUbkuMnk&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
           />
         </SubSection>
         <SubSection title="Embodied Navigation">
@@ -1151,11 +1152,13 @@ export default function Home({ data }) {
             organizations={["Google"]}
             name="Peter Anderson"
             fixedImg={data.peter.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=r5RmmXeUAwE&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
           />
           <Speaker
             organizations={["Google"]}
             name="Aleksandra Faust"
             fixedImg={data.aleksandra.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=x0CXtjpsWCE&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
           />
         </SubSection>
         <SubSection title="Robotics">
@@ -1163,6 +1166,7 @@ export default function Home({ data }) {
             organizations={["UC Berkeley"]}
             name="Anca Dragan"
             fixedImg={data.anca.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=G-qxzerBq8I&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
           />
           <Speaker
             organizations={["Stanford", "Google"]}
