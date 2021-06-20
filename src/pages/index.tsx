@@ -1048,7 +1048,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       Livestream
                       <br />
-                      <Time time="6:30 - 11:00 AM PST" />
+                      <Time time="6:30 AM - 6:00 PM PST" />
                     </Timeline.Item>
                     <Timeline.Item>
                       Speaker Panel
