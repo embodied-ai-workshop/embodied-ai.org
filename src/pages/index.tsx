@@ -52,12 +52,13 @@ function ChallengeSpotlight(props: {
   width?: string;
   playSize?: string;
   display?: string;
+  rank: string;
 }) {
   return (
     <div
       css={css`
         width: ${props.width ? props.width : "175px"};
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         display: ${props.display ? props.display : "inline-block"};
         text-align: center;
         margin-right: ${props.display === "block" ? "auto" : "4px"};
@@ -70,6 +71,17 @@ function ChallengeSpotlight(props: {
       >
         <Img fluid={props.data[props.imageQuery].childImageSharp.fluid} />
       </Video>
+      <div
+        css={css`
+          background-color: ${color.gray4};
+          border-radius: 0px 0px 3px 3px;
+          border-right: 1px solid ${color.gray6};
+          border-left: 1px solid ${color.gray6};
+          border-bottom: 1px solid ${color.gray6};
+        `}
+      >
+        {props.rank}
+      </div>
     </div>
   );
 }
@@ -804,6 +816,7 @@ export default function Home({ data }) {
             imageQuery="ict_robothor"
             data={data}
             width="200px"
+            rank="1st Place"
           />
         </>
       ),
@@ -869,11 +882,13 @@ export default function Home({ data }) {
             url="//www.youtube.com/watch?v=z7HflwSv3GM&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="redRabbit_habitat"
             data={data}
+            rank="1st Place"
           />
           <ChallengeSpotlight
             url="//www.youtube.com/watch?v=40cbSZefjjY&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="habitatOnWeb_habitat"
             data={data}
+            rank="2nd Place"
           />
         </>
       ),
@@ -901,11 +916,13 @@ export default function Home({ data }) {
             url="//www.youtube.com/watch?v=I-4s2keQ1Ig&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="inspir_habitat"
             data={data}
+            rank="1st Place"
           />
           <ChallengeSpotlight
             url="//www.youtube.com/watch?v=z1lYiPfEAOQ&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="ucu_habitat"
             data={data}
+            rank="2nd Place"
           />
         </>
       ),
@@ -934,18 +951,21 @@ export default function Home({ data }) {
             imageQuery="gatech_igibson"
             data={data}
             display="block"
+            rank="1st Place"
           />
           <ChallengeSpotlight
             url="//www.youtube.com/watch?v=x5ewIkkgYuQ&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="lpais_igibson"
             data={data}
             display="block"
+            rank="2nd Place"
           />
           <ChallengeSpotlight
             url="//www.youtube.com/watch?v=gK4ek_tvCJo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="nicsefc_igibson"
             data={data}
             display="block"
+            rank="4th Place"
           />
         </>
       ),
@@ -973,21 +993,25 @@ export default function Home({ data }) {
             url="//www.youtube.com/watch?v=gK4ek_tvCJo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="nicsefc_igibson"
             data={data}
+            rank="1st Place"
           />
           <ChallengeSpotlight
             url="//www.youtube.com/watch?v=x5ewIkkgYuQ&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="lpais_igibson"
             data={data}
+            rank="3rd Place"
           />
           <ChallengeSpotlight
             url="//www.youtube.com/watch?v=c2TRfio7J-M&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="lpacsi_igibson"
             data={data}
+            rank="4th Place"
           />
           <ChallengeSpotlight
             url="//www.youtube.com/watch?v=kC9wdC3abDo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
             imageQuery="gatech_igibson"
             data={data}
+            rank="5th Place"
           />
         </>
       ),
