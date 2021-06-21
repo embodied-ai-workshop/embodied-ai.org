@@ -1187,9 +1187,10 @@ export default function Home({ data }) {
             fixedImg={data.sanja.childImageSharp.fixed}
           />
           <Speaker
-            organizations={["Google"]}
+            organizations={["DeepMind"]}
             name="Konstantinos Bousmalis"
             fixedImg={data.konstantinos.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=jqxY7tqc6-Y&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
           />
         </SubSection>
       </Section>
