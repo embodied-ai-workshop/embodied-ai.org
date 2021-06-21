@@ -45,6 +45,35 @@ function ChallengeVideo(props: {
   );
 }
 
+function ChallengeSpotlight(props: {
+  url: string;
+  imageQuery: string;
+  data: object;
+  width?: string;
+  playSize?: string;
+  display?: string;
+}) {
+  return (
+    <div
+      css={css`
+        width: ${props.width ? props.width : "175px"};
+        margin-bottom: 15px;
+        display: ${props.display ? props.display : "inline-block"};
+        text-align: center;
+        margin-right: ${props.display === "block" ? "auto" : "4px"};
+        margin-left: ${props.display === "block" ? "auto" : "4px"};
+      `}
+    >
+      <Video
+        fontSize={props.playSize ? props.playSize : "25px"}
+        url={props.url}
+      >
+        <Img fluid={props.data[props.imageQuery].childImageSharp.fluid} />
+      </Video>
+    </div>
+  );
+}
+
 const challengePageMap = {
   "AI2-THOR ObjectNav": (
     <a
@@ -751,9 +780,6 @@ function Slack() {
 // And finally, we add all the content into their respective sections.
 export default function Home({ data }) {
   const [windowWidth, setWindowWidth] = useState(getWindowWidth());
-  // [paperOrder, setPaperOrder] = useState([
-  //   ...Array(acceptedPapers.length).keys(),
-  // ]);
 
   useEffect(() => {
     const resizeWindow = () => setWindowWidth(getWindowWidth());
@@ -770,6 +796,16 @@ export default function Home({ data }) {
           imageQuery="ai2thor2021"
           data={data}
         />
+      ),
+      winnerSpotlight: (
+        <>
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=EH94fGEjj1I&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="ict_robothor"
+            data={data}
+            width="200px"
+          />
+        </>
       ),
       key: "ai2thor-objectnav",
       task: "ObjectNav",
@@ -789,6 +825,7 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: <></>,
       key: "ai2thor-rearrangement",
       task: "Rearrangement",
       interactiveActions: "✓",
@@ -807,6 +844,7 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: <></>,
       key: "alfred",
       task: "Vision-and-Language Interaction",
       interactiveActions: "✓",
@@ -824,6 +862,20 @@ export default function Home({ data }) {
           imageQuery="habitat2021"
           data={data}
         />
+      ),
+      winnerSpotlight: (
+        <>
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=z7HflwSv3GM&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="redRabbit_habitat"
+            data={data}
+          />
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=40cbSZefjjY&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="habitatOnWeb_habitat"
+            data={data}
+          />
+        </>
       ),
       key: "habitat-objectNav",
       task: "ObjectNav",
@@ -843,6 +895,20 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: (
+        <>
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=I-4s2keQ1Ig&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="inspir_habitat"
+            data={data}
+          />
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=z1lYiPfEAOQ&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="ucu_habitat"
+            data={data}
+          />
+        </>
+      ),
       key: "habitat-pointnav",
       task: "PointNav v2",
       interactiveActions: "",
@@ -860,6 +926,28 @@ export default function Home({ data }) {
           imageQuery="igibson2021"
           data={data}
         />
+      ),
+      winnerSpotlight: (
+        <>
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=kC9wdC3abDo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="gatech_igibson"
+            data={data}
+            display="block"
+          />
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=x5ewIkkgYuQ&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="lpais_igibson"
+            data={data}
+            display="block"
+          />
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=gK4ek_tvCJo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="nicsefc_igibson"
+            data={data}
+            display="block"
+          />
+        </>
       ),
       key: "igibson-in",
       task: "Interactive Navigation",
@@ -879,6 +967,30 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: (
+        <>
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=gK4ek_tvCJo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="nicsefc_igibson"
+            data={data}
+          />
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=x5ewIkkgYuQ&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="lpais_igibson"
+            data={data}
+          />
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=c2TRfio7J-M&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="lpacsi_igibson"
+            data={data}
+          />
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=kC9wdC3abDo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="gatech_igibson"
+            data={data}
+          />
+        </>
+      ),
       key: "igibson-social-navigation",
       task: "Social Navigation",
       interactiveActions: "✓",
@@ -897,6 +1009,7 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: <></>,
       key: "multion",
       task: "Multi-Object Navigation",
       interactiveActions: "",
@@ -915,6 +1028,7 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: <></>,
       key: "rvsu",
       task: "Rearrangement (SCD)",
       interactiveActions: "",
@@ -933,6 +1047,7 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: <></>,
       key: "rvsu-2",
       task: "Semantic SLAM",
       interactiveActions: "",
@@ -951,6 +1066,7 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: <></>,
       key: "rxr",
       task: "Vision-and-Language Navigation",
       interactiveActions: "",
@@ -969,6 +1085,7 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: <></>,
       key: "soundspaces",
       task: "Audio Visual Navigation",
       interactiveActions: "",
@@ -987,6 +1104,7 @@ export default function Home({ data }) {
           data={data}
         />
       ),
+      winnerSpotlight: <></>,
       key: "tdw",
       task: "Rearrangement",
       interactiveActions: "✓",
@@ -1429,7 +1547,7 @@ export default function Home({ data }) {
           The table below describes, compares, and links each challenge.
         </p>
         <Table
-          scroll={{ x: "1850px" }}
+          scroll={{ x: "2250px" }}
           css={css`
             margin-top: 25px;
             margin-bottom: 50px;
@@ -1444,7 +1562,7 @@ export default function Home({ data }) {
               ),
               dataIndex: "challenge",
               key: "challenge",
-              fixed: "left",
+              fixed: windowWidth > 650 ? "left" : "",
             },
             {
               title: (
@@ -1456,6 +1574,7 @@ export default function Home({ data }) {
               key: "task",
               sorter: (a, b) => a.task.localeCompare(b.task),
               sortDirections: ["ascend", "descend"],
+              fixed: windowWidth > 650 ? "left" : "",
             },
             {
               title: (
@@ -1466,6 +1585,16 @@ export default function Home({ data }) {
               dataIndex: "video",
               key: "video",
               width: 300,
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="trophy" size={18} /> Spotlight
+                </>
+              ),
+              dataIndex: "winnerSpotlight",
+              key: "winnerSpotlight",
+              width: 400,
             },
             {
               title: (
@@ -1933,6 +2062,43 @@ export const query = graphql`
       ...FluidImage
     }
     liveStream: file(relativePath: { eq: "cvpr2021/live-stream21.jpg" }) {
+      ...FluidImage
+    }
+
+    # spotlights
+    gatech_igibson: file(relativePath: { eq: "cvpr2021/gatech-igibson.jpg" }) {
+      ...FluidImage
+    }
+    lpacsi_igibson: file(
+      relativePath: { eq: "cvpr2021/challenge-lpacsi.jpg" }
+    ) {
+      ...FluidImage
+    }
+    lpais_igibson: file(relativePath: { eq: "cvpr2021/team-lpais.jpg" }) {
+      ...FluidImage
+    }
+    nicsefc_igibson: file(relativePath: { eq: "cvpr2021/team-nicsefc.jpg" }) {
+      ...FluidImage
+    }
+
+    ict_robothor: file(relativePath: { eq: "cvpr2021/ict-cas.jpg" }) {
+      ...FluidImage
+    }
+
+    redRabbit_habitat: file(
+      relativePath: { eq: "cvpr2021/red-rabbit-team.jpg" }
+    ) {
+      ...FluidImage
+    }
+    habitatOnWeb_habitat: file(
+      relativePath: { eq: "cvpr2021/habitat-on-web.jpg" }
+    ) {
+      ...FluidImage
+    }
+    inspir_habitat: file(relativePath: { eq: "cvpr2021/inspir-team.jpg" }) {
+      ...FluidImage
+    }
+    ucu_habitat: file(relativePath: { eq: "cvpr2021/ucu-mlab.jpg" }) {
       ...FluidImage
     }
   }
