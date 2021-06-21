@@ -1412,6 +1412,7 @@ export default function Home({ data }) {
             organizations={["Stanford", "Google"]}
             name="Chelsea Finn"
             fixedImg={data.chelsea.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=6IGdWmvcwb4&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
           />
           <Speaker
             organizations={["Facebook AI Research"]}
