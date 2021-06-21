@@ -1425,6 +1425,7 @@ export default function Home({ data }) {
             organizations={["University of Toronto", "NVIDIA"]}
             name="Sanja Fidler"
             fixedImg={data.sanja.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=cgAatW67U4M&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
           />
           <Speaker
             organizations={["DeepMind"]}
