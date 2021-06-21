@@ -18,7 +18,7 @@ import SlackLogo from "../../static/icons/slack.svg";
 const { Step } = Steps;
 import { Emoji } from "emoji-mart";
 
-import { Speaker, LiveSession } from "./cvpr2020";
+import { Speaker, LiveSession, Video } from "./cvpr2020";
 
 import { OrganizerPics } from "./cvpr2020";
 import { css } from "@emotion/react";
@@ -31,6 +31,18 @@ import { css } from "@emotion/react";
 function validateEmail(email: string) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
+}
+
+function ChallengeVideo(props: {
+  url: string;
+  imageQuery: string;
+  data: object;
+}) {
+  return (
+    <Video fontSize="45px" url={props.url}>
+      <Img fluid={props.data[props.imageQuery].childImageSharp.fluid} />
+    </Video>
+  );
 }
 
 const challengePageMap = {
@@ -88,152 +100,6 @@ const challengePageMap = {
     </a>
   ),
 };
-
-const challengeData = [
-  {
-    challenge: challengePageMap["AI2-THOR ObjectNav"],
-    key: "ai2thor-objectnav",
-    task: "ObjectNav",
-    interactiveActions: "",
-    simulationPlatform: "AI2-THOR",
-    sceneDataset: "RoboTHOR",
-    actionSpace: "Discrete",
-    observations: "RGB-D",
-    stochasticAcuation: "✓",
-  },
-  {
-    challenge: challengePageMap["AI2-THOR Rearrangement"],
-    key: "ai2thor-rearrangement",
-    task: "Rearrangement",
-    interactiveActions: "✓",
-    simulationPlatform: "AI2-THOR",
-    sceneDataset: "iTHOR",
-    actionSpace: "Discrete",
-    observations: "RGB-D, Localization",
-    stochasticAcuation: "",
-  },
-  {
-    challenge: challengePageMap["ALFRED"],
-    key: "alfred",
-    task: "Vision-and-Language Interaction",
-    interactiveActions: "✓",
-    simulationPlatform: "AI2-THOR",
-    sceneDataset: "iTHOR",
-    actionSpace: "Discrete",
-    observations: "RGB",
-    stochasticAcuation: "",
-  },
-  {
-    challenge: challengePageMap["Habitat"],
-    key: "habitat-objectNav",
-    task: "ObjectNav",
-    interactiveActions: "",
-    simulationPlatform: "Habitat",
-    sceneDataset: "Matterport3D",
-    actionSpace: "Discrete",
-    observations: "RGB-D, Localization",
-    stochasticAcuation: "",
-  },
-  {
-    challenge: challengePageMap["Habitat"],
-    key: "habitat-pointnav",
-    task: "PointNav v2",
-    interactiveActions: "",
-    simulationPlatform: "Habitat",
-    sceneDataset: "Gibson",
-    actionSpace: "Discrete",
-    observations: "Noisy RGB-D",
-    stochasticAcuation: "✓",
-  },
-  {
-    challenge: challengePageMap["iGibson"],
-    key: "igibson-in",
-    task: "Interactive Navigation",
-    interactiveActions: "✓",
-    simulationPlatform: "iGibson",
-    sceneDataset: "iGibson",
-    actionSpace: "Continuous",
-    observations: "RGB-D",
-    stochasticAcuation: "✓",
-  },
-  {
-    challenge: challengePageMap["iGibson"],
-    key: "igibson-social-navigation",
-    task: "Social Navigation",
-    interactiveActions: "✓",
-    simulationPlatform: "iGibson",
-    sceneDataset: "iGibson",
-    actionSpace: "Continuous",
-    observations: "RGB-D",
-    stochasticAcuation: "✓",
-  },
-  {
-    challenge: challengePageMap["MultiOn"],
-    key: "multion",
-    task: "Multi-Object Navigation",
-    interactiveActions: "",
-    simulationPlatform: "Habitat",
-    sceneDataset: "Matterport3D",
-    actionSpace: "Discrete",
-    observations: "RGB-D, Localization",
-    stochasticAcuation: "",
-  },
-  {
-    challenge: challengePageMap["Robotic Vision Scene Understanding"],
-    key: "rvsu",
-    task: "Rearrangement (SCD)",
-    interactiveActions: "",
-    simulationPlatform: "Isaac Sim",
-    sceneDataset: "Active Scene Understanding",
-    observations: "RGB-D, Pose Data, Flatscan Laser",
-    actionSpace: "Discrete",
-    stochasticAcuation: "✓",
-  },
-  {
-    challenge: challengePageMap["Robotic Vision Scene Understanding"],
-    key: "rvsu-2",
-    task: "Semantic SLAM",
-    interactiveActions: "",
-    simulationPlatform: "Isaac Sim",
-    sceneDataset: "Active Scene Understanding",
-    observations: "RGB-D, Pose Data, Flatscan Laser",
-    actionSpace: "Discrete",
-    stochasticAcuation: "Partially",
-  },
-  {
-    challenge: challengePageMap["RxR-Habitat"],
-    key: "rxr",
-    task: "Vision-and-Language Navigation",
-    interactiveActions: "",
-    simulationPlatform: "Habitat",
-    sceneDataset: "Matterport3D",
-    observations: "RGB-D",
-    actionSpace: "Discrete",
-    stochasticAcuation: "",
-  },
-  {
-    challenge: challengePageMap["SoundSpaces"],
-    key: "soundspaces",
-    task: "Audio Visual Navigation",
-    interactiveActions: "",
-    simulationPlatform: "Habitat",
-    sceneDataset: "Matterport3D",
-    observations: "RGB-D, Audio Waveform",
-    actionSpace: "Discrete",
-    stochasticAcuation: "",
-  },
-  {
-    challenge: challengePageMap["TDW-Transport"],
-    key: "tdw",
-    task: "Rearrangement",
-    interactiveActions: "✓",
-    simulationPlatform: "TDW",
-    sceneDataset: "TDW",
-    observations: "RGB-D, Metadata",
-    actionSpace: "Discrete",
-    stochasticAcuation: "✓",
-  },
-];
 
 function EmailSubscription(props: {
   actionIdentifier: string;
@@ -895,6 +761,243 @@ export default function Home({ data }) {
     return () => window.removeEventListener("resize", resizeWindow);
   });
 
+  const challengeData = [
+    {
+      challenge: challengePageMap["AI2-THOR ObjectNav"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=bUW8oGKqtY8&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="ai2thor2021"
+          data={data}
+        />
+      ),
+      key: "ai2thor-objectnav",
+      task: "ObjectNav",
+      interactiveActions: "",
+      simulationPlatform: "AI2-THOR",
+      sceneDataset: "RoboTHOR",
+      actionSpace: "Discrete",
+      observations: "RGB-D",
+      stochasticAcuation: "✓",
+    },
+    {
+      challenge: challengePageMap["AI2-THOR Rearrangement"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=bUW8oGKqtY8&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="ai2thor2021"
+          data={data}
+        />
+      ),
+      key: "ai2thor-rearrangement",
+      task: "Rearrangement",
+      interactiveActions: "✓",
+      simulationPlatform: "AI2-THOR",
+      sceneDataset: "iTHOR",
+      actionSpace: "Discrete",
+      observations: "RGB-D, Localization",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["ALFRED"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=-YmHT2fSQDo&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="alfred2021"
+          data={data}
+        />
+      ),
+      key: "alfred",
+      task: "Vision-and-Language Interaction",
+      interactiveActions: "✓",
+      simulationPlatform: "AI2-THOR",
+      sceneDataset: "iTHOR",
+      actionSpace: "Discrete",
+      observations: "RGB",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["Habitat"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=SAoN2giK6Gk&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="habitat2021"
+          data={data}
+        />
+      ),
+      key: "habitat-objectNav",
+      task: "ObjectNav",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "Matterport3D",
+      actionSpace: "Discrete",
+      observations: "RGB-D, Localization",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["Habitat"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=SAoN2giK6Gk&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="habitat2021"
+          data={data}
+        />
+      ),
+      key: "habitat-pointnav",
+      task: "PointNav v2",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "Gibson",
+      actionSpace: "Discrete",
+      observations: "Noisy RGB-D",
+      stochasticAcuation: "✓",
+    },
+    {
+      challenge: challengePageMap["iGibson"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=1uSsds7HSrQ&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="igibson2021"
+          data={data}
+        />
+      ),
+      key: "igibson-in",
+      task: "Interactive Navigation",
+      interactiveActions: "✓",
+      simulationPlatform: "iGibson",
+      sceneDataset: "iGibson",
+      actionSpace: "Continuous",
+      observations: "RGB-D",
+      stochasticAcuation: "✓",
+    },
+    {
+      challenge: challengePageMap["iGibson"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=1uSsds7HSrQ&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="igibson2021"
+          data={data}
+        />
+      ),
+      key: "igibson-social-navigation",
+      task: "Social Navigation",
+      interactiveActions: "✓",
+      simulationPlatform: "iGibson",
+      sceneDataset: "iGibson",
+      actionSpace: "Continuous",
+      observations: "RGB-D",
+      stochasticAcuation: "✓",
+    },
+    {
+      challenge: challengePageMap["MultiOn"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=ghX5UDWD1HU&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="multion2021"
+          data={data}
+        />
+      ),
+      key: "multion",
+      task: "Multi-Object Navigation",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "Matterport3D",
+      actionSpace: "Discrete",
+      observations: "RGB-D, Localization",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["Robotic Vision Scene Understanding"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=uDhIEw9TA80&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="rvsu2021"
+          data={data}
+        />
+      ),
+      key: "rvsu",
+      task: "Rearrangement (SCD)",
+      interactiveActions: "",
+      simulationPlatform: "Isaac Sim",
+      sceneDataset: "Active Scene Understanding",
+      observations: "RGB-D, Pose Data, Flatscan Laser",
+      actionSpace: "Discrete",
+      stochasticAcuation: "✓",
+    },
+    {
+      challenge: challengePageMap["Robotic Vision Scene Understanding"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=uDhIEw9TA80&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="rvsu2021"
+          data={data}
+        />
+      ),
+      key: "rvsu-2",
+      task: "Semantic SLAM",
+      interactiveActions: "",
+      simulationPlatform: "Isaac Sim",
+      sceneDataset: "Active Scene Understanding",
+      observations: "RGB-D, Pose Data, Flatscan Laser",
+      actionSpace: "Discrete",
+      stochasticAcuation: "Partially",
+    },
+    {
+      challenge: challengePageMap["RxR-Habitat"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=YGwHGgD-9gQ&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="rxr2021"
+          data={data}
+        />
+      ),
+      key: "rxr",
+      task: "Vision-and-Language Navigation",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "Matterport3D",
+      observations: "RGB-D",
+      actionSpace: "Discrete",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["SoundSpaces"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=ANmhSo6gXNg&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="soundspaces2021"
+          data={data}
+        />
+      ),
+      key: "soundspaces",
+      task: "Audio Visual Navigation",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "Matterport3D",
+      observations: "RGB-D, Audio Waveform",
+      actionSpace: "Discrete",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["TDW-Transport"],
+      video: (
+        <ChallengeVideo
+          url="//www.youtube.com/watch?v=ffh7zxWAkFw&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
+          imageQuery="tdw2021"
+          data={data}
+        />
+      ),
+      key: "tdw",
+      task: "Rearrangement",
+      interactiveActions: "✓",
+      simulationPlatform: "TDW",
+      sceneDataset: "TDW",
+      observations: "RGB-D, Metadata",
+      actionSpace: "Discrete",
+      stochasticAcuation: "✓",
+    },
+  ];
+
   // useEffect(() => {
   //   setPaperOrder(prevOrder => shuffle(prevOrder));
   // }, []);
@@ -1331,7 +1434,7 @@ export default function Home({ data }) {
           The table below describes, compares, and links each challenge.
         </p>
         <Table
-          scroll={{ x: "1550px" }}
+          scroll={{ x: "1850px" }}
           css={css`
             margin-top: 25px;
             margin-bottom: 50px;
@@ -1356,9 +1459,19 @@ export default function Home({ data }) {
               ),
               dataIndex: "task",
               key: "task",
-              fixed: windowWidth > 650 ? "left" : "",
+              // fixed: windowWidth > 650 ? "left" : "",
               sorter: (a, b) => a.task.localeCompare(b.task),
               sortDirections: ["ascend", "descend"],
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="video_camera" size={18} /> Video
+                </>
+              ),
+              dataIndex: "video",
+              key: "video",
+              width: 300,
             },
             {
               title: (
@@ -1770,6 +1883,45 @@ export const query = graphql`
       ...FluidImage
     }
     haoyangOrg: file(relativePath: { eq: "organizers/haoyang.jpg" }) {
+      ...FluidImage
+    }
+
+    haoyangOrg: file(relativePath: { eq: "organizers/haoyang.jpg" }) {
+      ...FluidImage
+    }
+
+    # Challenge Videos
+    ai2thor2021: file(relativePath: { eq: "cvpr2021/ai2thor-challenges.jpg" }) {
+      ...FluidImage
+    }
+    alfred2021: file(relativePath: { eq: "cvpr2021/alfred-challenge.jpg" }) {
+      ...FluidImage
+    }
+    habitat2021: file(relativePath: { eq: "cvpr2021/habitat-challenge.jpg" }) {
+      ...FluidImage
+    }
+    igibson2021: file(relativePath: { eq: "cvpr2021/igibson-challenge.jpg" }) {
+      ...FluidImage
+    }
+    multion2021: file(relativePath: { eq: "cvpr2021/multion-challenge.jpg" }) {
+      ...FluidImage
+    }
+    rvsu2021: file(
+      relativePath: {
+        eq: "cvpr2021/robotic-vision-scene-understanding-challenge.jpg"
+      }
+    ) {
+      ...FluidImage
+    }
+    rxr2021: file(relativePath: { eq: "cvpr2021/rxr-habitat.jpg" }) {
+      ...FluidImage
+    }
+    soundspaces2021: file(
+      relativePath: { eq: "cvpr2021/soundspaces-challenge.jpg" }
+    ) {
+      ...FluidImage
+    }
+    tdw2021: file(relativePath: { eq: "cvpr2021/tdw-transport.jpg" }) {
       ...FluidImage
     }
 

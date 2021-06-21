@@ -41,7 +41,7 @@ export const OrganizerPics = function (props: { organizers: any; data: any }) {
 
 // Wrapper for any generic video that is linked to an external page.
 // Note that @fontSize sets the size of the play icon.
-function Video(props: {
+export function Video(props: {
   fontSize: string;
   url: string;
   children: React.ReactNode;
