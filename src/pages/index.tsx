@@ -1169,38 +1169,33 @@ export default function Home({ data }) {
                       <br />
                       <Time time="1:00 PM PST" />
                       <div>
-                        <a
-                          href="//gather.town/app/5ZiXnZJDqMAsIjnd/EAI2021"
-                          target="_blank"
+                        <div
+                          css={css`
+                            display: inline-block;
+                            /* border: 1px solid ${color.gray6}; */
+                            border-radius: 0px 10px 0px 10px;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            margin-top: 3px;
+                            padding-top: 3px;
+                            padding-bottom: 4px;
+                            background-color: ${color.dark.blue6};
+                            transition-duration: 0.15s;
+                            color: white;
+                            &:hover {
+                              cursor: not-allowed;
+                              filter: contrast(1.25);
+                            }
+                            > span,
+                            > img {
+                              vertical-align: middle;
+                            }
+                          `}
                         >
-                          <div
-                            css={css`
-                              display: inline-block;
-                              /* border: 1px solid ${color.gray6}; */
-                              border-radius: 0px 10px 0px 10px;
-                              padding-left: 10px;
-                              padding-right: 10px;
-                              margin-top: 3px;
-                              padding-top: 3px;
-                              padding-bottom: 4px;
-                              background-color: ${color.dark.blue6};
-                              transition-duration: 0.15s;
-                              color: white;
-                              &:hover {
-                                cursor: pointer;
-                                filter: contrast(1.25);
-                              }
-                              > span,
-                              > img {
-                                vertical-align: middle;
-                              }
-                            `}
-                          >
-                            <span>
-                              Join on <b>gather.town</b>
-                            </span>
-                          </div>
-                        </a>
+                          <span>
+                            Join on <b>gather.town</b>
+                          </span>
+                        </div>
                       </div>
                     </Timeline.Item>
                     <Timeline.Item>
@@ -1459,7 +1454,6 @@ export default function Home({ data }) {
               ),
               dataIndex: "task",
               key: "task",
-              // fixed: windowWidth > 650 ? "left" : "",
               sorter: (a, b) => a.task.localeCompare(b.task),
               sortDirections: ["ascend", "descend"],
             },
