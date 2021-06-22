@@ -1428,8 +1428,7 @@ export default function Home({ data }) {
         <SubSection title="Interaction Panel">
           <LiveSession
             fluidImage={data.interactionPanel.childImageSharp.fluid}
-            questionLink="YO"
-            videoURL={undefined}
+            videoURL="//www.youtube.com/watch?v=kQ4mxaGd21M&list=PL4XI7L9Xv5fXNCizY4FUOT69pnG5c5KLy"
             rhs={
               <>
                 <Slack />
