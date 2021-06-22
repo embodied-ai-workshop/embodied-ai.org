@@ -1280,8 +1280,8 @@ export default function Home({ data }) {
                       <div>
                         <div
                           css={css`
+                            opacity: 0.2;
                             display: inline-block;
-                            /* border: 1px solid ${color.gray6}; */
                             border-radius: 0px 10px 0px 10px;
                             padding-left: 10px;
                             padding-right: 10px;
@@ -1389,7 +1389,7 @@ export default function Home({ data }) {
         <SubSection title="Navigation Panel">
           <LiveSession
             fluidImage={data.navigationPanel.childImageSharp.fluid}
-            videoURL={undefined}
+            videoURL="//www.youtube.com/watch?v=dOR-Q0XS6Xs&list=PL4XI7L9Xv5fXNCizY4FUOT69pnG5c5KLy"
             rhs={
               <>
                 <Slack />
