@@ -1345,69 +1345,11 @@ export default function Home({ data }) {
           <Step title="Workshop Announced" description="Feb 17, 2021" />
         </Steps>
       </Section>
-      <Section title="Invited Speakers">
-        <SubSection title="Motivation for Embodied AI Research">
-          <Speaker
-            organizations={["Stanford"]}
-            name="Hyowon Gweon"
-            fixedImg={data.hyowon.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=1S8lUbkuMnk&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-        </SubSection>
-        <SubSection title="Embodied Navigation">
-          <Speaker
-            organizations={["Google"]}
-            name="Peter Anderson"
-            fixedImg={data.peter.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=r5RmmXeUAwE&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-          <Speaker
-            organizations={["Google"]}
-            name="Aleksandra Faust"
-            fixedImg={data.aleksandra.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=x0CXtjpsWCE&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-        </SubSection>
-        <SubSection title="Robotics">
-          <Speaker
-            organizations={["UC Berkeley"]}
-            name="Anca Dragan"
-            fixedImg={data.anca.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=G-qxzerBq8I&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-          <Speaker
-            organizations={["Stanford", "Google"]}
-            name="Chelsea Finn"
-            fixedImg={data.chelsea.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=6IGdWmvcwb4&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-          <Speaker
-            organizations={["Facebook AI Research"]}
-            name="Akshara Rai"
-            fixedImg={data.akshara.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=Z3RMJA1Nopw&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-        </SubSection>
-        <SubSection title="Sim-2-Real Transfer">
-          <Speaker
-            organizations={["University of Toronto", "NVIDIA"]}
-            name="Sanja Fidler"
-            fixedImg={data.sanja.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=cgAatW67U4M&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-          <Speaker
-            organizations={["DeepMind"]}
-            name="Konstantinos Bousmalis"
-            fixedImg={data.konstantinos.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=jqxY7tqc6-Y&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-        </SubSection>
-      </Section>
       <Section title="Panel Sessions">
         <SubSection title="Speaker Panel">
           <LiveSession
             fluidImage={data.speakerPanel.childImageSharp.fluid}
-            videoURL={undefined}
+            videoURL="//www.youtube.com/watch?v=-UcfQnTk8dU&list=PL4XI7L9Xv5fXNCizY4FUOT69pnG5c5KLy"
             rhs={
               <>
                 <Slack />
@@ -1522,6 +1464,64 @@ export default function Home({ data }) {
                 </div>
               </>
             }
+          />
+        </SubSection>
+      </Section>
+      <Section title="Invited Speakers">
+        <SubSection title="Motivation for Embodied AI Research">
+          <Speaker
+            organizations={["Stanford"]}
+            name="Hyowon Gweon"
+            fixedImg={data.hyowon.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=1S8lUbkuMnk&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
+          />
+        </SubSection>
+        <SubSection title="Embodied Navigation">
+          <Speaker
+            organizations={["Google"]}
+            name="Peter Anderson"
+            fixedImg={data.peter.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=r5RmmXeUAwE&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
+          />
+          <Speaker
+            organizations={["Google"]}
+            name="Aleksandra Faust"
+            fixedImg={data.aleksandra.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=x0CXtjpsWCE&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
+          />
+        </SubSection>
+        <SubSection title="Robotics">
+          <Speaker
+            organizations={["UC Berkeley"]}
+            name="Anca Dragan"
+            fixedImg={data.anca.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=G-qxzerBq8I&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
+          />
+          <Speaker
+            organizations={["Stanford", "Google"]}
+            name="Chelsea Finn"
+            fixedImg={data.chelsea.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=6IGdWmvcwb4&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
+          />
+          <Speaker
+            organizations={["Facebook AI Research"]}
+            name="Akshara Rai"
+            fixedImg={data.akshara.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=Z3RMJA1Nopw&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
+          />
+        </SubSection>
+        <SubSection title="Sim-2-Real Transfer">
+          <Speaker
+            organizations={["University of Toronto", "NVIDIA"]}
+            name="Sanja Fidler"
+            fixedImg={data.sanja.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=cgAatW67U4M&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
+          />
+          <Speaker
+            organizations={["DeepMind"]}
+            name="Konstantinos Bousmalis"
+            fixedImg={data.konstantinos.childImageSharp.fixed}
+            url="//www.youtube.com/watch?v=jqxY7tqc6-Y&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
           />
         </SubSection>
       </Section>
