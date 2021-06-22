@@ -1033,7 +1033,31 @@ export default function Home({ data }) {
           data={data}
         />
       ),
-      winnerSpotlight: <></>,
+      winnerSpotlight: (
+        <>
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=boDaAORoKho&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="lyon_multion"
+            data={data}
+            display="block"
+            rank="1st Place"
+          />
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=XgT2w6rUwjM&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="sgolam_multion"
+            data={data}
+            display="block"
+            rank="2nd Place"
+          />
+          <ChallengeSpotlight
+            url="//www.youtube.com/watch?v=AIbVRo4xIh8&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
+            imageQuery="vimp_multion"
+            data={data}
+            display="block"
+            rank="3rd Place"
+          />
+        </>
+      ),
       key: "multion",
       task: "Multi-Object Navigation",
       interactiveActions: "",
@@ -2091,6 +2115,16 @@ export const query = graphql`
       ...FluidImage
     }
     ucu_habitat: file(relativePath: { eq: "cvpr2021/ucu-mlab.jpg" }) {
+      ...FluidImage
+    }
+
+    lyon_multion: file(relativePath: { eq: "cvpr2021/team-lyon.jpg" }) {
+      ...FluidImage
+    }
+    sgolam_multion: file(relativePath: { eq: "cvpr2021/sgolam.jpg" }) {
+      ...FluidImage
+    }
+    vimp_multion: file(relativePath: { eq: "cvpr2021/team-vimp.jpg" }) {
       ...FluidImage
     }
   }
