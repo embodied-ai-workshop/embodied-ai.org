@@ -3,7 +3,7 @@ import Header, { OtherYears } from "./page-header";
 import { headerId } from "./text-helpers";
 import { Helmet } from "react-helmet";
 import style from "./page-wrapper.module.scss";
-import { YoutubeFilled, GithubFilled } from "@ant-design/icons";
+import { YoutubeFilled, GithubFilled, SlackOutlined } from "@ant-design/icons";
 
 // This brings both the header, page content, section contents
 // in a way that they are clickable. Note, all children
@@ -137,6 +137,12 @@ export default class PageWrapper extends React.Component<
             target="_blank"
           >
             <YoutubeFilled className={style.footerIcon} />
+          </a>
+          <a
+            href="//join.slack.com/t/embodied-aiworkshop/shared_invite/zt-s6amdv5c-gBZQZ7YSktrD_tMhQDjDfg"
+            target="_blank"
+          >
+            <SlackOutlined className={style.footerIcon} />
           </a>
         </footer>
       </>
