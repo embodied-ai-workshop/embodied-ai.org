@@ -39,7 +39,7 @@ module.exports = {
           name: "Suman Bista",
           organization: "QUT, ACRV, QCR",
           imageId: "suman",
-          site: "//www.roboticvision.org/rv_person/suman-bista/",
+          site: "//au.linkedin.com/in/suman-bista-88921044",
           challenge: true,
         },
         {
@@ -312,7 +312,7 @@ module.exports = {
           name: "Rohan Smith",
           organization: "QUT, ACRV, QCR",
           imageId: "rohan",
-          site: "//www.roboticvision.org/rv_person/rohan-smith-2/",
+          site: "//au.linkedin.com/in/rohan-smith-4442b5160",
           challenge: true,
         },
         {
@@ -326,7 +326,7 @@ module.exports = {
           name: "Ben Talbot",
           organization: "QUT, ACRV, QCR",
           imageId: "ben",
-          site: "//www.roboticvision.org/rv_person/ben-talbot/",
+          site: "//staff.qut.edu.au/staff/b.talbot",
           challenge: true,
         },
         {
@@ -399,7 +399,7 @@ module.exports = {
           name: "Haoyang Zhang",
           organization: "QUT, ACRV, QCR",
           imageId: "haoyang",
-          site: "//www.roboticvision.org/rv_person/haoyang-zhang/",
+          site: "//staff.qut.edu.au/staff/haoyang.zhang.acrv",
           challenge: true,
         },
       ],
