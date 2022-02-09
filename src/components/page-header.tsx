@@ -42,7 +42,7 @@ export const Challenges = (props: {
           padding: 0px;
           font-size: 15px;
           &:hover {
-            color: #1d3d7e !important;
+            color: #1d3d7e;
           }
         `}
       >
@@ -72,10 +72,17 @@ export const OtherYears = (props: { onConference: string }) => (
       content={
         <div>
           <div>
+            {props.onConference === "CVPR 2022" ? (
+              <>CVPR 2022</>
+            ) : (
+              <Link to="/">CVPR 2022</Link>
+            )}
+          </div>
+          <div>
             {props.onConference === "CVPR 2021" ? (
               <>CVPR 2021</>
             ) : (
-              <Link to="/">CVPR 2021</Link>
+              <Link to="/cvpr2021">CVPR 2021</Link>
             )}
           </div>
           <div>
@@ -117,11 +124,13 @@ export const Header = (props: {
   leftSide: React.ReactNode;
   imageContent: any;
   headerGradient: string;
+  headerStyle: any;
 }) => (
   <>
     <div
       css={css`
         background: ${props.headerGradient};
+        ${props.headerStyle};
       `}
       className={style.header}
     >

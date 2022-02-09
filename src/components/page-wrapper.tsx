@@ -15,6 +15,7 @@ export default class PageWrapper extends React.Component<
     rightSide: React.ReactNode;
     imageContent: any;
     headerGradient: string;
+    headerStyle?: string;
   },
   { headerIdLocations: number[]; focusedHeaderI: number }
 > {
@@ -102,6 +103,7 @@ export default class PageWrapper extends React.Component<
           rightSide={this.props.rightSide}
           imageContent={this.props.imageContent}
           headerGradient={this.props.headerGradient}
+          headerStyle={this.props.headerStyle}
         />
         <div className={style.contentWrapper}>
           <div className={style.mainContent}>{this.props.children}</div>

@@ -12,7 +12,7 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import moment from "moment-timezone";
 import Img, { FixedObject, FluidObject } from "gatsby-image";
 
-import TennesseeCover from "../../static/images/cvpr2021/cover.svg";
+import NewOrleansCover from "../../static/images/cvpr2022/cover.svg";
 import SlackLogo from "../../static/icons/slack.svg";
 
 const { Step } = Steps;
@@ -1178,22 +1178,32 @@ export default function Home({ data }) {
 
   return (
     <PageWrapper
-      headerGradient="linear-gradient(to bottom, #ebdfa5, #49c3cd)"
+      headerGradient="radial-gradient(#090617, #090617)"
+      headerStyle={css`
+        color: ${color.dark.gold10} !important;
+        button {
+          &:hover {
+            color: ${color.dark.gold9} !important;
+          }
+        }
+      `}
       imageContent={{
         css: css`
-          width: 120%;
+          width: 130%;
           background-repeat: no-repeat;
-          padding-top: 50.25%;
-          margin-left: -6%;
-          margin-top: 50px;
+          padding-top: 70.25%;
+          margin-top: -25px;
+          margin-left: -15%;
           margin-bottom: -15px;
-          background-image: url(${TennesseeCover});
+          background-image: url("/images/cvpr2022/cover.jpg");
+          background-size: cover;
+          background-position: center;
         `,
       }}
-      conference="CVPR 2021"
+      conference="CVPR 2022"
       rightSide={
         <Challenges
-          conference="CVPR 2021"
+          conference="CVPR 2022"
           challengeData={Object.values(challengePageMap)}
         />
       }
@@ -1261,103 +1271,8 @@ export default function Home({ data }) {
         />
       </Section>
       <Section title="Timeline">
-        <Steps progressDot current={0} direction="vertical">
-          <Step
-            title="CVPR Workshop"
-            description={
-              <>
-                June 20, 2021.{" "}
-                <span
-                  css={css`
-                    color: ${color.gray7};
-                  `}
-                >
-                  Tentitative Schedule:
-                </span>
-                <div
-                  css={css`
-                    margin-left: 0px;
-                    margin-top: 20px;
-                  `}
-                >
-                  <Timeline>
-                    <Timeline.Item>
-                      Livestream
-                      <br />
-                      <Time time="6:30 AM - 6:00 PM PST" />
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      Speaker Panel
-                      <br />
-                      <Time time="11:00 AM PST" />
-                      <InlineSlack />
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      Lunch
-                      <br />
-                      <Time time="12:00 AM PST" />
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      Poster Session
-                      <br />
-                      <Time time="1:00 PM PST" />
-                      <div>
-                        <div
-                          css={css`
-                            opacity: 0.2;
-                            display: inline-block;
-                            border-radius: 0px 10px 0px 10px;
-                            padding-left: 10px;
-                            padding-right: 10px;
-                            margin-top: 3px;
-                            padding-top: 3px;
-                            padding-bottom: 4px;
-                            background-color: ${color.dark.blue6};
-                            transition-duration: 0.15s;
-                            color: white;
-                            &:hover {
-                              cursor: not-allowed;
-                              filter: contrast(1.25);
-                            }
-                            > span,
-                            > img {
-                              vertical-align: middle;
-                            }
-                          `}
-                        >
-                          <span>
-                            Join on <b>gather.town</b>
-                          </span>
-                        </div>
-                      </div>
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      Navigation Challenge Results
-                      <br />
-                      <Time time="2:00 PM PST" />
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      Navigation Panel
-                      <br />
-                      <Time time="3:00 PM PST" />
-                      <InlineSlack />
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      Interaction Challenge Results
-                      <br />
-                      <Time time="4:00 PM PST" />
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      Interaction Panel
-                      <br />
-                      <Time time="5:00 PM PST" />
-                      <InlineSlack />
-                    </Timeline.Item>
-                  </Timeline>
-                </div>
-              </>
-            }
-          />
+        <Steps progressDot current={4} direction="vertical">
+          <Step title="CVPR Workshop" description={<>June 20, 2021. </>} />
           <Step
             title="Challenge Submission Deadlines"
             description="May 2021. Check each challenge for the specific date."
@@ -1368,185 +1283,6 @@ export default function Home({ data }) {
           />
           <Step title="Workshop Announced" description="Feb 17, 2021" />
         </Steps>
-      </Section>
-      <Section title="Panel Sessions">
-        <SubSection title="Speaker Panel">
-          <LiveSession
-            fluidImage={data.speakerPanel.childImageSharp.fluid}
-            videoURL="//www.youtube.com/watch?v=-UcfQnTk8dU&list=PL4XI7L9Xv5fXNCizY4FUOT69pnG5c5KLy"
-            rhs={
-              <>
-                <Slack />
-                <div
-                  css={css`
-                    > p {
-                      margin-top: 5px;
-                      text-indent: -10px;
-                      margin-left: 10px;
-                      &:nth-of-type(1) {
-                        margin-top: 20px;
-                      }
-                    }
-                  `}
-                >
-                  <p>
-                    <b>Date.</b> June 20th, 11 AM PST.
-                  </p>
-                  <p>
-                    <b>Panel.</b> The panel consists of speakers at this
-                    workshop.
-                  </p>
-                  <p>
-                    <b>Moderator.</b> Erik Wijmans.
-                  </p>
-                  <p>
-                    <b>Topics.</b> The topics are based on questions, likely
-                    involving cognitive development in humans, progress in
-                    embodied AI tasks, sim-2-real transfer, robotics, embodied
-                    AI for all, and more!
-                  </p>
-                </div>
-              </>
-            }
-          />
-        </SubSection>
-        <SubSection title="Navigation Panel">
-          <LiveSession
-            fluidImage={data.navigationPanel.childImageSharp.fluid}
-            videoURL="//www.youtube.com/watch?v=dOR-Q0XS6Xs&list=PL4XI7L9Xv5fXNCizY4FUOT69pnG5c5KLy"
-            rhs={
-              <>
-                <Slack />
-                <div
-                  css={css`
-                    > p {
-                      margin-top: 5px;
-                      text-indent: -10px;
-                      margin-left: 10px;
-                      &:nth-of-type(1) {
-                        margin-top: 20px;
-                      }
-                    }
-                  `}
-                >
-                  <p>
-                    <b>Date.</b> June 20th, 3 PM PST.
-                  </p>
-                  <p>
-                    <b>Panel.</b> The panel consists of challenge organizers who
-                    organized navigation tasks.
-                  </p>
-                  <p>
-                    <b>Moderator.</b> Luca Weihs.
-                  </p>
-                  <p>
-                    <b>Topics.</b> The topics are based on questions, likely
-                    involving navigation benchmarks and tasks, the "reality"
-                    gap, robotics, simulation platforms, and more!
-                  </p>
-                </div>
-              </>
-            }
-          />
-        </SubSection>
-        <SubSection title="Interaction Panel">
-          <LiveSession
-            fluidImage={data.interactionPanel.childImageSharp.fluid}
-            videoURL="//www.youtube.com/watch?v=kQ4mxaGd21M&list=PL4XI7L9Xv5fXNCizY4FUOT69pnG5c5KLy"
-            rhs={
-              <>
-                <Slack />
-                <div
-                  css={css`
-                    > p {
-                      margin-top: 5px;
-                      text-indent: -10px;
-                      margin-left: 10px;
-                      &:nth-of-type(1) {
-                        margin-top: 20px;
-                      }
-                    }
-                  `}
-                >
-                  <p>
-                    <b>Date.</b> June 20th, 5 PM PST.
-                  </p>
-                  <p>
-                    <b>Panel.</b> The panel consists of challenge organizers who
-                    organized interaction tasks.
-                  </p>
-                  <p>
-                    <b>Moderator.</b> Chengshu (Eric) Li.
-                  </p>
-                  <p>
-                    <b>Topics.</b> The topics are based on questions, likely
-                    involving interaction benchmarks and tasks,
-                    vision-and-language, rearrangement, leveraging audio, the
-                    "reality" gap, robotics, simulation platforms, and more!
-                  </p>
-                </div>
-              </>
-            }
-          />
-        </SubSection>
-      </Section>
-      <Section title="Invited Speakers">
-        <SubSection title="Motivation for Embodied AI Research">
-          <Speaker
-            organizations={["Stanford"]}
-            name="Hyowon Gweon"
-            fixedImg={data.hyowon.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=1S8lUbkuMnk&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-        </SubSection>
-        <SubSection title="Embodied Navigation">
-          <Speaker
-            organizations={["Google"]}
-            name="Peter Anderson"
-            fixedImg={data.peter.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=r5RmmXeUAwE&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-          <Speaker
-            organizations={["Google"]}
-            name="Aleksandra Faust"
-            fixedImg={data.aleksandra.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=x0CXtjpsWCE&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-        </SubSection>
-        <SubSection title="Robotics">
-          <Speaker
-            organizations={["UC Berkeley"]}
-            name="Anca Dragan"
-            fixedImg={data.anca.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=G-qxzerBq8I&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-          <Speaker
-            organizations={["Stanford", "Google"]}
-            name="Chelsea Finn"
-            fixedImg={data.chelsea.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=6IGdWmvcwb4&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-          <Speaker
-            organizations={["Facebook AI Research"]}
-            name="Akshara Rai"
-            fixedImg={data.akshara.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=Z3RMJA1Nopw&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-        </SubSection>
-        <SubSection title="Sim-2-Real Transfer">
-          <Speaker
-            organizations={["University of Toronto", "NVIDIA"]}
-            name="Sanja Fidler"
-            fixedImg={data.sanja.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=cgAatW67U4M&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-          <Speaker
-            organizations={["DeepMind"]}
-            name="Konstantinos Bousmalis"
-            fixedImg={data.konstantinos.childImageSharp.fixed}
-            url="//www.youtube.com/watch?v=jqxY7tqc6-Y&list=PL4XI7L9Xv5fWVW72Dmoqkc3lJUnF67jvF"
-          />
-        </SubSection>
       </Section>
       <Section title="Challenges">
         <p>
@@ -1736,31 +1472,12 @@ export default function Home({ data }) {
             <a href="http://cvpr2021.thecvf.com/node/33" target="_blank">
               CVPR format
             </a>
-            . Paper submissions are now closed.
+            . Paper submissions open soon.
           </p>
-        </SubSection>
-        <SubSection title="Accepted Papers">
-          <p>
-            <b>Note.</b> The order of the papers is randomized each time the
-            page is refreshed.
-          </p>
-          <div
-            css={css`
-              display: grid;
-              grid-gap: 2%;
-              grid-row-gap: 20px;
-              grid-template-columns: 49% 49%;
-              @media (max-width: 600px) {
-                grid-template-columns: 100%;
-              }
-            `}
-          >
-            {paperOrder.map((n: number) => acceptedPapers[n])}
-          </div>
         </SubSection>
       </Section>
       <Section title="Organizers">
-        The Embodied AI 2021 workshop is a joint effort by a large set of
+        The Embodied AI 2022 workshop is a joint effort by a large set of
         researchers from a variety of organizations. They are listed below in
         alphabetical order.
         <SubSection title="Organizing Committee">
