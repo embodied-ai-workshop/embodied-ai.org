@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@allenai/varnish@^2.0.24":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@allenai/varnish/-/varnish-2.1.2.tgz#e641dad89906b06dee8701e639574086af53ece7"
+  integrity sha512-CsUWJokRpr4eoOEoNmvWcF7usGadfqO3IS7TLoH/VNyHp3Kg4Koi0+BoLkt2+TtKqGXUM2cp+KHkC+9domD/Jw==
+  dependencies:
+    lodash.merge "^4.6.2"
+
 "@ant-design/colors@^6.0.0":
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/@ant-design/colors/-/colors-6.0.0.tgz#9b9366257cffcc47db42b9d0203bb592c13c0298"
@@ -8939,6 +8946,11 @@ lodash.memoize@^4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/lodash.memoize/-/lodash.memoize-4.1.2.tgz#bcc6c49a42a2840ed997f323eada5ecd182e0bfe"
   integrity sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4=
+
+lodash.merge@^4.6.2:
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
+  integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
 
 lodash.uniq@^4.5.0:
   version "4.5.0"

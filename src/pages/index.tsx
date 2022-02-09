@@ -23,6 +23,8 @@ import { Speaker, LiveSession, Video } from "./cvpr2020";
 import { OrganizerPics } from "./cvpr2020";
 import { css } from "@emotion/react";
 
+import "@allenai/varnish/dist/theme.css";
+
 /**
  * Return true if an email is formatted correctly, otherwise false.
  * Taken from https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
