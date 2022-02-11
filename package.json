@@ -14,7 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "@allenai/varnish": "^2.0.24",
+    "@allenai/varnish": "^3.0.7",
     "@ant-design/icons": "^4.3.0",
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.1.5",

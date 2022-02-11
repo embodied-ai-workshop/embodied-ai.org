@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@allenai/varnish@^2.0.24":
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/@allenai/varnish/-/varnish-2.1.2.tgz#e641dad89906b06dee8701e639574086af53ece7"
-  integrity sha512-CsUWJokRpr4eoOEoNmvWcF7usGadfqO3IS7TLoH/VNyHp3Kg4Koi0+BoLkt2+TtKqGXUM2cp+KHkC+9domD/Jw==
+"@allenai/varnish@^3.0.7":
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/@allenai/varnish/-/varnish-3.0.7.tgz#5120ddfe2b6490a03ef28839369abfa3bc40dac1"
+  integrity sha512-yxmmK6JVM5Db0TWwr1J++VFpBFcJEiCcGIpZ9GwUKXEzFZzLeAWsqRQd7GA4xIMctzz1IiGVp1xw1UAdmje5EQ==
   dependencies:
     lodash.merge "^4.6.2"
 
