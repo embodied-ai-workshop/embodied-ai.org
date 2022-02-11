@@ -1301,7 +1301,7 @@ export default function Home({ data }) {
           The table below describes, compares, and links each challenge.
         </p>
         <Table
-          scroll={{ x: "2250px" }}
+          scroll={{ x: "1500px" }}
           css={css`
             margin-top: 25px;
             margin-bottom: 50px;
@@ -1316,7 +1316,8 @@ export default function Home({ data }) {
               ),
               dataIndex: "challenge",
               key: "challenge",
-              fixed: windowWidth > 650 ? "left" : "",
+              // fixed: windowWidth > 650 ? "left" : "",
+              fixed: "left",
             },
             {
               title: (
@@ -1328,27 +1329,6 @@ export default function Home({ data }) {
               key: "task",
               sorter: (a, b) => a.task.localeCompare(b.task),
               sortDirections: ["ascend", "descend"],
-              fixed: windowWidth > 650 ? "left" : "",
-            },
-            {
-              title: (
-                <>
-                  <Emoji emoji="video_camera" size={18} /> Video
-                </>
-              ),
-              dataIndex: "video",
-              key: "video",
-              width: 300,
-            },
-            {
-              title: (
-                <>
-                  <Emoji emoji="trophy" size={18} /> Spotlight
-                </>
-              ),
-              dataIndex: "winnerSpotlight",
-              key: "winnerSpotlight",
-              width: 400,
             },
             {
               title: (
@@ -1386,6 +1366,7 @@ export default function Home({ data }) {
               key: "sceneDataset",
               sorter: (a, b) => a.sceneDataset.localeCompare(b.sceneDataset),
               sortDirections: ["ascend", "descend"],
+              width: 180,
             },
             {
               title: (
@@ -1397,6 +1378,7 @@ export default function Home({ data }) {
               dataIndex: "observations",
               sorter: (a, b) => a.observations.localeCompare(b.observations),
               sortDirections: ["ascend", "descend"],
+              width: 170,
             },
             {
               title: (
@@ -1415,18 +1397,23 @@ export default function Home({ data }) {
                 return aActuation.localeCompare(bActuation);
               },
               sortDirections: ["descend", "ascend"],
-              width: 205,
+              // width: 225,
             },
             {
               title: (
-                <>
+                <div
+                  css={css`
+                    text-align: center;
+                  `}
+                >
                   <Emoji emoji="joystick" size={18} /> Action Space
-                </>
+                </div>
               ),
               key: "actionSpace",
               dataIndex: "actionSpace",
               sorter: (a, b) => a.actionSpace.localeCompare(b.actionSpace),
               sortDirections: ["ascend", "descend"],
+              width: 165,
             },
           ]}
           dataSource={challengeData}
@@ -1467,7 +1454,7 @@ export default function Home({ data }) {
         </p>
         <SubSection title="Submission">
           <p>
-            The submission deadline is May 14th (
+            The submission deadline is May 16th (
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
             in the{" "}
