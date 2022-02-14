@@ -183,7 +183,7 @@ module.exports = {
           imageId: "roberto",
           name: "Roberto Mart\u00edn-Mart\u00edn",
           oc: false,
-          organization: "Stanford, UT Austin",
+          organization: "Stanford",
           sab: true,
           site: "https://robertomartinmartin.com/",
         },

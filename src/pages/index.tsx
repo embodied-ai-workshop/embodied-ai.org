@@ -957,7 +957,7 @@ export default function Home({ data }) {
   // }, []);
 
   // using 4:59 since PST is 5 hours behind AoE.
-  const paperDeadline = moment.tz("2021-05-15 04:59", "America/Los_Angeles");
+  const paperDeadline = moment.tz("2022-05-17 04:59", "America/Los_Angeles");
   const currentTime = moment();
   const duration = moment.duration(paperDeadline.diff(currentTime));
 
@@ -1102,8 +1102,8 @@ export default function Home({ data }) {
               ),
               dataIndex: "challenge",
               key: "challenge",
-              // fixed: windowWidth > 650 ? "left" : "",
-              fixed: "left",
+              fixed: windowWidth > 650 ? "left" : "",
+              // fixed: "left",
             },
             {
               title: (
@@ -1249,6 +1249,66 @@ export default function Home({ data }) {
             </a>
             . Paper submissions open soon.
           </p>
+          {/* <a href="//cmt3.research.microsoft.com/EAI2021" target="_blank"> */}
+          <div
+            css={css`
+              background: linear-gradient(
+                to bottom,
+                ${color.light.geekblue7},
+                ${color.light.geekblue9}
+              );
+              padding: 15px 15px;
+              border: 10px 5px;
+              border-radius: 5px;
+              color: white;
+              font-size: 20px;
+              text-align: center;
+            `}
+          >
+            <div>
+              <div
+                css={css`
+                  display: block;
+                  font-weight: 500;
+                `}
+              >
+                Paper Submissions Open Soon
+                {/* <ArrowForwardIcon
+                    css={css`
+                      vertical-align: middle;
+                      margin-top: -3px;
+                      font-size: 18px !important;
+                    `}
+                  /> */}
+              </div>
+              {/* <div
+                  css={css`
+                    color: white;
+                    font-size: 15px;
+                    font-family: monospace;
+                    opacity: 0.8;
+                  `}
+                >
+                  cmt3.research.microsoft.com/EAI2021
+                </div> */}
+              <div
+                css={css`
+                  display: inline-block;
+                  background: ${color.light.geekblue4 + "44"};
+                  padding: 5px 15px;
+                  font-size: 15px;
+                  color: ${color.gray5};
+                  margin-top: 15px;
+                  margin-bottom: 10px;
+                  border-radius: 5px;
+                  text-align: center;
+                `}
+              >
+                Deadline in {daysLeft} Days, {hoursLeft} Hours
+              </div>
+            </div>
+          </div>
+          {/* </a> */}
         </SubSection>
       </Section>
       <Section title="Organizers">
