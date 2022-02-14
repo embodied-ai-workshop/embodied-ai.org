@@ -346,7 +346,7 @@ module.exports = {
           name: "Roozbeh Mottaghi",
           oc: false,
           organization: "AI2, UW",
-          sab: false,
+          sab: true,
           site: "https://roozbehm.info/",
         },
         {
