@@ -3,7 +3,7 @@
 .hash {
   transition-duration: 0.15s;
   font-weight: normal;
-  margin-right: -28px;
+  margin-right: -20px;
   pointer-events: none;
 
   &:hover {
@@ -13,7 +13,7 @@
 
 .textWrapper {
   // hides the hash
-  margin-left: -26px;
+  margin-left: -34px;
 }
 
 @include breakpoint(mobile) {

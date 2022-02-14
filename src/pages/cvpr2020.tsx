@@ -19,22 +19,24 @@ import { css } from "@emotion/react";
 export const OrganizerPics = function (props: { organizers: any; data: any }) {
   return (
     <div className={style.organizerContainer}>
-      {props.organizers.map(organizer => (
-        <div className={style.organizer}>
-          <div className={style.organizerPic}>
-            <a href={organizer.site} target="_blank">
-              <Img
-                fluid={
-                  props.data[organizer.imageId + "Org"].childImageSharp.fluid
-                }
-              />
-            </a>
+      {props.organizers.map(organizer => {
+        return (
+          <div className={style.organizer}>
+            <div className={style.organizerPic}>
+              <a href={organizer.site} target="_blank">
+                <Img
+                  fluid={
+                    props.data[organizer.imageId + "Org"].childImageSharp.fluid
+                  }
+                />
+              </a>
+            </div>
+            <b>{organizer.name}</b>
+            <br />
+            {organizer.organization}
           </div>
-          <b>{organizer.name}</b>
-          <br />
-          {organizer.organization}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

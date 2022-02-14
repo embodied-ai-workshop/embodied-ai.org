@@ -89,12 +89,9 @@ function ChallengeSpotlight(props: {
 }
 
 const challengePageMap = {
-  "AI2-THOR ObjectNav": (
-    <a
-      href="//ai2thor.allenai.org/robothor/cvpr-2021-challenge"
-      target="_blank"
-    >
-      AI2-THOR ObjectNav
+  "AI2-THOR FurnMove": (
+    <a href="//ai2thor.allenai.org/FurnMove" target="_blank">
+      AI2-THOR FurnMove
     </a>
   ),
   "AI2-THOR Rearrangement": (
@@ -103,27 +100,35 @@ const challengePageMap = {
     </a>
   ),
   ALFRED: (
-    <a href="//askforalfred.com/EAI21/" target="_blank">
+    <a href="//askforalfred.com/EAI22" target="_blank">
       ALFRED
     </a>
   ),
   Habitat: (
-    <a href="//aihabitat.org/challenge/2021" target="_blank">
+    <a href="//aihabitat.org/challenge/2022" target="_blank">
       Habitat
     </a>
   ),
   iGibson: (
-    <a href="http://svl.stanford.edu/igibson/challenge.html" target="_blank">
+    <a href="//svl.stanford.edu/igibson/challenge.html" target="_blank">
       iGibson
     </a>
   ),
+  TEACh: (
+    <a href="//teachingalfred.github.io/EAI22" target="_blank">
+      TEACh
+    </a>
+  ),
   MultiOn: (
-    <a href="//multion-challenge.github.io/" target="_blank">
+    <a href="http://multion-challenge.cs.sfu.ca" target="_blank">
       MultiON
     </a>
   ),
   "Robotic Vision Scene Understanding": (
-    <a href="http://cvpr2021.roboticvisionchallenge.org/" target="_blank">
+    <a
+      href="//nikosuenderhauf.github.io/roboticvisionchallenges/cvpr2022"
+      target="_blank"
+    >
       Robotic Vision Scene Understanding
     </a>
   ),
@@ -138,7 +143,7 @@ const challengePageMap = {
     </a>
   ),
   "TDW-Transport": (
-    <a href="http://tdw-transport.csail.mit.edu/" target="_blank">
+    <a href="http://tdw-transport.csail.mit.edu" target="_blank">
       TDW-Transport
     </a>
   ),
@@ -803,44 +808,18 @@ export default function Home({ data }) {
 
   const challengeData = [
     {
-      challenge: challengePageMap["AI2-THOR ObjectNav"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=bUW8oGKqtY8&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="ai2thor2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: (
-        <>
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=EH94fGEjj1I&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="ict_robothor"
-            data={data}
-            width="200px"
-            rank="1st Place"
-          />
-        </>
-      ),
-      key: "ai2thor-objectnav",
-      task: "ObjectNav",
-      interactiveActions: "",
+      challenge: challengePageMap["AI2-THOR FurnMove"],
+      key: "ai2thor-furnmove",
+      task: "Multi-agent Furniture Moving",
+      interactiveActions: "✓",
       simulationPlatform: "AI2-THOR",
-      sceneDataset: "RoboTHOR",
+      sceneDataset: "iTHOR",
       actionSpace: "Discrete",
-      observations: "RGB-D",
-      stochasticAcuation: "✓",
+      observations: "RGB, Localization",
+      stochasticAcuation: "",
     },
     {
       challenge: challengePageMap["AI2-THOR Rearrangement"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=bUW8oGKqtY8&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="ai2thor2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: <></>,
       key: "ai2thor-rearrangement",
       task: "Rearrangement",
       interactiveActions: "✓",
@@ -852,14 +831,6 @@ export default function Home({ data }) {
     },
     {
       challenge: challengePageMap["ALFRED"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=-YmHT2fSQDo&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="alfred2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: <></>,
       key: "alfred",
       task: "Vision-and-Language Interaction",
       interactiveActions: "✓",
@@ -871,29 +842,6 @@ export default function Home({ data }) {
     },
     {
       challenge: challengePageMap["Habitat"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=SAoN2giK6Gk&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="habitat2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: (
-        <>
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=z7HflwSv3GM&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="redRabbit_habitat"
-            data={data}
-            rank="1st Place"
-          />
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=40cbSZefjjY&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="habitatOnWeb_habitat"
-            data={data}
-            rank="2nd Place"
-          />
-        </>
-      ),
       key: "habitat-objectNav",
       task: "ObjectNav",
       interactiveActions: "",
@@ -904,73 +852,7 @@ export default function Home({ data }) {
       stochasticAcuation: "",
     },
     {
-      challenge: challengePageMap["Habitat"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=SAoN2giK6Gk&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="habitat2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: (
-        <>
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=I-4s2keQ1Ig&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="inspir_habitat"
-            data={data}
-            rank="1st Place"
-          />
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=z1lYiPfEAOQ&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="ucu_habitat"
-            data={data}
-            rank="2nd Place"
-          />
-        </>
-      ),
-      key: "habitat-pointnav",
-      task: "PointNav v2",
-      interactiveActions: "",
-      simulationPlatform: "Habitat",
-      sceneDataset: "Gibson",
-      actionSpace: "Discrete",
-      observations: "Noisy RGB-D",
-      stochasticAcuation: "✓",
-    },
-    {
       challenge: challengePageMap["iGibson"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=1uSsds7HSrQ&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="igibson2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: (
-        <>
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=kC9wdC3abDo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="gatech_igibson"
-            data={data}
-            display="block"
-            rank="1st Place"
-          />
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=x5ewIkkgYuQ&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="lpais_igibson"
-            data={data}
-            display="block"
-            rank="2nd Place"
-          />
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=gK4ek_tvCJo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="nicsefc_igibson"
-            data={data}
-            display="block"
-            rank="4th Place"
-          />
-        </>
-      ),
       key: "igibson-in",
       task: "Interactive Navigation",
       interactiveActions: "✓",
@@ -982,41 +864,6 @@ export default function Home({ data }) {
     },
     {
       challenge: challengePageMap["iGibson"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=1uSsds7HSrQ&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="igibson2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: (
-        <>
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=gK4ek_tvCJo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="nicsefc_igibson"
-            data={data}
-            rank="1st Place"
-          />
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=x5ewIkkgYuQ&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="lpais_igibson"
-            data={data}
-            rank="3rd Place"
-          />
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=c2TRfio7J-M&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="lpacsi_igibson"
-            data={data}
-            rank="4th Place"
-          />
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=kC9wdC3abDo&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="gatech_igibson"
-            data={data}
-            rank="5th Place"
-          />
-        </>
-      ),
       key: "igibson-social-navigation",
       task: "Social Navigation",
       interactiveActions: "✓",
@@ -1028,38 +875,6 @@ export default function Home({ data }) {
     },
     {
       challenge: challengePageMap["MultiOn"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=ghX5UDWD1HU&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="multion2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: (
-        <>
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=boDaAORoKho&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="lyon_multion"
-            data={data}
-            display="block"
-            rank="1st Place"
-          />
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=XgT2w6rUwjM&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="sgolam_multion"
-            data={data}
-            display="block"
-            rank="2nd Place"
-          />
-          <ChallengeSpotlight
-            url="//www.youtube.com/watch?v=AIbVRo4xIh8&list=PL4XI7L9Xv5fVnzoKzSL0GOu2l2fIAJA7O"
-            imageQuery="vimp_multion"
-            data={data}
-            display="block"
-            rank="3rd Place"
-          />
-        </>
-      ),
       key: "multion",
       task: "Multi-Object Navigation",
       interactiveActions: "",
@@ -1071,14 +886,6 @@ export default function Home({ data }) {
     },
     {
       challenge: challengePageMap["Robotic Vision Scene Understanding"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=uDhIEw9TA80&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="rvsu2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: <></>,
       key: "rvsu",
       task: "Rearrangement (SCD)",
       interactiveActions: "",
@@ -1090,14 +897,6 @@ export default function Home({ data }) {
     },
     {
       challenge: challengePageMap["Robotic Vision Scene Understanding"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=uDhIEw9TA80&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="rvsu2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: <></>,
       key: "rvsu-2",
       task: "Semantic SLAM",
       interactiveActions: "",
@@ -1109,14 +908,6 @@ export default function Home({ data }) {
     },
     {
       challenge: challengePageMap["RxR-Habitat"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=YGwHGgD-9gQ&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="rxr2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: <></>,
       key: "rxr",
       task: "Vision-and-Language Navigation",
       interactiveActions: "",
@@ -1128,14 +919,6 @@ export default function Home({ data }) {
     },
     {
       challenge: challengePageMap["SoundSpaces"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=ANmhSo6gXNg&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="soundspaces2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: <></>,
       key: "soundspaces",
       task: "Audio Visual Navigation",
       interactiveActions: "",
@@ -1147,14 +930,6 @@ export default function Home({ data }) {
     },
     {
       challenge: challengePageMap["TDW-Transport"],
-      video: (
-        <ChallengeVideo
-          url="//www.youtube.com/watch?v=ffh7zxWAkFw&list=PL4XI7L9Xv5fVzPkYPxASt64LhfNM8MAlP"
-          imageQuery="tdw2021"
-          data={data}
-        />
-      ),
-      winnerSpotlight: <></>,
       key: "tdw",
       task: "Rearrangement",
       interactiveActions: "✓",
@@ -1163,6 +938,17 @@ export default function Home({ data }) {
       observations: "RGB-D, Metadata",
       actionSpace: "Discrete",
       stochasticAcuation: "✓",
+    },
+    {
+      challenge: challengePageMap["TEACh"],
+      key: "teach",
+      task: "Vision-and-Dialogue Interaction",
+      interactiveActions: "✓",
+      simulationPlatform: "AI2-THOR",
+      sceneDataset: "iTHOR",
+      observations: "RGB",
+      actionSpace: "Discrete, Text Generation",
+      stochasticAcuation: "",
     },
   ];
 
@@ -1262,10 +1048,10 @@ export default function Home({ data }) {
           </li>
         </ul>
         <p>
-          The Embodied AI 2021 workshop will be held virtually in conjunction
-          with CVPR 2021. It will feature a host of invited talks covering a
-          variety of topics in Embodied AI, many exciting challenges, a poster
-          session, and panel discussions.
+          The Embodied AI 2022 workshop will be held in conjunction with CVPR
+          2022. It will feature a host of invited talks covering a variety of
+          topics in Embodied AI, many exciting challenges, a poster session, and
+          panel discussions.
         </p>
         <EmailSubscription
           actionIdentifier="1FAIpQLSeIZrn-tk7Oain2R8gc_Q0HzLMLQ9XXwqu3KecK_E5kALpiug"
@@ -1274,21 +1060,21 @@ export default function Home({ data }) {
       </Section>
       <Section title="Timeline">
         <Steps progressDot current={4} direction="vertical">
-          <Step title="CVPR Workshop" description={<>June 20, 2021. </>} />
+          <Step title="CVPR Workshop" description={<>June 19, 2022. </>} />
           <Step
             title="Challenge Submission Deadlines"
             description="May 2021. Check each challenge for the specific date."
           />
           <Step
             title="Paper Submission Deadline"
-            description="May 14, 2021 (Anywhere on Earth)"
+            description="May 16, 2021 (Anywhere on Earth)"
           />
-          <Step title="Workshop Announced" description="Feb 17, 2021" />
+          <Step title="Workshop Announced" description="Feb 14, 2021" />
         </Steps>
       </Section>
       <Section title="Challenges">
         <p>
-          The Embodied AI 2021 workshop is hosting many exciting challenges
+          The Embodied AI 2022 workshop is hosting many exciting challenges
           covering a wide range of topics such as rearrangement, visual
           navigation, vision-and-language, and audio-visual navigation. More
           details regarding data, submission instructions, and timelines can be
@@ -1471,25 +1257,25 @@ export default function Home({ data }) {
         alphabetical order.
         <SubSection title="Organizing Committee">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers.filter(
-              (organizer: any) => organizer.oc === true
-            )}
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2022.organizers
+              .filter((organizer: any) => organizer.oc === true)
+              .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
           />
         </SubSection>
         <SubSection title="Challenge Organizers">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers.filter(
-              (organizer: any) => organizer.challenge === true
-            )}
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2022.organizers
+              .filter((organizer: any) => organizer.challenge === true)
+              .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
           />
         </SubSection>
         <SubSection title="Scientific Advisory Board">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2021.organizers.filter(
-              (organizer: any) => organizer.sab === true
-            )}
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2022.organizers
+              .filter((organizer: any) => organizer.sab === true)
+              .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
           />
         </SubSection>
@@ -1521,7 +1307,7 @@ export const query = graphql`
     allSite {
       nodes {
         siteMetadata {
-          cvpr2021 {
+          cvpr2022 {
             organizers {
               name
               imageId
@@ -1536,111 +1322,134 @@ export const query = graphql`
       }
     }
 
-    # speaker pictures
-    akshara: file(relativePath: { eq: "cvpr2021/akshara-rai.jpg" }) {
-      ...VideoThumbnail
-    }
-    aleksandra: file(relativePath: { eq: "cvpr2021/aleksandra-faust.jpg" }) {
-      ...VideoThumbnail
-    }
-    anca: file(relativePath: { eq: "cvpr2021/anca-dragan.jpg" }) {
-      ...VideoThumbnail
-    }
-    chelsea: file(relativePath: { eq: "cvpr2021/chelsea-finn.jpg" }) {
-      ...VideoThumbnail
-    }
-    hyowon: file(relativePath: { eq: "cvpr2021/hyowon-gweon.jpg" }) {
-      ...VideoThumbnail
-    }
-    peter: file(relativePath: { eq: "cvpr2021/peter-anderson.jpg" }) {
-      ...VideoThumbnail
-    }
-    sanja: file(relativePath: { eq: "cvpr2021/sanja-fidler.jpg" }) {
-      ...VideoThumbnail
-    }
-    konstantinos: file(
-      relativePath: { eq: "cvpr2021/konstantinos-bousmalis.jpg" }
-    ) {
-      ...VideoThumbnail
-    }
-
     # organizer pictures
+    devendraOrg: file(relativePath: { eq: "organizers/devendra.jpg" }) {
+      ...FluidImage
+    }
     claudiaOrg: file(relativePath: { eq: "organizers/claudia.jpg" }) {
-      ...FluidImage
-    }
-    apoorvOrg: file(relativePath: { eq: "organizers/apoorv.jpg" }) {
-      ...FluidImage
-    }
-    joseAOrg: file(relativePath: { eq: "organizers/joseA.jpg" }) {
-      ...FluidImage
-    }
-    peterOrg: file(relativePath: { eq: "organizers/peter.jpg" }) {
-      ...FluidImage
-    }
-    dhruvOrg: file(relativePath: { eq: "organizers/dhruv.jpg" }) {
-      ...FluidImage
-    }
-    yonatanOrg: file(relativePath: { eq: "organizers/yonatan.jpg" }) {
-      ...FluidImage
-    }
-    sumanOrg: file(relativePath: { eq: "organizers/suman.jpg" }) {
-      ...FluidImage
-    }
-    angelOrg: file(relativePath: { eq: "organizers/angel.jpg" }) {
-      ...FluidImage
-    }
-    changanOrg: file(relativePath: { eq: "organizers/changan.jpg" }) {
-      ...FluidImage
-    }
-    soniaOrg: file(relativePath: { eq: "organizers/sonia.jpg" }) {
-      ...FluidImage
-    }
-    ferasOrg: file(relativePath: { eq: "organizers/feras.jpg" }) {
-      ...FluidImage
-    }
-    mattOrg: file(relativePath: { eq: "organizers/matt.jpg" }) {
-      ...FluidImage
-    }
-    aliOrg: file(relativePath: { eq: "organizers/ali.jpg" }) {
       ...FluidImage
     }
     anthonyOrg: file(relativePath: { eq: "organizers/anthony.jpg" }) {
       ...FluidImage
     }
-    chuangOrg: file(relativePath: { eq: "organizers/chuang.jpg" }) {
+    chengshuOrg: file(relativePath: { eq: "organizers/chengshu.jpg" }) {
       ...FluidImage
     }
-    aaronOrg: file(relativePath: { eq: "organizers/aaron.jpg" }) {
+    oleksandrOrg: file(relativePath: { eq: "organizers/oleksandr.jpg" }) {
       ...FluidImage
     }
-    kristenOrg: file(relativePath: { eq: "organizers/kristen.jpg" }) {
+    mikeOrg: file(relativePath: { eq: "organizers/mike.jpg" }) {
       ...FluidImage
     }
-    davidOrg: file(relativePath: { eq: "organizers/david.jpg" }) {
+    andrewSOrg: file(relativePath: { eq: "organizers/andrewS.jpg" }) {
       ...FluidImage
     }
-    winsonOrg: file(relativePath: { eq: "organizers/winson.jpg" }) {
+    lucaOrg: file(relativePath: { eq: "organizers/luca.jpg" }) {
+      ...FluidImage
+    }
+    mattOrg: file(relativePath: { eq: "organizers/matt.jpg" }) {
+      ...FluidImage
+    }
+    soreanOrg: file(relativePath: { eq: "organizers/sorean.jpg" }) {
+      ...FluidImage
+    }
+    germanOrg: file(relativePath: { eq: "organizers/german.jpg" }) {
+      ...FluidImage
+    }
+    joanneOrg: file(relativePath: { eq: "organizers/joanne.jpg" }) {
       ...FluidImage
     }
     joseMOrg: file(relativePath: { eq: "organizers/joseM.jpg" }) {
       ...FluidImage
     }
+    soniaOrg: file(relativePath: { eq: "organizers/sonia.jpg" }) {
+      ...FluidImage
+    }
+    aliOrg: file(relativePath: { eq: "organizers/ali.jpg" }) {
+      ...FluidImage
+    }
+    joseAOrg: file(relativePath: { eq: "organizers/joseA.jpg" }) {
+      ...FluidImage
+    }
+    aniOrg: file(relativePath: { eq: "organizers/ani.jpg" }) {
+      ...FluidImage
+    }
+    feifeiOrg: file(relativePath: { eq: "organizers/feifei.jpg" }) {
+      ...FluidImage
+    }
+    antonioOrg: file(relativePath: { eq: "organizers/antonio.jpg" }) {
+      ...FluidImage
+    }
+    robertoOrg: file(relativePath: { eq: "organizers/roberto.jpg" }) {
+      ...FluidImage
+    }
+    deviOrg: file(relativePath: { eq: "organizers/devi.jpg" }) {
+      ...FluidImage
+    }
+    silvioOrg: file(relativePath: { eq: "organizers/silvio.jpg" }) {
+      ...FluidImage
+    }
+    manolisOrg: file(relativePath: { eq: "organizers/manolis.jpg" }) {
+      ...FluidImage
+    }
+    jieOrg: file(relativePath: { eq: "organizers/jie.jpg" }) {
+      ...FluidImage
+    }
+    alexanderOrg: file(relativePath: { eq: "organizers/alexander.jpg" }) {
+      ...FluidImage
+    }
+    feiOrg: file(relativePath: { eq: "organizers/fei.jpg" }) {
+      ...FluidImage
+    }
+    karmeshOrg: file(relativePath: { eq: "organizers/karmesh.jpg" }) {
+      ...FluidImage
+    }
+    aaronOrg: file(relativePath: { eq: "organizers/aaron.jpg" }) {
+      ...FluidImage
+    }
     rishabhOrg: file(relativePath: { eq: "organizers/rishabh.jpg" }) {
+      ...FluidImage
+    }
+    ramOrg: file(relativePath: { eq: "organizers/ram.jpg" }) {
+      ...FluidImage
+    }
+    santhoshOrg: file(relativePath: { eq: "organizers/santhosh.jpg" }) {
+      ...FluidImage
+    }
+    erikOrg: file(relativePath: { eq: "organizers/erik.jpg" }) {
+      ...FluidImage
+    }
+    alexanderCOrg: file(relativePath: { eq: "organizers/alexanderC.jpg" }) {
+      ...FluidImage
+    }
+    dhruvOrg: file(relativePath: { eq: "organizers/dhruv.jpg" }) {
       ...FluidImage
     }
     unnatOrg: file(relativePath: { eq: "organizers/unnat.jpg" }) {
       ...FluidImage
     }
-    jaewooOrg: file(relativePath: { eq: "organizers/jaewoo.jpg" }) {
-      ...FluidImage
-    }
-    aniruddhaOrg: file(relativePath: { eq: "organizers/ani.jpg" }) {
-      ...FluidImage
-    }
-    vladlenOrg: file(relativePath: { eq: "organizers/vladlen.jpg" }) {
-      ...FluidImage
-    }
     ericOrg: file(relativePath: { eq: "organizers/eric.jpg" }) {
+      ...FluidImage
+    }
+    roozbehOrg: file(relativePath: { eq: "organizers/roozbeh.jpg" }) {
+      ...FluidImage
+    }
+    mohitOrg: file(relativePath: { eq: "organizers/mohit.png" }) {
+      ...FluidImage
+    }
+    ishikaOrg: file(relativePath: { eq: "organizers/ishika.jpg" }) {
+      ...FluidImage
+    }
+    anthonyLOrg: file(relativePath: { eq: "organizers/anthonyL.jpg" }) {
+      ...FluidImage
+    }
+    tiffanyOrg: file(relativePath: { eq: "organizers/tiffany.jpg" }) {
+      ...FluidImage
+    }
+    yonatanOrg: file(relativePath: { eq: "organizers/yonatan.jpg" }) {
+      ...FluidImage
+    }
+    jesseOrg: file(relativePath: { eq: "organizers/jesse.jpg" }) {
       ...FluidImage
     }
     jacobOrg: file(relativePath: { eq: "organizers/jacob.jpg" }) {
@@ -1652,185 +1461,40 @@ export const query = graphql`
     stefanOrg: file(relativePath: { eq: "organizers/stefan.jpg" }) {
       ...FluidImage
     }
-    chengshuOrg: file(relativePath: { eq: "organizers/chengshu.jpg" }) {
+    peterOrg: file(relativePath: { eq: "organizers/peter.jpg" }) {
       ...FluidImage
     }
-    feifeiOrg: file(relativePath: { eq: "organizers/feifei.jpg" }) {
+    changanOrg: file(relativePath: { eq: "organizers/changan.jpg" }) {
       ...FluidImage
     }
-    antonioOrg: file(relativePath: { eq: "organizers/antonio.jpg" }) {
+    sagnikOrg: file(relativePath: { eq: "organizers/sagnik.jpg" }) {
       ...FluidImage
     }
-    oleksandrOrg: file(relativePath: { eq: "organizers/oleksandr.jpg" }) {
+    kristenOrg: file(relativePath: { eq: "organizers/kristen.jpg" }) {
       ...FluidImage
     }
-    jitendraOrg: file(relativePath: { eq: "organizers/jitendra.png" }) {
-      ...FluidImage
-    }
-    robertoOrg: file(relativePath: { eq: "organizers/roberto.jpg" }) {
-      ...FluidImage
-    }
-    roozbehOrg: file(relativePath: { eq: "organizers/roozbeh.jpg" }) {
-      ...FluidImage
-    }
-    deviOrg: file(relativePath: { eq: "organizers/devi.jpg" }) {
-      ...FluidImage
-    }
-    shivanshOrg: file(relativePath: { eq: "organizers/shivansh.jpg" }) {
-      ...FluidImage
-    }
-    germanOrg: file(relativePath: { eq: "organizers/german.jpg" }) {
-      ...FluidImage
-    }
-    silvioOrg: file(relativePath: { eq: "organizers/silvio.jpg" }) {
-      ...FluidImage
-    }
-    manolisOrg: file(relativePath: { eq: "organizers/manolis.jpg" }) {
-      ...FluidImage
-    }
-    mohitOrg: file(relativePath: { eq: "organizers/mohit.png" }) {
-      ...FluidImage
-    }
-    rohanOrg: file(relativePath: { eq: "organizers/rohan.jpg" }) {
-      ...FluidImage
-    }
-    nikoOrg: file(relativePath: { eq: "organizers/niko.jpg" }) {
-      ...FluidImage
-    }
-    benOrg: file(relativePath: { eq: "organizers/ben.jpg" }) {
+    chuangOrg: file(relativePath: { eq: "organizers/chuang.jpg" }) {
       ...FluidImage
     }
     joshOrg: file(relativePath: { eq: "organizers/josh.jpg" }) {
       ...FluidImage
     }
-    jesseOrg: file(relativePath: { eq: "organizers/jesse.jpg" }) {
+    benOrg: file(relativePath: { eq: "organizers/ben.jpg" }) {
       ...FluidImage
     }
-    alexanderOrg: file(relativePath: { eq: "organizers/alexander.jpg" }) {
+    angelOrg: file(relativePath: { eq: "organizers/angel.jpg" }) {
       ...FluidImage
     }
-    joanneOrg: file(relativePath: { eq: "organizers/joanne.jpg" }) {
+    soniaROrg: file(relativePath: { eq: "organizers/soniaR.jpg" }) {
       ...FluidImage
     }
-    saimOrg: file(relativePath: { eq: "organizers/saim.jpg" }) {
+    tommasoOrg: file(relativePath: { eq: "organizers/tommaso.jpg" }) {
       ...FluidImage
     }
-    lucaOrg: file(relativePath: { eq: "organizers/luca.jpg" }) {
+    davidOrg: file(relativePath: { eq: "organizers/david.jpg" }) {
       ...FluidImage
     }
-    andrewOrg: file(relativePath: { eq: "organizers/andrew.jpg" }) {
-      ...FluidImage
-    }
-    erikOrg: file(relativePath: { eq: "organizers/erik.jpg" }) {
-      ...FluidImage
-    }
-    feiOrg: file(relativePath: { eq: "organizers/fei.jpg" }) {
-      ...FluidImage
-    }
-    haoyangOrg: file(relativePath: { eq: "organizers/haoyang.jpg" }) {
-      ...FluidImage
-    }
-
-    haoyangOrg: file(relativePath: { eq: "organizers/haoyang.jpg" }) {
-      ...FluidImage
-    }
-
-    # Challenge Videos
-    ai2thor2021: file(relativePath: { eq: "cvpr2021/ai2thor-challenges.jpg" }) {
-      ...FluidImage
-    }
-    alfred2021: file(relativePath: { eq: "cvpr2021/alfred-challenge.jpg" }) {
-      ...FluidImage
-    }
-    habitat2021: file(relativePath: { eq: "cvpr2021/habitat-challenge.jpg" }) {
-      ...FluidImage
-    }
-    igibson2021: file(relativePath: { eq: "cvpr2021/igibson-challenge.jpg" }) {
-      ...FluidImage
-    }
-    multion2021: file(relativePath: { eq: "cvpr2021/multion-challenge.jpg" }) {
-      ...FluidImage
-    }
-    rvsu2021: file(
-      relativePath: {
-        eq: "cvpr2021/robotic-vision-scene-understanding-challenge.jpg"
-      }
-    ) {
-      ...FluidImage
-    }
-    rxr2021: file(relativePath: { eq: "cvpr2021/rxr-habitat.jpg" }) {
-      ...FluidImage
-    }
-    soundspaces2021: file(
-      relativePath: { eq: "cvpr2021/soundspaces-challenge.jpg" }
-    ) {
-      ...FluidImage
-    }
-    tdw2021: file(relativePath: { eq: "cvpr2021/tdw-transport.jpg" }) {
-      ...FluidImage
-    }
-
-    interactionPanel: file(
-      relativePath: { eq: "cvpr2021/interaction-panel.jpg" }
-    ) {
-      ...FluidImage
-    }
-    navigationPanel: file(
-      relativePath: { eq: "cvpr2021/navigation-panel.jpg" }
-    ) {
-      ...FluidImage
-    }
-    speakerPanel: file(relativePath: { eq: "cvpr2021/speaker-panel.jpg" }) {
-      ...FluidImage
-    }
-    liveStream: file(relativePath: { eq: "cvpr2021/live-stream21.jpg" }) {
-      ...FluidImage
-    }
-
-    # spotlights
-    gatech_igibson: file(relativePath: { eq: "cvpr2021/gatech-igibson.jpg" }) {
-      ...FluidImage
-    }
-    lpacsi_igibson: file(
-      relativePath: { eq: "cvpr2021/challenge-lpacsi.jpg" }
-    ) {
-      ...FluidImage
-    }
-    lpais_igibson: file(relativePath: { eq: "cvpr2021/team-lpais.jpg" }) {
-      ...FluidImage
-    }
-    nicsefc_igibson: file(relativePath: { eq: "cvpr2021/team-nicsefc.jpg" }) {
-      ...FluidImage
-    }
-
-    ict_robothor: file(relativePath: { eq: "cvpr2021/ict-cas.jpg" }) {
-      ...FluidImage
-    }
-
-    redRabbit_habitat: file(
-      relativePath: { eq: "cvpr2021/red-rabbit-team.jpg" }
-    ) {
-      ...FluidImage
-    }
-    habitatOnWeb_habitat: file(
-      relativePath: { eq: "cvpr2021/habitat-on-web.jpg" }
-    ) {
-      ...FluidImage
-    }
-    inspir_habitat: file(relativePath: { eq: "cvpr2021/inspir-team.jpg" }) {
-      ...FluidImage
-    }
-    ucu_habitat: file(relativePath: { eq: "cvpr2021/ucu-mlab.jpg" }) {
-      ...FluidImage
-    }
-
-    lyon_multion: file(relativePath: { eq: "cvpr2021/team-lyon.jpg" }) {
-      ...FluidImage
-    }
-    sgolam_multion: file(relativePath: { eq: "cvpr2021/sgolam.jpg" }) {
-      ...FluidImage
-    }
-    vimp_multion: file(relativePath: { eq: "cvpr2021/team-vimp.jpg" }) {
+    nikoOrg: file(relativePath: { eq: "organizers/niko.jpg" }) {
       ...FluidImage
     }
   }
