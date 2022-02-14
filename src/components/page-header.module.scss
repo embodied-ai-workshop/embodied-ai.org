@@ -53,6 +53,14 @@ $darkBlue: #1d3d7e;
       text-align: center;
       width: 50%;
       display: inline-block;
+
+      @include breakpoint(tablet) {
+        width: 100% !important;
+      }
+
+      @include breakpoint(mobile) {
+        margin-bottom: 20px;
+      }
     }
 
     .right,
@@ -78,6 +86,7 @@ $darkBlue: #1d3d7e;
         opacity: 0;
         z-index: -99 !important;
         pointer-events: none;
+        width: 0 !important;
       }
     }
   }
