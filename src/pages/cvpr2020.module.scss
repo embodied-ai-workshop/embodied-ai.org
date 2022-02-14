@@ -152,6 +152,13 @@
   margin-top: 15px;
   text-align: center;
 
+  // quick 2022 fix so sonia isn't alone on the bottom
+  // row.
+  @include breakpoint(desktop) {
+    width: 90%;
+    margin: auto;
+  }
+
   .organizer {
     width: 75px;
     display: inline-block;
