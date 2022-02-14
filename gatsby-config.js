@@ -297,12 +297,21 @@ module.exports = {
         },
         {
           challenge: true,
+          imageId: "ericU",
+          name: "Eric Undersander",
+          oc: false,
+          organization: "Meta AI",
+          sab: false,
+          site: "https://www.ericundersander.com/",
+        },
+        {
+          challenge: true,
           imageId: "alexanderC",
           name: "Alexander Clegg",
           oc: false,
           organization: "Meta AI",
           sab: false,
-          site: "https://scholar.google.com/citations?user=p463opcAAAAJ&hl=en",
+          site: "https://github.com/aclegg3",
         },
         {
           challenge: true,

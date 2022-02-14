@@ -21,7 +21,7 @@ export const OrganizerPics = function (props: { organizers: any; data: any }) {
     <div className={style.organizerContainer}>
       {props.organizers.map(organizer => {
         return (
-          <div className={style.organizer}>
+          <div className={style.organizer} key={organizer.imageId}>
             <div className={style.organizerPic}>
               <a href={organizer.site} target="_blank">
                 <Img

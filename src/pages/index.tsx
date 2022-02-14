@@ -1479,6 +1479,9 @@ export const query = graphql`
     erikOrg: file(relativePath: { eq: "organizers/erik.jpg" }) {
       ...FluidImage
     }
+    ericUOrg: file(relativePath: { eq: "organizers/ericU.jpg" }) {
+      ...FluidImage
+    }
     alexanderCOrg: file(relativePath: { eq: "organizers/alexanderC.jpg" }) {
       ...FluidImage
     }
