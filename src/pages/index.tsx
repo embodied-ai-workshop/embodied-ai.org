@@ -114,11 +114,6 @@ const challengePageMap = {
       iGibson
     </a>
   ),
-  TEACh: (
-    <a href="//teachingalfred.github.io/EAI22" target="_blank">
-      TEACh
-    </a>
-  ),
   MultiOn: (
     <a href="http://multion-challenge.cs.sfu.ca" target="_blank">
       MultiON
@@ -145,6 +140,11 @@ const challengePageMap = {
   "TDW-Transport": (
     <a href="http://tdw-transport.csail.mit.edu" target="_blank">
       TDW-Transport
+    </a>
+  ),
+  TEACh: (
+    <a href="//teachingalfred.github.io/EAI22" target="_blank">
+      TEACh
     </a>
   ),
 };
@@ -1059,17 +1059,17 @@ export default function Home({ data }) {
         />
       </Section>
       <Section title="Timeline">
-        <Steps progressDot current={4} direction="vertical">
-          <Step title="CVPR Workshop" description={<>June 19, 2022. </>} />
+        <Steps progressDot current={2} direction="vertical">
+          <Step title="CVPR Workshop" description={<>June 19, 2022</>} />
           <Step
             title="Challenge Submission Deadlines"
-            description="May 2021. Check each challenge for the specific date."
+            description="May 2022. Check each challenge for the specific date."
           />
           <Step
             title="Paper Submission Deadline"
-            description="May 16, 2021 (Anywhere on Earth)"
+            description="May 16, 2022 (Anywhere on Earth)"
           />
-          <Step title="Workshop Announced" description="Feb 14, 2021" />
+          <Step title="Workshop Announced" description="Feb 14, 2022" />
         </Steps>
       </Section>
       <Section title="Challenges">
@@ -1244,7 +1244,7 @@ export default function Home({ data }) {
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
             in the{" "}
-            <a href="http://cvpr2021.thecvf.com/node/33" target="_blank">
+            <a href="//cvpr2022.thecvf.com/author-guidelines" target="_blank">
               CVPR format
             </a>
             . Paper submissions open soon.
