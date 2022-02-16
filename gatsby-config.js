@@ -156,7 +156,7 @@ module.exports = {
           imageId: "ani",
           name: "Aniruddha Kembhavi",
           oc: false,
-          organization: "AI2",
+          organization: "AI2, UW",
           sab: true,
           site: "https://anikem.github.io/",
         },
