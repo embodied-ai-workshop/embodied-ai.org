@@ -121,7 +121,7 @@ const challengePageMap = {
   ),
   "Robotic Vision Scene Understanding": (
     <a
-      href="//nikosuenderhauf.github.io/roboticvisionchallenges/cvpr2022"
+      href="http://cvpr2022.roboticvisionchallenge.org/"
       target="_blank"
     >
       Robotic Vision Scene Understanding
