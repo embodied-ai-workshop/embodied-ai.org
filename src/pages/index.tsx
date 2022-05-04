@@ -120,10 +120,7 @@ const challengePageMap = {
     </a>
   ),
   "Robotic Vision Scene Understanding": (
-    <a
-      href="http://cvpr2022.roboticvisionchallenge.org/"
-      target="_blank"
-    >
+    <a href="http://cvpr2022.roboticvisionchallenge.org/" target="_blank">
       Robotic Vision Scene Understanding
     </a>
   ),
@@ -1244,8 +1241,8 @@ export default function Home({ data }) {
           >
             CVPR rules
           </a>
-          , at least one author must register for CVPR using an in-person
-          registration.
+          regarding workshop papers, at least one author must register for CVPR
+          using an in-person registration.
         </p>
         <SubSection title="Submission">
           <p>
