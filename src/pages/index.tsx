@@ -1236,7 +1236,16 @@ export default function Home({ data }) {
           </ul>
           Accepted papers will be presented as posters. These papers will be
           made publicly available in a non-archival format, allowing future
-          submission to archival journals or conferences.
+          submission to archival journals or conferences. Paper submissions do
+          not have to be anononymized. Per{" "}
+          <a
+            href="https://docs.google.com/document/d/1JWVoTitdS5UhktYNI2KyRP8JdDplawr_Zwm6R0ymQwI"
+            target="_blank"
+          >
+            CVPR rules
+          </a>
+          , at least one author must register for CVPR using an in-person
+          registration.
         </p>
         <SubSection title="Submission">
           <p>
@@ -1247,41 +1256,42 @@ export default function Home({ data }) {
             <a href="//cvpr2022.thecvf.com/author-guidelines" target="_blank">
               CVPR format
             </a>
-            . Paper submissions open soon.
+            . Paper submissions{" "}
+            <a href="//cmt3.research.microsoft.com/EAI2022">are now open</a>!
           </p>
-          {/* <a href="//cmt3.research.microsoft.com/EAI2021" target="_blank"> */}
-          <div
-            css={css`
-              background: linear-gradient(
-                to bottom,
-                ${color.light.geekblue7},
-                ${color.light.geekblue9}
-              );
-              padding: 15px 15px;
-              border: 10px 5px;
-              border-radius: 5px;
-              color: white;
-              font-size: 20px;
-              text-align: center;
-            `}
-          >
-            <div>
-              <div
-                css={css`
-                  display: block;
-                  font-weight: 500;
-                `}
-              >
-                Paper Submissions Open Soon
-                {/* <ArrowForwardIcon
+          <a href="//cmt3.research.microsoft.com/EAI2022" target="_blank">
+            <div
+              css={css`
+                background: linear-gradient(
+                  to bottom,
+                  ${color.light.geekblue7},
+                  ${color.light.geekblue9}
+                );
+                padding: 15px 15px;
+                border: 10px 5px;
+                border-radius: 5px;
+                color: white;
+                font-size: 20px;
+                text-align: center;
+              `}
+            >
+              <div>
+                <div
+                  css={css`
+                    display: block;
+                    font-weight: 500;
+                  `}
+                >
+                  Submit Paper{" "}
+                  <ArrowForwardIcon
                     css={css`
                       vertical-align: middle;
                       margin-top: -3px;
                       font-size: 18px !important;
                     `}
-                  /> */}
-              </div>
-              {/* <div
+                  />
+                </div>
+                <div
                   css={css`
                     color: white;
                     font-size: 15px;
@@ -1289,26 +1299,26 @@ export default function Home({ data }) {
                     opacity: 0.8;
                   `}
                 >
-                  cmt3.research.microsoft.com/EAI2021
-                </div> */}
-              <div
-                css={css`
-                  display: inline-block;
-                  background: ${color.light.geekblue4 + "44"};
-                  padding: 5px 15px;
-                  font-size: 15px;
-                  color: ${color.gray5};
-                  margin-top: 15px;
-                  margin-bottom: 10px;
-                  border-radius: 5px;
-                  text-align: center;
-                `}
-              >
-                Deadline in {daysLeft} Days, {hoursLeft} Hours
+                  cmt3.research.microsoft.com/EAI2022
+                </div>
+                <div
+                  css={css`
+                    display: inline-block;
+                    background: ${color.light.geekblue4 + "44"};
+                    padding: 5px 15px;
+                    font-size: 15px;
+                    color: ${color.gray5};
+                    margin-top: 15px;
+                    margin-bottom: 10px;
+                    border-radius: 5px;
+                    text-align: center;
+                  `}
+                >
+                  Deadline in {daysLeft} Days, {hoursLeft} Hours
+                </div>
               </div>
             </div>
-          </div>
-          {/* </a> */}
+          </a>
         </SubSection>
       </Section>
       <Section title="Organizers">
