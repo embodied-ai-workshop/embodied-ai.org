@@ -1231,16 +1231,16 @@ export default function Home({ data }) {
               Language
             </li>
           </ul>
-          Accepted papers will be presented as posters. These papers will be
-          made publicly available in a non-archival format, allowing future
-          submission to archival journals or conferences. Paper submissions do
-          not have to be anononymized. Per{" "}
+          Accepted papers will be presented as posters or spotlight talks at the
+          workshop. These papers will be made publicly available in a
+          non-archival format, allowing future submission to archival journals
+          or conferences. Paper submissions do not have to be anononymized. Per{" "}
           <a
             href="https://docs.google.com/document/d/1JWVoTitdS5UhktYNI2KyRP8JdDplawr_Zwm6R0ymQwI"
             target="_blank"
           >
             CVPR rules
-          </a>
+          </a>{" "}
           regarding workshop papers, at least one author must register for CVPR
           using an in-person registration.
         </p>
