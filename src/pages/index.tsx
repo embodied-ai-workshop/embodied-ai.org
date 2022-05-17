@@ -1298,7 +1298,7 @@ export default function Home({ data }) {
                 >
                   cmt3.research.microsoft.com/EAI2022
                 </div>
-                <div
+                {/* <div
                   css={css`
                     display: inline-block;
                     background: ${color.light.geekblue4 + "44"};
@@ -1312,7 +1312,7 @@ export default function Home({ data }) {
                   `}
                 >
                   Deadline in {daysLeft} Days, {hoursLeft} Hours
-                </div>
+                </div> */}
               </div>
             </div>
           </a>
