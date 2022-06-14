@@ -78,13 +78,16 @@ export const Speaker = (props: {
   fixedImg: FixedObject;
   name: string;
   organizations: string[];
+  noMargin?: boolean;
 }) => (
-  <div className={style.speaker}>
+  <div className={props.noMargin ? style.speakerNoMargin : style.speaker}>
     <div
-      css={css`
+      css={
+        css`
         vertical-align: middle;
         display: inline-block;
-      `}
+        `
+      }
     >
       {props.url ? (
         <Video fontSize="45px" url={props.url}>

@@ -1040,8 +1040,156 @@ export default function Home({ data }) {
         />
       </Section>
       <Section title="Timeline">
-        <Steps progressDot current={2} direction="vertical">
-          <Step title="CVPR Workshop" description={<>June 19, 2022</>} />
+        <Steps progressDot current={0} direction="vertical">
+          <Step 
+            title="CVPR Workshop"
+            description={
+              <>
+                June 19, 2022
+                <br/>
+                9:00 AM - 5:30 PM CT{" "}
+                <br/>
+                <span
+                  css={css`
+                    color: ${color.gray7};
+                  `}
+                >
+                  Tentative Schedule:
+                </span>
+                <div
+                  css={css`
+                    margin-left: 0px;
+                    margin-top: 20px;
+                  `}
+                >
+                  <Timeline>
+                  <Timeline.Item>
+                      Workshop Introduction
+                      <br />
+                      <Time time="9:00 AM CT" />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      Navigation & Understanding Challenge Presentations
+                      <br />
+                      (MultiON, SoundSpaces, RxR-Habitat, RVSU)
+                      <br />
+                      <Time time="9:10 AM CT" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Navigation & Understanding Challenge Q&A Panel
+                      <br />
+                      (MultiON, SoundSpaces, RxR-Habitat, RVSU)
+                      <br />
+                      <Time time="10:00 AM CT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      Invited Talk
+                      <Speaker
+                        organizations={["Berkeley"]}
+                        name="Jitendra Malik"
+                        fixedImg={data.jitendra.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Time time="10:30 AM CT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Invited Talk 
+                      <Speaker
+                        organizations={["Allen Institute for AI"]}
+                        name="Roozbeh Mottaghi"
+                        fixedImg={data.roozbeh.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Time time="11:00 AM CT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Invited Talk
+                      <Speaker
+                        organizations={["GaTech", "FAIR"]}
+                        name="Dhruv Batra"
+                        fixedImg={data.dhruv.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Time time="11:30 AM CT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      Accepted Papers Poster Session
+                      <br />
+                      <Time time="12:00 PM CT" />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      Invited Talk
+                      <Speaker
+                        organizations={["Carnegie Mellon"]}
+                        name="Katerina Fragkiadaki"
+                        fixedImg={data.katerina.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Time time="1:30 PM CT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Invited Talk
+                      <Speaker
+                        organizations={["Stanford"]}
+                        name="Fei-Fei Li"
+                        fixedImg={data.feifei.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Time time="2:00 PM CT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Invited Talk
+                      <Speaker
+                        organizations={["Google AI"]}
+                        name="Carolina Parada"
+                        fixedImg={data.carolina.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Time time="2:30 PM CT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      Interaction Challenge Presentations
+                      <br />
+                      AI2-Rearrangement, ALFRED, TEACh
+                      <br />
+                      <Time time="3:00 PM CT" />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Interaction Challenge Q&A Panel
+                      <br />
+                      <Time time="4:00 PM CT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      Invited Speaker Panel
+                      <br />
+                      <Time time="4:30 PM CT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      Workshop Concludes
+                      <br />
+                      <Time time="5:30 PM CT" />
+                    </Timeline.Item>
+                  </Timeline>
+                </div>
+              </>
+            }
+          ></Step>
           <Step
             title="Challenge Submission Deadlines"
             description="May 2022. Check each challenge for the specific date."
@@ -1284,6 +1432,14 @@ export const query = graphql`
     }
   }
 
+  fragment FaceThumbnail on File {
+    childImageSharp {
+      fixed(width: 100, height: 100) {
+        ...GatsbyImageSharpFixed
+      }
+    }
+  }
+
   fragment FluidImage on File {
     childImageSharp {
       fluid(quality: 100) {
@@ -1311,6 +1467,27 @@ export const query = graphql`
         }
       }
     }
+
+    # speaker pictures
+    jitendra: file(relativePath: { eq: "cvpr2022/jitendra.jpg" }) {
+      ...FaceThumbnail
+    }
+    roozbeh: file(relativePath: { eq: "cvpr2022/roozbeh.jpg" }) {
+      ...FaceThumbnail
+    }
+    dhruv: file(relativePath: { eq: "cvpr2022/dhruv.jpg" }) {
+      ...FaceThumbnail
+    }
+    katerina: file(relativePath: { eq: "cvpr2022/katerina.jpg" }) {
+      ...FaceThumbnail
+    }
+    feifei: file(relativePath: { eq: "cvpr2022/fei-fei.jpg" }) {
+      ...FaceThumbnail
+    }
+    carolina: file(relativePath: { eq: "cvpr2022/carolina.jpg" }) {
+      ...FaceThumbnail
+    }
+  
 
     # organizer pictures
     devendraOrg: file(relativePath: { eq: "organizers/devendra.jpg" }) {

@@ -1272,7 +1272,7 @@ export default function Home({ data }) {
                     color: ${color.gray7};
                   `}
                 >
-                  Tentitative Schedule:
+                  Tentative Schedule:
                 </span>
                 <div
                   css={css`

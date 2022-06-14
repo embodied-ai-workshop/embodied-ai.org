@@ -244,6 +244,23 @@
   }
 }
 
+.speakerNoMargin {
+
+  .speakerInfo {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .speakerInfo {
+    margin: 15px;
+    @include breakpoint("mobile") {
+      display: block;
+      margin-left: 0px;
+      margin-top: 5px;
+    }
+  }
+}
+
 .sponsorContainer {
   text-align: center;
 

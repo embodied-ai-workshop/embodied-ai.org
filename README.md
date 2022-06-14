@@ -42,6 +42,7 @@ yarn install
 5. Invoke gatsby from the root of the directory to build locally:
 
 ```
+export NODE_OPTIONS=--openssl-legacy-provider # Needed for newer versions of node
 yarn run develop
 ```
 
