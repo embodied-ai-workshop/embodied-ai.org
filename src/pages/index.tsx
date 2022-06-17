@@ -1045,6 +1045,13 @@ export default function Home({ data }) {
             title="CVPR Workshop"
             description={
               <>
+                <a
+                  href={"/images/cvpr2022/map-location.jpg"}
+                  target="_blank"
+                >
+                  Room 224, New Orleans Ernest M. Morial Conventinon Center
+                </a>{" "}
+                <br/>
                 June 19, 2022
                 <br/>
                 9:00 AM - 5:30 PM CT{" "}
@@ -1088,9 +1095,9 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       Invited Talk
                       <Speaker
-                        organizations={["Berkeley"]}
-                        name="Jitendra Malik"
-                        fixedImg={data.jitendra.childImageSharp.fixed}
+                        organizations={["Google AI"]}
+                        name="Carolina Parada"
+                        fixedImg={data.carolina.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Time time="10:30 AM CT" />
@@ -1150,9 +1157,9 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       Invited Talk
                       <Speaker
-                        organizations={["Google AI"]}
-                        name="Carolina Parada"
-                        fixedImg={data.carolina.childImageSharp.fixed}
+                        organizations={["Berkeley"]}
+                        name="Jitendra Malik"
+                        fixedImg={data.jitendra.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Time time="2:30 PM CT" />
