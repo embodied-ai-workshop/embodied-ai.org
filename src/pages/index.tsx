@@ -24,7 +24,6 @@ import { OrganizerPics } from "./cvpr2020";
 import { css } from "@emotion/react";
 
 import "@allenai/varnish/theme.css";
-
 /**
  * Return true if an email is formatted correctly, otherwise false.
  * Taken from https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
@@ -339,7 +338,7 @@ function Paper(props: {
   authors: object;
   affiliations: string[];
   pdf: string;
-  poster: string;
+  poster?: string;
 }) {
   const [showFullAbstract, setShowFullAbstract] = useState(false);
 
@@ -430,7 +429,15 @@ function Paper(props: {
         `}
       >
         <PaperButton text="PDF" emoji="page_facing_up" url={props.pdf} />
-        <PaperButton text="Poster" emoji="page_with_curl" url={props.poster} />
+        {props.poster ? (
+          <PaperButton
+            text="Poster"
+            emoji="page_with_curl"
+            url={props.poster}
+          />
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
@@ -438,217 +445,296 @@ function Paper(props: {
 
 let acceptedPapers = [
   <Paper
-    title="Pathdreamer: A World Model for Indoor Navigation"
-    abstract="People navigating in unfamiliar buildings take advantage of myriad visual, spatial and semantic cues to efficiently achieve their navigation goals. Towards equipping computational agents with similar capabilities, we introduce Pathdreamer, a visual world model for agents navigating in novel indoor environments. Given one or more previous visual observations, Pathdreamer generates plausible high-resolution 360 degree visual observations (RGB, semantic segmentation and depth) for viewpoints that have not been visited, in buildings not seen during training. In regions of high uncertainty (e.g. predicting around corners, imagining the contents of an unseen room), Pathdreamer can predict diverse scenes, allowing an agent to sample multiple realistic outcomes for a given trajectory. In the downstream task of Vision-and-Language Navigation (VLN), planning ahead with Pathdreamer provides about half the benefit of looking ahead at unobserved parts of the environment."
+    title="ABCDE: An Agent-Based Cognitive Development Environment"
+    abstract="Children’s cognitive abilities are sometimes cited as AI benchmarks. How can the most common 1,000 concepts (89% of everyday use) be learnt in a naturalistic children’s setting? Cognitive development in children is about quality, and new concepts can be conveyed via simple examples. Our approach of knowledge scaffolding uses simple objects and actions to convey concepts, like how children are taught. We introduce ABCDE, an interactive 3D environment modeled after a typical playroom for children. It comes with 300+ unique 3D object assets (mostly toys), and a large action space for child and parent agents to interact with objects and each other. ABCDE is the first environment aimed at mimicking a naturalistic setting for cognitive development in children; no other environment focuses on high-level concept learning through learner-teacher interactions. The simulator can be found at https://pypi.org/project/ABCDESim/1.0.0/"
     authors={{
-      "Jing Yu Koh": [0],
-      "Honglak Lee": [1, 2],
-      "Yinfei Yang": [0],
-      "Jason Baldridge": [0],
-      "Peter Anderson": [0],
+      "Jieyi Ye": [],
+      "Jiafei Duan": [],
+      "Samson Yu": [],
+      "Bihan Wen": [],
+      "Cheston Tan": [],
     }}
-    affiliations={[
-      "Google Research",
-      "LG AI Research",
-      "University of Michigan",
-    ]}
-    pdf="/papers/Pathdreamer.pdf"
-    poster="/posters/Pathdreamer_poster.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/1.pdf"
   />,
   <Paper
-    title="A Neural-Symbolic Approach for Object Navigation"
-    abstract="Object navigation refers to the task of discovering and locating objects in an unknown environment. End-to-end deep learning methods struggle at this task due to sparse rewards. In this work, we propose a simple neural-symbolic approach for object navigation in the AI2-THOR environment. Our method takes raw RGB images as input and uses a spatial memory graph as memory to store object and location information. The architecture consists of both a convolutional neural network for object detection and a spatial graph to represent the environment. By having a discrete graph representation of the environment, the agent can directly use search or planning algorithms as high-level reasoning engines. Model performance is evaluated on both task completion rate and steps required to reach target objects. Empirical results demonstrate that our approach can achieve performance close to the optimal. Our work builds a foundation for a neural-symbolic approach that can reason via unstructured visual cues."
+    title="IFOR: Iterative Flow Minimization for Robotic Object Rearrangement"
+    abstract="Accurate object rearrangement from vision is a crucial problem for a wide variety of real-world robotics applications in unstructured environments. We propose IFOR, Iterative Flow Minimization for Robotic Object Rearrangement, an end-to-end method for the challenging problem of object rearrangement for unknown objects given an RGBD image of the original and final scenes. First, we learn an optical flow model based on RAFT to estimate the relative transformation of the objects purely from synthetic data. This flow is then used in an iterative minimization algorithm to achieve accurate positioning of previously unseen objects. Crucially, we show that our method applies to cluttered scenes, and in the real world, while training only on synthetic data. Videos are available at https://imankgoyal.github.io/ifor.html."
     authors={{
-      "Xiaotian Liu": [0],
-      "Christian Muise": [0],
+      "Ankit Goyal": [],
+      "Arsalan Mousavian": [],
+      "Chris Paxton": [],
+      "Yu-Wei Chao": [],
+      "Brian Okorn": [],
+      "Jia Deng": [],
+      "Dieter Fox": [],
     }}
-    affiliations={["Queen's University"]}
-    pdf="/papers/A-Neural-Symbolic-Approach-for-Object-Navigation.pdf"
-    poster="/posters/Neural-Symbolic-Approach-for-Object-Navigation.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/3.pdf"
   />,
   <Paper
-    title="LegoTron: An Environment for Interactive Structural Understanding"
-    abstract="Visual reasoning about geometric structures with detailed spatial relationships is a fundamental component of human intelligence. As children, we learn how to reason about this structure not only from observation, but also by interacting with the world around us -- by taking things apart and putting them back together again. We introduce a new learning environment designed to explore the interplay between interactive reasoning, scene understanding and construction by mining a previously untapped high-quality data source: fan-made Lego creations that have been uploaded to the internet. To make use of this data we have built LegoTron, a fully interactive 3D environment that allows a learning agent to assemble, disassemble and manipulate these models. Our goal is to provide an interactive playground for agents to explore and manipulate complex scenes and recover their underlying structure."
+    title="Simple and Effective Synthesis of Indoor 3D Scenes"
+    abstract="We study the problem of synthesizing immersive 3D indoor scenes from one or more images. Our aim is to generate high-resolution images and videos from novel viewpoints, including those that extrapolate far beyond the input images while maintaining 3D consistency. Existing approaches are highly complex, with many separately trained stages and components. We propose a simple alternative: an image-to-image GAN that maps directly from reprojections of incomplete point clouds to full high-resolution RGB-D images. On the Matterport3D and RealEstate10K datasets, our approach significantly outperforms prior work when evaluated by humans, as well as on FID scores. Further, we show that our model is useful for generative data augmentation. A vision-and-language navigation (VLN) agent trained with trajectories spatially-perturbed by our model improves success rate by up to 1.5% over a state of the art model on the R2R benchmark. For more details, we refer readers to our full paper (https://arxiv.org/abs/2204.02960) and video results (https://youtu.be/lhwwlrRfFp0)."
     authors={{
-      "Aaron T Walsman": [0],
-      "Muru Zhang": [0],
-      "Adam Fishman": [0],
-      "Karthik Desingh": [0],
-      "Dieter Fox": [0, 1],
-      "Ali Farhadi": [0, 2],
+      "Jing Yu Koh": [],
+      "Harsh Agrawal": [],
+      "Dhruv Batra": [],
+      "Richard Tucker": [],
+      "Austin Waters": [],
+      "Honglak Lee": [],
+      "Yinfei Yang": [],
+      "Jason M Baldridge": [],
+      "Peter Anderson": [],
     }}
-    affiliations={["University of Washington, Seattle", "NVIDIA", "Apple"]}
-    pdf="/papers/LegoTron.pdf"
-    poster="/posters/LegoTron.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/4.pdf"
   />,
   <Paper
-    title="Success-Aware Visual Navigation Agent"
-    abstract="This work presents a method to improve the efficiency and robustness of the previous model-free Reinforcement Learning (RL) algorithms for the task of object-target visual navigation. Despite achieving the state-of-the-art results, one of the major drawbacks of those approaches is the lack of a forward model that informs the agent about the potential consequences if its actions, e.g. being model-free. In this work we take a step towards augmenting the model-free methods with a forward model that is trained along with the policy, using a replay buffer, and can predict a successful future state of an episode in a challenging 3D navigation environment. We develop a module that can predict a representation of a future state, from the beginning of a navigation episode, if the episode were to be successful; we call this ForeSIM module. ForeSIM is trained to imagine a future latent state that leads to success. Therefore, during navigation, the policy is able to take better actions leading to two main advantages: first, in the absence of an object detector, ForeSIM leads mainly to a more robust policy, e.g. about 5% absolute improvement on success rate; second, when combined with an off-the-shelf object detector to help better distinguish the target object, ForeSIM leads to about 3% absolute improvement on success rate and about 2% absolute improvement on Success weighted by inverse Path Length (SPL), e.g. higher efficiency."
+    title="Less is More: Generating Grounded Navigation Instructions from Landmarks"
+    abstract="We study the automatic generation of navigation instructions from 360-degree images captured on indoor routes. Existing generators suffer from poor visual grounding, causing them to rely on language priors and hallucinate objects. Our Marky-mT5 system addresses this by focusing on visual landmarks; it comprises a first stage landmark detector and a second stage generator--a multimodal, multilingual, multitask encoder-decoder. To train it, we bootstrap grounded landmark annotations on top of the Room-across-Room (RxR) dataset. Using text parsers, weak supervision from RxR's pose traces, and a multilingual image-text encoder trained on 1.8b images, we identify 971k English, Hindi and Telugu landmark descriptions and ground them to specific regions in panoramas. On Room-to-Room, human wayfinders obtain success rates (SR) of 71% following Marky-mT5's instructions, just shy of their 75% SR following human instructions---and well above SRs with other generators. Evaluations on RxR's longer, diverse paths obtain 61-64% SRs on three languages. Generating such high-quality navigation instructions in novel environments is a step towards conversational navigation tools and could facilitate larger-scale training of instruction-following agents. The full paper at CVPR 2022 is available at https://arxiv.org/abs/2111.12872."
     authors={{
-      "Mahdi Kazemi Moghaddam": [0],
-      "Ehsan M Abbasnejad": [0],
-      "Qi Wu": [0],
-      "Javen Qinfeng Shi": [0],
-      "Anton van den Hengel": [0],
+      "Su Wang": [],
+      "Ceslee Montgomery": [],
+      "Jordi Orbay": [],
+      "Vighnesh N Birodkar": [],
+      "Aleksandra Faust": [],
+      "Izzeddin Gur": [],
+      "Natasha Jaques": [],
+      "Austin Waters": [],
+      "Jason M Baldridge": [],
+      "Peter Anderson": [],
     }}
-    affiliations={["University of Adelaide"]}
-    pdf="/papers/Success-Aware-Visual-Navigation-Agent.pdf"
-    poster="/posters/Success-Aware-Visual-Navigation-Agent.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/5.pdf"
   />,
   <Paper
-    title="Learning to Explore, Navigate and Interact for Visual Room Rearrangement"
-    abstract="Intelligent agents for visual room rearrangement aim to reach a goal room configuration from a cluttered room configuration via a sequence of interactions. For successful visual room rearrangement, the agents need to learn to explore, navigate and interact within the surrounding environments. Contemporary methods for visual room rearrangement display unsatisfactory performance even with state-of-the-art techniques for embodied AI. One of the causes for the low performance arises from the expensive cost of learning in an end-to-end manner. To overcome the limitation, we design a three-phased modular architecture (TMA) for visual room rearrangement. TMA performs visual room rearrangement in three phases: the exploration phase, the inspection phase, and the rearrangement phase. The proposed TMA maximizes the performance by placing the learning modules along with hand-crafted feature engineering modules—retaining the advantage of learning while reducing the cost of learning."
+    title="VLMbench: A Benchmark for Vision-and-Language Manipulation"
+    abstract="One crucial ability of embodied agents is to finish tasks by following language instructions. Language can represent complicated tasks and distinguish their differences, and it is natural for humans to use language to command an embodied agent. In this work, we aim to fill the blank of the last mile of embodied agents---object manipulation by following human guidance, e.g., “move the red mug next to the box while keeping it upright.” To this end, we introduce an Automatic Manipulation Solver (AMSolver) and build a Vision-and-Language Manipulation benchmark (VLMbench), which contains various language instructions on categorized robotic manipulation tasks. Specifically, modular rule-based task templates are created to automatically generate robot demonstrations with language instructions, consisting of diverse object shapes and appearances, action types, and motion constraints. We hope the new simulator and benchmark will facilitate future research on language-guided robotic manipulation."
     authors={{
-      "Ue-Hwan Kim": [0],
-      "Youngho Kim": [0],
-      "Jin-Man Park": [0],
-      "Hwansoo Choi": [0],
-      "Jong-Hwan Kim": [0],
+      "Kaizhi Zheng": [],
+      "Xiaotong Chen": [],
+      "Odest Chadwicke Jenkins": [],
+      "Xin Eric Wang": [],
     }}
-    affiliations={["KAIST"]}
-    pdf="/papers/Learning-to-Explore-Navigate-and-Interact-for-Visual-Room-Rearrangement.pdf"
-    poster="/posters/Learning-to-Explore.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/6.pdf"
   />,
   <Paper
-    title="Massively Parallel Robot Simulations with the HBP Neurorobotics Platform"
-    abstract="The success of deep learning in robotics hinges on the availability of physically accurate virtual training environments and simulation tools that accelerate learning by scaling to many parallel instances. However, most current AI frameworks do not integrate easily with common software stacks from robotics, while fully-fledged robot simulators lack capabilities for parallelization. In this paper, we introduce an extension for the Neurorobotics Platform of the Human Brain Project (HBP) that offers the full feature set of a robot simulation and at the same time is arbitrarily scalable for massively parallel robotics experiments."
+    title="FedVLN: Privacy-preserving Federated Vision-and-Language Navigation"
+    abstract="Data privacy is a central problem for embodied agents that can perceive the environment, communicate with humans, and act in the real world. While helping humans complete tasks, the agent may observe and process sensitive information of users. In this work, we introduce privacy-preserving embodied agent learning for the task of Vision-and-Language Navigation (VLN), where an embodied agent navigates house environments by following natural language instructions. We propose a novel federated vision-and-language navigation (FedVLN) framework to protect data privacy during both training and pre-exploration, where we view each house environment as a local client. Experiment results show that, under our FedVLN framework, the decentralized VLN model achieve comparable results with centralized training while protecting seen environment privacy, and federated pre-exploration significantly outperforms other pre-exploration methods while preserving unseen environment privacy."
     authors={{
-      "Florian Walter": [0],
-      "Mahmoud Akl": [0],
-      "Fabrice O. Morin": [0],
-      "Alois Knoll": [0],
+      "Kaiwen Zhou": [],
+      "Xin Eric Wang": [],
     }}
-    affiliations={["Technical University of Munich"]}
-    pdf="/papers/Massively-Parallel-NRP-Simulations.pdf"
-    poster="/posters/Massively-Parallel-NRP-Simulations.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/7.pdf"
   />,
   <Paper
-    title="BEyond observation: an approach for ObjectNav"
-    abstract="With the rise of automation, unmanned vehicles became a hot topic both as commercial products and as a scientific research topic. It composes a multi-disciplinary field of robotics that encompasses embedded systems, control theory, path planning, Simultaneous Localization and Mapping (SLAM), scene reconstruction, and pattern recognition. In this work, we present our exploratory research of how sensor data fusion and state-of-the-art machine learning algorithms can perform the Embodied Artificial Intelligence (E-AI) task called Visual Semantic Navigation. This task, a.k.a Object-Goal Navigation (ObjectNav) consists of autonomous navigation using egocentric visual observations to reach an object belonging to the target semantic class without prior knowledge of the environment. Our method reached second place on the Habitat Challenge 2021 ObjectNav on the Minival phase."
+    title="Towards Generalisable Audio Representations for Audio-Visual Navigation"
+    abstract="In audio-visual navigation (AVN), an intelligent agent needs to navigate to a constantly sound-making object in complex 3D environments based on its audio and visual perceptions. While existing methods attempt to improve the navigation performance with preciously designed path planning or intricate task settings, none has improved the model generalisation on unheard sounds with task settings unchanged. We thus propose a contrastive learning-based method to tackle this challenge by regularising the audio encoder, where the sound-agnostic goal-driven latent representations can be learnt from various audio signals of different classes. In addition, we consider two data augmentation strategies to enrich the training sounds. We demonstrate that our designs can be easily equipped to existing AVN frameworks to obtain an immediate performance gain (13.4%↑ in SPL on Replica and 12.2%↑ in SPL on MP3D). Our project is available at https://AV-GeN.github.io/."
     authors={{
-      "Daniel V Ruiz": [0],
-      "Eduardo Todt": [0],
+      "Shunqi Mao": [],
+      "Chaoyi Zhang": [],
+      "Heng Wang": [],
+      "Weidong Cai": [],
     }}
-    affiliations={["UFPR"]}
-    pdf="/papers/BEyond-observation-an-approach-for-ObjectNav.pdf"
-    poster="/posters/BEyond.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/9.pdf"
   />,
   <Paper
-    title="PiCoEDL: Discovery and Learning of Minecraft Navigation Goals from Pixels and Coordinates"
-    abstract="Defining a reward function in Reinforcement Learning (RL) is not always possible or very costly. For this reason, there is a great interest in training agents in a task-agnostic manner making use of intrinsic motivations and unsupervised techniques. Due to the complexity to learn useful behaviours in pixel-based domains, the results obtained in RL are still far from the remarkable results obtained in domains such as computer vision and natural language processing. We hypothesize that RL agents will also benefit from unsupervised pre-trainings with no extrinsic rewards, analogously to how humans mostly learn, especially in the early stages of life. Our main contribution is the deployment of the Explore, Discover and Learn (EDL) paradigm for unsupervised learning to the pixel space. In particular, our work focuses on the MineRL environment, where the observation of the agent is represented by: (a) its spatial coordinates in the Minecraft virtual world, and (b) an image from an egocentric viewpoint. Following the idea of empowerment, our goal is to learn latent-conditioned policies by maximizing the mutual information between states and some latent variables, instead of sequences of actions. This allows the agent to influence the environment while discovering available skills."
+    title="Benchmarking Augmentation Methods for Learning Robust Navigation Agents: The Winning Entry of the 2021 iGibson Challenge"
+    abstract="While impressive progress has been made for teaching embodied agents to navigate static environments using vision, much less progress has been made on more dynamic environments that may include moving pedestrians or movable obstacles. In this study, we aim to benchmark different augmentation techniques for improving the agent's performance in these challenging environments. We show that adding several dynamic obstacles into the scene during training confers significant improvements in test-time generalization, achieving much higher success rates than baseline agents. We find that this approach can also be combined with image augmentation methods to achieve even higher success rates. Additionally, we show that this approach is also more robust to sim-to-sim transfer than image augmentation methods. Finally, we demonstrate the effectiveness of this dynamic obstacle augmentation approach by using it to train an agent for the 2021 iGibson Challenge at CVPR, achieving 1st place for Interactive Navigation."
     authors={{
-      "Juan José Nieto": [0],
-      "Roger Creus Castanyer": [0],
-      "Xavier Giró-i-Nieto": [0],
+      "Naoki Yokoyama": [],
+      "Qian Luo": [],
+      "Dhruv Batra": [],
+      "Sehoon Ha": [],
     }}
-    affiliations={["Universitat Politecnica de Catalunya"]}
-    pdf="/papers/PiCoEDL.pdf"
-    poster="/posters/PiCoEDL.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/10.pdf"
   />,
   <Paper
-    title="Agent with the Big Picture: Perceiving Surroundings for Interactive Instruction Following"
-    abstract="Performing simple household tasks based on language directives is very natural to humans, yet it remains an open challenge for an AI agent. The 'interactive instruction following' task attempts to make progress towards building an agent that can jointly navigate, interact, and reason in the environment at every step. Here, we propose to exploit surrounding views by perceiving observation from navigable directions for effective task completion with ample information, In addition, to address the multifaceted problem, we propose a model that factorizes the task into interactive perception and action policy streams with enhanced components. We empirically validate that our model outperforms prior arts by significant margins on the ALFRED benchmark with improved generalization."
+    title="Habitat-Web: Learning Embodied Object-Search Strategies from Human Demonstrations at Scale"
+    abstract="We present a large-scale study of imitating human demonstrations on tasks that require a virtual robot to search for objects in new environments – (1) ObjectGoal Navigation (e.g. ‘find &amp; go to a chair’) and (2) Pick&amp;Place (e.g. ‘find mug, pick mug, find counter, place mug on counter’). First, we develop a virtual teleoperation data-collection infrastructure – connecting Habitat simulator running in a web browser to Amazon Mechanical Turk, allowing remote users to teleoperate virtual robots, safely and at scale. We collect 80k demonstrations for ObjectNav and 12k demonstrations for Pick&amp;Place, which is an order of magnitude larger than existing human demonstration datasets in simulation or on real robots. Second, we use this data to answer the question – how does large-scale imitation learning (IL) (which has not been hitherto possible) compare to reinforcement learning (RL) (which is the status quo)? On ObjectNav, we find that IL (with no bells or whistles) using 70k human demonstrations outperforms RL using 240k agent-gathered trajectories. This effectively establishes an ‘exchange rate’ – a single human demonstration appears to be worth ∼4 agent-gathered ones. Finally, accuracy vs. training data size plots show promising scaling behavior, suggesting that simply collecting more demonstrations is likely to advance the state of art further. On Pick&amp;Place, the comparison is starker – IL agents achieve ∼18% success on episodes with new object-receptacle locations when trained with 9.5k human demonstrations, while RL agents fail to get beyond 0%. Overall, our work provides compelling evidence for investing in large-scale imitation learning. Project page: https://ram81.github.io/projects/habitat-web."
     authors={{
-      "Byeonghwi Kim": [0],
-      "Suvaansh Bhambri": [0],
-      "Kunal Pratap Singh": [1],
-      "Roozbeh Mottaghi": [1, 2],
-      "Jonghyun Choi": [0],
+      "Ram Ramrakhya": [],
+      "Eric Undersander": [],
+      "Dhruv Batra": [],
+      "Abhishek Das": [],
     }}
-    affiliations={[
-      "GIST",
-      "Allen Institute for AI",
-      "University of Washington",
-    ]}
-    pdf="/papers/Agent-with-the-Big-Picture.pdf"
-    poster="/posters/Agent-with-the-Big-Picture.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/11.pdf"
   />,
   <Paper
-    title="PixelEDL: Unsupervised Skill Discovery and Learning from Pixels"
-    abstract="We tackle embodied visual navigation in a task-agnostic set-up by putting the focus on the unsupervised discovery of skills (or options) that provide a good coverage of states. Our approach intersects with empowerment: we address the reward-free skill discovery and learning tasks to discover “what” can be done in an environment and “how”. For this reason, we adopt the existing Explore, Discover and Learn (EDL) paradigm, tested only in toy example mazes, and extend it to pixel-based state representations available for embodied AI agents."
+    title="IGLU Gridworld: Simple and Fast Environment for Embodied Dialog Agents"
+    abstract="We present the IGLU Gridworld: a reinforcement learning environment for building and evaluating language conditioned embodied agents in a scalable way. The environment features visual agent embodiment, interactive learning through collaboration, language conditioned RL, and combinatorically hard task (3d blocks building) space."
     authors={{
-      "Roger Creus Castanyer": [0],
-      "Juan José Nieto": [0],
-      "Xavier Giro-i-Nieto": [0],
+      "Artem Zholus": [],
+      "Alexey Skrynnik": [],
+      "Shrestha Mohanty": [],
+      "Zoya Volovikova": [],
+      "Julia Kiseleva": [],
+      "Arthur Szlam": [],
+      "Marc-Alexandre Côté": [],
+      "Aleksandr Panov": [],
     }}
-    affiliations={["Universitat Politècnica de Catalunya"]}
-    pdf="/papers/PixelEDL.pdf"
-    poster="/posters/PixelEDL.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/12.pdf"
   />,
   <Paper
-    title="URoboSim: A Simulation-Based Predictive Modelling Engine for Cognition-Enabled Robot Manipulation"
-    abstract="In a nutshell robot simulators are fully developed software systems that provide simulations as a substitute for real-world activity. They are primarily used for training modules of robot control programs, which are, after completing the learning process, deployed in real-world robots. In contrast, simulation in (artificial) cognitive systems is a core cognitive capability, which is assumed to provide a “small-scale model of external reality and of its own possible actions within its head, it is able to try out various alternatives, conclude which is the best of them, react to future situations before they arise, utilise the knowledge of past events in dealing with the present and future, and in every way to react in a much fuller, safer, and more competent manner to the emergencies which face it.” [8] This means that simulation can be considered as an embodied, online predictive modelling engine that enables robots to contextualize vague task requests such as “bring me the milk” into a concrete body motion that achieves the implicit goal and avoids unwanted side effects. In this setting a robot can run small-scale simulation and rendering processes for different reasoning tasks all the time and can continually compare simulation results with reality — it is a promising Sim2Real2Sim setup that has the potential to create much more powerful robot simulation engines. We introduce URoboSim, a robot simulation framework that is currently designed and developed with this vision in mind."
+    title="SAMPLE-HD: Simultaneous Action and Motion Planning Learning Environment"
+    abstract="Humans exhibit incredibly high levels of multi-modal understanding - combining visual cues with read, or heard knowledge comes easy to us and allows for very accurate interaction with the surrounding environment. Various simulation environments focus on providing data for tasks related to scene understanding, question answering, space exploration, visual navigation. In this work, we are providing a solution to encompass both, visual and behavioural aspects of simulation in a new environment for learning interactive reasoning in manipulation setup. SAMPLE-HD environment allows to generate various scenes composed of small household objects, to procedurally generate language instructions for manipulation, and to generate ground truth paths serving as training data."
     authors={{
-      "Michael Neumann": [0],
-      "Michael Beetz": [0],
-      "Andrei Haidu": [0],
+      "Michal Nazarczuk": [],
+      "Tony Ng": [],
+      "Krystian Mikolajczyk": [],
     }}
-    affiliations={["University Bremen"]}
-    pdf="/papers/URoboSim.pdf"
-    poster="/posters/URoboSim.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/13.pdf"
   />,
   <Paper
-    title="RobustNav: Towards Benchmarking Robustness in Embodied Navigation"
-    abstract="As an attempt towards assessing the robustness of embodied navigation agents, we propose RobustNav, a framework to quantify the performance of embodied navigation agents when exposed to a wide variety of visual – affecting RGB inputs – and dynamics – affecting transition dynamics – corruptions. Most recent efforts in visual navigation have typically focused on generalizing to novel target environments with similar appearance and dynamics characteristics. With RobustNav, we find that some standard embodied navigation agents significantly underperform (or fail) in the presence of visual or dynamics corruptions. We systematically analyze the kind of idiosyncrasies that emerge in the behavior of such agents when operating under corruptions. Finally, for visual corruptions in RobustNav, we show that while standard techniques to improve robustness such as data-augmentation and self-supervised adaptation offer some zero-shot resistance and improvements in navigation performance, there is still a long way to go in terms of recovering lost performance relative to clean “non-corrupt” settings, warranting more research in this direction."
+    title="Human Instruction Following: Graph Neural Network Guided Object Navigation"
+    abstract="Home-assistant robots (e.g., mobile manipulator) following human instruction is a long-standing topic of research whose main challenge comes from the interpretation of diverse instructions and dynamically-changing environments. This paper proposes a hybrid planner for parsing human instruction and task planning, and a graph-based object navigation to search unknown objects by exploiting a partially known semantic map. We present preliminary evaluations of human instruction parsing and object-to-object link prediction based on graph neural network prediction, and demonstrate their effectiveness in human instruction following tasks."
     authors={{
-      "Prithvijit Chattopadhyay": [0],
-      "Judy Hoffman": [0],
-      "Roozbeh Mottaghi": [1, 2],
-      "Aniruddha Kembhavi": [1, 2],
+      "Hongyi Chen": [],
+      "Letian Wang": [],
+      "Yuhang Yao": [],
+      "Ye Zhao": [],
+      "Patricio Vela": [],
     }}
-    affiliations={[
-      "Georgia Tech",
-      "Allen Institute for AI",
-      "University of Washington",
-    ]}
-    pdf="/papers/RobustNav.pdf"
-    poster="/posters/RobustNav.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/14.pdf"
   />,
   <Paper
-    title="HexaJungle: a MARL Simulator to Study the Emergence of Language"
-    abstract="Multi-agent reinforcement learning in mixed-motive settings allows for the study of complex dynamics of agent interactions. Embodied agents in partially observable environments with the ability to communicate can share information, agree on strategies, or even lie to each other.In order to study this, we propose a simple environment where we can impose varying levels of cooperation, communication and competition as pre-requisites to reach an optimal outcome. Welcome to the jungle."
+    title="A Planning based Neural-Symbolic Approach for Embodied Instruction Following"
+    abstract="The ALFRED environment features an embodied agent following instructions and accomplishing tasks in simulated home environments. However, end-to-end deep learning methods struggle at these tasks due to long-horizon and sparse rewards. In this work, we propose a principled neural-symbolic approach combining symbolic planning and deep-learning methods for visual perception and NL processing. The symbolic model is enriched as exploration progress until a full plan can be obtained. New perceptions are added to a discrete graph representation that is used for producing new planning problems. Empirical results demonstrate that our approach can achieve high scalability with SOTA performance of 36.04% unseen success rate in the ALFRED benchmark. Our work builds a foundation for a neural-symbolic approach that can act in unstructured environments when the set of skills and possible relationships is known."
     authors={{
-      "Kiran Ikram": [0],
-      "Esther Mondragon": [0],
-      "Eduardo Alonso": [0],
-      "Michaël Garcia Ortiz": [0],
+      "Xiaotian Liu": [],
+      "Hector Palacios": [],
+      "Christian Muise": [],
     }}
-    affiliations={["City University Artificial Intelligence Lab"]}
-    pdf="/papers/HexaJungle.pdf"
-    poster="/posters/HexaJungle.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/15.pdf"
   />,
   <Paper
-    title="Modular Framework for Visuomotor Language Grounding"
-    abstract="Natural language instruction following tasks serve as a valuable test-bed for grounded language and robotics research. However, data collection for these tasks is expensive and end-to-end approaches suffer from data inefficiency. We propose the structuring of language, acting, and visual tasks into separate modules that can be trained independently. Using a Language, Action, and Vision (LAV) framework removes the dependence of action and vision modules on instruction following datasets, making them more efficient to train. We also present a preliminary evaluation of LAV on the ALFRED task for visual and interactive instruction following."
+    title="Modality-invariant Visual Odometry for Indoor Navigation"
+    abstract='Successful indoor navigation is a crucial skill for many robots. This fundamental ability has been extensively studied through the task of PointGoal navigation in simulated environments. With noisy observations and actuation, the setting becomes more realistic and previously successful agents fail dramatically. Visual Odometry has shown to be a practical substitute for GPS+compass and can effectively localize the agent from visual observations. With the availability of multiple sensors and estimators, the question naturally arises of how to make the most use of multiple input modalities. When having access to multiple modalities, the predictions of naive multi-modal approaches can be dominated by a single one, impeding overall robustness. Recent methods are modality-specific and can not deal with "privileged" modalities, e.g., irregular or no access to depth during test time. We propose the Visual Odometry Transformer, a novel approach to multi-modal Visual Odometry based on Vision Transformers that successfully replaces GPS+compass. Our experiments show that the model can deal with limited availability of modalities during test time by implicitly learning a representation invariant to the availability of input modalities.'
     authors={{
-      "Kolby T Nottingham": [0],
-      "Litian Liang": [0],
-      "Daeyun Shin": [0],
-      "Charless Fowlkes": [0],
-      "Roy Fox": [0],
-      "Sameer Singh": [0],
+      "Marius Memmel": [],
+      "Amir Zamir": [],
     }}
-    affiliations={["University of California Irvine"]}
-    pdf="/papers/Modular-Framework-for-Visuomotor-Language-Grounding.pdf"
-    poster="/posters/LAV.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/17.pdf"
   />,
   <Paper
-    title="PGDrive: Procedural Generation of Driving Environments for Generalization"
-    abstract="To better evaluate and improve the generalization of end-to-end driving, we introduce an open-ended and highly configurable driving simulator called PGDrive, following a key feature of procedural generation. We validate that training with the increasing number of procedurally generated scenes significantly improves the generalization of the agent across scenarios of different traffic densities and road networks. Many applications such as multi-agent traffic simulation and safe driving benchmark can be further built upon the simulator."
+    title="Role of reward shaping in object-goal navigation"
+    abstract="Deep reinforcement learning approaches have been a popular method for visual navigation tasks in the computer vision and robotics community of late. In most cases, the reward function has a binary structure, i.e., a large positive reward is provided when the agent reaches goal state, and a negative step penalty is assigned for every other state in the environment. A sparse signal like this makes the learning process challenging, specially in big environments, where a large number of sequential actions need to be taken to reach the target. We introduce a reward shaping mechanism which gradually adjusts the reward signal based on distance to the goal. Detailed experiments conducted using the AI2-THOR simulation environment demonstrate the efficacy of the proposed approach for object-goal navigation tasks."
     authors={{
-      "Quanyi Li": [0],
-      "Zhenghao Peng": [0],
-      "Qihang Zhang": [1],
-      "Chunxiao Liu": [2],
-      "Bolei Zhou": [0],
+      "Srirangan Madhavan": [],
+      "Anwesan Pal": [],
+      "Henrik Christensen": [],
     }}
-    affiliations={[
-      "Chinese University of Hong Kong",
-      "Zhejiang University",
-      "Sensetime",
-    ]}
-    pdf="/papers/PGDrive.pdf"
-    poster="/posters/pgdrive.pdf"
+    affiliations={[]}
+    pdf="/papers/2022/18.pdf"
+  />,
+  <Paper
+    title="Bridging the Gap between Events and Frames through Unsupervised Domain Adaptation"
+    abstract="Event cameras are novel sensors with outstanding properties such as high temporal resolution and high dynamic range. However, event-based vision has been held back by the shortage of labeled datasets due to the novelty of event cameras. To overcome this drawback, we propose a task transfer method to train models directly with labeled images and unlabeled event data. We leverage the generative event model to split event features into content and motion features. Thus, our approach unlocks the vast amount of existing image datasets for the training of event-based neural networks. Our task transfer method outperforms methods targeting Unsupervised Domain Adaptation for object detection by 0.26 mAP and classification by 2.7% accuracy."
+    authors={{
+      "Nico Messikommer": [],
+      "Daniel Gehrig": [],
+      "Mathias Gehrig": [],
+      "Davide Scaramuzza": [],
+    }}
+    affiliations={[]}
+    pdf="/papers/2022/19.pdf"
+  />,
+  <Paper
+    title="BEHAVIOR in Habitat 2.0: Simulator-Independent Logical Task Description for Benchmarking Embodied AI Agents"
+    abstract="Robots excel in performing repetitive and precision-sensitive tasks in controlled environments such as warehouses and factories, but have not been yet extended to embodied AI agents providing assistance in household tasks. Inspired by the catalyzing effect that benchmarks have played in the AI fields such as computer vision and natural language processing, the community is looking for new benchmarks for embodied AI. Prior work in embodied AI benchmark defines tasks using a different formalism, often specific to one environment, simulator or domain, making it hard to develop general and comparable solutions. In this work, we bring a subset of BEHAVIOR activities into Habitat 2.0 to benefit from its fast simulation speed, as a first step towards demonstrating the ease of adapting activities defined in the logic space into different simulators."
+    authors={{
+      "Ziang Liu": [],
+      "Roberto Martin-Martin": [],
+      "Fei Xia": [],
+      "Jiajun Wu": [],
+      "Li Fei-Fei": [],
+    }}
+    affiliations={[]}
+    pdf="/papers/2022/22.pdf"
+  />,
+  <Paper
+    title="Language Guided Meta-Control for Embodied Instruction Following"
+    abstract="Embodied Instruction Following (EIF) is a challenging problem requiring an agent to infer a sequence of actions to achieve a goal environment state from complex language and visual inputs. We propose a generalised Language Guided Meta-Controller (LMC) for better language grounding in the large action space of the embodied agent. We additionally propose an auxiliary reasoning loss to improve `conceptual grounding' of the agent. Our empirical validation shows that our approach outperforms strong baselines on the Execution from Dialogue History (EDH) benchmark from the TEACh benchmark."
+    authors={{
+      "Divyam Goel": [],
+      "Kunal Pratap Singh": [],
+      "Jonghyun Choi": [],
+    }}
+    affiliations={[]}
+    pdf="/papers/2022/23.pdf"
+  />,
+  <Paper
+    title="Learning to navigate in interactive Environments with the transformer-based memory"
+    abstract="Substantial progress has been achieved in embodied visual navigation based on reinforcement learning (RL). These studies presume that the environment is stationary where all the obstacles are static. However, in real cluttered scenes, interactable objects (e.g. shoes and boxes) blocking the way of robots makes the environment non-stationary. We formulate this interactive visual navigation as a Partial Observed Markov Decision Problem. To handle it, we propose a transformer encoder to learn a belief state which captures the long spatial-temporal dependencies of the aggregated observations in the memory. However, leveraging the transformer architecture in the RL settings is highly unstable. We propose a surrogate objective to predict the next waypoint, which facilitates the representation learning and bootstrap the RL. We demonstrate our method in the iGibson environment and experimental results show a significant improvement over the interactive Gibson benchmark and the related recurrent RL policy both in the validation seen scenes and the test unseen scenes."
+    authors={{
+      "Weiyuan Li": [],
+      "Ruoxin Hong": [],
+      "Jiwei Shen": [],
+      "Yue Lu": [],
+    }}
+    affiliations={[]}
+    pdf="/papers/2022/24.pdf"
+  />,
+  <Paper
+    title="Learning to navigate in interactive Environments with the transformer-based memory"
+    abstract="Substantial progress has been achieved in embodied visual navigation based on reinforcement learning (RL). These studies presume that the environment is stationary where all the obstacles are static. However, in real cluttered scenes, interactable objects (e.g. shoes and boxes) blocking the way of robots makes the environment non-stationary. We formulate this interactive visual navigation as a Partial Observed Markov Decision Problem. To handle it, we propose a transformer encoder to learn a belief state which captures the long spatial-temporal dependencies of the aggregated observations in the memory. However, leveraging the transformer architecture in the RL settings is highly unstable. We propose a surrogate objective to predict the next waypoint, which facilitates the representation learning and bootstrap the RL. We demonstrate our method in the iGibson environment and experimental results show a significant improvement over the interactive Gibson benchmark and the related recurrent RL policy both in the validation seen scenes and the test unseen scenes."
+    authors={{
+      "Weiyuan Li": [],
+      "Ruoxin Hong": [],
+      "Jiwei Shen": [],
+      "Yue Lu": [],
+    }}
+    affiliations={[]}
+    pdf="/papers/2022/24.pdf"
+  />,
+  <Paper
+    title="ET tu, CLIP? Addressing Common Object Errors for Unseen Environments"
+    abstract="We introduce a simple method that employs pre-trained CLIP encoders to enhance model generalization in the ALFRED task. In contrast to previous literature where CLIP replaces the visual encoder, we suggest using CLIP as an additional module through an auxiliary object detection objective. We validate our method on the recently proposed Episodic Transformer architecture and demonstrate that incorporating CLIP improves task performance on the unseen validation set. Additionally, our analysis results support that CLIP especially helps with leveraging object descriptions, detecting small objects, and interpreting rare words."
+    authors={{
+      "Jimin Sun": [],
+      "Ye Won Byun": [],
+      "Shahriar Noroozizadeh": [],
+      "Rosanna M Vitiello": [],
+      "Cathy L Jiao": [],
+    }}
+    affiliations={[]}
+    pdf="/papers/2022/20.pdf"
+  />,
+  <Paper
+    title="Housekeep: Tidying Virtual Households using Commonsense Reasoning"
+    abstract="We introduce Housekeep, a benchmark to evaluate commonsense reasoning in the home for embodied AI. In Housekeep, an embodied agent must tidy a house by rearranging misplaced objects without explicit instructions specifying which objects need to be rearranged. Instead, the agent must learn from and is evaluated against human preferences of which objects belong where in a tidy house. Specifically, we collect a dataset of where humans typically place objects in tidy and untidy houses constituting 1799 objects, 268 object categories, 585 placements, and 105 rooms. Next, we propose a modular baseline approach for Housekeep that integrates planning, exploration, and navigation. It leverages a fine-tuned large language model (LLM) trained on an internet text corpus for effective planning. We show that our baseline agent generalizes to rearranging unseen objects in unknown environments."
+    authors={{
+      "Yash Mukund": [],
+      "Arun Ramachandran": [],
+      "Sriram Yenamandra": [],
+      "Igor Gilitschenski": [],
+      "Dhruv Batra": [],
+      "Andrew Szot": [],
+      "Harsh Agrawal": [],
+    }}
+    affiliations={[]}
+    pdf="/papers/2022/21.pdf"
+  />,
+  <Paper
+    title="Learning Value Functions from Undirected State-only Experience"
+    abstract="This paper tackles the problem of learning value functions from undirected state-only experience (state transitions without action labels i.e. (s,s',r) tuples). We first theoretically characterize the applicability of Q-learning in this setting. We show that tabular Q-learning in discrete Markov decision processes (MDPs) learns the same value function under any arbitrary refinement of the action space. This theoretical result motivates the design of Latent Action Q-learning or LAQ, an offline RL method that can learn effective value functions from state-only experience. Latent Action Q-learning (LAQ) learns value functions using Q-learning on discrete latent actions obtained through a latent-variable future prediction model. We show that LAQ can recover value functions that have high correlation with value functions learned using ground truth actions. Value functions learned using LAQ lead to sample efficient acquisition of goal-directed behavior, can be used with domain-specific low-level controllers, and facilitate transfer across embodiments. Our experiments in 5 environments ranging from 2D grid world to 3D visual navigation in realistic environments demonstrate the benefits of LAQ over simpler alternatives, imitation learning oracles, and competing methods."
+    authors={{
+      "Matthew Chang": [],
+      "Arjun Gupta": [],
+      "Saurabh Gupta": [],
+    }}
+    affiliations={[]}
+    pdf="/papers/2022/16.pdf"
   />,
 ];
 
@@ -1041,21 +1127,17 @@ export default function Home({ data }) {
       </Section>
       <Section title="Timeline">
         <Steps progressDot current={0} direction="vertical">
-          <Step 
+          <Step
             title="CVPR Workshop"
             description={
               <>
-                <a
-                  href={"/images/cvpr2022/map-location.jpg"}
-                  target="_blank"
-                >
+                <a href={"/images/cvpr2022/map-location.jpg"} target="_blank">
                   Room 224, New Orleans Ernest M. Morial Conventinon Center
                 </a>{" "}
-                <br/>
+                <br />
                 June 19, 2022
-                <br/>
-                9:00 AM - 5:30 PM CT{" "}
-                <br/>
+                <br />
+                9:00 AM - 5:30 PM CT <br />
                 <span
                   css={css`
                     color: ${color.gray7};
@@ -1070,7 +1152,7 @@ export default function Home({ data }) {
                   `}
                 >
                   <Timeline>
-                  <Timeline.Item>
+                    <Timeline.Item>
                       Workshop Introduction
                       <br />
                       <Time time="9:00 AM CT" />
@@ -1104,7 +1186,7 @@ export default function Home({ data }) {
                       <InlineSlack />
                     </Timeline.Item>
                     <Timeline.Item>
-                      Invited Talk 
+                      Invited Talk
                       <Speaker
                         organizations={["Allen Institute for AI"]}
                         name="Roozbeh Mottaghi"
@@ -1395,6 +1477,25 @@ export default function Home({ data }) {
             . Paper submissions are now closed.
           </p>
         </SubSection>
+        <SubSection title="Accepted Papers">
+          <p>
+            <b>Note.</b> The order of the papers is randomized each time the
+            page is refreshed.
+          </p>
+          <div
+            css={css`
+              display: grid;
+              grid-gap: 2%;
+              grid-row-gap: 20px;
+              grid-template-columns: 49% 49%;
+              @media (max-width: 600px) {
+                grid-template-columns: 100%;
+              }
+            `}
+          >
+            {paperOrder.map((n: number) => acceptedPapers[n])}
+          </div>
+        </SubSection>
       </Section>
       <Section title="Organizers">
         The Embodied AI 2022 workshop is a joint effort by a large set of
@@ -1494,7 +1595,6 @@ export const query = graphql`
     carolina: file(relativePath: { eq: "cvpr2022/carolina.jpg" }) {
       ...FaceThumbnail
     }
-  
 
     # organizer pictures
     devendraOrg: file(relativePath: { eq: "organizers/devendra.jpg" }) {
