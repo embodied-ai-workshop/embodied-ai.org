@@ -877,7 +877,6 @@ function Slack() {
 // And finally, we add all the content into their respective sections.
 export default function Home({ data }) {
   const [windowWidth, setWindowWidth] = useState(getWindowWidth());
-  console.log(data.allSite.nodes[0].siteMetadata.cvpr2023.organizers);
 
   useEffect(() => {
     const resizeWindow = () => setWindowWidth(getWindowWidth());
@@ -1478,14 +1477,33 @@ export default function Home({ data }) {
             . Paper submissions are now closed.
           </p>
         </SubSection>
+        <SubSection title="Accepted Papers">
+          <p>
+            <b>Note.</b> The order of the papers is randomized each time the
+            page is refreshed.
+          </p>
+          <div
+            css={css`
+              display: grid;
+              grid-gap: 2%;
+              grid-row-gap: 20px;
+              grid-template-columns: 49% 49%;
+              @media (max-width: 600px) {
+                grid-template-columns: 100%;
+              }
+            `}
+          >
+            {paperOrder.map((n: number) => acceptedPapers[n])}
+          </div>
+        </SubSection>
       </Section>
       <Section title="Organizers">
-        The Embodied AI 2023 workshop is a joint effort by a large set of
+        The Embodied AI 2022 workshop is a joint effort by a large set of
         researchers from a variety of organizations. They are listed below in
         alphabetical order.
         <SubSection title="Organizing Committee">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2023.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2022.organizers
               .filter((organizer: any) => organizer.oc === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1493,7 +1511,7 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Challenge Organizers">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2023.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2022.organizers
               .filter((organizer: any) => organizer.challenge === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1501,7 +1519,7 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Scientific Advisory Board">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2023.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2022.organizers
               .filter((organizer: any) => organizer.sab === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1543,7 +1561,7 @@ export const query = graphql`
     allSite {
       nodes {
         siteMetadata {
-          cvpr2023 {
+          cvpr2022 {
             organizers {
               name
               imageId

@@ -72,10 +72,17 @@ export const OtherYears = (props: { onConference: string }) => (
       content={
         <div>
           <div>
+            {props.onConference === "CVPR 2023" ? (
+              <>CVPR 2023</>
+            ) : (
+              <Link to="/">CVPR 2023</Link>
+            )}
+          </div>
+          <div>
             {props.onConference === "CVPR 2022" ? (
               <>CVPR 2022</>
             ) : (
-              <Link to="/">CVPR 2022</Link>
+              <Link to="/cvpr2022">CVPR 2022</Link>
             )}
           </div>
           <div>

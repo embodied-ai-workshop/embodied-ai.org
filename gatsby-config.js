@@ -4,6 +4,19 @@ const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
+    cvpr2023: {
+      organizers: [
+        {
+          challenge: true,
+          imageId: "devendra",
+          name: "Devendra Singh Chaplot",
+          oc: true,
+          organization: "Meta AI",
+          sab: true,
+          site: "https://devendrachaplot.github.io/",
+        }
+      ]
+    },
     cvpr2022: {
       organizers: [
         {
