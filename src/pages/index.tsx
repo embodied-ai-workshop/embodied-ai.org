@@ -877,7 +877,6 @@ function Slack() {
 // And finally, we add all the content into their respective sections.
 export default function Home({ data }) {
   const [windowWidth, setWindowWidth] = useState(getWindowWidth());
-  console.log(data.allSite.nodes[0].siteMetadata.cvpr2023.organizers);
 
   useEffect(() => {
     const resizeWindow = () => setWindowWidth(getWindowWidth());
@@ -1056,10 +1055,10 @@ export default function Home({ data }) {
           background-position: center;
         `,
       }}
-      conference="CVPR 2022"
+      conference="CVPR 2023"
       rightSide={
         <Challenges
-          conference="CVPR 2022"
+          conference="CVPR 2023"
           challengeData={Object.values(challengePageMap)}
         />
       }
