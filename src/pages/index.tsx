@@ -1050,7 +1050,7 @@ export default function Home({ data }) {
           margin-top: -25px;
           margin-left: -15%;
           margin-bottom: -15px;
-          background-image: url("/images/cvpr2022/cover.jpg");
+          background-image: url("/images/cvpr2023/cover-logos.png");
           background-size: cover;
           background-position: center;
         `,
