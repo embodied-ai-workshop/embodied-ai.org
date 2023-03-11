@@ -1053,7 +1053,8 @@ export default function Home({ data }) {
 
   return (
     <PageWrapper
-      headerGradient="radial-gradient(#090617, #090617)"
+      // headerGradient="radial-gradient(#090617, #090617)"
+      headerGradient="linear-gradient(0deg, #1f2f3f, #100b0f)"
       headerStyle={css`
         color: ${color.dark.gold10} !important;
         button {
