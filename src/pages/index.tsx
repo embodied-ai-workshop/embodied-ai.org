@@ -92,9 +92,9 @@ const challengePageMap = {
       AI2-THOR Rearrangement
     </a>
   ),
-  "Language Interaction": (
-    <a href="//askforalfred.com/EAI23" target="_blank">
-      Language Interaction
+  DialFRED: (
+    <a href="https://eval.ai/web/challenges/challenge-page/1859/overview" target="_blank">
+      DialFRED
     </a>
   ),
   Habitat: (
@@ -102,9 +102,14 @@ const challengePageMap = {
       Habitat
     </a>
   ),
-  iGibson: (
-    <a href="http://svl.stanford.edu/igibson/challenge.html" target="_blank">
-      iGibson
+  "Language Interaction": (
+    <a href="//askforalfred.com/EAI23" target="_blank">
+      Language Interaction
+    </a>
+  ),
+  ManiSkill: (
+    <a href="https://sapien.ucsd.edu/challenges/maniskill" target="_blank">
+      ManiSkill
     </a>
   ),
   MultiOn: (
@@ -130,21 +135,6 @@ const challengePageMap = {
   "TDW-Transport": (
     <a href="http://tdw-transport.csail.mit.edu" target="_blank">
       TDW-Transport
-    </a>
-  ),
-  TEACh: (
-    <a href="//teachingalfred.github.io/EAI22" target="_blank">
-      TEACh
-    </a>
-  ),
-  DialFRED: (
-    <a href="https://eval.ai/web/challenges/challenge-page/1859/overview" target="_blank">
-      DialFRED
-    </a>
-  ),
-  ManiSkill: (
-    <a href="https://sapien.ucsd.edu/challenges/maniskill" target="_blank">
-      ManiSkill
     </a>
   ),
 };
@@ -1071,7 +1061,7 @@ export default function Home({ data }) {
           margin-top: -25px;
           margin-left: -15%;
           margin-bottom: -15px;
-          background-image: url("/images/cvpr2023/cover-logos.png");
+          background-image: url("/images/cvpr2023/cover-small.png");
           background-size: cover;
           background-position: center;
         `,
@@ -1833,6 +1823,39 @@ export const query = graphql`
       ...FluidImage
     }
     nikoOrg: file(relativePath: { eq: "organizers/niko.jpg" }) {
+      ...FluidImage
+    }
+    naokiOrg: file(relativePath: { eq: "organizers/naoki.jpg" }) {
+      ...FluidImage
+    }
+    chrisOrg: file(relativePath: { eq: "organizers/chris.jpg" }) {
+      ...FluidImage
+    }
+    davidHOrg: file(relativePath: { eq: "organizers/davidH.jpg" }) {
+      ...FluidImage
+    }
+    devonOrg: file(relativePath: { eq: "organizers/devon.jpg" }) {
+      ...FluidImage
+    }
+    lambertoOrg: file(relativePath: { eq: "organizers/lamberto.jpg" }) {
+      ...FluidImage
+    }
+    xiaofengOrg: file(relativePath: { eq: "organizers/xiaofeng.jpg" }) {
+      ...FluidImage
+    }
+    govindOrg: file(relativePath: { eq: "organizers/govind.jpg" }) {
+      ...FluidImage
+    }
+    ruohanOrg: file(relativePath: { eq: "organizers/ruohan.jpg" }) {
+      ...FluidImage
+    }
+    stoneOrg: file(relativePath: { eq: "organizers/stone.jpg" }) {
+      ...FluidImage
+    }
+    fanboOrg: file(relativePath: { eq: "organizers/fanbo.png" }) {
+      ...FluidImage
+    }
+    jiayuanOrg: file(relativePath: { eq: "organizers/jiayuan.png" }) {
       ...FluidImage
     }
   }
