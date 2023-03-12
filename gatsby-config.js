@@ -127,7 +127,7 @@ module.exports = {
           challenge: false,
           imageId: "chris",
           name: "Chris Paxton",
-          oc: true,
+          oc: false,
           organization: "Meta AI",
           sab: false,
           site: "https://cpaxton.github.io/about/",

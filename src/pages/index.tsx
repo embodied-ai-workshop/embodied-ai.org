@@ -1189,9 +1189,9 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       Workshop Introduction: Embodied AI
                       <Speaker
-                         organizations={["Logical Robotics"]}
-                         name="Anthony Francis"
-                         fixedImg={data.anthony.childImageSharp.fixed}
+                         organizations={["NVIDIA"]}
+                         name="Claudia Perez D'Arpino"
+                         fixedImg={data.claudia.childImageSharp.fixed}
                          noMargin={true}
                       />
                       <Time time="9:00 AM PT" />
@@ -1302,6 +1302,13 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       Invited Speaker Panel
                       <br />
+                      <Speaker
+                         organizations={["Logical Robotics"]}
+                         name="Moderator - Anthony Francis"
+                         fixedImg={data.anthony.childImageSharp.fixed}
+                         noMargin={true}
+                      />
+
                       <Time time="4:30 PM PT" />
                       <InlineSlack />
                     </Timeline.Item>
@@ -1644,6 +1651,9 @@ export const query = graphql`
       ...FaceThumbnail
     }
     embodi: file(relativePath: { eq: "cvpr2023/embodi.png" }) {
+      ...FaceThumbnail
+    }
+    claudia: file(relativePath: { eq: "organizers/claudia.jpg" }) {
       ...FaceThumbnail
     }
     
