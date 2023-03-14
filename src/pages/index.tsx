@@ -12,7 +12,6 @@ import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import moment from "moment-timezone";
 import Img, { FixedObject, FluidObject } from "gatsby-image";
 
-import NewOrleansCover from "../../static/images/cvpr2022/cover.svg";
 import SlackLogo from "../../static/icons/slack.svg";
 
 const { Step } = Steps;
@@ -93,9 +92,9 @@ const challengePageMap = {
       AI2-THOR Rearrangement
     </a>
   ),
-  ALFRED: (
-    <a href="//askforalfred.com/EAI22" target="_blank">
-      ALFRED
+  DialFRED: (
+    <a href="https://eval.ai/web/challenges/challenge-page/1859/overview" target="_blank">
+      DialFRED
     </a>
   ),
   Habitat: (
@@ -103,9 +102,14 @@ const challengePageMap = {
       Habitat
     </a>
   ),
-  iGibson: (
-    <a href="http://svl.stanford.edu/igibson/challenge.html" target="_blank">
-      iGibson
+  "Language Interaction": (
+    <a href="//askforalfred.com/EAI23" target="_blank">
+      Language Interaction
+    </a>
+  ),
+  ManiSkill: (
+    <a href="https://sapien.ucsd.edu/challenges/maniskill" target="_blank">
+      ManiSkill
     </a>
   ),
   MultiOn: (
@@ -131,11 +135,6 @@ const challengePageMap = {
   "TDW-Transport": (
     <a href="http://tdw-transport.csail.mit.edu" target="_blank">
       TDW-Transport
-    </a>
-  ),
-  TEACh: (
-    <a href="//teachingalfred.github.io/EAI22" target="_blank">
-      TEACh
     </a>
   ),
 };
@@ -886,92 +885,26 @@ export default function Home({ data }) {
 
   const challengeData = [
     {
-      challenge: challengePageMap["AI2-THOR Rearrangement"],
-      key: "ai2thor-rearrangement",
-      task: "Rearrangement",
-      interactiveActions: "✓",
-      simulationPlatform: "AI2-THOR",
-      sceneDataset: "iTHOR",
-      actionSpace: "Discrete",
-      observations: "RGB-D, Localization",
-      stochasticAcuation: "",
-    },
-    {
-      challenge: challengePageMap["ALFRED"],
-      key: "alfred",
-      task: "Vision-and-Language Interaction",
-      interactiveActions: "✓",
-      simulationPlatform: "AI2-THOR",
-      sceneDataset: "iTHOR",
-      actionSpace: "Discrete",
-      observations: "RGB",
-      stochasticAcuation: "",
-    },
-    {
       challenge: challengePageMap["Habitat"],
       key: "habitat-objectNav",
       task: "ObjectNav",
       interactiveActions: "",
       simulationPlatform: "Habitat",
-      sceneDataset: "Matterport3D",
-      actionSpace: "Discrete",
+      sceneDataset: "HM3D Semantics",
+      actionSpace: "Continuous",
       observations: "RGB-D, Localization",
       stochasticAcuation: "",
     },
     {
-      challenge: challengePageMap["iGibson"],
-      key: "igibson-in",
-      task: "Interactive Navigation",
-      interactiveActions: "✓",
-      simulationPlatform: "iGibson",
-      sceneDataset: "iGibson",
-      actionSpace: "Continuous",
-      observations: "RGB-D",
-      stochasticAcuation: "✓",
-    },
-    {
-      challenge: challengePageMap["iGibson"],
-      key: "igibson-social-navigation",
-      task: "Social Navigation",
-      interactiveActions: "✓",
-      simulationPlatform: "iGibson",
-      sceneDataset: "iGibson",
-      actionSpace: "Continuous",
-      observations: "RGB-D",
-      stochasticAcuation: "✓",
-    },
-    {
-      challenge: challengePageMap["MultiOn"],
-      key: "multion",
-      task: "Multi-Object Navigation",
+      challenge: challengePageMap["Habitat"],
+      key: "habitat-imageNav",
+      task: "ImageNav",
       interactiveActions: "",
       simulationPlatform: "Habitat",
-      sceneDataset: "Matterport3D",
-      actionSpace: "Discrete",
+      sceneDataset: "HM3D Semantics",
+      actionSpace: "Continuous",
       observations: "RGB-D, Localization",
       stochasticAcuation: "",
-    },
-    {
-      challenge: challengePageMap["Robotic Vision Scene Understanding"],
-      key: "rvsu",
-      task: "Rearrangement (SCD)",
-      interactiveActions: "",
-      simulationPlatform: "Isaac Sim",
-      sceneDataset: "Active Scene Understanding",
-      observations: "RGB-D, Pose Data, Flatscan Laser",
-      actionSpace: "Discrete",
-      stochasticAcuation: "✓",
-    },
-    {
-      challenge: challengePageMap["Robotic Vision Scene Understanding"],
-      key: "rvsu-2",
-      task: "Semantic SLAM",
-      interactiveActions: "",
-      simulationPlatform: "Isaac Sim",
-      sceneDataset: "Active Scene Understanding",
-      observations: "RGB-D, Pose Data, Flatscan Laser",
-      actionSpace: "Discrete",
-      stochasticAcuation: "Partially",
     },
     {
       challenge: challengePageMap["RxR-Habitat"],
@@ -982,6 +915,17 @@ export default function Home({ data }) {
       sceneDataset: "Matterport3D",
       observations: "RGB-D",
       actionSpace: "Discrete",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["MultiOn"],
+      key: "multion",
+      task: "Multi-Object Navigation",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "HM3D Semantics",
+      actionSpace: "Discrete",
+      observations: "RGB-D, Localization",
       stochasticAcuation: "",
     },
     {
@@ -996,6 +940,39 @@ export default function Home({ data }) {
       stochasticAcuation: "",
     },
     {
+      challenge: challengePageMap["SoundSpaces"],
+      key: "soundspaces",
+      task: "Active Audio Visual Source Separation",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "Matterport3D",
+      observations: "RGB-D, Audio Waveform",
+      actionSpace: "Discrete",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["Robotic Vision Scene Understanding"],
+      key: "rvsu-2",
+      task: "Semantic SLAM",
+      interactiveActions: "",
+      simulationPlatform: "Isaac Sim",
+      sceneDataset: "Active Scene Understanding",
+      observations: "RGB-D, Pose Data, Flatscan Laser",
+      actionSpace: "Discrete",
+      stochasticAcuation: "Partially",
+    },
+    {
+      challenge: challengePageMap["Robotic Vision Scene Understanding"],
+      key: "rvsu",
+      task: "Rearrangement (SCD)",
+      interactiveActions: "",
+      simulationPlatform: "Isaac Sim",
+      sceneDataset: "Active Scene Understanding",
+      observations: "RGB-D, Pose Data, Flatscan Laser",
+      actionSpace: "Discrete",
+      stochasticAcuation: "✓",
+    },
+    {
       challenge: challengePageMap["TDW-Transport"],
       key: "tdw",
       task: "Rearrangement",
@@ -1007,14 +984,47 @@ export default function Home({ data }) {
       stochasticAcuation: "✓",
     },
     {
-      challenge: challengePageMap["TEACh"],
+      challenge: challengePageMap["AI2-THOR Rearrangement"],
+      key: "ai2thor-rearrangement",
+      task: "Rearrangement",
+      interactiveActions: "✓",
+      simulationPlatform: "AI2-THOR",
+      sceneDataset: "iTHOR",
+      actionSpace: "Discrete",
+      observations: "RGB-D, Localization",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["Language Interaction"],
+      key: "language-interaction",
+      task: "Instruction Following and Dialogue",
+      interactiveActions: "✓",
+      simulationPlatform: "AI2-THOR",
+      sceneDataset: "iTHOR",
+      actionSpace: "Discrete",
+      observations: "RGB",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["DialFRED"],
       key: "teach",
       task: "Vision-and-Dialogue Interaction",
       interactiveActions: "✓",
       simulationPlatform: "AI2-THOR",
       sceneDataset: "iTHOR",
       observations: "RGB",
-      actionSpace: "Discrete, Text Generation",
+      actionSpace: "Discrete",
+      stochasticAcuation: "",
+    },
+    {
+      challenge: challengePageMap["ManiSkill"],
+      key: "maniskill",
+      task: "Generalized Manipulation",
+      interactiveActions: "✓",
+      simulationPlatform: "SAPIEN",
+      sceneDataset: "PartNet-Mobility, YCB, EGAD",
+      observations: "RGB-D, Metadata",
+      actionSpace: "Continuous",
       stochasticAcuation: "",
     },
   ];
@@ -1033,7 +1043,8 @@ export default function Home({ data }) {
 
   return (
     <PageWrapper
-      headerGradient="radial-gradient(#090617, #090617)"
+      // headerGradient="radial-gradient(#090617, #090617)"
+      headerGradient="linear-gradient(0deg, #1f2f3f, #100b0f)"
       headerStyle={css`
         color: ${color.dark.gold10} !important;
         button {
@@ -1050,36 +1061,38 @@ export default function Home({ data }) {
           margin-top: -25px;
           margin-left: -15%;
           margin-bottom: -15px;
-          background-image: url("/images/cvpr2022/cover.jpg");
+          background-image: url("/images/cvpr2023/cover-small.png");
           background-size: cover;
           background-position: center;
         `,
       }}
-      conference="CVPR 2022"
+      conference="CVPR 2023"
       rightSide={
         <Challenges
-          conference="CVPR 2022"
+          conference="CVPR 2023"
           challengeData={Object.values(challengePageMap)}
         />
       }
     >
       <Section title="Overview">
         <p>
-          Within the last decade, advances in deep learning, coupled with the
-          creation of large, freely available datasets (e.g., ImageNet), have
-          resulted in remarkable progress in the computer vision, NLP, and
-          broader AI communities. This progress has enabled models to begin to
-          obtain superhuman performance on a wide variety of passive tasks.
-          However, this progress has also enabled a paradigm shift that a
-          growing collection of researchers take aim at: the creation of an
-          embodied agent (e.g., a robot) which learns, through interaction and
-          exploration, to creatively solve challenging tasks within its
-          environment.
-        </p>
-        <p>
-          The goal of this workshop is to bring together researchers from the
-          fields of computer vision, language, graphics, and robotics to share
-          and discuss the current state of intelligent agents that can:
+          Minds live in bodies, and bodies move through a changing world.
+          The goal of embodied artificial intelligence is to create agents,
+          such as robots, which learn to creatively solve challenging tasks
+          requiring interaction with the environment.
+
+          While this is a tall order, fantastic advances in deep learning and the
+          increasing availability of large datasets like ImageNet have enabled
+          superhuman performance on a variety of AI tasks previously thought
+          intractable. Computer vision, speech recognition and natural language
+          processing have experienced transformative revolutions at passive
+          input-output tasks like language translation and image processing,
+          and reinforcement learning has similarly achieved world-class
+          performance at interactive tasks like games.
+
+          These advances have supercharged embodied AI, enabling a growing
+          collection of researchers to make rapid progress towards intelligent
+          agents which can:         
         </p>
         <ul>
           <li>
@@ -1096,8 +1109,7 @@ export default function Home({ data }) {
           </li>
           <li>
             <b>
-              <Emoji emoji="ear" size={18} />
-              Listen
+              <Emoji emoji="ear" size={18} /> Listen
             </b>
             : understand and react to audio input anywhere in a scene.
           </li>
@@ -1115,10 +1127,32 @@ export default function Home({ data }) {
           </li>
         </ul>
         <p>
-          The Embodied AI 2022 workshop will be held in conjunction with CVPR
-          2022. It will feature a host of invited talks covering a variety of
-          topics in Embodied AI, many exciting challenges, a poster session, and
-          panel discussions.
+          The goal of the Embodied AI workshop is to bring together researchers
+          from computer vision, language, graphics, and robotics to share
+          and discuss the latest advances in embodied intelligent agents.
+          This year's workshop will focus on the three themes of:
+          <ul>
+            <li>
+              <Emoji emoji="house" size={16} /> <b>Foundation Models</b>: Large pretrained models such as CLIP,
+              ViLD and PaLI which enable few-shot and zero-shot performance on
+              novel tasks.
+            </li>
+            <li>
+              <Emoji emoji="robot_face" size={16} /> <b>Generalist Agents</b>: Single learning methods for multiple
+              tasks, such as RT-1, which enable models trained on one task
+              to be expanded to novel tasks.
+            </li>
+            <li>
+              <Emoji emoji="world_map" size={16} /> <b>Sim to Real Transfer</b>: Techniques which enable models trained
+              in simulation to be deployed in the real world.
+            </li>
+          </ul>
+
+          The Embodied AI 2023 workshop will be held in conjunction with
+          {" "}<a href="https://cvpr2023.thecvf.com/">CVPR 2023</a>{" "}
+          in Vancouver, British Columbia. It will feature a host of invited
+          talks covering a variety of topics in Embodied AI, many exciting 
+          Emboided AI challenges, a poster session, and panel discussions.
         </p>
         <EmailSubscription
           actionIdentifier="1FAIpQLSeIZrn-tk7Oain2R8gc_Q0HzLMLQ9XXwqu3KecK_E5kALpiug"
@@ -1128,16 +1162,16 @@ export default function Home({ data }) {
       <Section title="Timeline">
         <Steps progressDot current={0} direction="vertical">
           <Step
-            title="CVPR Workshop"
+            title="CVPR Embodied AI Workshop"
             description={
               <>
-                <a href={"/images/cvpr2022/map-location.jpg"} target="_blank">
-                  Room 224, New Orleans Ernest M. Morial Conventinon Center
+                <a href={"https://cvpr2023.thecvf.com/Conferences/2023"} target="_blank">
+                  Vancouver Convention Center
                 </a>{" "}
                 <br />
-                June 19, 2022
+                Monday, June 19, 2023
                 <br />
-                9:00 AM - 5:30 PM CT <br />
+                9:00 AM - 5:30 PM PT <br />
                 <span
                   css={css`
                     color: ${color.gray7};
@@ -1153,146 +1187,160 @@ export default function Home({ data }) {
                 >
                   <Timeline>
                     <Timeline.Item>
-                      Workshop Introduction
-                      <br />
-                      <Time time="9:00 AM CT" />
+                      Workshop Introduction: Embodied AI
+                      <Speaker
+                         organizations={["NVIDIA"]}
+                         name="Claudia Perez D'Arpino"
+                         fixedImg={data.claudia.childImageSharp.fixed}
+                         noMargin={true}
+                      />
+                      <Time time="9:00 AM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       Navigation & Understanding Challenge Presentations
                       <br />
-                      (MultiON, SoundSpaces, RxR-Habitat, RVSU)
+                      (Habitat, MultiON, SoundSpaces, RxR-Habitat, RVSU)
                       <br />
-                      <Time time="9:10 AM CT" />
+                      <Time time="9:10 AM PT" />
                     </Timeline.Item>
                     <Timeline.Item>
                       Navigation & Understanding Challenge Q&A Panel
-                      <br />
-                      (MultiON, SoundSpaces, RxR-Habitat, RVSU)
-                      <br />
-                      <Time time="10:00 AM CT" />
+                      <br/>
+                      <Time time="10:00 AM PT" />
                       <InlineSlack />
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Invited Talk
+                      Invited Talk - Embodied Navigation
                       <Speaker
-                        organizations={["Google AI"]}
-                        name="Carolina Parada"
-                        fixedImg={data.carolina.childImageSharp.fixed}
+                        organizations={["UIUC"]}
+                        name="Saurabh Gupta"
+                        fixedImg={data.saurabh.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <Time time="10:30 AM CT" />
+                      <Time time="10:30 AM PT" />
                       <InlineSlack />
                     </Timeline.Item>
                     <Timeline.Item>
-                      Invited Talk
+                      Invited Talk - External Knowledge
                       <Speaker
-                        organizations={["Allen Institute for AI"]}
-                        name="Roozbeh Mottaghi"
-                        fixedImg={data.roozbeh.childImageSharp.fixed}
+                        organizations={["UT Austin"]}
+                        name="Kristen Grauman"
+                        fixedImg={data.kristen.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <Time time="11:00 AM CT" />
+                      <Time time="11:00 AM PT" />
                       <InlineSlack />
                     </Timeline.Item>
                     <Timeline.Item>
-                      Invited Talk
+                      Invited Talk - Generalist Agents
                       <Speaker
-                        organizations={["GaTech", "FAIR"]}
-                        name="Dhruv Batra"
-                        fixedImg={data.dhruv.childImageSharp.fixed}
+                        organizations={["CMU"]}
+                        name="Ruslan Salakhutdinov"
+                        fixedImg={data.ruslan.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <Time time="11:30 AM CT" />
+                      <Time time="11:30 AM PT" />
                       <InlineSlack />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       Accepted Papers Poster Session
                       <br />
-                      <Time time="12:00 PM CT" />
+                      <Time time="12:00 PM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Invited Talk
-                      <Speaker
-                        organizations={["Carnegie Mellon"]}
-                        name="Katerina Fragkiadaki"
-                        fixedImg={data.katerina.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Time time="1:30 PM CT" />
-                      <InlineSlack />
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      Invited Talk
+                      Invited Talk - Foundation Models
                       <Speaker
                         organizations={["Stanford"]}
-                        name="Fei-Fei Li"
-                        fixedImg={data.feifei.childImageSharp.fixed}
+                        name="Jeannette Bohg"
+                        fixedImg={data.jeannette.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <Time time="2:00 PM CT" />
+                      <Time time="1:30 PM PT" />
                       <InlineSlack />
                     </Timeline.Item>
                     <Timeline.Item>
-                      Invited Talk
+                      Invited Talk - Sim to Real
                       <Speaker
-                        organizations={["Berkeley"]}
-                        name="Jitendra Malik"
-                        fixedImg={data.jitendra.childImageSharp.fixed}
+                        organizations={["NVIDIA", "U Washington"]}
+                        name="Dieter Fox"
+                        fixedImg={data.dieter.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <Time time="2:30 PM CT" />
+                      <Time time="2:00 PM PT" />
+                      <InlineSlack />
+                    </Timeline.Item>
+                    <Timeline.Item>
+                      Invited Talk - Embodied AI for All
+                      <Speaker
+                        organizations={["TBD"]}
+                        name="TBD"
+                        fixedImg={data.embodi.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Time time="2:30 PM PT" />
                       <InlineSlack />
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Interaction Challenge Presentations
+                      Interaction & Rearrangement Challenge Presentations
                       <br />
-                      AI2-Rearrangement, ALFRED, TEACh
+                      AI2-Rearrangement, ALFRED+TEACh, DialFRED, ManiSkill, TDW-Transport
                       <br />
-                      <Time time="3:00 PM CT" />
+                      <Time time="3:00 PM PT" />
                     </Timeline.Item>
                     <Timeline.Item>
-                      Interaction Challenge Q&A Panel
+                      Interaction & Rearrangement Challenge Q&A Panel
                       <br />
-                      <Time time="4:00 PM CT" />
+                      <Time time="4:00 PM PT" />
                       <InlineSlack />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       Invited Speaker Panel
                       <br />
-                      <Time time="4:30 PM CT" />
+                      <Speaker
+                         organizations={["Logical Robotics"]}
+                         name="Moderator - Anthony Francis"
+                         fixedImg={data.anthony.childImageSharp.fixed}
+                         noMargin={true}
+                      />
+
+                      <Time time="4:30 PM PT" />
                       <InlineSlack />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       Workshop Concludes
                       <br />
-                      <Time time="5:30 PM CT" />
+                      <Time time="5:30 PM PT" />
                     </Timeline.Item>
                   </Timeline>
                 </div>
               </>
             }
           ></Step>
-          <Step
-            title="Challenge Submission Deadlines"
-            description="May 2022. Check each challenge for the specific date."
-          />
+          <Step title="Workshop Announced" description="March 15, 2023" />
           <Step
             title="Paper Submission Deadline"
-            description="May 16, 2022 (Anywhere on Earth)"
+            description="May 16, 2023 (Anywhere on Earth)"
           />
-          <Step title="Workshop Announced" description="Feb 14, 2022" />
+          <Step
+            title="Challenge Submission Deadlines"
+            description="May 2023. Check each challenge for the specific date."
+          />
+          <Step
+            title="Challenge Winners Announced"
+            description="June 19, 2023 at the workshop. Check each challenge for specifics."
+          />
         </Steps>
       </Section>
       <Section title="Challenges">
         <p>
-          The Embodied AI 2022 workshop is hosting many exciting challenges
+          The Embodied AI 2023 workshop is hosting many exciting challenges
           covering a wide range of topics such as rearrangement, visual
           navigation, vision-and-language, and audio-visual navigation. More
           details regarding data, submission instructions, and timelines can be
@@ -1337,19 +1385,6 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  <Emoji emoji="cooking" size={18} /> Interactive Actions?
-                </>
-              ),
-              dataIndex: "interactiveActions",
-              key: "interactiveActions",
-              sorter: (a, b) =>
-                a.interactiveActions.localeCompare(b.interactiveActions),
-              sortDirections: ["descend", "ascend"],
-              width: 200,
-            },
-            {
-              title: (
-                <>
                   <Emoji emoji="earth_americas" size={18} /> Simulation Platform
                 </>
               ),
@@ -1386,6 +1421,35 @@ export default function Home({ data }) {
             },
             {
               title: (
+                <div
+                  css={css`
+                    text-align: center;
+                  `}
+                >
+                  <Emoji emoji="joystick" size={18} /> Action Space
+                </div>
+              ),
+              key: "actionSpace",
+              dataIndex: "actionSpace",
+              sorter: (a, b) => a.actionSpace.localeCompare(b.actionSpace),
+              sortDirections: ["ascend", "descend"],
+              width: 165,
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="cooking" size={18} /> Interactive Actions?
+                </>
+              ),
+              dataIndex: "interactiveActions",
+              key: "interactiveActions",
+              sorter: (a, b) =>
+                a.interactiveActions.localeCompare(b.interactiveActions),
+              sortDirections: ["descend", "ascend"],
+              width: 200,
+            },
+            {
+              title: (
                 <>
                   <Emoji emoji="tophat" size={18} /> Stochastic Acuation?
                 </>
@@ -1403,22 +1467,6 @@ export default function Home({ data }) {
               sortDirections: ["descend", "ascend"],
               // width: 225,
             },
-            {
-              title: (
-                <div
-                  css={css`
-                    text-align: center;
-                  `}
-                >
-                  <Emoji emoji="joystick" size={18} /> Action Space
-                </div>
-              ),
-              key: "actionSpace",
-              dataIndex: "actionSpace",
-              sorter: (a, b) => a.actionSpace.localeCompare(b.actionSpace),
-              sortDirections: ["ascend", "descend"],
-              width: 165,
-            },
           ]}
           dataSource={challengeData}
           pagination={false}
@@ -1427,8 +1475,20 @@ export default function Home({ data }) {
       </Section>
       <Section title="Call for Papers">
         <p>
-          We invite high-quality 2-page extended abstracts in relevant areas,
-          such as:
+          We invite high-quality 2-page extended abstracts on embodied AI,
+          especially in areas relevant to the themes of this year's workshop:
+          <ul>
+            <li>
+              <Emoji emoji="house" size={16} /> Foundation Models
+            </li>
+            <li>
+              <Emoji emoji="robot_face" size={16} /> Generalist Agents
+            </li>
+            <li>
+              <Emoji emoji="world_map" size={16} /> Sim to Real Transfer
+            </li>
+          </ul>
+          as well as themes related to embodied AI in general:
           <ul>
             <li>
               <Emoji emoji="mountain_railway" size={16} /> Simulation
@@ -1441,15 +1501,10 @@ export default function Home({ data }) {
               <Emoji emoji="chair" size={16} /> Rearrangement
             </li>
             <li>
-              <Emoji emoji="raising_hand" size={16} /> Embodied Question
-              Answering
+              <Emoji emoji="raising_hand" size={16} /> Embodied Question Answering
             </li>
             <li>
-              <Emoji emoji="world_map" size={16} /> Simulation-to-Real Transfer
-            </li>
-            <li>
-              <Emoji emoji="speak_no_evil" size={16} /> Embodied Vision &amp;
-              Language
+              <Emoji emoji="speak_no_evil" size={16} /> Embodied Vision &amp; Language
             </li>
           </ul>
           Accepted papers will be presented as posters or spotlight talks at the
@@ -1457,7 +1512,7 @@ export default function Home({ data }) {
           non-archival format, allowing future submission to archival journals
           or conferences. Paper submissions do not have to be anononymized. Per{" "}
           <a
-            href="https://docs.google.com/document/d/1JWVoTitdS5UhktYNI2KyRP8JdDplawr_Zwm6R0ymQwI"
+            href="https://cvpr2023.thecvf.com/Conferences/2023/AuthorGuidelines"
             target="_blank"
           >
             CVPR rules
@@ -1467,43 +1522,24 @@ export default function Home({ data }) {
         </p>
         <SubSection title="Submission">
           <p>
-            The submission deadline is May 16th (
+            The submission deadline is May 15th (
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
             in the{" "}
-            <a href="//cvpr2022.thecvf.com/author-guidelines" target="_blank">
+            <a href="https://cvpr2023.thecvf.com/Conferences/2023/AuthorGuidelines" target="_blank">
               CVPR format
             </a>
-            . Paper submissions are now closed.
+            .
           </p>
-        </SubSection>
-        <SubSection title="Accepted Papers">
-          <p>
-            <b>Note.</b> The order of the papers is randomized each time the
-            page is refreshed.
-          </p>
-          <div
-            css={css`
-              display: grid;
-              grid-gap: 2%;
-              grid-row-gap: 20px;
-              grid-template-columns: 49% 49%;
-              @media (max-width: 600px) {
-                grid-template-columns: 100%;
-              }
-            `}
-          >
-            {paperOrder.map((n: number) => acceptedPapers[n])}
-          </div>
         </SubSection>
       </Section>
       <Section title="Organizers">
-        The Embodied AI 2022 workshop is a joint effort by a large set of
+        The Embodied AI 2023 workshop is a joint effort by a large set of
         researchers from a variety of organizations. They are listed below in
         alphabetical order.
         <SubSection title="Organizing Committee">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2022.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2023.organizers
               .filter((organizer: any) => organizer.oc === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1511,7 +1547,7 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Challenge Organizers">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2022.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2023.organizers
               .filter((organizer: any) => organizer.challenge === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1519,7 +1555,7 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Scientific Advisory Board">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2022.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2023.organizers
               .filter((organizer: any) => organizer.sab === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1561,7 +1597,7 @@ export const query = graphql`
     allSite {
       nodes {
         siteMetadata {
-          cvpr2022 {
+          cvpr2023 {
             organizers {
               name
               imageId
@@ -1596,6 +1632,31 @@ export const query = graphql`
       ...FaceThumbnail
     }
 
+    anthony: file(relativePath: { eq: "organizers/anthony.jpg" }) {
+      ...FaceThumbnail
+    }
+    jeannette: file(relativePath: { eq: "cvpr2023/jeannette.png" }) {
+      ...FaceThumbnail
+    }
+    dieter: file(relativePath: { eq: "cvpr2023/dieter.jpg" }) {
+      ...FaceThumbnail
+    }
+    ruslan: file(relativePath: { eq: "cvpr2023/ruslan.jpg" }) {
+      ...FaceThumbnail
+    }
+    kristen: file(relativePath: { eq: "cvpr2023/kristen.jpg" }) {
+      ...FaceThumbnail
+    }
+    saurabh: file(relativePath: { eq: "cvpr2023/saurabh.png" }) {
+      ...FaceThumbnail
+    }
+    embodi: file(relativePath: { eq: "cvpr2023/embodi.png" }) {
+      ...FaceThumbnail
+    }
+    claudia: file(relativePath: { eq: "organizers/claudia.jpg" }) {
+      ...FaceThumbnail
+    }
+    
     # organizer pictures
     devendraOrg: file(relativePath: { eq: "organizers/devendra.jpg" }) {
       ...FluidImage
@@ -1772,6 +1833,39 @@ export const query = graphql`
       ...FluidImage
     }
     nikoOrg: file(relativePath: { eq: "organizers/niko.jpg" }) {
+      ...FluidImage
+    }
+    naokiOrg: file(relativePath: { eq: "organizers/naoki.jpg" }) {
+      ...FluidImage
+    }
+    chrisOrg: file(relativePath: { eq: "organizers/chris.jpg" }) {
+      ...FluidImage
+    }
+    davidHOrg: file(relativePath: { eq: "organizers/davidH.jpg" }) {
+      ...FluidImage
+    }
+    devonOrg: file(relativePath: { eq: "organizers/devon.jpg" }) {
+      ...FluidImage
+    }
+    lambertoOrg: file(relativePath: { eq: "organizers/lamberto.jpg" }) {
+      ...FluidImage
+    }
+    xiaofengOrg: file(relativePath: { eq: "organizers/xiaofeng.jpg" }) {
+      ...FluidImage
+    }
+    govindOrg: file(relativePath: { eq: "organizers/govind.jpg" }) {
+      ...FluidImage
+    }
+    ruohanOrg: file(relativePath: { eq: "organizers/ruohan.jpg" }) {
+      ...FluidImage
+    }
+    stoneOrg: file(relativePath: { eq: "organizers/stone.jpg" }) {
+      ...FluidImage
+    }
+    fanboOrg: file(relativePath: { eq: "organizers/fanbo.png" }) {
+      ...FluidImage
+    }
+    jiayuanOrg: file(relativePath: { eq: "organizers/jiayuan.png" }) {
       ...FluidImage
     }
   }
