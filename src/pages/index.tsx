@@ -89,7 +89,7 @@ function ChallengeSpotlight(props: {
 const challengePageMap = {
   "AI2-THOR Rearrangement": (
     <a href="//ai2thor.allenai.org/rearrangement" target="_blank">
-      AI2-THOR Rearrangement
+      AI2-THOR Rearrangement (Coming Soon)
     </a>
   ),
   DialFRED: (
@@ -98,7 +98,7 @@ const challengePageMap = {
     </a>
   ),
   Habitat: (
-    <a href="//aihabitat.org/challenge/2022" target="_blank">
+    <a href="//aihabitat.org/challenge/2023/" target="_blank">
       Habitat
     </a>
   ),
@@ -118,13 +118,13 @@ const challengePageMap = {
     </a>
   ),
   "Robotic Vision Scene Understanding": (
-    <a href="http://cvpr2022.roboticvisionchallenge.org/" target="_blank">
+    <a href="https://nikosuenderhauf.github.io/roboticvisionchallenges/cvpr2023" target="_blank">
       Robotic Vision Scene Understanding
     </a>
   ),
   "RxR-Habitat": (
     <a href="//ai.google.com/research/rxr/habitat" target="_blank">
-      RxR-Habitat
+      RxR-Habitat (Coming Soon)
     </a>
   ),
   SoundSpaces: (
@@ -134,7 +134,7 @@ const challengePageMap = {
   ),
   "TDW-Transport": (
     <a href="http://tdw-transport.csail.mit.edu" target="_blank">
-      TDW-Transport
+      TDW-Transport (Coming Soon)
     </a>
   ),
 };
