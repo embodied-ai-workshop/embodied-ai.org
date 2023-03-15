@@ -398,7 +398,7 @@ module.exports = {
           challenge: true,
           imageId: "changan",
           name: "Changan Chen",
-          oc: false,
+          oc: true,
           organization: "UT Austin",
           sab: false,
           site: "https://changan.io/",
@@ -447,6 +447,15 @@ module.exports = {
           organization: "Intel",
           sab: true,
           site: "https://germanros.net/",
+        },
+        {
+          challenge: false,
+          imageId: "rin",
+          name: "Rin Metcalf",
+          oc: true,
+          organization: "Apple",
+          sab: false,
+          site: "https://scholar.google.com/citations?user=V7baeTMAAAAJ",
         },
 
       ]

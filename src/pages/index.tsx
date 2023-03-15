@@ -1868,5 +1868,8 @@ export const query = graphql`
     jiayuanOrg: file(relativePath: { eq: "organizers/jiayuan.png" }) {
       ...FluidImage
     }
+    rinOrg: file(relativePath: { eq: "organizers/rin.jpg" }) {
+      ...FluidImage
+    }
   }
 `;
