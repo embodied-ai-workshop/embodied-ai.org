@@ -1152,7 +1152,10 @@ export default function Home({ data }) {
           {" "}<a href="https://cvpr2023.thecvf.com/">CVPR 2023</a>{" "}
           in Vancouver, British Columbia. It will feature a host of invited
           talks covering a variety of topics in Embodied AI, many exciting 
-          Emboided AI challenges, a poster session, and panel discussions.
+          Embodied AI challenges, a poster session, and panel discussions.
+          For more information on the Embodied AI Workshop series, see our 
+          {" "}<a href="https://arxiv.org/abs/2210.06849">Retrospectives</a>{" "}
+          paper on the first three years of the workshop.
         </p>
         <EmailSubscription
           actionIdentifier="1FAIpQLSeIZrn-tk7Oain2R8gc_Q0HzLMLQ9XXwqu3KecK_E5kALpiug"
