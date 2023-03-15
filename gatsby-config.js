@@ -56,9 +56,9 @@ module.exports = {
           imageId: "anthony",
           name: "Anthony Francis",
           oc: true,
-          organization: "Google",
+          organization: "Logical Robotics",
           sab: false,
-          site: "https://research.google/people/author35466/",
+          site: "https://logicalrobotics.com/",
         },
         {
           challenge: false,
