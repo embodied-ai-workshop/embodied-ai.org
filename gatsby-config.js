@@ -26,6 +26,15 @@ module.exports = {
         },
         {
           challenge: true,
+          imageId: "roozbeh",
+          name: "Roozbeh Mottaghi",
+          oc: false,
+          organization: "FAIR, UW",
+          sab: true,
+          site: "https://roozbehm.info/",
+        },
+        {
+          challenge: true,
           imageId: "luca",
           name: "Luca Weihs",
           oc: true,
