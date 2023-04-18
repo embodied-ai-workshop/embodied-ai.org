@@ -88,8 +88,8 @@ function ChallengeSpotlight(props: {
 
 const challengePageMap = {
   "AI2-THOR Rearrangement": (
-    <a href="//ai2thor.allenai.org/rearrangement" target="_blank">
-      AI2-THOR Rearrangement (Coming Soon)
+    <a href="https://github.com/allenai/ai2thor-rearrangement" target="_blank">
+      AI2-THOR Rearrangement
     </a>
   ),
   DialFRED: (
