@@ -1534,7 +1534,7 @@ export default function Home({ data }) {
             </a>.
             <uL>
               <li>
-              The <a href="https://openreview.net/group?id=thecvf.com/CVPR/2023/Workshop/EAI">paper submission link is LIVE at CMT.</a>
+              The <a href="https://openreview.net/group?id=thecvf.com/CVPR/2023/Workshop/EAI">paper submission link is LIVE.</a>
               </li>
             </uL>
             
