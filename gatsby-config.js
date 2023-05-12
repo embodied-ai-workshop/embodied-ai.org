@@ -20,7 +20,7 @@ module.exports = {
           imageId: "sorean",
           name: "S\u00f6ren Pirk",
           oc: true,
-          organization: "Google",
+          organization: "Adobe",
           sab: false,
           site: "https://www.pirk.io",
         },
