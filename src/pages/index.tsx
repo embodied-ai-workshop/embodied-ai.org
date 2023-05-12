@@ -1329,7 +1329,7 @@ export default function Home({ data }) {
           <Step title="Workshop Announced" description="March 15, 2023" />
           <Step
             title="Paper Submission Deadline"
-            description="May 16, 2023 (Anywhere on Earth)"
+            description="May 26, 2023 (Anywhere on Earth)"
           />
           <Step
             title="Challenge Submission Deadlines"
@@ -1525,14 +1525,19 @@ export default function Home({ data }) {
         </p>
         <SubSection title="Submission">
           <p>
-            The submission deadline is May 15th (
+            The submission deadline is May 25th (
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
             in the{" "}
             <a href="https://cvpr2023.thecvf.com/Conferences/2023/AuthorGuidelines" target="_blank">
               CVPR format
-            </a>
-            .
+            </a>.
+            <uL>
+              <li>
+              The <a href="">paper submission link is LIVE at CMT.</a>
+              </li>
+            </uL>
+            
           </p>
         </SubSection>
       </Section>
