@@ -1277,11 +1277,11 @@ export default function Home({ data }) {
                       <InlineSlack />
                     </Timeline.Item>
                     <Timeline.Item>
-                      Invited Talk - Embodied AI for All
+                      Invited Talk - Robotics
                       <Speaker
-                        organizations={["TBD"]}
-                        name="TBD"
-                        fixedImg={data.embodi.childImageSharp.fixed}
+                        organizations={["Google"]}
+                        name="Fei Xia"
+                        fixedImg={data.fei.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Time time="2:30 PM PT" />
