@@ -124,7 +124,7 @@ const challengePageMap = {
   ),
   "RxR-Habitat": (
     <a href="//ai.google.com/research/rxr/habitat" target="_blank">
-      RxR-Habitat (Coming Soon)
+      RxR-Habitat
     </a>
   ),
   SoundSpaces: (
@@ -1163,7 +1163,24 @@ export default function Home({ data }) {
         />
       </Section>
       <Section title="Timeline">
-        <Steps progressDot current={0} direction="vertical">
+      <Steps progressDot current={2} direction="vertical">
+          <Step title="Workshop Announced" description="March 15, 2023" />
+          <Step
+            title="Paper Submission Deadline"
+            description="May 26, 2023 (Anywhere on Earth)"
+          />
+          <Step
+            title="Challenge Submission Deadlines"
+            description="May 2023. Check each challenge for the specific date."
+          />
+          <Step
+            title="Challenge Winners Announced"
+            description="June 19, 2023 at the workshop. Check each challenge for specifics."
+          />
+          <Step
+            title="Fourth Annual Embodied AI Workshop"
+            description="June 19, 2023 at CVPR."
+          />
           <Step
             title="CVPR Embodied AI Workshop"
             description={
@@ -1180,8 +1197,23 @@ export default function Home({ data }) {
                     color: ${color.gray7};
                   `}
                 >
-                  Tentative Schedule:
                 </span>
+              </>
+            }
+          ></Step>
+               </Steps>
+      </Section>
+
+      <Section title="Workshop Schedule">
+        Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
+        <br />
+        Zoom information is available on the CVPR virtual platform for registered attendees.
+        <br />
+        Remote and in-person attendees are welcome to as questions via Slack:  
+        <br />
+
+                      <InlineSlack />
+                      <br />
                 <div
                   css={css`
                     margin-left: 0px;
@@ -1191,13 +1223,14 @@ export default function Home({ data }) {
                   <Timeline>
                     <Timeline.Item>
                       Workshop Introduction: Embodied AI
+                      <br />
+                      <Time time="9:00 - 9:10 AM PT" />
                       <Speaker
                          organizations={["NVIDIA"]}
                          name="Claudia Perez D'Arpino"
                          fixedImg={data.claudia.childImageSharp.fixed}
                          noMargin={true}
                       />
-                      <Time time="9:00 AM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -1205,87 +1238,78 @@ export default function Home({ data }) {
                       <br />
                       (Habitat, MultiON, SoundSpaces, RxR-Habitat, RVSU)
                       <br />
-                      <Time time="9:10 AM PT" />
+                      <Time time="9:10 - 10:00 AM PT" />
                     </Timeline.Item>
                     <Timeline.Item>
                       Navigation & Understanding Challenge Q&A Panel
                       <br/>
-                      <Time time="10:00 AM PT" />
-                      <InlineSlack />
+                      <Time time="10:00 - 10:30 AM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       Invited Talk - Embodied Navigation
+                      <br />
+                      <Time time="10:30 - 11:00 AM PT" />
                       <Speaker
                         organizations={["UIUC"]}
                         name="Saurabh Gupta"
                         fixedImg={data.saurabh.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <Time time="10:30 AM PT" />
-                      <InlineSlack />
                     </Timeline.Item>
+
                     <Timeline.Item>
-                      Invited Talk - External Knowledge
+                      Invited Talk - Robotics
+                      <br />
+                      <Time time="11:00 - 11:30 AM PT" />
                       <Speaker
-                        organizations={["UT Austin"]}
-                        name="Kristen Grauman"
-                        fixedImg={data.kristen.childImageSharp.fixed}
+                        organizations={["Google"]}
+                        name="Fei Xia"
+                        fixedImg={data.fei.childImageSharp.fixed}
                         noMargin={true}
-                      />
-                      <Time time="11:00 AM PT" />
-                      <InlineSlack />
+                      />                     
                     </Timeline.Item>
+
                     <Timeline.Item>
                       Invited Talk - Generalist Agents
+                      <br />
+                      <Time time="11:30 AM - 12 NOON PT" />
                       <Speaker
                         organizations={["CMU"]}
                         name="Ruslan Salakhutdinov"
                         fixedImg={data.ruslan.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <Time time="11:30 AM PT" />
-                      <InlineSlack />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       Accepted Papers Poster Session
                       <br />
-                      <Time time="12:00 PM PT" />
+                      <Time time="12:00 NOON - 1:20 PM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       Invited Talk - Foundation Models
+                      <br />
+                      <Time time="1:30 - 2:00 PM PT" />
                       <Speaker
                         organizations={["Stanford"]}
                         name="Jeannette Bohg"
                         fixedImg={data.jeannette.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <Time time="1:30 PM PT" />
-                      <InlineSlack />
                     </Timeline.Item>
+
                     <Timeline.Item>
                       Invited Talk - Sim to Real
+                      <br />
+                      <Time time="2:00 - 2:30 PM PT" />
                       <Speaker
                         organizations={["NVIDIA", "U Washington"]}
                         name="Dieter Fox"
                         fixedImg={data.dieter.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <Time time="2:00 PM PT" />
-                      <InlineSlack />
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      Invited Talk - Robotics
-                      <Speaker
-                        organizations={["Google"]}
-                        name="Fei Xia"
-                        fixedImg={data.fei.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Time time="2:30 PM PT" />
-                      <InlineSlack />
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -1293,17 +1317,31 @@ export default function Home({ data }) {
                       <br />
                       AI2-Rearrangement, ALFRED+TEACh, DialFRED, ManiSkill, TDW-Transport
                       <br />
-                      <Time time="3:00 PM PT" />
+                      <Time time="2:30 - 3:30 PM PT" />
                     </Timeline.Item>
+
                     <Timeline.Item>
                       Interaction & Rearrangement Challenge Q&A Panel
                       <br />
-                      <Time time="4:00 PM PT" />
-                      <InlineSlack />
+                      <Time time="3:30 - 4:00 PM PT" />
+                    </Timeline.Item>
+                    
+                    <Timeline.Item>
+                      Invited Talk - External Knowledge
+                      <br />
+                      <Time time="4:00 - 4:30 PM PT" />
+                      <Speaker
+                        organizations={["UT Austin"]}
+                        name="Kristen Grauman"
+                        fixedImg={data.kristen.childImageSharp.fixed}
+                        noMargin={true}
+                      />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       Invited Speaker Panel
+                      <br />
+                      <Time time="4:30 - 5:30 PM PT" />
                       <br />
                       <Speaker
                          organizations={["Logical Robotics"]}
@@ -1311,9 +1349,6 @@ export default function Home({ data }) {
                          fixedImg={data.anthony.childImageSharp.fixed}
                          noMargin={true}
                       />
-
-                      <Time time="4:30 PM PT" />
-                      <InlineSlack />
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -1323,23 +1358,6 @@ export default function Home({ data }) {
                     </Timeline.Item>
                   </Timeline>
                 </div>
-              </>
-            }
-          ></Step>
-          <Step title="Workshop Announced" description="March 15, 2023" />
-          <Step
-            title="Paper Submission Deadline"
-            description="May 26, 2023 (Anywhere on Earth)"
-          />
-          <Step
-            title="Challenge Submission Deadlines"
-            description="May 2023. Check each challenge for the specific date."
-          />
-          <Step
-            title="Challenge Winners Announced"
-            description="June 19, 2023 at the workshop. Check each challenge for specifics."
-          />
-        </Steps>
       </Section>
       <Section title="Challenges">
         <p>
@@ -1348,6 +1366,10 @@ export default function Home({ data }) {
           navigation, vision-and-language, and audio-visual navigation. More
           details regarding data, submission instructions, and timelines can be
           found on the individual challenge websites.
+        </p>
+        <p>
+          The workshop organizers are awarding each first-place challenge winner
+          $300 dollars, sponsored by Apple, Hello Robot and Logical Robotics.
         </p>
         <p>
           Challenge winners will be given the opportunity to present a talk at
@@ -1534,13 +1556,42 @@ export default function Home({ data }) {
             </a>.
             <uL>
               <li>
-              The <a href="https://openreview.net/group?id=thecvf.com/CVPR/2023/Workshop/EAI">paper submission link is LIVE.</a>
+              Paper submissions have now CLOSED.
+              {/* The <a href="https://openreview.net/group?id=thecvf.com/CVPR/2023/Workshop/EAI">paper submission link is LIVE.</a> */}
               </li>
             </uL>
             
           </p>
         </SubSection>
       </Section>
+      <Section title="Sponsors">
+        <p>The Embodied AI 2023 Workshop is sponsored by the following organizations:</p>
+        <table>
+          <tr>
+            <td>
+              <center>
+                <a href="https://www.apple.com/">
+                  <img src="images/sponsors/apple.svg" width="300" alt="Apple"/>
+                </a>
+              </center>
+            </td>
+            <td>
+              <center>
+                <a href="https://hello-robot.com/">
+                  <img src="images/sponsors/hello-robot.png" width="400" alt="Hello Robot"/>
+                </a>
+              </center>
+            </td>
+            <td>
+            <center>
+              <a href="https://logicalrobotics.com/">
+                <img src="images/sponsors/logical-robotics.png" width="300" alt="Logical Robotics"/>
+                </a>
+              </center>
+            </td>
+          </tr>
+        </table>
+        </Section>
       <Section title="Organizers">
         The Embodied AI 2023 workshop is a joint effort by a large set of
         researchers from a variety of organizations. They are listed below in
