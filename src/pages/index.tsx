@@ -1571,21 +1571,21 @@ export default function Home({ data }) {
             <td>
               <center>
                 <a href="https://www.apple.com/">
-                  <img src="images/sponsors/apple.svg" width="300" alt="Apple"/>
+                  <img src="images/sponsors/apple.svg" width="100" alt="Apple"/>
                 </a>
               </center>
             </td>
             <td>
               <center>
                 <a href="https://hello-robot.com/">
-                  <img src="images/sponsors/hello-robot.png" width="400" alt="Hello Robot"/>
+                  <img src="images/sponsors/hello-robot.png" width="550" alt="Hello Robot"/>
                 </a>
               </center>
             </td>
             <td>
             <center>
               <a href="https://logicalrobotics.com/">
-                <img src="images/sponsors/logical-robotics.png" width="300" alt="Logical Robotics"/>
+                <img src="images/sponsors/logical-robotics.png" width="400" alt="Logical Robotics"/>
                 </a>
               </center>
             </td>
