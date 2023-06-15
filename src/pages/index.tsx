@@ -1566,31 +1566,19 @@ export default function Home({ data }) {
       </Section>
       <Section title="Sponsors">
         <p>The Embodied AI 2023 Workshop is sponsored by the following organizations:</p>
-        <table>
-          <tr>
-            <td>
-              <center>
+        <p>
+          <center>
                 <a href="https://www.apple.com/">
                   <img src="images/sponsors/apple.svg" width="100" alt="Apple"/>
                 </a>
-              </center>
-            </td>
-            <td>
-              <center>
                 <a href="https://hello-robot.com/">
                   <img src="images/sponsors/hello-robot.png" width="550" alt="Hello Robot"/>
                 </a>
-              </center>
-            </td>
-            <td>
-            <center>
               <a href="https://logicalrobotics.com/">
                 <img src="images/sponsors/logical-robotics.png" width="400" alt="Logical Robotics"/>
                 </a>
-              </center>
-            </td>
-          </tr>
-        </table>
+                </center>
+        </p>
         </Section>
       <Section title="Organizers">
         The Embodied AI 2023 workshop is a joint effort by a large set of
