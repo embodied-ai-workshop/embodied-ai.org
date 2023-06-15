@@ -1359,6 +1359,21 @@ export default function Home({ data }) {
                   </Timeline>
                 </div>
       </Section>
+      <Section title="Demos">
+        <p>
+        An Open-Vocabulary Mobile Pick-and-Place demo will be presented by
+        Meta on <b>Thursday, June 22 from 10:00 AM - 12:30 PM PT</b> in the
+        West Exhibit Hall Demo Area. In it, a Boston Dynamics Spot will 
+        follow voice commands and perform object rearrangement at the
+        Meta AI Research booth.
+        </p>
+        <br />
+        <p>
+        <center>
+          <Img fluid={data.metaDemo.childImageSharp.fluid} alt="Meta Demo"/>
+        </center>
+        </p>
+      </Section>
       <Section title="Challenges">
         <p>
           The Embodied AI 2023 workshop is hosting many exciting challenges
@@ -1568,16 +1583,16 @@ export default function Home({ data }) {
         <p>The Embodied AI 2023 Workshop is sponsored by the following organizations:</p>
         <p>
           <center>
-                <a href="https://www.apple.com/">
-                  <img src="images/sponsors/apple.svg" width="100" alt="Apple"/>
-                </a>
-                <a href="https://hello-robot.com/">
-                  <img src="images/sponsors/hello-robot.png" width="550" alt="Hello Robot"/>
-                </a>
-              <a href="https://logicalrobotics.com/">
-                <img src="images/sponsors/logical-robotics.png" width="400" alt="Logical Robotics"/>
-                </a>
-                </center>
+            <a href="https://www.apple.com/">
+              <img src="images/sponsors/apple.svg" width="100" alt="Apple"/>
+            </a>
+            <a href="https://hello-robot.com/">
+              <img src="images/sponsors/hello-robot.png" width="550" alt="Hello Robot"/>
+            </a>
+            <a href="https://logicalrobotics.com/">
+              <img src="images/sponsors/logical-robotics.png" width="400" alt="Logical Robotics"/>
+            </a>
+          </center>
         </p>
         </Section>
       <Section title="Organizers">
@@ -1919,6 +1934,11 @@ export const query = graphql`
       ...FluidImage
     }
     rinOrg: file(relativePath: { eq: "organizers/rin.jpg" }) {
+      ...FluidImage
+    }
+
+    # Demo pictures
+    metaDemo: file(relativePath: { eq: "cvpr2023/meta-demo.png" }) {
       ...FluidImage
     }
   }
