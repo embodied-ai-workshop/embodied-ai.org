@@ -1332,12 +1332,17 @@ export default function Home({ data }) {
       </Section>
       <Section title="Demos">
         <p>
-        An Open-Vocabulary Mobile Pick-and-Place demo will be presented by
-        Meta on <b>Thursday, June 22 from 10:00 AM - 12:30 PM PT</b> in the
-        West Exhibit Hall Demo Area. In it, a Boston Dynamics Spot will 
-        follow voice commands and perform object rearrangement at the
-        Meta AI Research booth.
+          In association with the Embodied AI Workshop, Meta AI will present a demo
+          of <b>
+            LSC: Language-guided Skill Coordination for Open-Vocabulary Mobile
+            Pick-and-Place
+          </b> in which a Boston Dynamics Spot will follow voice commands for object rearrangement
+          such as "Find the plush in the table and place it in the case." The demo times for LSC include:
         </p>
+        <ul>
+          <li>Expo Meta AI Booth: <b>Tue-Wed-Fri, June 20-21-23 11:00-5:00</b></li>
+          <li>West Exhibit Hall Demo Area: <b>Thu, June 22 10:00-18:00</b></li>
+        </ul>
         <br />
         <p>
         <center>
