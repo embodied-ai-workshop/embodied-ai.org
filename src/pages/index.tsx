@@ -1210,6 +1210,13 @@ export default function Home({ data }) {
                       (Habitat, MultiON, SoundSpaces, RxR-Habitat, RVSU)
                       <br />
                       <Time time="9:10 - 10:00 AM PT" />
+                      <ul>
+                        <li>9:10: Habitat</li>
+                        <li>9:20: RxR-Habitat</li>
+                        <li>9:30: MultiOn</li>
+                        <li>9:40: SoundSpaces</li>
+                        <li>9:50: RVSU</li>
+                      </ul>
                     </Timeline.Item>
                     <Timeline.Item>
                       Navigation & Understanding Challenge Q&A Panel
@@ -1289,6 +1296,14 @@ export default function Home({ data }) {
                       AI2-Rearrangement, ALFRED+TEACh, DialFRED, ManiSkill, TDW-Transport
                       <br />
                       <Time time="2:30 - 3:30 PM PT" />
+                      <ul>
+                        <li>2:30: AI2-Rearrangement</li>
+                        <li>2:40: ALFRED+TEACh</li>
+                        <li>2:50: DialFRED</li>
+                        <li>3:00: ManiSkill</li>
+                        <li>3:10: TDW-Transport</li>
+                        <li>3:20: Break</li>
+                      </ul>
                     </Timeline.Item>
 
                     <Timeline.Item>
