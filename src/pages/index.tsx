@@ -706,6 +706,24 @@ let acceptedPapers = [
     affiliations={[]}
     pdf="/papers/2023/22.pdf"
   />,
+  <Paper
+    title="DialMAT: Dialogue-Enabled Transformer with Moment-Based Adversarial Training"
+    abstract="This paper focuses on the DialFRED task, which is the task of embodied instruction following in a setting where an agent can actively ask questions about the task. To address this task, we propose DialMAT. DialMAT introduces Moment-based Adversarial Training, which incorporates adversarial perturbations into the latent space of language, image, and action. Additionally, it introduces a crossmodal parallel feature extraction mechanism that applies foundation models to both language and image. We evaluated our model using a dataset constructed from the DialFRED dataset and demonstrated superior performance compared to the baseline method in terms of success rate and path weighted success rate. The model secured the top position in the DialFRED Challenge, which took place at the CVPR 2023 Embodied AI workshop."
+    authors={{
+      "Kanta Kaneda": [],
+      "Ryosuke Korekata": [],
+      "Yuiga Wada": [],
+      "Shunya Nagashima": [],
+      "Motonari Kambara": [],
+      "Yui Iioka": [],
+      "Haruka Matsuo": [],
+      "Yuto Imai": [],
+      "Takayuki Nishimura": [],
+      "Komei Sugiura": [],
+    }}
+    affiliations={[]}
+    pdf="/papers/2023/23.pdf"
+  />,
 ];
 
 const Time = (props: { time: string }) => (
