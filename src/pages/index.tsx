@@ -1231,11 +1231,11 @@ export default function Home({ data }) {
                       <br />
                       <Time time="9:10 - 10:00 AM PT" />
                       <ul>
-                        <li>9:10: Habitat</li>
-                        <li>9:20: RxR-Habitat</li>
-                        <li>9:30: MultiOn</li>
-                        <li>9:40: SoundSpaces</li>
-                        <li>9:50: RVSU</li>
+                        <li>9:10: RxR-Habitat</li>
+                        <li>9:20: MultiOn</li>
+                        <li>9:30: SoundSpaces</li>
+                        <li>9:40: RVSU</li>
+                        <li>9:50: Habitat</li>
                       </ul>
                     </Timeline.Item>
                     <Timeline.Item>
