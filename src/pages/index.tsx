@@ -1213,6 +1213,8 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       Workshop Introduction: Embodied AI
                       <br />
+                      East Ballroom A 
+                      <br />
                       <Time time="9:00 - 9:10 AM PT" />
                       <Speaker
                          organizations={["NVIDIA"]}
@@ -1281,11 +1283,15 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       Accepted Papers Poster Session
                       <br />
+                      West Exhibit Hall - Poster Numbers 131-154.
+                      <br />
                       <Time time="12:00 NOON - 1:20 PM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       Invited Talk - Foundation Models
+                      <br />
+                      East Ballroom A 
                       <br />
                       <Time time="1:30 - 2:00 PM PT" />
                       <Speaker
