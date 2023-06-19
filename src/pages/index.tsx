@@ -1419,6 +1419,8 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - External Knowledge</b>
                       <br />
+                      <i>From goals to grasps: Learning about action from people in video</i>
+                      <br />
                       <Time time="4:00 - 4:30 PM PT" />
                       <Speaker
                         organizations={["UT Austin"]}
