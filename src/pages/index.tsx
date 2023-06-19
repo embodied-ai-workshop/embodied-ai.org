@@ -1469,7 +1469,7 @@ export default function Home({ data }) {
           such as "Find the plush in the table and place it in the case." The demo times for LSC include:
         </p>
         <ul>
-          <li>Expo Meta AI Booth: <b>Tue-Wed-Fri, June 20-21-23 11:00-5:00</b></li>
+          <li>Expo Meta AI Booth: <b>Tue-Thu, June 20-22 11:00-5:00</b></li>
           <li>West Exhibit Hall Demo Area: <b>Thu, June 22 10:00-18:00</b></li>
         </ul>
         <br />
