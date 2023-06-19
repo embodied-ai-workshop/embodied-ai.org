@@ -1206,7 +1206,7 @@ export default function Home({ data }) {
         />
       </Section>
       <Section title="Timeline">
-      <Steps progressDot current={2} direction="vertical">
+      <Steps progressDot current={3} direction="vertical">
           <Step title="Workshop Announced" description="March 15, 2023" />
           <Step
             title="Paper Submission Deadline"
@@ -1217,15 +1217,7 @@ export default function Home({ data }) {
             description="May 2023. Check each challenge for the specific date."
           />
           <Step
-            title="Challenge Winners Announced"
-            description="June 19, 2023 at the workshop. Check each challenge for specifics."
-          />
-          <Step
-            title="Fourth Annual Embodied AI Workshop"
-            description="June 19, 2023 at CVPR."
-          />
-          <Step
-            title="CVPR Embodied AI Workshop"
+            title="Fourth Annual Embodied AI Workshop at CVPR"
             description={
               <>
                 <a href={"https://cvpr2023.thecvf.com/Conferences/2023"} target="_blank">
@@ -1234,7 +1226,8 @@ export default function Home({ data }) {
                 <br />
                 Monday, June 19, 2023
                 <br />
-                9:00 AM - 5:30 PM PT <br />
+                9:00 AM - 5:30 PM PT<br />
+                East Ballroom A <br />
                 <span
                   css={css`
                     color: ${color.gray7};
@@ -1244,13 +1237,20 @@ export default function Home({ data }) {
               </>
             }
           ></Step>
+          <Step
+            title="Challenge Winners Announced"
+            description="June 19, 2023 at the workshop. Check each challenge for specifics."
+          />
                </Steps>
       </Section>
 
       <Section title="Workshop Schedule">
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
-        <br />
-        Zoom information is available on the CVPR virtual platform for registered attendees.
+        <ul>
+          <li><b>Workshop Talks: 9:00AM-5:30PM PT - East Ballroom A</b></li>
+          <li><b>Poster Session: NOON-1:20PM PT - West Exhibit Hall, Posters 131-154</b></li>
+        </ul>
+        Zoom information is available on <a href="https://cvpr2023.thecvf.com/virtual/2023/index.html">the CVPR virtual platform for registered attendees</a>.
         <br />
         Remote and in-person attendees are welcome to as questions via Slack:  
         <br />
