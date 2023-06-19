@@ -331,6 +331,60 @@ function PaperButton(props: { text: string; url: string; emoji: string }) {
   );
 }
 
+function Abstract(props: {
+  text: string;
+}) {
+  const [showFullText, setShowFullText] = useState(false);
+
+  let text;
+  if (props.text.indexOf(" ", 250) === -1) {
+    text = <div>{props.text}</div>;
+  } else {
+    text = (
+      <div>
+        {showFullText
+          ? props.text + " "
+          : (props.text.indexOf(". ") + 2 > 250 ? props.text.slice(0, props.text.indexOf(". ") + 2) : props.text.slice(0, 250) + "... ")}
+        <span
+          css={css`
+            color: ${color.light.blue6};
+            &:hover {
+              cursor: pointer;
+            }
+          `}
+          onClick={() => setShowFullText(prev => !prev)}
+        >
+          [{!showFullText ? "Expand" : "Collapse"}]
+        </span>
+      </div>
+    );
+  }
+
+  const emojis = ["diamonds", "clubs", "spades", "hearts"];
+
+  return (
+    <div
+      css={css`
+        padding: 20px;
+        background: ${color.gray1};
+        border: 1px solid ${color.gray5 + "cc"};
+        box-shadow: 0px 0px 100px 0px ${color.gray4};
+        border-radius: 0px;
+        padding-bottom: 45px;
+        text-align: left;
+        vertical-align: top;
+        display: inline-block;
+        position: relative;
+        @media (min-width: 601px) {
+          min-height: 25px;
+        }
+      `}
+    >
+      {text}
+    </div>
+  );
+}
+
 function Paper(props: {
   title: string;
   abstract: string;
@@ -1256,6 +1310,7 @@ export default function Home({ data }) {
                         fixedImg={data.saurabh.childImageSharp.fixed}
                         noMargin={true}
                       />
+                      <p>Saurabh Gupta is an Assistant Professor in the ECE Department at UIUC. Before starting at UIUC in 2019, he received his Ph.D. from UC Berkeley in 2018 and spent the following year as a Research Scientist at Facebook AI Research in Pittsburgh. His research interests span computer vision, robotics, and machine learning, with a focus on building agents that can intelligently interact with the physical world around them. He received the President's Gold Medal at IIT Delhi in 2011, the Google Fellowship in Computer Vision in 2015, an Amazon Research Award in 2020, and an NSF CAREER Award in 2022. He has also won many challenges at leading computer vision conferences.</p>
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -1269,7 +1324,11 @@ export default function Home({ data }) {
                         name="Fei Xia"
                         fixedImg={data.fei.childImageSharp.fixed}
                         noMargin={true}
-                      />                     
+                      />
+                      <p>Fei Xia is a Research Scientist at Google Research where he works on the Robotics team. He received his PhD degree from the Department of Electrical Engineering, Stanford University. He was co-advised by Silvio Savarese in SVL and Leonidas Guibas. His mission is to build intelligent embodied agents that can interact with complex and unstructured real-world environments, with applications to home robotics. He has been approaching this problem from 3 aspects: 1) Large scale and transferrable simulation for Robotics. 2) Learning algorithms for long-horizon tasks. 3) Combining geometric and semantic representation for environments. Most recently, He has been exploring using foundation models for robot decision making.</p>                     
+                      <Abstract
+                        text="Large language models can encode a wealth of semantic knowledge about the world. Such knowledge could in principle be extremely useful to robots aiming to act upon high-level, temporally extended instructions expressed in natural language. However, a significant weakness of language models is that they lack contextual grounding, which makes it difficult to leverage them for decision-making within a given real-world context. For example, asking a language model to describe how to clean a spill might result in a reasonable narrative, but it may not be applicable to a particular agent, such as a robot, that needs to perform this task in a particular environment. We propose to provide this grounding by means of pretrained behaviors, which are used to condition the model to propose natural language actions that are both feasible and contextually appropriate. The robot can act as the language model’s “hands and eyes,” while the language model supplies high-level semantic knowledge about the task. We show how low-level tasks can be combined with large language models so that the language model provides high-level knowledge about the procedures for performing complex and temporally extended instructions, while value functions associated with these tasks provide the grounding necessary to connect this knowledge to a particular physical environment. We evaluate our method on a number of real-world robotic tasks, where we show that this approach is capable of completing long-horizon, abstract, natural language instructions on a mobile manipulator."
+                        />                      
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -1284,6 +1343,10 @@ export default function Home({ data }) {
                         fixedImg={data.ruslan.childImageSharp.fixed}
                         noMargin={true}
                       />
+                      <p>Russ Salakhutdinov is a UPMC Professor of Computer Science in the Department of Machine Learning at CMU. He received his PhD in computer science from the University of Toronto. After spending two post-doctoral years at MIT, he joined the University of Toronto and later moved to CMU. Russ's primary interests lie in deep learning, machine learning, and large-scale optimization. He is an action editor of the Journal of Machine Learning Research, served as a director of AI research at Apple, served on the senior programme committee of several top-tier learning conferences including NeurIPS and ICML, was a program co-chair for ICML 2019, and will serve as a general chair for ICML 2024.  He is an Alfred P. Sloan Research Fellow, Microsoft Research Faculty Fellow, a recipient of the Early Researcher Award, Google Faculty Award, and Nvidia's Pioneers of AI award.</p>
+                      <Abstract
+                        text="In this talk I will give an overview of our recent work on how we can design modular agents for visual navigation that can perform tasks specified by natural language instructions, perform efficient exploration and long-term planning, build and utilize 3D semantic maps, while generalizing across domains and tasks. In the second part of the talk, I will introduce a method to ground pretrained text-only language models to the visual domain, enabling them to process arbitrarily interleaved image-and-text inputs, and generate free-form text interleaved with retrieved images, I will show that the model is able to achieve strong zero-shot performance on grounded tasks such as contextual image retrieval and multimodal dialogue, and showcase its interactive abilities."
+                        />
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -1308,6 +1371,9 @@ export default function Home({ data }) {
                         fixedImg={data.jeannette.childImageSharp.fixed}
                         noMargin={true}
                       />
+                      <Abstract
+                        text="My long-term research goal is enable real robots to manipulate any kind of object such that they can perform many different tasks in a wide variety of application scenarios such as in our homes, in hospitals, warehouses, or factories. Many of these tasks will require long-horizon reasoning and sequencing of skills to achieve a goal state. In this talk, I will present our work on enabling long-horizon reasoning on real robots for a variety of different long-horizon tasks that can be solved by sequencing a large variety of composable skill primitives. I will specifically focus on the different ways Large Language Models (LLMs) can help with solving these long-horizon tasks. The first part of my talk will be on TidyBot, a robot for personalised household clean-up. One of the key challenges in robotic household cleanup is deciding where each item goes. People's preferences can vary greatly depending on personal taste or cultural background. One person might want shirts in the drawer, another might want them on the shelf. How can we infer these user preferences from only a handful of examples in a generalizable way? Our key insight: Summarization with LLMs is an effective way to achieve generalization in robotics. Given the generalised rules, I will then show how TidyBot then solves the long-horizon task of cleaning up a home. In the second part of my talk, I will focus on more complex long-horizon manipulation tasks that exhibit geometric dependencies between different skills in a sequence. In these tasks, the way a robot performs a certain skill will determine whether a follow-up skill in the sequence can be executed at all. I will present an approach called text2motion that utilises LLMs for task planning without the need for defining complex symbolic domains. And I will show how we can verify whether the plan that the LLM came up with is actually feasible. The basis for this verification is a library of learned skills and an approach for sequencing these skills to resolve geometric dependencies prevalent in long-horizon tasks."
+                        />
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -1322,6 +1388,10 @@ export default function Home({ data }) {
                         fixedImg={data.dieter.childImageSharp.fixed}
                         noMargin={true}
                       />
+                      <p>Dieter Fox received his PhD degree from the University of Bonn, Germany. He is a professor in the Allen School of Computer Science & Engineering at the University of Washington, where he heads the UW Robotics and State Estimation Lab.  He is also Senior Director of Robotics Research at NVIDIA.  His research is in robotics and artificial intelligence, with a focus on learning and estimation applied to problems such as robot manipulation, planning, language grounding, and activity recognition. He has published more than 300 technical papers and is co-author of the textbook "Probabilistic Robotics". Dieter is a Fellow of the IEEE, ACM, and AAAI, and recipient of the IEEE RAS Pioneer Award and the IJCAI John McCarthy Award.</p>
+                      <Abstract
+                        text="In this talk, I will discuss our ongoing efforts toward developing the models and generating the kind of data that might lead to foundational manipulation skills for robotics.  To generate large amounts of data, we sample many object rearrangement tasks in physically realistic simulation environments and apply task and motion planning to generate high quality solutions for them.  We will then train manipulation skills so that they can be used across a broad range of object rearrangement tasks in unknown, real-world environments.  We believe that such skills could provide the glue between generative AI reasoning and robust execution in the real world."
+                        />                      
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -1356,6 +1426,7 @@ export default function Home({ data }) {
                         fixedImg={data.kristen.childImageSharp.fixed}
                         noMargin={true}
                       />
+                      <p>Kristen Grauman is a Professor in the Department of Computer Science at the University of Texas at Austin and a Research Director in Facebook AI Research (FAIR).  Her research in computer vision and machine learning focuses on video, visual recognition, and action for perception or embodied AI.  Before joining UT-Austin in 2007, she received her Ph.D. at MIT.  She is an IEEE Fellow, AAAI Fellow, Sloan Fellow, a Microsoft Research New Faculty Fellow, and a recipient of NSF CAREER and ONR Young Investigator awards, the PAMI Young Researcher Award in 2013, the 2013 Computers and Thought Award from the International Joint Conference on Artificial Intelligence (IJCAI), the Presidential Early Career Award for Scientists and Engineers (PECASE) in 2013.  She was inducted into the UT Academy of Distinguished Teachers in 2017.  She and her collaborators have been recognized with several Best Paper awards in computer vision, including a 2011 Marr Prize and a 2017 Helmholtz Prize (test of time award).  She served for six years as an Associate Editor-in-Chief for the Transactions on Pattern Analysis and Machine Intelligence (PAMI) and for ten years as an Editorial Board member for the International Journal of Computer Vision (IJCV).  She also served as a Program Chair of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2015 and a Program Chair of Neural Information Processing Systems (NeurIPS) 2018, and will serve as a Program Chair of the IEEE International Conference on Computer Vision (ICCV) 2023.</p>
                     </Timeline.Item>
 
                     <Timeline.Item>
