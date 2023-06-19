@@ -1245,6 +1245,10 @@ export default function Home({ data }) {
       </Section>
 
       <Section title="Workshop Schedule">
+        <p>
+          <Img fluid={data.workshopLocation.childImageSharp.fluid} alt="Workshop Location"/>
+        </p>
+
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
         <ul>
           <li><b>Workshop Talks: 9:00AM-5:30PM PT - East Ballroom A</b></li>
@@ -1311,6 +1315,9 @@ export default function Home({ data }) {
                         noMargin={true}
                       />
                       <p>Saurabh Gupta is an Assistant Professor in the ECE Department at UIUC. Before starting at UIUC in 2019, he received his Ph.D. from UC Berkeley in 2018 and spent the following year as a Research Scientist at Facebook AI Research in Pittsburgh. His research interests span computer vision, robotics, and machine learning, with a focus on building agents that can intelligently interact with the physical world around them. He received the President's Gold Medal at IIT Delhi in 2011, the Google Fellowship in Computer Vision in 2015, an Amazon Research Award in 2020, and an NSF CAREER Award in 2022. He has also won many challenges at leading computer vision conferences.</p>
+                      <Abstract
+                        text="True gains of machine learning in AI sub-fields such as computer vision and natural language processing have come about from the use of large-scale diverse datasets for learning. In this talk, I will discuss if and how we can leverage large-scale diverse data in the form of egocentric videos (first-person videos of humans conducting different tasks) to similarly scale up policy learning for robots. I will discuss the challenges this presents, and some of our initial efforts towards tackling them. In particular, I will describe work that extracts a) spatial common sense and b) an interactive understanding of objects from such videos."
+                        />                      
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -2055,8 +2062,11 @@ export const query = graphql`
       ...FluidImage
     }
 
-    # Demo pictures
+    # Other pictures
     metaDemo: file(relativePath: { eq: "cvpr2023/meta-demo.png" }) {
+      ...FluidImage
+    }
+    workshopLocation: file(relativePath: { eq: "cvpr2023/workshop-location.jpg" }) {
       ...FluidImage
     }
   }
