@@ -1252,7 +1252,7 @@ export default function Home({ data }) {
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
         <ul>
           <li><b>Workshop Talks: 9:00AM-5:30PM PT - East Ballroom A</b></li>
-          <li><b>Poster Session: NOON-1:20PM PT - West Exhibit Hall, Posters 131-154</b></li>
+          <li><b>Poster Session: NOON-1:20PM PT - West Exhibit Hall, Posters #123 - #148</b></li>
         </ul>
         Zoom information is available on <a href="https://cvpr2023.thecvf.com/virtual/2023/index.html">the CVPR virtual platform for registered attendees</a>.
         <br />
@@ -1359,7 +1359,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Accepted Papers Poster Session</b>
                       <br />
-                      West Exhibit Hall - Poster Numbers 131-154.
+                      West Exhibit Hall - Posters #123 - #148.
                       <br />
                       <Time time="12:00 NOON - 1:20 PM PT" />
                     </Timeline.Item>
