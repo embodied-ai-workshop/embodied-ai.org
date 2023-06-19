@@ -1211,7 +1211,7 @@ export default function Home({ data }) {
                 >
                   <Timeline>
                     <Timeline.Item>
-                      Workshop Introduction: Embodied AI
+                      <b>Workshop Introduction: Embodied AI</b>
                       <br />
                       East Ballroom A 
                       <br />
@@ -1225,7 +1225,7 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Navigation & Understanding Challenge Presentations
+                      <b>Navigation & Understanding Challenge Presentations</b>
                       <br />
                       (Habitat, MultiON, SoundSpaces, RxR-Habitat, RVSU)
                       <br />
@@ -1239,13 +1239,15 @@ export default function Home({ data }) {
                       </ul>
                     </Timeline.Item>
                     <Timeline.Item>
-                      Navigation & Understanding Challenge Q&A Panel
+                      <b>Navigation & Understanding Challenge Q&A Panel</b>
                       <br/>
                       <Time time="10:00 - 10:30 AM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Invited Talk - Embodied Navigation
+                      <b>Invited Talk - Embodied Navigation: </b>
+                      <br />
+                      <i>Robot Learning by Understanding Videos</i>
                       <br />
                       <Time time="10:30 - 11:00 AM PT" />
                       <Speaker
@@ -1257,7 +1259,9 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Invited Talk - Robotics
+                      <b>Invited Talk - Robotics: </b>
+                      <br />
+                      <i>Embodied Reasoning Through Planning with Language and Vision Foundation Models</i>
                       <br />
                       <Time time="11:00 - 11:30 AM PT" />
                       <Speaker
@@ -1269,7 +1273,9 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Invited Talk - Generalist Agents
+                      <b>Invited Talk - Generalist Agents: </b>
+                      <br />
+                      <i>Building Embodied Autonomous Agents with Multimodal Interaction</i>
                       <br />
                       <Time time="11:30 AM - 12 NOON PT" />
                       <Speaker
@@ -1281,7 +1287,7 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Accepted Papers Poster Session
+                      <b>Accepted Papers Poster Session</b>
                       <br />
                       West Exhibit Hall - Poster Numbers 131-154.
                       <br />
@@ -1289,7 +1295,9 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Invited Talk - Foundation Models
+                      <b>Invited Talk - Foundation Models: </b>
+                      <br />
+                      <i>Large Language Models for Solving Long-Horizon Robotic Manipulation Problems</i>
                       <br />
                       East Ballroom A 
                       <br />
@@ -1303,7 +1311,9 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Invited Talk - Sim to Real
+                      <b>Invited Talk - Sim to Real</b>
+                      <br />
+                      <i>Toward Foundational Robot Manipulation Skills</i>
                       <br />
                       <Time time="2:00 - 2:30 PM PT" />
                       <Speaker
@@ -1315,7 +1325,7 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Interaction & Rearrangement Challenge Presentations
+                      <b>Interaction & Rearrangement Challenge Presentations</b>
                       <br />
                       AI2-Rearrangement, ALFRED+TEACh, DialFRED, ManiSkill, TDW-Transport
                       <br />
@@ -1331,13 +1341,13 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Interaction & Rearrangement Challenge Q&A Panel
+                      <b>Interaction & Rearrangement Challenge Q&A Panel</b>
                       <br />
                       <Time time="3:30 - 4:00 PM PT" />
                     </Timeline.Item>
                     
                     <Timeline.Item>
-                      Invited Talk - External Knowledge
+                      <b>Invited Talk - External Knowledge</b>
                       <br />
                       <Time time="4:00 - 4:30 PM PT" />
                       <Speaker
@@ -1349,7 +1359,7 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Invited Speaker Panel
+                      <b>Invited Speaker Panel</b>
                       <br />
                       <Time time="4:30 - 5:30 PM PT" />
                       <br />
@@ -1362,7 +1372,7 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      Workshop Concludes
+                      <b>Workshop Concludes</b>
                       <br />
                       <Time time="5:30 PM PT" />
                     </Timeline.Item>
