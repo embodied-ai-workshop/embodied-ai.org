@@ -134,7 +134,7 @@ const challengePageMap = {
   ),
   "TDW-Transport": (
     <a href="http://tdw-transport.csail.mit.edu" target="_blank">
-      TDW-Transport (Coming Soon)
+      TDW-Transport
     </a>
   ),
 };
@@ -937,6 +937,7 @@ export default function Home({ data }) {
       actionSpace: "Continuous",
       observations: "RGB-D, Localization",
       stochasticAcuation: "",
+      winner: "SkillFusion (AIRI)",
     },
     {
       challenge: challengePageMap["Habitat"],
@@ -948,6 +949,7 @@ export default function Home({ data }) {
       actionSpace: "Continuous",
       observations: "RGB-D, Localization",
       stochasticAcuation: "",
+      winner: "LQ",
     },
     {
       challenge: challengePageMap["RxR-Habitat"],
@@ -959,6 +961,7 @@ export default function Home({ data }) {
       observations: "RGB-D",
       actionSpace: "Discrete",
       stochasticAcuation: "",
+      winner: "The GridMM Team",
     },
     {
       challenge: challengePageMap["MultiOn"],
@@ -970,6 +973,7 @@ export default function Home({ data }) {
       actionSpace: "Discrete",
       observations: "RGB-D, Localization",
       stochasticAcuation: "",
+      winner: "",
     },
     {
       challenge: challengePageMap["SoundSpaces"],
@@ -981,6 +985,7 @@ export default function Home({ data }) {
       observations: "RGB-D, Audio Waveform",
       actionSpace: "Discrete",
       stochasticAcuation: "",
+      winner: "AK-lab-tokyotech",
     },
     {
       challenge: challengePageMap["SoundSpaces"],
@@ -992,6 +997,7 @@ export default function Home({ data }) {
       observations: "RGB-D, Audio Waveform",
       actionSpace: "Discrete",
       stochasticAcuation: "",
+      winner: "AK-lab-tokyotech",
     },
     {
       challenge: challengePageMap["Robotic Vision Scene Understanding"],
@@ -1003,6 +1009,7 @@ export default function Home({ data }) {
       observations: "RGB-D, Pose Data, Flatscan Laser",
       actionSpace: "Discrete",
       stochasticAcuation: "Partially",
+      winner: "Team SP",
     },
     {
       challenge: challengePageMap["Robotic Vision Scene Understanding"],
@@ -1014,6 +1021,7 @@ export default function Home({ data }) {
       observations: "RGB-D, Pose Data, Flatscan Laser",
       actionSpace: "Discrete",
       stochasticAcuation: "✓",
+      winner: "MSC Lab",
     },
     {
       challenge: challengePageMap["TDW-Transport"],
@@ -1025,6 +1033,7 @@ export default function Home({ data }) {
       observations: "RGB-D, Metadata",
       actionSpace: "Discrete",
       stochasticAcuation: "✓",
+      winner: "",
     },
     {
       challenge: challengePageMap["AI2-THOR Rearrangement"],
@@ -1036,6 +1045,7 @@ export default function Home({ data }) {
       actionSpace: "Discrete",
       observations: "RGB-D, Localization",
       stochasticAcuation: "",
+      winner: "TIDEE",
     },
     {
       challenge: challengePageMap["Language Interaction"],
@@ -1047,6 +1057,7 @@ export default function Home({ data }) {
       actionSpace: "Discrete",
       observations: "RGB",
       stochasticAcuation: "",
+      winner: "Yonsei VnL",
     },
     {
       challenge: challengePageMap["DialFRED"],
@@ -1058,6 +1069,7 @@ export default function Home({ data }) {
       observations: "RGB",
       actionSpace: "Discrete",
       stochasticAcuation: "",
+      winner: "Team Keio",
     },
     {
       challenge: challengePageMap["ManiSkill"],
@@ -1069,6 +1081,7 @@ export default function Home({ data }) {
       observations: "RGB-D, Metadata",
       actionSpace: "Continuous",
       stochasticAcuation: "",
+      winner: "GXU-LIPE",
     },
   ];
 
@@ -1206,7 +1219,7 @@ export default function Home({ data }) {
         />
       </Section>
       <Section title="Timeline">
-      <Steps progressDot current={3} direction="vertical">
+      <Steps progressDot current={4} direction="vertical">
           <Step title="Workshop Announced" description="March 15, 2023" />
           <Step
             title="Paper Submission Deadline"
@@ -1525,6 +1538,17 @@ export default function Home({ data }) {
               dataIndex: "task",
               key: "task",
               sorter: (a, b) => a.task.localeCompare(b.task),
+              sortDirections: ["ascend", "descend"],
+            },
+            {
+              title: (
+                <>
+                  <Emoji emoji="trophy" size={18} /> 2023 Winner
+                </>
+              ),
+              dataIndex: "winner",
+              key: "winner",
+              sorter: (a, b) => a.task.localeCompare(b.winner),
               sortDirections: ["ascend", "descend"],
             },
             {
