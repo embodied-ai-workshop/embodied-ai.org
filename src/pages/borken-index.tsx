@@ -1,12 +1,7 @@
-// import React, { useState, useEffect } from "react";
-import * as React from "react";
-
+import React, { useState, useEffect } from "react";
 import { graphql, Link } from "gatsby";
 import { Section, SubSection } from "../components/text-helpers";
-
-// import PageWrapper from "../components/page-wrapper";
-import PageWrapper from "../components/new-page-wrapper";
-
+import PageWrapper from "../components/page-wrapper";
 import color from "../components/color";
 import { Challenges } from "../components/page-header";
 import { Table, Steps, Timeline } from "antd";
@@ -20,6 +15,7 @@ import Img, { FixedObject, FluidObject } from "gatsby-image";
 import SlackLogo from "../../static/icons/slack.svg";
 
 const { Step } = Steps;
+import { Emoji } from "emoji-mart";
 
 import { Speaker, LiveSession, Video } from "./cvpr2020";
 
@@ -147,9 +143,9 @@ function EmailSubscription(props: {
   actionIdentifier: string;
   entryNumber: number;
 }) {
-  const [submitted, setSubmitted] = React.useState(false),
-    [emailFocused, setEmailFocused] = React.useState(false),
-    [inputEmail, setInputEmail] = React.useState("");
+  const [submitted, setSubmitted] = useState(false),
+    [emailFocused, setEmailFocused] = useState(false),
+    [inputEmail, setInputEmail] = useState("");
 
   const emailIsValid = validateEmail(inputEmail);
 
@@ -196,6 +192,7 @@ function EmailSubscription(props: {
               margin-left: 5px;
             `}
           >
+            <Emoji emoji="nerd_face" size={32} />
           </div>
         </div>
         {submitted ? (
@@ -292,7 +289,7 @@ function getWindowWidth() {
   return width;
 }
 
-function PaperButton(props: { text: string; url: string;  }) {
+function PaperButton(props: { text: string; url: string; emoji: string }) {
   return (
     <a
       href={props.url}
@@ -320,6 +317,7 @@ function PaperButton(props: { text: string; url: string;  }) {
           }
         `}
       >
+        <Emoji emoji={props.emoji} size={14} />
         <span
           css={css`
             margin-left: 5px;
@@ -336,7 +334,7 @@ function PaperButton(props: { text: string; url: string;  }) {
 function Abstract(props: {
   text: string;
 }) {
-  const [showFullText, setShowFullText] = React.useState(false);
+  const [showFullText, setShowFullText] = useState(false);
 
   let text;
   if (props.text.indexOf(" ", 250) === -1) {
@@ -361,6 +359,8 @@ function Abstract(props: {
       </div>
     );
   }
+
+  const emojis = ["diamonds", "clubs", "spades", "hearts"];
 
   return (
     <div
@@ -393,7 +393,7 @@ function Paper(props: {
   pdf: string;
   poster?: string;
 }) {
-  const [showFullAbstract, setShowFullAbstract] = React.useState(false);
+  const [showFullAbstract, setShowFullAbstract] = useState(false);
 
   let abs;
   if (props.abstract.indexOf(" ", 250) === -1) {
@@ -419,6 +419,7 @@ function Paper(props: {
     );
   }
 
+  const emojis = ["diamonds", "clubs", "spades", "hearts"];
 
   return (
     <div
@@ -480,10 +481,11 @@ function Paper(props: {
           padding-top: 5px;
         `}
       >
-        <PaperButton text="PDF"  url={props.pdf} />
+        <PaperButton text="PDF" emoji="page_facing_up" url={props.pdf} />
         {props.poster ? (
           <PaperButton
             text="Poster"
+            emoji="page_with_curl"
             url={props.poster}
           />
         ) : (
@@ -906,7 +908,7 @@ function Slack() {
             border-radius: 10px 0px 10px 0px;
           `}
         >
-          Questions can be asked{" "}
+          <Emoji emoji="male-detective" size={20} /> Questions can be asked{" "}
           <b>anonymously</b>.
         </div>
       </div>
@@ -914,223 +916,220 @@ function Slack() {
   );
 }
 
-
-
-
 // And finally, we add all the content into their respective sections.
 export default function Home({ data }) {
-    const [windowWidth, setWindowWidth] = React.useState(getWindowWidth());
-  
-    React.useEffect(() => {
-      const resizeWindow = () => setWindowWidth(getWindowWidth());
-      window.addEventListener("resize", resizeWindow);
-      return () => window.removeEventListener("resize", resizeWindow);
-    });
-  
-    const challengeData = [
-      {
-        challenge: challengePageMap["Habitat"],
-        key: "habitat-objectNav",
-        task: "ObjectNav",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "HM3D Semantics",
-        actionSpace: "Continuous",
-        observations: "RGB-D, Localization",
-        stochasticAcuation: "",
-        winner: "SkillFusion (AIRI)",
-      },
-      {
-        challenge: challengePageMap["Habitat"],
-        key: "habitat-imageNav",
-        task: "ImageNav",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "HM3D Semantics",
-        actionSpace: "Continuous",
-        observations: "RGB-D, Localization",
-        stochasticAcuation: "",
-        winner: "LQ",
-      },
-      {
-        challenge: challengePageMap["RxR-Habitat"],
-        key: "rxr",
-        task: "Vision-and-Language Navigation",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "Matterport3D",
-        observations: "RGB-D",
-        actionSpace: "Discrete",
-        stochasticAcuation: "",
-        winner: "The GridMM Team",
-      },
-      {
-        challenge: challengePageMap["MultiOn"],
-        key: "multion",
-        task: "Multi-Object Navigation",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "HM3D Semantics",
-        actionSpace: "Discrete",
-        observations: "RGB-D, Localization",
-        stochasticAcuation: "",
-        winner: "",
-      },
-      {
-        challenge: challengePageMap["SoundSpaces"],
-        key: "soundspaces",
-        task: "Audio Visual Navigation",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "Matterport3D",
-        observations: "RGB-D, Audio Waveform",
-        actionSpace: "Discrete",
-        stochasticAcuation: "",
-        winner: "AK-lab-tokyotech",
-      },
-      {
-        challenge: challengePageMap["SoundSpaces"],
-        key: "soundspaces",
-        task: "Active Audio Visual Source Separation",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "Matterport3D",
-        observations: "RGB-D, Audio Waveform",
-        actionSpace: "Discrete",
-        stochasticAcuation: "",
-        winner: "AK-lab-tokyotech",
-      },
-      {
-        challenge: challengePageMap["Robotic Vision Scene Understanding"],
-        key: "rvsu-2",
-        task: "Semantic SLAM",
-        interactiveActions: "",
-        simulationPlatform: "Isaac Sim",
-        sceneDataset: "Active Scene Understanding",
-        observations: "RGB-D, Pose Data, Flatscan Laser",
-        actionSpace: "Discrete",
-        stochasticAcuation: "Partially",
-        winner: "Team SP",
-      },
-      {
-        challenge: challengePageMap["Robotic Vision Scene Understanding"],
-        key: "rvsu",
-        task: "Rearrangement (SCD)",
-        interactiveActions: "",
-        simulationPlatform: "Isaac Sim",
-        sceneDataset: "Active Scene Understanding",
-        observations: "RGB-D, Pose Data, Flatscan Laser",
-        actionSpace: "Discrete",
-        stochasticAcuation: "✓",
-        winner: "MSC Lab",
-      },
-      {
-        challenge: challengePageMap["TDW-Transport"],
-        key: "tdw",
-        task: "Rearrangement",
-        interactiveActions: "✓",
-        simulationPlatform: "TDW",
-        sceneDataset: "TDW",
-        observations: "RGB-D, Metadata",
-        actionSpace: "Discrete",
-        stochasticAcuation: "✓",
-        winner: "",
-      },
-      {
-        challenge: challengePageMap["AI2-THOR Rearrangement"],
-        key: "ai2thor-rearrangement",
-        task: "Rearrangement",
-        interactiveActions: "✓",
-        simulationPlatform: "AI2-THOR",
-        sceneDataset: "iTHOR",
-        actionSpace: "Discrete",
-        observations: "RGB-D, Localization",
-        stochasticAcuation: "",
-        winner: "TIDEE",
-      },
-      {
-        challenge: challengePageMap["Language Interaction"],
-        key: "language-interaction",
-        task: "Instruction Following and Dialogue",
-        interactiveActions: "✓",
-        simulationPlatform: "AI2-THOR",
-        sceneDataset: "iTHOR",
-        actionSpace: "Discrete",
-        observations: "RGB",
-        stochasticAcuation: "",
-        winner: "Yonsei VnL",
-      },
-      {
-        challenge: challengePageMap["DialFRED"],
-        key: "teach",
-        task: "Vision-and-Dialogue Interaction",
-        interactiveActions: "✓",
-        simulationPlatform: "AI2-THOR",
-        sceneDataset: "iTHOR",
-        observations: "RGB",
-        actionSpace: "Discrete",
-        stochasticAcuation: "",
-        winner: "Team Keio",
-      },
-      {
-        challenge: challengePageMap["ManiSkill"],
-        key: "maniskill",
-        task: "Generalized Manipulation",
-        interactiveActions: "✓",
-        simulationPlatform: "SAPIEN",
-        sceneDataset: "PartNet-Mobility, YCB, EGAD",
-        observations: "RGB-D, Metadata",
-        actionSpace: "Continuous",
-        stochasticAcuation: "",
-        winner: "GXU-LIPE",
-      },
-    ];
-  
-    // useEffect(() => {
-    //   setPaperOrder(prevOrder => shuffle(prevOrder));
-    // }, []);
-  
-    // using 4:59 since PST is 5 hours behind AoE.
-    const paperDeadline = moment.tz("2022-05-17 04:59", "America/Los_Angeles");
-    const currentTime = moment();
-    const duration = moment.duration(paperDeadline.diff(currentTime));
-  
-    const hoursLeft = Math.ceil(duration.asHours() % 24);
-    const daysLeft = Math.floor(duration.asDays());
+  const [windowWidth, setWindowWidth] = useState(getWindowWidth());
 
-    return (
-        <PageWrapper
-        // headerGradient="radial-gradient(#090617, #090617)"
-        headerGradient="linear-gradient(0deg, #1f2f3f, #100b0f)"
-        headerStyle={css`
-          color: ${color.dark.gold10} !important;
-          button {
-            &:hover {
-              color: ${color.dark.gold9} !important;
-            }
+  useEffect(() => {
+    const resizeWindow = () => setWindowWidth(getWindowWidth());
+    window.addEventListener("resize", resizeWindow);
+    return () => window.removeEventListener("resize", resizeWindow);
+  });
+
+  const challengeData = [
+    {
+      challenge: challengePageMap["Habitat"],
+      key: "habitat-objectNav",
+      task: "ObjectNav",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "HM3D Semantics",
+      actionSpace: "Continuous",
+      observations: "RGB-D, Localization",
+      stochasticAcuation: "",
+      winner: "SkillFusion (AIRI)",
+    },
+    {
+      challenge: challengePageMap["Habitat"],
+      key: "habitat-imageNav",
+      task: "ImageNav",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "HM3D Semantics",
+      actionSpace: "Continuous",
+      observations: "RGB-D, Localization",
+      stochasticAcuation: "",
+      winner: "LQ",
+    },
+    {
+      challenge: challengePageMap["RxR-Habitat"],
+      key: "rxr",
+      task: "Vision-and-Language Navigation",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "Matterport3D",
+      observations: "RGB-D",
+      actionSpace: "Discrete",
+      stochasticAcuation: "",
+      winner: "The GridMM Team",
+    },
+    {
+      challenge: challengePageMap["MultiOn"],
+      key: "multion",
+      task: "Multi-Object Navigation",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "HM3D Semantics",
+      actionSpace: "Discrete",
+      observations: "RGB-D, Localization",
+      stochasticAcuation: "",
+      winner: "",
+    },
+    {
+      challenge: challengePageMap["SoundSpaces"],
+      key: "soundspaces",
+      task: "Audio Visual Navigation",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "Matterport3D",
+      observations: "RGB-D, Audio Waveform",
+      actionSpace: "Discrete",
+      stochasticAcuation: "",
+      winner: "AK-lab-tokyotech",
+    },
+    {
+      challenge: challengePageMap["SoundSpaces"],
+      key: "soundspaces",
+      task: "Active Audio Visual Source Separation",
+      interactiveActions: "",
+      simulationPlatform: "Habitat",
+      sceneDataset: "Matterport3D",
+      observations: "RGB-D, Audio Waveform",
+      actionSpace: "Discrete",
+      stochasticAcuation: "",
+      winner: "AK-lab-tokyotech",
+    },
+    {
+      challenge: challengePageMap["Robotic Vision Scene Understanding"],
+      key: "rvsu-2",
+      task: "Semantic SLAM",
+      interactiveActions: "",
+      simulationPlatform: "Isaac Sim",
+      sceneDataset: "Active Scene Understanding",
+      observations: "RGB-D, Pose Data, Flatscan Laser",
+      actionSpace: "Discrete",
+      stochasticAcuation: "Partially",
+      winner: "Team SP",
+    },
+    {
+      challenge: challengePageMap["Robotic Vision Scene Understanding"],
+      key: "rvsu",
+      task: "Rearrangement (SCD)",
+      interactiveActions: "",
+      simulationPlatform: "Isaac Sim",
+      sceneDataset: "Active Scene Understanding",
+      observations: "RGB-D, Pose Data, Flatscan Laser",
+      actionSpace: "Discrete",
+      stochasticAcuation: "✓",
+      winner: "MSC Lab",
+    },
+    {
+      challenge: challengePageMap["TDW-Transport"],
+      key: "tdw",
+      task: "Rearrangement",
+      interactiveActions: "✓",
+      simulationPlatform: "TDW",
+      sceneDataset: "TDW",
+      observations: "RGB-D, Metadata",
+      actionSpace: "Discrete",
+      stochasticAcuation: "✓",
+      winner: "",
+    },
+    {
+      challenge: challengePageMap["AI2-THOR Rearrangement"],
+      key: "ai2thor-rearrangement",
+      task: "Rearrangement",
+      interactiveActions: "✓",
+      simulationPlatform: "AI2-THOR",
+      sceneDataset: "iTHOR",
+      actionSpace: "Discrete",
+      observations: "RGB-D, Localization",
+      stochasticAcuation: "",
+      winner: "TIDEE",
+    },
+    {
+      challenge: challengePageMap["Language Interaction"],
+      key: "language-interaction",
+      task: "Instruction Following and Dialogue",
+      interactiveActions: "✓",
+      simulationPlatform: "AI2-THOR",
+      sceneDataset: "iTHOR",
+      actionSpace: "Discrete",
+      observations: "RGB",
+      stochasticAcuation: "",
+      winner: "Yonsei VnL",
+    },
+    {
+      challenge: challengePageMap["DialFRED"],
+      key: "teach",
+      task: "Vision-and-Dialogue Interaction",
+      interactiveActions: "✓",
+      simulationPlatform: "AI2-THOR",
+      sceneDataset: "iTHOR",
+      observations: "RGB",
+      actionSpace: "Discrete",
+      stochasticAcuation: "",
+      winner: "Team Keio",
+    },
+    {
+      challenge: challengePageMap["ManiSkill"],
+      key: "maniskill",
+      task: "Generalized Manipulation",
+      interactiveActions: "✓",
+      simulationPlatform: "SAPIEN",
+      sceneDataset: "PartNet-Mobility, YCB, EGAD",
+      observations: "RGB-D, Metadata",
+      actionSpace: "Continuous",
+      stochasticAcuation: "",
+      winner: "GXU-LIPE",
+    },
+  ];
+
+  // useEffect(() => {
+  //   setPaperOrder(prevOrder => shuffle(prevOrder));
+  // }, []);
+
+  // using 4:59 since PST is 5 hours behind AoE.
+  const paperDeadline = moment.tz("2022-05-17 04:59", "America/Los_Angeles");
+  const currentTime = moment();
+  const duration = moment.duration(paperDeadline.diff(currentTime));
+
+  const hoursLeft = Math.ceil(duration.asHours() % 24);
+  const daysLeft = Math.floor(duration.asDays());
+
+  return (
+    <PageWrapper
+      // headerGradient="radial-gradient(#090617, #090617)"
+      headerGradient="linear-gradient(0deg, #1f2f3f, #100b0f)"
+      headerStyle={css`
+        color: ${color.dark.gold10} !important;
+        button {
+          &:hover {
+            color: ${color.dark.gold9} !important;
           }
-        `}
-        imageContent={{
-          css: css`
-            width: 130%;
-            background-repeat: no-repeat;
-            padding-top: 70.25%;
-            margin-top: -25px;
-            margin-left: -15%;
-            margin-bottom: -15px;
-            background-image: url("/images/cvpr2023/cover-small.png");
-            background-size: cover;
-            background-position: center;
-          `,
-        }}
-        conference="CVPR 2023"
-        rightSide={
-          <Challenges
-            conference="CVPR 2023"
-            challengeData={Object.values(challengePageMap)}
-          />
         }
-      >
+      `}
+      imageContent={{
+        css: css`
+          width: 130%;
+          background-repeat: no-repeat;
+          padding-top: 70.25%;
+          margin-top: -25px;
+          margin-left: -15%;
+          margin-bottom: -15px;
+          background-image: url("/images/cvpr2023/cover-small.png");
+          background-size: cover;
+          background-position: center;
+        `,
+      }}
+      conference="CVPR 2023"
+      rightSide={
+        <Challenges
+          conference="CVPR 2023"
+          challengeData={Object.values(challengePageMap)}
+        />
+      }
+    >
       <Section title="Overview">
         <p>
           Minds live in bodies, and bodies move through a changing world.
@@ -1154,31 +1153,31 @@ export default function Home({ data }) {
         <ul>
           <li>
             <b>
-              See
+              <Emoji emoji="eye" size={18} /> See
             </b>
             : perceive their environment through vision or other senses.
           </li>
           <li>
             <b>
-              Talk
+              <Emoji emoji="microphone" size={18} /> Talk
             </b>
             : hold a natural language dialog grounded in their environment.
           </li>
           <li>
             <b>
-              Listen
+              <Emoji emoji="ear" size={18} /> Listen
             </b>
             : understand and react to audio input anywhere in a scene.
           </li>
           <li>
             <b>
-              Act
+              <Emoji emoji="joystick" size={18} /> Act
             </b>
             : navigate and interact with their environment to accomplish goals.
           </li>
           <li>
             <b>
-              Reason
+              <Emoji emoji="thinking_face" size={18} /> Reason
             </b>
             : consider and plan for the long-term consequences of their actions.
           </li>
@@ -1190,17 +1189,17 @@ export default function Home({ data }) {
           This year's workshop will focus on the three themes of:
           <ul>
             <li>
-              <b>Foundation Models</b>: Large pretrained models such as CLIP,
+              <Emoji emoji="house" size={16} /> <b>Foundation Models</b>: Large pretrained models such as CLIP,
               ViLD and PaLI which enable few-shot and zero-shot performance on
               novel tasks.
             </li>
             <li>
-              <b>Generalist Agents</b>: Single learning methods for multiple
+              <Emoji emoji="robot_face" size={16} /> <b>Generalist Agents</b>: Single learning methods for multiple
               tasks, such as RT-1, which enable models trained on one task
               to be expanded to novel tasks.
             </li>
             <li>
-              <b>Sim to Real Transfer</b>: Techniques which enable models trained
+              <Emoji emoji="world_map" size={16} /> <b>Sim to Real Transfer</b>: Techniques which enable models trained
               in simulation to be deployed in the real world.
             </li>
           </ul>
@@ -1218,8 +1217,8 @@ export default function Home({ data }) {
           actionIdentifier="1FAIpQLSeIZrn-tk7Oain2R8gc_Q0HzLMLQ9XXwqu3KecK_E5kALpiug"
           entryNumber={1834823104}
         />
-        </Section>
-        <Section title="Timeline">
+      </Section>
+      <Section title="Timeline">
       <Steps progressDot current={4} direction="vertical">
           <Step title="Workshop Announced" description="March 15, 2023" />
           <Step
@@ -1257,6 +1256,7 @@ export default function Home({ data }) {
           />
                </Steps>
       </Section>
+
       <Section title="Workshop Schedule">
         <p>
           <Img fluid={data.workshopLocation.childImageSharp.fluid} alt="Workshop Location"/>
@@ -1521,7 +1521,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  Challenge
+                  <Emoji emoji="mechanical_arm" size={18} /> Challenge
                 </>
               ),
               dataIndex: "challenge",
@@ -1532,7 +1532,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  Task
+                  <Emoji emoji="microscope" size={18} /> Task
                 </>
               ),
               dataIndex: "task",
@@ -1543,7 +1543,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  2023 Winner
+                  <Emoji emoji="trophy" size={18} /> 2023 Winner
                 </>
               ),
               dataIndex: "winner",
@@ -1554,7 +1554,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  Simulation Platform
+                  <Emoji emoji="earth_americas" size={18} /> Simulation Platform
                 </>
               ),
               dataIndex: "simulationPlatform",
@@ -1567,7 +1567,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  Scene Dataset
+                  <Emoji emoji="house" size={18} /> Scene Dataset
                 </>
               ),
               dataIndex: "sceneDataset",
@@ -1579,7 +1579,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  Observations
+                  <Emoji emoji="eye" size={18} /> Observations
                 </>
               ),
               key: "observations",
@@ -1595,7 +1595,7 @@ export default function Home({ data }) {
                     text-align: center;
                   `}
                 >
-                  Action Space
+                  <Emoji emoji="joystick" size={18} /> Action Space
                 </div>
               ),
               key: "actionSpace",
@@ -1607,7 +1607,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  Interactive Actions?
+                  <Emoji emoji="cooking" size={18} /> Interactive Actions?
                 </>
               ),
               dataIndex: "interactiveActions",
@@ -1620,7 +1620,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  Stochastic Acuation?
+                  <Emoji emoji="tophat" size={18} /> Stochastic Acuation?
                 </>
               ),
               key: "stochasticAcuation",
@@ -1648,32 +1648,32 @@ export default function Home({ data }) {
           especially in areas relevant to the themes of this year's workshop:
           <ul>
             <li>
-              Foundation Models
+              <Emoji emoji="house" size={16} /> Foundation Models
             </li>
             <li>
-              Generalist Agents
+              <Emoji emoji="robot_face" size={16} /> Generalist Agents
             </li>
             <li>
-              Sim to Real Transfer
+              <Emoji emoji="world_map" size={16} /> Sim to Real Transfer
             </li>
           </ul>
           as well as themes related to embodied AI in general:
           <ul>
             <li>
-              Simulation
+              <Emoji emoji="mountain_railway" size={16} /> Simulation
               Environments
             </li>
             <li>
-              Visual Navigation
+              <Emoji emoji="footprints" size={16} /> Visual Navigation
             </li>
             <li>
-              Rearrangement
+              <Emoji emoji="chair" size={16} /> Rearrangement
             </li>
             <li>
-              Embodied Question Answering
+              <Emoji emoji="raising_hand" size={16} /> Embodied Question Answering
             </li>
             <li>
-              Embodied Vision &amp; Language
+              <Emoji emoji="speak_no_evil" size={16} /> Embodied Vision &amp; Language
             </li>
           </ul>
           Accepted papers will be presented as posters or spotlight talks at the
@@ -1733,13 +1733,13 @@ export default function Home({ data }) {
         <p>
           <center>
             <a href="https://www.apple.com/">
-              <img src="/images/sponsors/apple.svg" width="100" alt="Apple"/>
+              <img src="images/sponsors/apple.svg" width="100" alt="Apple"/>
             </a>
             <a href="https://hello-robot.com/">
-              <img src="/images/sponsors/hello-robot.png" width="550" alt="Hello Robot"/>
+              <img src="images/sponsors/hello-robot.png" width="550" alt="Hello Robot"/>
             </a>
             <a href="https://logicalrobotics.com/">
-              <img src="/images/sponsors/logical-robotics.png" width="400" alt="Logical Robotics"/>
+              <img src="images/sponsors/logical-robotics.png" width="400" alt="Logical Robotics"/>
             </a>
           </center>
         </p>
@@ -1773,16 +1773,9 @@ export default function Home({ data }) {
           />
         </SubSection>
       </Section>
-
-        </PageWrapper>
-    );     
+    </PageWrapper>
+  );
 }
-
-
-
-
-
-
 
 // This helps the images load immediately, among other things
 export const query = graphql`

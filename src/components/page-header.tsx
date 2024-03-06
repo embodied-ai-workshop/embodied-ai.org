@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import style from "./page-header.module.scss";
+import * as style from "./page-header.module.scss";
 import { Popover, Button } from "antd";
 import { DownOutlined, RightOutlined, LeftOutlined } from "@ant-design/icons";
 import SeattleCover from "../../static/images/cvpr2020/cover-transparent.svg";

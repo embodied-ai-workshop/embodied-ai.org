@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Img, { FixedObject, FluidObject } from "gatsby-image";
-import style from "./cvpr2020.module.scss";
+import * as style from "./cvpr2020.module.scss";
 import { Section, SubSection } from "../components/text-helpers";
 import { Challenges, OtherYear } from "../components/page-header";
 import PageWrapper from "../components/page-wrapper";
