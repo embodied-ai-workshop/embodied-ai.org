@@ -90,24 +90,9 @@ function ChallengeSpotlight(props: {
 }
 
 const challengePageMap = {
-  "AI2-THOR Rearrangement": (
-    <a href="https://github.com/allenai/ai2thor-rearrangement" target="_blank">
-      AI2-THOR Rearrangement
-    </a>
-  ),
-  DialFRED: (
-    <a href="https://eval.ai/web/challenges/challenge-page/1859/overview" target="_blank">
-      DialFRED
-    </a>
-  ),
-  Habitat: (
-    <a href="//aihabitat.org/challenge/2023/" target="_blank">
-      Habitat
-    </a>
-  ),
-  "Language Interaction": (
-    <a href="//askforalfred.com/EAI23" target="_blank">
-      Language Interaction
+  ARNOLD: (
+    <a href="https://sites.google.com/view/arnoldchallenge/" target="_blank">
+      ARNOLD
     </a>
   ),
   ManiSkill: (
@@ -118,26 +103,6 @@ const challengePageMap = {
   MultiOn: (
     <a href="http://multion-challenge.cs.sfu.ca" target="_blank">
       MultiON
-    </a>
-  ),
-  "Robotic Vision Scene Understanding": (
-    <a href="https://nikosuenderhauf.github.io/roboticvisionchallenges/cvpr2023" target="_blank">
-      Robotic Vision Scene Understanding
-    </a>
-  ),
-  "RxR-Habitat": (
-    <a href="//ai.google.com/research/rxr/habitat" target="_blank">
-      RxR-Habitat
-    </a>
-  ),
-  SoundSpaces: (
-    <a href="//soundspaces.org/challenge" target="_blank">
-      SoundSpaces
-    </a>
-  ),
-  "TDW-Transport": (
-    <a href="http://tdw-transport.csail.mit.edu" target="_blank">
-      TDW-Transport
     </a>
   ),
 };
@@ -928,42 +893,6 @@ export default function Home({ data }) {
   
     const challengeData = [
       {
-        challenge: challengePageMap["Habitat"],
-        key: "habitat-objectNav",
-        task: "ObjectNav",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "HM3D Semantics",
-        actionSpace: "Continuous",
-        observations: "RGB-D, Localization",
-        stochasticAcuation: "",
-        winner: "SkillFusion (AIRI)",
-      },
-      {
-        challenge: challengePageMap["Habitat"],
-        key: "habitat-imageNav",
-        task: "ImageNav",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "HM3D Semantics",
-        actionSpace: "Continuous",
-        observations: "RGB-D, Localization",
-        stochasticAcuation: "",
-        winner: "LQ",
-      },
-      {
-        challenge: challengePageMap["RxR-Habitat"],
-        key: "rxr",
-        task: "Vision-and-Language Navigation",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "Matterport3D",
-        observations: "RGB-D",
-        actionSpace: "Discrete",
-        stochasticAcuation: "",
-        winner: "The GridMM Team",
-      },
-      {
         challenge: challengePageMap["MultiOn"],
         key: "multion",
         task: "Multi-Object Navigation",
@@ -976,102 +905,6 @@ export default function Home({ data }) {
         winner: "",
       },
       {
-        challenge: challengePageMap["SoundSpaces"],
-        key: "soundspaces",
-        task: "Audio Visual Navigation",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "Matterport3D",
-        observations: "RGB-D, Audio Waveform",
-        actionSpace: "Discrete",
-        stochasticAcuation: "",
-        winner: "AK-lab-tokyotech",
-      },
-      {
-        challenge: challengePageMap["SoundSpaces"],
-        key: "soundspaces",
-        task: "Active Audio Visual Source Separation",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "Matterport3D",
-        observations: "RGB-D, Audio Waveform",
-        actionSpace: "Discrete",
-        stochasticAcuation: "",
-        winner: "AK-lab-tokyotech",
-      },
-      {
-        challenge: challengePageMap["Robotic Vision Scene Understanding"],
-        key: "rvsu-2",
-        task: "Semantic SLAM",
-        interactiveActions: "",
-        simulationPlatform: "Isaac Sim",
-        sceneDataset: "Active Scene Understanding",
-        observations: "RGB-D, Pose Data, Flatscan Laser",
-        actionSpace: "Discrete",
-        stochasticAcuation: "Partially",
-        winner: "Team SP",
-      },
-      {
-        challenge: challengePageMap["Robotic Vision Scene Understanding"],
-        key: "rvsu",
-        task: "Rearrangement (SCD)",
-        interactiveActions: "",
-        simulationPlatform: "Isaac Sim",
-        sceneDataset: "Active Scene Understanding",
-        observations: "RGB-D, Pose Data, Flatscan Laser",
-        actionSpace: "Discrete",
-        stochasticAcuation: "✓",
-        winner: "MSC Lab",
-      },
-      {
-        challenge: challengePageMap["TDW-Transport"],
-        key: "tdw",
-        task: "Rearrangement",
-        interactiveActions: "✓",
-        simulationPlatform: "TDW",
-        sceneDataset: "TDW",
-        observations: "RGB-D, Metadata",
-        actionSpace: "Discrete",
-        stochasticAcuation: "✓",
-        winner: "",
-      },
-      {
-        challenge: challengePageMap["AI2-THOR Rearrangement"],
-        key: "ai2thor-rearrangement",
-        task: "Rearrangement",
-        interactiveActions: "✓",
-        simulationPlatform: "AI2-THOR",
-        sceneDataset: "iTHOR",
-        actionSpace: "Discrete",
-        observations: "RGB-D, Localization",
-        stochasticAcuation: "",
-        winner: "TIDEE",
-      },
-      {
-        challenge: challengePageMap["Language Interaction"],
-        key: "language-interaction",
-        task: "Instruction Following and Dialogue",
-        interactiveActions: "✓",
-        simulationPlatform: "AI2-THOR",
-        sceneDataset: "iTHOR",
-        actionSpace: "Discrete",
-        observations: "RGB",
-        stochasticAcuation: "",
-        winner: "Yonsei VnL",
-      },
-      {
-        challenge: challengePageMap["DialFRED"],
-        key: "teach",
-        task: "Vision-and-Dialogue Interaction",
-        interactiveActions: "✓",
-        simulationPlatform: "AI2-THOR",
-        sceneDataset: "iTHOR",
-        observations: "RGB",
-        actionSpace: "Discrete",
-        stochasticAcuation: "",
-        winner: "Team Keio",
-      },
-      {
         challenge: challengePageMap["ManiSkill"],
         key: "maniskill",
         task: "Generalized Manipulation",
@@ -1081,7 +914,19 @@ export default function Home({ data }) {
         observations: "RGB-D, Metadata",
         actionSpace: "Continuous",
         stochasticAcuation: "",
-        winner: "GXU-LIPE",
+        winner: "",
+      },
+      {
+        challenge: challengePageMap["ARNOLD"],
+        key: "arnold",
+        task: "Language-Grounded Manipulation",
+        interactiveActions: "✓",
+        simulationPlatform: "Isaac Sim",
+        sceneDataset: "Arnold Dataset",
+        observations: "RGB-D, Proprioception",
+        actionSpace: "Continuous",
+        stochasticAcuation: "✓",
+        winner: "TBD",
       },
     ];
   
@@ -1242,11 +1087,11 @@ export default function Home({ data }) {
           <Step title="Workshop Announced" description="March 15, 2024" />
           <Step
             title="Paper Submission Deadline"
-            description="April 1st, 2024 (Anywhere on Earth)"
+            description="April 15th, 2024 (Anywhere on Earth)"
           />
           <Step
             title="Challenge Submission Deadlines"
-            description="May 2023. Check each challenge for the specific date."
+            description="May 2024. Check each challenge for the specific date."
           />
           <Step
             title="Fifth Annual Embodied AI Workshop at CVPR"
@@ -1256,7 +1101,7 @@ export default function Home({ data }) {
                   Seattle Convention Center
                 </a>{" "}
                 <br />
-                Monday, June 20, 2023
+                Monday, June 18, 2023
                 <br />
                 8:50 AM - 6:00 PM PT<br />
                 TBD <br />
@@ -1271,21 +1116,18 @@ export default function Home({ data }) {
           ></Step>
           <Step
             title="Challenge Winners Announced"
-            description="June 20, 2023 at the workshop. Check each challenge for specifics."
+            description="June 18, 2024 at the workshop. Check each challenge for specifics."
           />
                </Steps>
       </Section>
       <Section title="Workshop Schedule">
-        <p>
-          <Img fluid={data.workshopLocation.childImageSharp.fluid} alt="Workshop Location"/>
-        </p>
-
+        
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
         <ul>
-          <li><b>Workshop Talks: 9:00AM-5:30PM PT - East Ballroom A</b></li>
-          <li><b>Poster Session: NOON-1:20PM PT - West Exhibit Hall, Posters #123 - #148</b></li>
+          <li><b>Workshop Talks: 9:00AM-5:30PM PT - TBD</b></li>
+          <li><b>Poster Session: 1:00PM-2:00PM PT - TBD</b></li>
         </ul>
-        Zoom information is available on <a href="https://cvpr2023.thecvf.com/virtual/2023/index.html">the CVPR virtual platform for registered attendees</a>.
+        Zoom information is available on <a href="https://cvpr.thecvf.com/Conferences/2024">the CVPR virtual platform for registered attendees</a>.
         <br />
         Remote and in-person attendees are welcome to as questions via Slack:  
         <br />
@@ -1302,182 +1144,203 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Workshop Introduction: Embodied AI</b>
                       <br />
-                      East Ballroom A 
+                      TBD
                       <br />
-                      <Time time="9:00 - 9:10 AM PT" />
+                      <Time time="8:50 - 9:00 AM PT" />
                       <Speaker
-                         organizations={["NVIDIA"]}
-                         name="Claudia Perez D'Arpino"
-                         fixedImg={data.claudia.childImageSharp.fixed}
+                         organizations={["Logical Robotics"]}
+                         name="Moderator - Anthony Francis"
+                         fixedImg={data.anthony.childImageSharp.fixed}
                          noMargin={true}
                       />
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Navigation & Understanding Challenge Presentations</b>
+                      <b>Navigation & Social Challenge Presentations</b>
                       <br />
-                      (Habitat, MultiON, SoundSpaces, RxR-Habitat, RVSU)
+                      (MultiOn, HAZARD, PRS Challenge)
                       <br />
                       <Time time="9:10 - 10:00 AM PT" />
                       <ul>
-                        <li>9:10: RxR-Habitat</li>
-                        <li>9:20: MultiOn</li>
-                        <li>9:30: SoundSpaces</li>
-                        <li>9:40: RVSU</li>
-                        <li>9:50: Habitat</li>
+                        <li>9:00: MultiOn</li>
+                        <li>9:10: HAZARD</li>
+                        <li>9:20: PRS Challenge</li>
                       </ul>
                     </Timeline.Item>
                     <Timeline.Item>
-                      <b>Navigation & Understanding Challenge Q&A Panel</b>
+                      <b>Navigation & Social Challenge Q&A Panel</b>
                       <br/>
-                      <Time time="10:00 - 10:30 AM PT" />
+                      <Time time="9:30 - 10:00 AM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Invited Talk - Embodied Navigation: </b>
+                      <b>Invited Talk - Generative AI for Embodied AI: </b>
                       <br />
-                      <i>Robot Learning by Understanding Videos</i>
+                      <i>TBD</i>
                       <br />
-                      <Time time="10:30 - 11:00 AM PT" />
+                      <Time time="10:00 - 10:30 AM PT" />
                       <Speaker
-                        organizations={["UIUC"]}
-                        name="Saurabh Gupta"
-                        fixedImg={data.saurabh.childImageSharp.fixed}
+                        organizations={["AI2"]}
+                        name="Aniruddha Kembhavi"
+                        // fixedImg={data.saurabh.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Saurabh Gupta is an Assistant Professor in the ECE Department at UIUC. Before starting at UIUC in 2019, he received his Ph.D. from UC Berkeley in 2018 and spent the following year as a Research Scientist at Facebook AI Research in Pittsburgh. His research interests span computer vision, robotics, and machine learning, with a focus on building agents that can intelligently interact with the physical world around them. He received the President's Gold Medal at IIT Delhi in 2011, the Google Fellowship in Computer Vision in 2015, an Amazon Research Award in 2020, and an NSF CAREER Award in 2022. He has also won many challenges at leading computer vision conferences.</p>
+                      <p>TBD</p>
                       <Abstract
-                        text="True gains of machine learning in AI sub-fields such as computer vision and natural language processing have come about from the use of large-scale diverse datasets for learning. In this talk, I will discuss if and how we can leverage large-scale diverse data in the form of egocentric videos (first-person videos of humans conducting different tasks) to similarly scale up policy learning for robots. I will discuss the challenges this presents, and some of our initial efforts towards tackling them. In particular, I will describe work that extracts a) spatial common sense and b) an interactive understanding of objects from such videos."
+                        text="TBD"
                         />                      
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Invited Talk - Robotics: </b>
+                    <b>Invited Talk - Generative AI for Embodied AI: </b>
                       <br />
-                      <i>Embodied Reasoning Through Planning with Language and Vision Foundation Models</i>
+                      <i>TBD</i>
+                      <br />
+                      <Time time="10:30 - 11:00 AM PT" />
+                      <Speaker
+                        organizations={["TBD"]}
+                        name="TBD"
+                        // fixedImg={data.fei.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <p>TBD.</p>                     
+                      <Abstract
+                        text="TBD"
+                        />                      
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Invited Talk - Language Model Planning: </b>
+                      <br />
+                      <i>TBD</i>
                       <br />
                       <Time time="11:00 - 11:30 AM PT" />
                       <Speaker
                         organizations={["Google"]}
-                        name="Fei Xia"
-                        fixedImg={data.fei.childImageSharp.fixed}
+                        name="Brian Ichter"
+                        // fixedImg={data.ruslan.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Fei Xia is a Research Scientist at Google Research where he works on the Robotics team. He received his PhD degree from the Department of Electrical Engineering, Stanford University. He was co-advised by Silvio Savarese in SVL and Leonidas Guibas. His mission is to build intelligent embodied agents that can interact with complex and unstructured real-world environments, with applications to home robotics. He has been approaching this problem from 3 aspects: 1) Large scale and transferrable simulation for Robotics. 2) Learning algorithms for long-horizon tasks. 3) Combining geometric and semantic representation for environments. Most recently, He has been exploring using foundation models for robot decision making.</p>                     
+                      <p>TBD.</p>
                       <Abstract
-                        text="Large language models can encode a wealth of semantic knowledge about the world. Such knowledge could in principle be extremely useful to robots aiming to act upon high-level, temporally extended instructions expressed in natural language. However, a significant weakness of language models is that they lack contextual grounding, which makes it difficult to leverage them for decision-making within a given real-world context. For example, asking a language model to describe how to clean a spill might result in a reasonable narrative, but it may not be applicable to a particular agent, such as a robot, that needs to perform this task in a particular environment. We propose to provide this grounding by means of pretrained behaviors, which are used to condition the model to propose natural language actions that are both feasible and contextually appropriate. The robot can act as the language model’s “hands and eyes,” while the language model supplies high-level semantic knowledge about the task. We show how low-level tasks can be combined with large language models so that the language model provides high-level knowledge about the procedures for performing complex and temporally extended instructions, while value functions associated with these tasks provide the grounding necessary to connect this knowledge to a particular physical environment. We evaluate our method on a number of real-world robotic tasks, where we show that this approach is capable of completing long-horizon, abstract, natural language instructions on a mobile manipulator."
-                        />                      
+                        text="TBD"
+                        />
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Invited Talk - Generalist Agents: </b>
+                      <b>Sponsor Talk - Project Aria: </b>
                       <br />
-                      <i>Building Embodied Autonomous Agents with Multimodal Interaction</i>
+                      <i>TBD</i>
                       <br />
-                      <Time time="11:30 AM - 12 NOON PT" />
+                      <Time time="11:30 AM - 12:00 NOON PT" />
                       <Speaker
-                        organizations={["CMU"]}
-                        name="Ruslan Salakhutdinov"
-                        fixedImg={data.ruslan.childImageSharp.fixed}
+                        organizations={["Google"]}
+                        name="Brian Ichter"
+                        // fixedImg={data.ruslan.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Russ Salakhutdinov is a UPMC Professor of Computer Science in the Department of Machine Learning at CMU. He received his PhD in computer science from the University of Toronto. After spending two post-doctoral years at MIT, he joined the University of Toronto and later moved to CMU. Russ's primary interests lie in deep learning, machine learning, and large-scale optimization. He is an action editor of the Journal of Machine Learning Research, served as a director of AI research at Apple, served on the senior programme committee of several top-tier learning conferences including NeurIPS and ICML, was a program co-chair for ICML 2019, and will serve as a general chair for ICML 2024.  He is an Alfred P. Sloan Research Fellow, Microsoft Research Faculty Fellow, a recipient of the Early Researcher Award, Google Faculty Award, and Nvidia's Pioneers of AI award.</p>
+                      <p>TBD.</p>
                       <Abstract
-                        text="In this talk I will give an overview of our recent work on how we can design modular agents for visual navigation that can perform tasks specified by natural language instructions, perform efficient exploration and long-term planning, build and utilize 3D semantic maps, while generalizing across domains and tasks. In the second part of the talk, I will introduce a method to ground pretrained text-only language models to the visual domain, enabling them to process arbitrarily interleaved image-and-text inputs, and generate free-form text interleaved with retrieved images, I will show that the model is able to achieve strong zero-shot performance on grounded tasks such as contextual image retrieval and multimodal dialogue, and showcase its interactive abilities."
+                        text="TBD"
                         />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Lunch</b>
+                      <br />
+                      TBD
+                      <br />
+                      <Time time="12:00 NOON - 1:00 PM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       <b>Accepted Papers Poster Session</b>
                       <br />
-                      West Exhibit Hall - Posters #123 - #148.
+                      TBD
                       <br />
-                      <Time time="12:00 NOON - 1:20 PM PT" />
+                      <Time time="1:00 PM - 2:00 PM PT" />
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Invited Talk - Foundation Models: </b>
+                      <b>Mobile Manipulation Challenge Presentations</b>
                       <br />
-                      <i>Large Language Models for Solving Long-Horizon Robotic Manipulation Problems</i>
+                      ManiSkill, ARNOLD, HomeRobot OVMM
                       <br />
-                      East Ballroom A 
-                      <br />
-                      <Time time="1:30 - 2:00 PM PT" />
-                      <Speaker
-                        organizations={["Stanford"]}
-                        name="Jeannette Bohg"
-                        fixedImg={data.jeannette.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Abstract
-                        text="My long-term research goal is enable real robots to manipulate any kind of object such that they can perform many different tasks in a wide variety of application scenarios such as in our homes, in hospitals, warehouses, or factories. Many of these tasks will require long-horizon reasoning and sequencing of skills to achieve a goal state. In this talk, I will present our work on enabling long-horizon reasoning on real robots for a variety of different long-horizon tasks that can be solved by sequencing a large variety of composable skill primitives. I will specifically focus on the different ways Large Language Models (LLMs) can help with solving these long-horizon tasks. The first part of my talk will be on TidyBot, a robot for personalised household clean-up. One of the key challenges in robotic household cleanup is deciding where each item goes. People's preferences can vary greatly depending on personal taste or cultural background. One person might want shirts in the drawer, another might want them on the shelf. How can we infer these user preferences from only a handful of examples in a generalizable way? Our key insight: Summarization with LLMs is an effective way to achieve generalization in robotics. Given the generalised rules, I will then show how TidyBot then solves the long-horizon task of cleaning up a home. In the second part of my talk, I will focus on more complex long-horizon manipulation tasks that exhibit geometric dependencies between different skills in a sequence. In these tasks, the way a robot performs a certain skill will determine whether a follow-up skill in the sequence can be executed at all. I will present an approach called text2motion that utilises LLMs for task planning without the need for defining complex symbolic domains. And I will show how we can verify whether the plan that the LLM came up with is actually feasible. The basis for this verification is a library of learned skills and an approach for sequencing these skills to resolve geometric dependencies prevalent in long-horizon tasks."
-                        />
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Invited Talk - Sim to Real</b>
-                      <br />
-                      <i>Toward Foundational Robot Manipulation Skills</i>
-                      <br />
-                      <Time time="2:00 - 2:30 PM PT" />
-                      <Speaker
-                        organizations={["NVIDIA", "U Washington"]}
-                        name="Dieter Fox"
-                        fixedImg={data.dieter.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <p>Dieter Fox received his PhD degree from the University of Bonn, Germany. He is a professor in the Allen School of Computer Science & Engineering at the University of Washington, where he heads the UW Robotics and State Estimation Lab.  He is also Senior Director of Robotics Research at NVIDIA.  His research is in robotics and artificial intelligence, with a focus on learning and estimation applied to problems such as robot manipulation, planning, language grounding, and activity recognition. He has published more than 300 technical papers and is co-author of the textbook "Probabilistic Robotics". Dieter is a Fellow of the IEEE, ACM, and AAAI, and recipient of the IEEE RAS Pioneer Award and the IJCAI John McCarthy Award.</p>
-                      <Abstract
-                        text="In this talk, I will discuss our ongoing efforts toward developing the models and generating the kind of data that might lead to foundational manipulation skills for robotics.  To generate large amounts of data, we sample many object rearrangement tasks in physically realistic simulation environments and apply task and motion planning to generate high quality solutions for them.  We will then train manipulation skills so that they can be used across a broad range of object rearrangement tasks in unknown, real-world environments.  We believe that such skills could provide the glue between generative AI reasoning and robust execution in the real world."
-                        />                      
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Interaction & Rearrangement Challenge Presentations</b>
-                      <br />
-                      AI2-Rearrangement, ALFRED+TEACh, DialFRED, ManiSkill, TDW-Transport
-                      <br />
-                      <Time time="2:30 - 3:30 PM PT" />
+                      <Time time="2:30 - 3:00 PM PT" />
                       <ul>
-                        <li>2:30: AI2-Rearrangement</li>
-                        <li>2:40: ALFRED+TEACh</li>
-                        <li>2:50: DialFRED</li>
-                        <li>3:00: ManiSkill</li>
-                        <li>3:10: TDW-Transport</li>
-                        <li>3:20: Break</li>
+                        <li>2:00: ManiSkill</li>
+                        <li>2:10: ARNOLD</li>
+                        <li>2:20: HomeRobot OVMM</li>
                       </ul>
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Interaction & Rearrangement Challenge Q&A Panel</b>
+                      <b>Mobile Manipulation Challenge Q&A Panel</b>
                       <br />
-                      <Time time="3:30 - 4:00 PM PT" />
+                      <Time time="3:00 - 3:30 PM PT" />
                     </Timeline.Item>
                     
                     <Timeline.Item>
-                      <b>Invited Talk - External Knowledge</b>
+                      <b>Invited Talk - Embodied Mobile Manipulation: </b>
                       <br />
-                      <i>From goals to grasps: Learning about action from people in video</i>
+                      <i>TBD</i>
+                      <br />
+                      TBD
+                      <br />
+                      <Time time="3:30 - 4:00 PM PT" />
+                      <Speaker
+                        organizations={["TBD"]}
+                        name="Shuran Song"
+                        // fixedImg={data.jeannette.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Abstract
+                        text="TBD."
+                        />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Invited Talk - Embodied Mobile Manipulation: </b>
+                      <br />
+                      <i>TBD</i>
                       <br />
                       <Time time="4:00 - 4:30 PM PT" />
                       <Speaker
-                        organizations={["UT Austin"]}
-                        name="Kristen Grauman"
-                        fixedImg={data.kristen.childImageSharp.fixed}
+                        organizations={["Meta AI"]}
+                        name="Chris Paxton"
+                        //fixedImg={data.chris.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Kristen Grauman is a Professor in the Department of Computer Science at the University of Texas at Austin and a Research Director in Facebook AI Research (FAIR).  Her research in computer vision and machine learning focuses on video, visual recognition, and action for perception or embodied AI.  Before joining UT-Austin in 2007, she received her Ph.D. at MIT.  She is an IEEE Fellow, AAAI Fellow, Sloan Fellow, a Microsoft Research New Faculty Fellow, and a recipient of NSF CAREER and ONR Young Investigator awards, the PAMI Young Researcher Award in 2013, the 2013 Computers and Thought Award from the International Joint Conference on Artificial Intelligence (IJCAI), the Presidential Early Career Award for Scientists and Engineers (PECASE) in 2013.  She was inducted into the UT Academy of Distinguished Teachers in 2017.  She and her collaborators have been recognized with several Best Paper awards in computer vision, including a 2011 Marr Prize and a 2017 Helmholtz Prize (test of time award).  She served for six years as an Associate Editor-in-Chief for the Transactions on Pattern Analysis and Machine Intelligence (PAMI) and for ten years as an Editorial Board member for the International Journal of Computer Vision (IJCV).  She also served as a Program Chair of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2015 and a Program Chair of Neural Information Processing Systems (NeurIPS) 2018, and will serve as a Program Chair of the IEEE International Conference on Computer Vision (ICCV) 2023.</p>
+                      <p>TBD.</p>
+                      <Abstract
+                        text="TBD."
+                        />                      
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Invited Talk - Humanoid Robots</b>
+                      <br />
+                      <i>TBD</i>
+                      <br />
+                      <Time time="4:30 - 5:00 PM PT" />
+                      <Speaker
+                        organizations={["TBD"]}
+                        name="Eric Jang"
+                        // fixedImg={data.kristen.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <p>TBD</p>
                     </Timeline.Item>
 
                     <Timeline.Item>
                       <b>Invited Speaker Panel</b>
                       <br />
-                      <Time time="4:30 - 5:30 PM PT" />
+                      <Time time="5:00 - 5:30 PM PT" />
                       <br />
                       <Speaker
-                         organizations={["Logical Robotics"]}
-                         name="Moderator - Anthony Francis"
-                         fixedImg={data.anthony.childImageSharp.fixed}
+                         organizations={["NVIDIA"]}
+                         name="Claudia Perez D'Arpino"
+                         fixedImg={data.claudia.childImageSharp.fixed}
                          noMargin={true}
                       />
                     </Timeline.Item>
@@ -1492,38 +1355,26 @@ export default function Home({ data }) {
       </Section>
       <Section title="Demos">
         <p>
-          In association with the Embodied AI Workshop, Meta AI will present a demo
-          of <b>
-            LSC: Language-guided Skill Coordination for Open-Vocabulary Mobile
-            Pick-and-Place
-          </b> in which a Boston Dynamics Spot will follow voice commands for object rearrangement
-          such as "Find the plush in the table and place it in the case." The demo times for LSC include:
+          In association with the Embodied AI Workshop, our partners and sponsors
+          will present demos, date and times TBD.
         </p>
-        <ul>
-          <li>Expo Meta AI Booth: <b>Tue-Thu, June 20-22 11:00-5:00</b></li>
-          <li>West Exhibit Hall Demo Area: <b>Thu, June 22 10:00-18:00</b></li>
-        </ul>
         <br />
-        <p>
-        <center>
-          <Img fluid={data.metaDemo.childImageSharp.fluid} alt="Meta Demo"/>
-        </center>
-        </p>
       </Section>
       <Section title="Challenges">
         <p>
-          The Embodied AI 2023 workshop is hosting many exciting challenges
+          The Embodied AI 2024 workshop is hosting many exciting challenges
           covering a wide range of topics such as rearrangement, visual
           navigation, vision-and-language, and audio-visual navigation. More
           details regarding data, submission instructions, and timelines can be
           found on the individual challenge websites.
         </p>
         <p>
-          The workshop organizers are awarding each first-place challenge winner
-          $300 dollars, sponsored by Apple, Hello Robot and Logical Robotics.
+          The workshop organizers will award each first-prize challenge winner
+          a cash prize, sponsored by Logical Robotics and our other sponsors.
         </p>
         <p>
-          Challenge winners will be given the opportunity to present a talk at
+          Challenge winners may be given the opportunity to present during their
+          challenge's presentation at the
           the workshop. Since many challenges can be grouped into similar tasks,
           we encourage participants to submit models to more than 1 challenge.
           The table below describes, compares, and links each challenge.
@@ -1666,13 +1517,16 @@ export default function Home({ data }) {
           especially in areas relevant to the themes of this year's workshop:
           <ul>
             <li>
-              Foundation Models
+              Open-World AI for Embodied AI
             </li>
             <li>
-              Generalist Agents
+              Generative AI for Embodied AI
             </li>
             <li>
-              Sim to Real Transfer
+              Embodied Mobile Manipulation
+            </li>
+            <li>
+              Language Model Planning
             </li>
           </ul>
           as well as themes related to embodied AI in general:
@@ -1699,7 +1553,7 @@ export default function Home({ data }) {
           non-archival format, allowing future submission to archival journals
           or conferences. Paper submissions do not have to be anononymized. Per{" "}
           <a
-            href="https://cvpr2023.thecvf.com/Conferences/2023/AuthorGuidelines"
+            href="https://cvpr.thecvf.com/Conferences/2024/AuthorGuidelines"
             target="_blank"
           >
             CVPR rules
@@ -1709,7 +1563,7 @@ export default function Home({ data }) {
         </p>
         <SubSection title="Submission">
           <p>
-            The submission deadline is May 26th (
+            The submission deadline is April 15th (
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
             in the{" "}
@@ -1747,15 +1601,9 @@ export default function Home({ data }) {
 
       </Section>
       <Section title="Sponsors">
-        <p>The Embodied AI 2023 Workshop is sponsored by the following organizations:</p>
+        <p>The Embodied AI 2024 Workshop is sponsored by the following organizations:</p>
         <p>
           <center>
-            <a href="https://www.apple.com/">
-              <img src="/images/sponsors/apple.svg" width="100" alt="Apple"/>
-            </a>
-            <a href="https://hello-robot.com/">
-              <img src="/images/sponsors/hello-robot.png" width="550" alt="Hello Robot"/>
-            </a>
             <a href="https://logicalrobotics.com/">
               <img src="/images/sponsors/logical-robotics.png" width="400" alt="Logical Robotics"/>
             </a>
@@ -1763,7 +1611,7 @@ export default function Home({ data }) {
         </p>
         </Section>
       <Section title="Organizers">
-        The Embodied AI 2023 workshop is a joint effort by a large set of
+        The Embodied AI 2024 workshop is a joint effort by a large set of
         researchers from a variety of organizations. They are listed below in
         alphabetical order.
         <SubSection title="Organizing Committee">
