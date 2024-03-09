@@ -4,8 +4,7 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import { Section, SubSection } from "../components/text-helpers";
 
-// import PageWrapper from "../components/page-wrapper";
-import PageWrapper from "../components/new-page-wrapper";
+import PageWrapper from "../components/page-wrapper";
 
 import color from "../components/color";
 import { Challenges } from "../components/page-header";

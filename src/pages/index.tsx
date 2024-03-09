@@ -5,7 +5,6 @@ import { graphql, Link } from "gatsby";
 import { Section, SubSection } from "../components/text-helpers";
 
 import PageWrapper from "../components/page-wrapper";
-// import PageWrapper from "../components/new-page-wrapper";
 
 import color from "../components/color";
 import { Challenges } from "../components/page-header";
@@ -1225,7 +1224,7 @@ export default function Home({ data }) {
            </ul>
 
           The Embodied AI 2024 workshop will be held in conjunction with
-          {" "}<a href="https://cvpr2024.thecvf.com/">CVPR 2024</a>{" "}
+          {" "}<a href="https://cvpr.thecvf.com/Conferences/2024">CVPR 2024</a>{" "}
           in Seattle, Washington. It will feature a host of invited
           talks covering a variety of topics in Embodied AI, many exciting 
           Embodied AI challenges, a poster session, and panel discussions.
@@ -1240,27 +1239,27 @@ export default function Home({ data }) {
         </Section>
         <Section title="Timeline">
       <Steps progressDot current={4} direction="vertical">
-          <Step title="Workshop Announced" description="March 15, 2023" />
+          <Step title="Workshop Announced" description="March 15, 2024" />
           <Step
             title="Paper Submission Deadline"
-            description="May 26, 2023 (Anywhere on Earth)"
+            description="April 1st, 2024 (Anywhere on Earth)"
           />
           <Step
             title="Challenge Submission Deadlines"
             description="May 2023. Check each challenge for the specific date."
           />
           <Step
-            title="Fourth Annual Embodied AI Workshop at CVPR"
+            title="Fifth Annual Embodied AI Workshop at CVPR"
             description={
               <>
-                <a href={"https://cvpr2023.thecvf.com/Conferences/2023"} target="_blank">
-                  Vancouver Convention Center
+                <a href={"https://cvpr.thecvf.com/Conferences/2024"} target="_blank">
+                  Seattle Convention Center
                 </a>{" "}
                 <br />
-                Monday, June 19, 2023
+                Monday, June 20, 2023
                 <br />
-                9:00 AM - 5:30 PM PT<br />
-                East Ballroom A <br />
+                8:50 AM - 6:00 PM PT<br />
+                TBD <br />
                 <span
                   css={css`
                     color: ${color.gray7};
@@ -1272,7 +1271,7 @@ export default function Home({ data }) {
           ></Step>
           <Step
             title="Challenge Winners Announced"
-            description="June 19, 2023 at the workshop. Check each challenge for specifics."
+            description="June 20, 2023 at the workshop. Check each challenge for specifics."
           />
                </Steps>
       </Section>
