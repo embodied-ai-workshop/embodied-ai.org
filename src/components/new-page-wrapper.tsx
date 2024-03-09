@@ -20,7 +20,6 @@ export default function PageWrapper({
   const [headerIdLocations, setHeaderIdLocations] = React.useState<number[]>([]);
   const [focusedHeaderI, setFocusedHeaderI] = React.useState<number>(0);
 
-  /*
   // Equivalent to `updateSidebarScroll` method
   const updateSidebarScroll = () => {
       // scrolled to absolute bottom of page, set last section
@@ -54,13 +53,9 @@ export default function PageWrapper({
         }
       }
   };
-*/
-/*
   const sidebarHeaderClick = (header: string) => {
     window.location.hash = headerId(header);
   };
-  */
-  /*
 
 
   const updateHeaderLocations = () => {
@@ -80,7 +75,6 @@ export default function PageWrapper({
   const componentWillUnmount = () => {
     window.removeEventListener("scroll", updateSidebarScroll);
   }
-  */
 
 
   // If you have lifecycle methods (componentDidMount, componentDidUpdate, componentWillUnmount),
@@ -100,9 +94,24 @@ export default function PageWrapper({
         headerGradient={headerGradient}
         headerStyle={headerStyle}
       />
-      Hello world!
       <div className={style.contentWrapper}>
       <div className={style.mainContent}>{children}</div>
+      <div className={style.toc}>
+        {children.map((section, i: number) => (
+              <div
+                className={style.tocHeader}
+                key={section.props.title}
+                onClick={() => sidebarHeaderClick(section.props.title)}
+                style={
+                  focusedHeaderI == i
+                    ? { borderLeft: "2px solid #000" }
+                    : {}
+                }
+              >
+                {section.props.title}
+              </div>
+            ))}
+          </div>
         </div>
         <footer>
           <a

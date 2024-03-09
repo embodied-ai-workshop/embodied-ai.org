@@ -4,7 +4,6 @@ import * as style from "./page-header.module.scss";
 import { Popover, Button } from "antd";
 import { DownOutlined, RightOutlined, LeftOutlined } from "@ant-design/icons";
 import SeattleCover from "../../static/images/cvpr2020/cover-transparent.svg";
-import { Emoji } from "emoji-mart";
 import { css } from "@emotion/react";
 
 // This will eventually show the 2021 challenges as a dropdown

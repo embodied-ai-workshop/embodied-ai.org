@@ -4,8 +4,8 @@ import * as React from "react";
 import { graphql, Link } from "gatsby";
 import { Section, SubSection } from "../components/text-helpers";
 
-// import PageWrapper from "../components/page-wrapper";
-import PageWrapper from "../components/new-page-wrapper";
+import PageWrapper from "../components/page-wrapper";
+// import PageWrapper from "../components/new-page-wrapper";
 
 import color from "../components/color";
 import { Challenges } from "../components/page-header";
@@ -1118,15 +1118,15 @@ export default function Home({ data }) {
             margin-top: -25px;
             margin-left: -15%;
             margin-bottom: -15px;
-            background-image: url("/images/cvpr2023/cover-small.png");
+            background-image: url("/images/cvpr2024/cover-small.png");
             background-size: cover;
             background-position: center;
           `,
         }}
-        conference="CVPR 2023"
+        conference="CVPR 2024"
         rightSide={
           <Challenges
-            conference="CVPR 2023"
+            conference="CVPR 2024"
             challengeData={Object.values(challengePageMap)}
           />
         }
@@ -1187,27 +1187,46 @@ export default function Home({ data }) {
           The goal of the Embodied AI workshop is to bring together researchers
           from computer vision, language, graphics, and robotics to share
           and discuss the latest advances in embodied intelligent agents.
-          This year's workshop will focus on the three themes of:
-          <ul>
+          
+          The overarching theme of this year's workshop is <b>Open World Embodied AI: </b> 
+          Being an embodied agent in a world that contains objects and concepts
+          unseen during training. This theme applies the “open set” problem of
+           many individual tasks to embodied AI as a whole. We feel that truly
+           effective embodied AI agents should be able to deal with tasks, 
+           objects, and situations markedly different from those that they 
+           have been trained on. 
+           
+           This umbrella theme is divided into three topics:
+           <ul>
             <li>
-              <b>Foundation Models</b>: Large pretrained models such as CLIP,
-              ViLD and PaLI which enable few-shot and zero-shot performance on
-              novel tasks.
+              <b>Embodied Mobile Manipulation</b> We go places to do things, and to do things we have to go places.
+              Many interesting embodied tasks combine manipulation and navigation
+              to solve problems that cannot be done with either manipulation or
+              navigation alone. This builds on embodied navigation and 
+              manipulation topics from previous years and makes them more 
+              challenging.
             </li>
             <li>
-              <b>Generalist Agents</b>: Single learning methods for multiple
-              tasks, such as RT-1, which enable models trained on one task
-              to be expanded to novel tasks.
+              <b>Generative AI for Embodied AI</b>  Generative AI isn't just a hot topic, it's an important tool
+              researchers are using to support embodied artificial intelligence 
+              research. Topics such as generative AI for simulation, generative 
+              AI for data generation, and generative AI for policies (e.g., 
+              diffusion policies and world models) are of great interest.
             </li>
             <li>
-              <b>Sim to Real Transfer</b>: Techniques which enable models trained
-              in simulation to be deployed in the real world.
+              <b>Language Model Planning</b> When we go somewhere to do something we do it for a purpose. 
+              Language model planning uses large language models (LLMs), 
+              vision-language models (VLMs), and multimodal foundation 
+              models to turn arbitrary language commands into plans and 
+              sequences for action - a key feature needed to make embodied 
+              artificial intelligence systems useful for performing the 
+              tasks in open worlds.
             </li>
-          </ul>
+           </ul>
 
-          The Embodied AI 2023 workshop will be held in conjunction with
-          {" "}<a href="https://cvpr2023.thecvf.com/">CVPR 2023</a>{" "}
-          in Vancouver, British Columbia. It will feature a host of invited
+          The Embodied AI 2024 workshop will be held in conjunction with
+          {" "}<a href="https://cvpr2024.thecvf.com/">CVPR 2024</a>{" "}
+          in Seattle, Washington. It will feature a host of invited
           talks covering a variety of topics in Embodied AI, many exciting 
           Embodied AI challenges, a poster session, and panel discussions.
           For more information on the Embodied AI Workshop series, see our 

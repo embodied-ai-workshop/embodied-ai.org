@@ -92,9 +92,3 @@ $darkBlue: #1d3d7e;
   }
 }
 
-// This is a bit dangerous when more than 1 emoji gets used.
-:global(span.emoji-mart-emoji) {
-  display: inline-block;
-  margin-bottom: -3px;
-  vertical-align: middle;
-}
