@@ -459,287 +459,6 @@ function Paper(props: {
 }
 
 let acceptedPapers = [
-  <Paper
-    title="Boosting Outdoor Vision-and-Language Navigation with On-the-route Objects"
-    abstract="Outdoor Vision-and-Language Navigation (VLN) is a challenging task that requires an agent to navigate using real-world urban environment data and natural language instructions. Current outdoor VLN models tend to overlook crucial navigation roles, such as objects that serve as landmarks for accurate turn and stop locations. This occurs because they primarily focus on panoramas and instructions, while disregarding objects that provide essential information for accurate decisions, such as identifying correct turn and stop locations, which humans naturally use as landmarks in unfamiliar places. In this paper, we propose the Object-Attention VLN (OAVLN) model, inspired by human navigation, which focuses on relevant on-the-route objects. Our model outperforms previous methods across all evaluation metrics on two benchmark datasets, Touchdown and map2seq."
-    authors={{
-      "Yanjun Sun": [],
-      "Yue Qiu": [],
-      "Yoshimitsu Aoki": [],
-      "Hirokatsu Kataoka": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/1.pdf"
-  />,
-  <Paper
-    title="Generalizing Skill Embeddings Across Body Shapes for Physically Simulated Characters"
-    abstract="Recent progress in physics-based character animation has enabled learning diverse skills from large motion capture datasets. However, most often only a single character shape is considered. On the other hand, work on controlling various body shapes with one policy is limited to few motions. In this paper, we first evaluate the generalization capabilities of latent skill embeddings on physicsbased character control for varying body shapes. We then propose two strategies to learn a single policy that can generalize across different body shapes. In our experiments, we show that these simple but effective strategies significantly improve the performance over state-of-the-art, without having to retrain the skill embeddings from scratch."
-    authors={{
-      "Sammy Christen": [],
-      "Nina Schmid": [],
-      "Otmar Hilliges": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/2.pdf"
-  />,
-  <Paper
-    title="Question Generation to Disambiguate Referring Expressions in 3D Environment"
-    abstract="Our paper presents a novel task and method for question generation, aimed to disambiguate referring expressions within 3D indoor environments (3D-REQ). Referring to objects using natural language is a fundamental aspect of human communication, and an essential capability for robots in various applications such as room organization. However, human instructions can sometimes be ambiguous, which poses challenges to existing research on visual grounding in 3D environments that assumes referring expressions can uniquely identify objects. To address this issue, we introduce a method inspired by human communication, where ambiguities are resolved by asking questions. Our approach predicts the positions of candidate objects that satisfy given referring expressions in a 3D environment and generates appropriate questions to narrow down the target objects. To facilitate this, we have constructed a new dataset (3D-REQ), containing input referring expressions with ambiguities and point clouds and output bounding boxes of candidate objects and questions to eliminate ambiguities. To our knowledge, 3D-REQ is the first effort to tackle the challenge of ambiguous referring expressions in 3D object grounding."
-    authors={{
-      "Fumiya Matsuzawa": [],
-      "Ryo Nakamura": [],
-      "Kodai Nakashima": [],
-      "Yue Qiu": [],
-      "Hirokatsu Kataoka": [],
-      "Yutaka Satoh": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/3.pdf"
-  />,
-  <Paper
-    title="Audio Visual Language Maps for Robot Navigation"
-    abstract="While interacting in the world is a multi-sensory experience, many robots continue to predominantly rely on visual perception to map and navigate in their environments. We propose AVLMaps, a 3D spatial map representation that stores cross-modal information from audio, visual, and language cues. AVLMaps fuse features from pre-trained multimodal foundation models into a centralized voxel grid. This enables robots to index goals in the map based on multimodal queries, such as textual descriptions, images, or audio snippets of landmarks. AVLMaps allow for zero-shot multimodal goal navigation and perform better than alternatives in ambiguous scenarios. These capabilities extend to mobile robots in the real world."
-    authors={{
-      "Chenguang Huang": [],
-      "Oier Mees": [],
-      "Andy Zeng": [],
-      "Wolfram Burgard": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/4.pdf"
-  />,
-  <Paper
-    title="Fully Automated Task Management for Generation, Execution, and Evaluation: A Framework for Fetch-and-Carry Tasks with Natural Language Instructions in Continuous Space"
-    abstract="This paper aims to develop a framework that enables a robot to execute tasks based on visual information, in response to natural language instructions for Fetch-and-Carry with Object Grounding (FCOG) tasks. Although there have been many frameworks, they usually rely on manually given instruction sentences. Therefore, evaluations have only been conducted with fixed tasks. Furthermore, many multimodal language understanding models for the benchmarks only consider discrete actions. To address the limitations, we propose a framework for the full automation of the generation, execution, and evaluation of FCOG tasks. In addition, we introduce an approach to solving the FCOG tasks by dividing them into four distinct subtasks."
-    authors={{
-      "Motonari Kambara": [],
-      "Komei Sugiura": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/6.pdf"
-  />,
-  <Paper
-    title="LLM-Planner: Few-Shot Grounded Planning for Embodied Agents with Large Language Models"
-    abstract="In this work, we propose a novel method, LLM-Planner, that harnesses the power of large language models to do few-shot planning for embodied agents. We further propose a simple but effective way to enhance LLMs with physical grounding to generate and update plans that are grounded in the current environment. Experiments on the ALFRED dataset show that our method can achieve very competitive few-shot performance: Despite using less than 0.5% of paired training data, LLM-Planner achieves competitive performance with recent baselines that are trained using the full training data. Existing methods can barely complete any task successfully under the same few-shot setting. Our work opens the door for developing versatile and sample-efficient embodied agents that can quickly learn many tasks. "
-    authors={{
-      "Chan Hee Song": [],
-      "Jiaman Wu": [],
-      "Clayton B Washington": [],
-      "Brian M. Sadler": [],
-      "Wei-Lun Chao": [],
-      "Yu Su": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/7.pdf"
-  />,
-  <Paper
-    title="Emergence of Implicit System Identification via Embodiment Randomization"
-    abstract="We show that embodiment randomization can produce visual navigation agents that are able to generalize to new embodiments in a zero-shot manner. Our embodiment randomization technique is simple and can easily be scaled for agents trained in simulation. Specifically, in training, we randomize various agent embodiment parameters such as height, radius, camera field-of-view, etc. Using the image-goal navigation task, we empirically find that single embodiment policies catastrophically fail to generalize to new embodiments, while embodiment randomized agents maintain strong performance. Through deeper analysis, we discover embodiment randomization produces agents that implicitly perform system identification."
-    authors={{
-      "Pranav Putta": [],
-      "Gunjan Aggarwal": [],
-      "Roozbeh Mottaghi": [],
-      "Dhruv Batra": [],
-      "Naoki Harrison Yokoyama": [],
-      "Joanne Truong": [],
-      "Arjun Majumdar": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/8.pdf"
-  />,
-  <Paper
-    title="Predicting Motion Plans for Articulating Everyday Objects"
-    abstract="Mobile manipulation tasks such as opening a door, pulling open a drawer, or lifting a toilet lid require constrained motion of the end-effector under environmental and task constraints. This, coupled with partial information in novel environments, makes it challenging to employ classical motion planning approaches at test time. Our key insight is to cast it as a learning problem to leverage past experience of solving similar planning problems to directly predict motion plans for mobile manipulation tasks in novel situations at test time. To enable this, we develop a simulator, ArtObjSim, that simulates articulated objects placed in real scenes. We then introduce SeqIK+, a fast and flexible representation for motion plans. Finally, we learn models that use SeqIK+ to quickly predict motion plans for articulating novel objects at test time. Experimental evaluation shows improved speed and accuracy at generating motion plans than pure search-based methods and pure learning methods."
-    authors={{
-      "Arjun Gupta": [],
-      "Max Shepherd": [],
-      "Saurabh Gupta": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/9.pdf"
-  />,
-  <Paper
-    title="SalsaBot: Towards a Robust and Generalizable Embodied Agent"
-    abstract="As embodied agents become more powerful, there arises a need for an agent to collaboratively solve tasks with humans. This paper introduces SalsaBot, an embodied agent designed for the Alexa Arena benchmark, which is a collaborative human-robot interaction benchmark. The primary aim of SalsaBot is to assist users in completing a game within a virtual environment by providing a consistent user-centric experience, which requires the agent to be capable of handling various types of user interactions. To ensure a great user experience, SalsaBot is equipped with robust macros, an explicit object memory, and a state-aware dialogue generation module. Our efforts and findings demonstrate that our SalsaBot is a robust interactive agent that can effectively collaborate with users."
-    authors={{
-      "Chan Hee Song": [],
-      "Jiaman Wu": [],
-      "Ju-Seung Byun": [],
-      "Zexin Xu": [],
-      "Vardaan Pahuja": [],
-      "Goonmeet Bajaj": [],
-      "Samuel Stevens": [],
-      "Ziru Chen": [],
-      "Yu Su": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/10.pdf"
-  />,
-  <Paper
-    title="Exploiting Proximity-Aware Tasks for Embodied Social Navigation"
-    abstract="Learning how to navigate among humans in an occluded and spatially constrained indoor environment, is a key ability required to embodied agent to be integrated into our society. In this paper, we propose an end-to-end architecture that exploits Proximity-Aware Tasks (referred as to Risk and Proximity Compass) to inject into a reinforcement learning navigation policy the ability to infer common-sense social behaviors. To this end, our tasks exploit the notion of immediate and future dangers of collision. We validate our approach on Gibson4+ and Habitat-Matterport3D datasets."
-    authors={{
-      "Enrico Cancelli": [],
-      "Tommaso Campari": [],
-      "Luciano Serafini": [],
-      "Angel X Chang": [],
-      "Lamberto Ballan": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/11.pdf"
-  />,
-  <Paper
-    title="A Hypothetical Framework of Embodied Generalist Agent with Foundation Model Assistance"
-    abstract="Recent significant advancements in computer vision (CV) and natural language processing (NLP) have showcased the vital importance of leveraging prior knowledge obtained from extensive data for a generalist agent. However, there are limited explorations in utilizing internet-scale data to train embodied generalist agents. In this work, we propose a hypothetical framework that integrates the prior knowledge from foundation models into each component of the actor-critic algorithms for the generalist agents."
-    authors={{
-      "Weirui Ye": [],
-      "Yunsheng Zhang": [],
-      "Xianfan Gu": [],
-      "Yang Gao": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/12.pdf"
-  />,
-  <Paper
-    title="Situated Real-time Interaction with a Virtually Embodied Avatar"
-    abstract="Recent advances in large language model fine-tuning datasets and techniques have made them flourish as general dialogue-based assistants that are well-suited to strictly turn-based interactions. However, maintaining consistency in long-range, multi-turn dialogues remains a challenge with many applications restricting conversations to a short window. Current multi-modal vision-based interactions are also limited to turn-based interactions on a static sequence of tokenized images with VQA-style referential querying. In this work, we present an approach to performing real-time, vision-based dynamic interaction with an auto-regressive language model. Our approach enables long-range consistency through continual visual grounding of language model inputs. Grounding makes use of a winnowing mechanism to reduce a raw stream of pixels hierarchically, to a series of discrete events as conditioning variables for the language model. We present a novel dataset and benchmark for situated, visual interaction in the form of exercise coaching, and show that our approach can generate relevant and useful responses grounded in a real-time camera stream."
-    authors={{
-      "Sunny Panchal": [],
-      "Guillaume Berger": [],
-      "Antoine Mercier": [],
-      "Cornelius Böhm": [],
-      "Florian Dietrichkeit": [],
-      "Xuanlin Li": [],
-      "Reza Pourreza": [],
-      "Pulkit Madan": [],
-      "Apratim Bhattacharyya": [],
-      "Mingu Lee": [],
-      "Mark Todorovich": [],
-      "Ingo Bax": [],
-      "Roland Memisevic": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/13.pdf"
-  />,
-  <Paper
-    title="When Learning Is Out of Reach, Reset: Generalization in Autonomous Visuomotor Reinforcement Learning"
-    abstract="Episodic training, where an agent's environment is reset to some initial condition after every success or failure, is the de facto standard when training embodied reinforcement learning (RL) agents. The underlying assumption that the environment can be easily reset is limiting both practically, as resets generally require human effort in the real world and can be computationally expensive in simulation, and philosophically, as we'd expect intelligent agents to be able to continuously learn without external intervention. Work in learning without any resets, i.e. Reset-Free RL (RF-RL), is very promising but is plagued by the problem of irreversible transitions (e.g. an object breaking or falling out of reach) which halt learning. Moreover, the limited state diversity and instrument setup encountered during RF-RL means that works studying RF-RL largely do not require their models to generalize to new environments. In this work, we instead look to minimize, rather than completely eliminate, resets while building visual agents that can meaningfully generalize. As studying generalization has previously not been a focus of benchmarks designed for RF-RL, we propose a new Stretch Pick-and-Place (Stretch-P&P) benchmark designed for evaluating generalizations across goals, cosmetic variations, and structural changes. Moreover, towards building performant reset-minimizing RL agents, we propose unsupervised metrics to detect irreversible transitions and a single-policy training mechanism to enable generalization. Our proposed approach significantly outperforms prior episodic, reset-free, and reset-minimizing approaches achieving higher success rates with fewer resets in Stretch-P&P and another popular RF-RL benchmark. Finally, we find that our proposed approach can dramatically reduce the number of resets required for training other embodied tasks, in particular for RoboTHOR ObjectNav we obtain higher success rates than episodic approaches using 99.97% fewer resets."
-    authors={{
-      "Zichen Zhang": [],
-      "Luca Weihs": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/14.pdf"
-  />,
-  <Paper
-    title="SegmATRon: Embodied Adaptive Semantic Segmentation for Indoor Environment"
-    abstract="This paper presents an adaptive transformer model named SegmATRon for embodied image semantic segmentation. Its distinctive feature is the adaptation of model weights during inference on several images using a hybrid multicomponent loss function. We studied this model on datasets collected in the photorealistic Habitat Simulator. We showed that obtaining additional images using the agent's actions in an indoor environment can improve the quality of semantic segmentation."
-    authors={{
-      "Tatiana Zemskova": [],
-      "Margarita Kichik": [],
-      "Dmitry Yudin": [],
-      "Aleksandr Panov": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/16.pdf"
-  />,
-  <Paper
-    title="Dynamic-Resolution Model Learning for Object Pile Manipulation"
-    abstract="Dynamics models learned from visual observations have shown to be effective in various robotic manipulation tasks. One of the key questions for learning such dynamics models is what scene representation to use. Prior works typically assume representation at a fixed dimension or resolution, which may be inefficient for simple tasks and ineffective for more complicated tasks. In this work, we investigate how to learn dynamic and adaptive representations at different levels of abstraction to achieve the optimal trade-off between efficiency and effectiveness. Specifically, we construct dynamic-resolution particle representations of the environment and learn a unified dynamics model using graph neural networks (GNNs) that allows continuous selection of the abstraction level. During test time, the agent can adaptively determine the optimal resolution at each model-predictive control (MPC) step. We evaluate our method in object pile manipulation, a task we commonly encounter in cooking, agriculture, manufacturing, and pharmaceutical applications. Through comprehensive evaluations both in the simulation and the real world, we show that our method achieves significantly better performance than state-of-the-art fixed-resolution baselines at the gathering, sorting, and redistribution of granular object piles made with various instances like coffee beans, almonds, corn, etc."
-    authors={{
-      "Yixuan Wang": [],
-      "Yunzhu Li": [],
-      "Katherine Rose Driggs-Campbell": [],
-      "Li Fei-Fei": [],
-      "Jiajun Wu": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/17.pdf"
-  />,
-  <Paper
-    title="Reduce, Reuse, Recycle: Modular Multi-Object Navigation"
-    abstract="Our work focuses on the Multi-Object Navigation (MultiON) task, where an agent needs to navigate to multiple objects in a given sequence. We systematically investigate the inherent modularity of this task by dividing our approach to contain four modules: (a) an object detection module trained to identify objects from RGB images, (b) a map building module to build a semantic map of the observed objects, (c) an exploration module enabling the agent to explore its surroundings, and finally (d) a navigation module to move to identified target objects. We focus on the navigation and the exploration modules in this work. We show that we can effectively leverage a PointGoal navigation model in the MultiON task instead of learning to navigate from scratch. Our experiments show that a PointGoal agent-based navigation module outperforms analytical path planning on the MultiON task. We also compare exploration strategies and surprisingly find that a random exploration strategy significantly outperforms more advanced exploration methods. We additionally create MultiON 2.0, a new large-scale dataset as a test-bed for our approach."
-    authors={{
-      "Sonia Raychaudhuri": [],
-      "Tommaso Campari": [],
-      "Unnat Jain": [],
-      "Manolis Savva": [],
-      "Angel X Chang": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/18.pdf"
-  />,
-  <Paper
-    title="Unordered Navigation to Multiple Semantic Targets in Novel Environments"
-    abstract="We consider the problem of unordered navigation to multiple objects in a novel environment. We define a multi-object navigation task which requires understanding of contextual semantic priors and reasoning over an optimal ordering of semantic targets, challenges missing from other multi-object task definitions and required by important motivating robotic scenarios. We develop a target-driven navigation objective trading off exploration and exploitation. To enable exploration, we explicitly predict unseen semantic regions and estimate uncertainty over those predictions, enabling us to solve the multi-object navigation problem by constructing a long horizon planning objective over an uncertain map. We demonstrate results for unordered navigation in the visually realistic environments of the Matterport3D dataset in the Habitat simulator. We find that our method leverages semantic relationships between objects in planning to allow exploitation of object co-occurrence."
-    authors={{
-      "Bernadette Bucher": [],
-      "Katrina Ashton": [],
-      "Bo Wu": [],
-      "Karl Schmeckpeper": [],
-      "Siddharth Goel": [],
-      "Nikolai Matni": [],
-      "Georgios Georgakis": [],
-      "Kostas Daniilidis": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/19.pdf"
-  />,
-  <Paper
-    title="EnvironAI: Extending AI Research into the Whole Environment"
-    abstract="This paper introduces Environment with AI (EnvironAI) as a complementary perspective to Embodied AI research. EnvironAI emphasizes the reciprocal relationship between AI, humans, and other elements, highlighting their dynamic co-construction within the environment. By integrating AI processing and human understanding, EnvironAI offers a comprehensive view that considers both individual elements and the entire system. A case study is presented to illustrate the practical application of EnvironAI, showcasing how the fusion of AI and human experience enhances our understanding of the big-picture metaphor. Overall, EnvironAI holds promise in deepening our insights into AI-human-environment interactions and fostering harmonious coexistence in the future."
-    authors={{
-      "Jingyi Duan": [],
-      "Song Tong": [],
-      "Hongyi Shi": [],
-      "Honghong Bai": [],
-      "Xuefeng Liang": [],
-      "Kaiping Peng": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/20.pdf"
-  />,
-  <Paper
-    title="Look Ma, No Hands! Agent-Environment Factorization of Egocentric Videos"
-    abstract="The analysis and use of egocentric videos for robotic tasks is made challenging by occlusion due to the hand and the visual mismatch between the human hand and a robot end-effector. In this sense, the human hand presents a nuisance. However, often hands also provide a valuable signal, e.g. the hand pose may suggest what kind of object is being held. In this work, we propose to extract a factored representation of the scene that separates the agent (human hand) and the environment. This alleviates both occlusion and mismatch while preserving the signal, thereby easing the design of models for downstream robotics tasks. At the heart of this factorization is our proposed Video Inpainting via Diffusion Model (VIDM) that leverages both a prior on real-world images (through a large-scale pre-trained diffusion model) and the appearance of the object in earlier frames of the video (through attention). Our experiments demonstrate the effectiveness of VIDM at improving inpainting quality on egocentric videos and the power of our factored representation for numerous tasks: from object detection to learning of reward functions, policies, and affordances from videos."
-    authors={{
-      "Matthew Chang": [],
-      "Aditya Prakash": [],
-      "Saurabh Gupta": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/21.pdf"
-  />,
-  <Paper
-    title="Curriculum Learning via Task Selection for Embodied Navigation"
-    abstract="In this work, we study the use of ACL for training long-horizon embodied AI tasks with sparse rewards using RL. We focus on ACL methods which generate their curriculum via \emph{task selection}, \ie methods which select training tasks for the agent from a predefined dataset of existing tasks of varying complexity. We present a simple approach, \textsc{ONACL}, which samples the next training task so that the predicted probability of the agent's success on task is near some threshold value.  Using \textsc{ONACL} we present an empirical study of ACL on the ObjectGoal Navigation (\textsc{ObjectNav}) task in the ProcTHOR and HM3D home environments. We find with a simple curriculum learning approach like \textsc{ONACL}, the agent achieves a significant improvement in performance and sample efficiency. Surprisingly, however, we find that the commonly held belief that sparse reward training in HM3D obtains near 0\% success is largely incorrect: if we simply add a sufficiently large number of `easy' episodes during policy training then (evaluation set) performance dramatically improves. We hypothesize this happens due to the emergence of an implicit curriculum during training and present an analysis supporting the claim. This suggests that, in some cases, curriculum learning approaches may simply be correcting for needlessly difficult training datasets."
-    authors={{
-      "Ram Ramrakhya": [],
-      "Dhruv Batra": [],
-      "Aniruddha Kembhavi": [],
-      "Luca Weihs": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/22.pdf"
-  />,
-  <Paper
-    title="DialMAT: Dialogue-Enabled Transformer with Moment-Based Adversarial Training"
-    abstract="This paper focuses on the DialFRED task, which is the task of embodied instruction following in a setting where an agent can actively ask questions about the task. To address this task, we propose DialMAT. DialMAT introduces Moment-based Adversarial Training, which incorporates adversarial perturbations into the latent space of language, image, and action. Additionally, it introduces a crossmodal parallel feature extraction mechanism that applies foundation models to both language and image. We evaluated our model using a dataset constructed from the DialFRED dataset and demonstrated superior performance compared to the baseline method in terms of success rate and path weighted success rate. The model secured the top position in the DialFRED Challenge, which took place at the CVPR 2023 Embodied AI workshop."
-    authors={{
-      "Kanta Kaneda": [],
-      "Ryosuke Korekata": [],
-      "Yuiga Wada": [],
-      "Shunya Nagashima": [],
-      "Motonari Kambara": [],
-      "Yui Iioka": [],
-      "Haruka Matsuo": [],
-      "Yuto Imai": [],
-      "Takayuki Nishimura": [],
-      "Komei Sugiura": [],
-    }}
-    affiliations={[]}
-    pdf="/papers/2023/23.pdf"
-  />,
 ];
 
 const Time = (props: { time: string }) => (
@@ -1567,12 +1286,12 @@ export default function Home({ data }) {
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
             in the{" "}
-            <a href="https://cvpr2023.thecvf.com/Conferences/2023/AuthorGuidelines" target="_blank">
+            <a href="https://cvpr.thecvf.com/Conferences/2024/AuthorGuidelines" target="_blank">
               CVPR format
             </a>.
             <uL>
               <li>
-              Paper submissions have now CLOSED.
+              The paper submission link will be available soon.
               {/* The <a href="https://openreview.net/group?id=thecvf.com/CVPR/2023/Workshop/EAI">paper submission link is LIVE.</a> */}
               </li>
             </uL>
@@ -1616,7 +1335,7 @@ export default function Home({ data }) {
         alphabetical order.
         <SubSection title="Organizing Committee">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2023.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2024.organizers
               .filter((organizer: any) => organizer.oc === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1624,7 +1343,7 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Challenge Organizers">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2023.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2024.organizers
               .filter((organizer: any) => organizer.challenge === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1632,7 +1351,7 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Scientific Advisory Board">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2023.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2024.organizers
               .filter((organizer: any) => organizer.sab === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1681,7 +1400,7 @@ export const query = graphql`
     allSite {
       nodes {
         siteMetadata {
-          cvpr2023 {
+          cvpr2024 {
             organizers {
               name
               imageId
