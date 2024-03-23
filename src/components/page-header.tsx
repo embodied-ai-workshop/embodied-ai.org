@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "gatsby";
-import style from "./page-header.module.scss";
+import * as style from "./page-header.module.scss";
 import { Popover, Button } from "antd";
 import { DownOutlined, RightOutlined, LeftOutlined } from "@ant-design/icons";
 import SeattleCover from "../../static/images/cvpr2020/cover-transparent.svg";
-import { Emoji } from "emoji-mart";
 import { css } from "@emotion/react";
 
 // This will eventually show the 2021 challenges as a dropdown
@@ -72,10 +71,17 @@ export const OtherYears = (props: { onConference: string }) => (
       content={
         <div>
           <div>
+            {props.onConference === "CVPR 2024" ? (
+              <>CVPR 2024</>
+            ) : (
+              <Link to="/">CVPR 2024</Link>
+            )}
+          </div>
+          <div>
             {props.onConference === "CVPR 2023" ? (
               <>CVPR 2023</>
             ) : (
-              <Link to="/">CVPR 2023</Link>
+              <Link to="/cvpr2023">CVPR 2023</Link>
             )}
           </div>
           <div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import style from "./text-helpers.module.scss";
+import * as style from "./text-helpers.module.scss";
 import { Divider } from "antd";
 
 // SubSections can thought of similar to their LaTeX counterparts,

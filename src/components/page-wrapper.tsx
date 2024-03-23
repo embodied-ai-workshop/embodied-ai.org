@@ -2,7 +2,7 @@ import React from "react";
 import Header, { OtherYears } from "./page-header";
 import { headerId } from "./text-helpers";
 import { Helmet } from "react-helmet";
-import style from "./page-wrapper.module.scss";
+import * as style from "./page-wrapper.module.scss";
 import { YoutubeFilled, GithubFilled, SlackOutlined } from "@ant-design/icons";
 
 // This brings both the header, page content, section contents

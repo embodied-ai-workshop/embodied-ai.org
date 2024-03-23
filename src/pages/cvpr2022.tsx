@@ -16,7 +16,6 @@ import NewOrleansCover from "../../static/images/cvpr2022/cover.svg";
 import SlackLogo from "../../static/icons/slack.svg";
 
 const { Step } = Steps;
-import { Emoji } from "emoji-mart";
 
 import { Speaker, LiveSession, Video } from "./cvpr2020";
 
@@ -193,7 +192,6 @@ function EmailSubscription(props: {
               margin-left: 5px;
             `}
           >
-            <Emoji emoji="nerd_face" size={32} />
           </div>
         </div>
         {submitted ? (
@@ -290,7 +288,7 @@ function getWindowWidth() {
   return width;
 }
 
-function PaperButton(props: { text: string; url: string; emoji: string }) {
+function PaperButton(props: { text: string; url: string; }) {
   return (
     <a
       href={props.url}
@@ -318,7 +316,6 @@ function PaperButton(props: { text: string; url: string; emoji: string }) {
           }
         `}
       >
-        <Emoji emoji={props.emoji} size={14} />
         <span
           css={css`
             margin-left: 5px;
@@ -366,7 +363,6 @@ function Paper(props: {
     );
   }
 
-  const emojis = ["diamonds", "clubs", "spades", "hearts"];
 
   return (
     <div
@@ -428,11 +424,10 @@ function Paper(props: {
           padding-top: 5px;
         `}
       >
-        <PaperButton text="PDF" emoji="page_facing_up" url={props.pdf} />
+        <PaperButton text="PDF" url={props.pdf} />
         {props.poster ? (
           <PaperButton
             text="Poster"
-            emoji="page_with_curl"
             url={props.poster}
           />
         ) : (
@@ -866,7 +861,7 @@ function Slack() {
             border-radius: 10px 0px 10px 0px;
           `}
         >
-          <Emoji emoji="male-detective" size={20} /> Questions can be asked{" "}
+          Questions can be asked{" "}
           <b>anonymously</b>.
         </div>
       </div>
@@ -1084,32 +1079,31 @@ export default function Home({ data }) {
         <ul>
           <li>
             <b>
-              <Emoji emoji="eye" size={18} /> See
+              See
             </b>
             : perceive their environment through vision or other senses.
           </li>
           <li>
             <b>
-              <Emoji emoji="microphone" size={18} /> Talk
+              Talk
             </b>
             : hold a natural language dialog grounded in their environment.
           </li>
           <li>
             <b>
-              <Emoji emoji="ear" size={18} />
               Listen
             </b>
             : understand and react to audio input anywhere in a scene.
           </li>
           <li>
             <b>
-              <Emoji emoji="joystick" size={18} /> Act
+              Act
             </b>
             : navigate and interact with their environment to accomplish goals.
           </li>
           <li>
             <b>
-              <Emoji emoji="thinking_face" size={18} /> Reason
+              Reason
             </b>
             : consider and plan for the long-term consequences of their actions.
           </li>
@@ -1315,7 +1309,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  <Emoji emoji="mechanical_arm" size={18} /> Challenge
+                  Challenge
                 </>
               ),
               dataIndex: "challenge",
@@ -1326,7 +1320,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  <Emoji emoji="microscope" size={18} /> Task
+                  Task
                 </>
               ),
               dataIndex: "task",
@@ -1337,7 +1331,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  <Emoji emoji="cooking" size={18} /> Interactive Actions?
+                  Interactive Actions?
                 </>
               ),
               dataIndex: "interactiveActions",
@@ -1350,7 +1344,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  <Emoji emoji="earth_americas" size={18} /> Simulation Platform
+                  Simulation Platform
                 </>
               ),
               dataIndex: "simulationPlatform",
@@ -1363,7 +1357,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  <Emoji emoji="house" size={18} /> Scene Dataset
+                  Scene Dataset
                 </>
               ),
               dataIndex: "sceneDataset",
@@ -1375,7 +1369,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  <Emoji emoji="eye" size={18} /> Observations
+                  Observations
                 </>
               ),
               key: "observations",
@@ -1387,7 +1381,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  <Emoji emoji="tophat" size={18} /> Stochastic Acuation?
+                  Stochastic Acuation?
                 </>
               ),
               key: "stochasticAcuation",
@@ -1410,7 +1404,7 @@ export default function Home({ data }) {
                     text-align: center;
                   `}
                 >
-                  <Emoji emoji="joystick" size={18} /> Action Space
+                  Action Space
                 </div>
               ),
               key: "actionSpace",
@@ -1431,24 +1425,24 @@ export default function Home({ data }) {
           such as:
           <ul>
             <li>
-              <Emoji emoji="mountain_railway" size={16} /> Simulation
+              Simulation
               Environments
             </li>
             <li>
-              <Emoji emoji="footprints" size={16} /> Visual Navigation
+              Visual Navigation
             </li>
             <li>
-              <Emoji emoji="chair" size={16} /> Rearrangement
+              Rearrangement
             </li>
             <li>
-              <Emoji emoji="raising_hand" size={16} /> Embodied Question
+              Embodied Question
               Answering
             </li>
             <li>
-              <Emoji emoji="world_map" size={16} /> Simulation-to-Real Transfer
+              Simulation-to-Real Transfer
             </li>
             <li>
-              <Emoji emoji="speak_no_evil" size={16} /> Embodied Vision &amp;
+              Embodied Vision &amp;
               Language
             </li>
           </ul>
