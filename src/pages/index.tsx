@@ -95,14 +95,29 @@ const challengePageMap = {
       ARNOLD
     </a>
   ),
-  ManiSkill: (
-    <a href="https://sapien.ucsd.edu/challenges/maniskill" target="_blank">
-      ManiSkill
+  HAZARD: (
+    <a href="https://vis-www.cs.umass.edu/hazard/" target="_blank">
+      HAZARD
+    </a>
+  ),
+  HomeRobotOVMM: (
+    <a href="https://ovmm.github.io/" target="_blank">
+      HomeRobot OVMM
+    </a>
+  ),
+  ManiSkillViTac: (
+    <a href="https://ai-workshops.github.io/maniskill-vitac-challenge-2024/" target="_blank">
+      ManiSkill-ViTac
     </a>
   ),
   MultiOn: (
     <a href="http://multion-challenge.cs.sfu.ca" target="_blank">
       MultiON
+    </a>
+  ),
+  PRS: (
+    <a href="https://prsorg.github.io/" target="_blank">
+      PRS
     </a>
   ),
 };
@@ -612,6 +627,54 @@ export default function Home({ data }) {
   
     const challengeData = [
       {
+        challenge: challengePageMap["ARNOLD"],
+        key: "arnold",
+        task: "Language-Grounded Manipulation",
+        interactiveActions: "✓",
+        simulationPlatform: "Isaac Sim",
+        sceneDataset: "Arnold Dataset",
+        observations: "RGB-D, Proprioception",
+        actionSpace: "Continuous",
+        stochasticAcuation: "✓",
+        winner: "TBD",
+      },
+      {
+        challenge: challengePageMap["HAZARD"],
+        key: "hazard",
+        task: "Multi-Object Rescue",
+        interactiveActions: "✓",
+        simulationPlatform: "ThreeDWorld",
+        sceneDataset: "HAZARD dataset",
+        observations: "RGB-D, Sensors, Temperature",
+        actionSpace: "Discrete",
+        stochasticAcuation: "",
+        winner: "TBD",
+      },
+      {
+        challenge: challengePageMap["HomeRobotOVMM"],
+        key: "homerobotovmm",
+        task: "Open Vocabulary Mobile Manipulation",
+        interactiveActions: "✓",
+        simulationPlatform: "Habitat",
+        sceneDataset: "OVMM Dataset",
+        observations: "RGB-D",
+        actionSpace: "Continuous",
+        stochasticAcuation: "",
+        winner: "TBD",
+      },
+      {
+        challenge: challengePageMap["ManiSkillViTac"],
+        key: "maniskill-vitac",
+        task: "Generalized Manipulation / Vision-Based Tactile Manipulation",
+        interactiveActions: "✓",
+        simulationPlatform: "SAPIEN",
+        sceneDataset: "PartNet-Mobility, YCB, EGAD",
+        observations: "RGB-D, Proproioception, Localization",
+        actionSpace: "Continuous / Discrete for ViTac",
+        stochasticAcuation: "",
+        winner: "",
+      },
+      {
         challenge: challengePageMap["MultiOn"],
         key: "multion",
         task: "Multi-Object Navigation",
@@ -624,28 +687,16 @@ export default function Home({ data }) {
         winner: "",
       },
       {
-        challenge: challengePageMap["ManiSkill"],
-        key: "maniskill",
-        task: "Generalized Manipulation",
+        challenge: challengePageMap["PRS"],
+        key: "multion",
+        task: "Human Society Integration",
         interactiveActions: "✓",
-        simulationPlatform: "SAPIEN",
-        sceneDataset: "PartNet-Mobility, YCB, EGAD",
-        observations: "RGB-D, Metadata",
+        simulationPlatform: "PRS Environment",
+        sceneDataset: "PRS Dataset",
         actionSpace: "Continuous",
+        observations: "RGB-D, Sensors, Pose Data, Tactile Sensors",
         stochasticAcuation: "",
         winner: "",
-      },
-      {
-        challenge: challengePageMap["ARNOLD"],
-        key: "arnold",
-        task: "Language-Grounded Manipulation",
-        interactiveActions: "✓",
-        simulationPlatform: "Isaac Sim",
-        sceneDataset: "Arnold Dataset",
-        observations: "RGB-D, Proprioception",
-        actionSpace: "Continuous",
-        stochasticAcuation: "✓",
-        winner: "TBD",
       },
     ];
   
@@ -663,8 +714,14 @@ export default function Home({ data }) {
 
     return (
         <PageWrapper
+        // Prior variant
         // headerGradient="radial-gradient(#090617, #090617)"
-        headerGradient="linear-gradient(0deg, #1f2f3f, #100b0f)"
+        // 2023 variant
+        // headerGradient="linear-gradient(0deg, #1f2f3f, #100b0f)"
+        // 2024 variant
+        // headerGradient="radial-gradient(#330066, #ff9933)"
+        headerGradient="linear-gradient(0deg, #0a2079, #1f094d)"
+        
         headerStyle={css`
           color: ${color.dark.gold10} !important;
           button {
@@ -820,7 +877,7 @@ export default function Home({ data }) {
                   Seattle Convention Center
                 </a>{" "}
                 <br />
-                Monday, June 18, 2023
+                Monday, June 18, 2024
                 <br />
                 8:50 AM - 6:00 PM PT<br />
                 TBD <br />
@@ -1008,13 +1065,14 @@ export default function Home({ data }) {
                       <br />
                       <Time time="3:30 - 4:00 PM PT" />
                       <Speaker
-                        organizations={["TBD"]}
+                        organizations={["Stanford University"]}
                         name="Shuran Song"
                         // fixedImg={data.jeannette.childImageSharp.fixed}
                         noMargin={true}
                       />
+                      <p>Shuran Song leads the Robotics and Embodied AI Lab at Stanford University ( REAL@Stanford ). She is interested in developing algorithms that enable intelligent systems to learn from their interactions with the physical world, and autonomously acquire the perception and manipulation skills necessary to execute complex tasks and assist people.</p>
                       <Abstract
-                        text="TBD."
+                        text="Shuran Song will be speaking on Embodied Mobile Manipulation."
                         />
                     </Timeline.Item>
 
@@ -1131,7 +1189,7 @@ export default function Home({ data }) {
             {
               title: (
                 <>
-                  2023 Winner
+                  2024 Winner
                 </>
               ),
               dataIndex: "winner",
