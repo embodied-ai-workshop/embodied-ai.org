@@ -1097,16 +1097,20 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Humanoid Robots</b>
                       <br />
-                      <i>TBD</i>
+                      <i>Foundation Models for Humanoid Robots</i>
                       <br />
                       <Time time="4:30 - 5:00 PM PT" />
                       <Speaker
-                        organizations={["TBD"]}
+                        organizations={["1X Technologies"]}
                         name="Eric Jang"
                         // fixedImg={data.kristen.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>TBD</p>
+                      <p>Eric leads the AI team at 1X Technologies, a vertically-integrated humanoid robot company. His research background is on end-to-end mobile manipulation and generative models. Eric recently authored a book on the future of AI and Robotics, titled “AI is Good for You”.</p>
+                      <Abstract
+                        text="1X’s mission is to create an abundant supply of physical labor through androids that work alongside humans. I will share some of the progress 1X has been making towards general-purpose mobile manipulation. We have scaled up the number of tasks our androids can do by combining an end-to-end learning strategy with a no-code system to add new robotic capabilities. Our Android Operations team trains their own models on the data they gather themselves, producing an extremely high-quality “farm-to-table” dataset that can be used to learn extremely capable behaviors. I’ll also share some of the progress we’ve been making towards a generalist foundation model for humanoid robots."
+                        />
+                    
                     </Timeline.Item>
 
                     <Timeline.Item>
