@@ -1770,6 +1770,18 @@ export const query = graphql`
     rinOrg: file(relativePath: { eq: "organizers/rin.jpg" }) {
       ...FluidImage
     }
+    ranGongOrg: file(relativePath: { eq: "organizers/Ran_Gong.png" }) {
+      ...FluidImage
+    }
+    siyuanHuangOrg: file(relativePath: { eq: "organizers/Siyuan_Huang.png" }) {
+      ...FluidImage
+    }
+    jiangyongHuangOrg: file(relativePath: { eq: "organizers/Jiangyong_Huang.png" }) {
+      ...FluidImage
+    }
+    baoxiongJiaOrg: file(relativePath: { eq: "organizers/Baoxiong_Jia.png" }) {
+      ...FluidImage
+    }
 
     # Other pictures
     metaDemo: file(relativePath: { eq: "cvpr2023/meta-demo.png" }) {
