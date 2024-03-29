@@ -152,7 +152,7 @@ module.exports = {
           name: "German Ros",
           oc: false,
           lo: false,
-          organization: "Intel",
+          organization: "NVIDIA",
           sab: true,
           site: "https://germanros.net/",
         },
