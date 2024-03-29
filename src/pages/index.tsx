@@ -672,7 +672,7 @@ export default function Home({ data }) {
         observations: "RGB-D, Proproioception, Localization",
         actionSpace: "Continuous / Discrete for ViTac",
         stochasticAcuation: "",
-        winner: "",
+        winner: "TBD",
       },
       {
         challenge: challengePageMap["MultiOn"],
@@ -684,7 +684,7 @@ export default function Home({ data }) {
         actionSpace: "Discrete",
         observations: "RGB-D, Localization",
         stochasticAcuation: "",
-        winner: "",
+        winner: "TBD",
       },
       {
         challenge: challengePageMap["PRS"],
@@ -696,7 +696,7 @@ export default function Home({ data }) {
         actionSpace: "Continuous",
         observations: "RGB-D, Sensors, Pose Data, Tactile Sensors",
         stochasticAcuation: "",
-        winner: "",
+        winner: "TBD",
       },
     ];
   
@@ -904,7 +904,7 @@ export default function Home({ data }) {
         
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
         <ul>
-          <li><b>Workshop Talks: 9:00AM-5:30PM PT - TBD</b></li>
+          <li><b>Workshop Talks: 8:50AM-5:30PM PT - TBD</b></li>
           <li><b>Poster Session: 1:00PM-2:00PM PT - TBD</b></li>
         </ul>
         Zoom information is available on <a href="https://cvpr.thecvf.com/Conferences/2024">the CVPR virtual platform for registered attendees</a>.
