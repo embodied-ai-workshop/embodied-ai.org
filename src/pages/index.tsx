@@ -859,11 +859,15 @@ export default function Home({ data }) {
         />
         </Section>
         <Section title="Timeline">
-      <Steps progressDot current={4} direction="vertical">
-          <Step title="Workshop Announced" description="March 15, 2024" />
+      <Steps progressDot current={0} direction="vertical">
+          <Step title="Workshop Announced" description="March 29, 2024" />
           <Step
             title="Paper Submission Deadline"
-            description="April 15th, 2024 (Anywhere on Earth)"
+            description="May 4th, 2024 (Anywhere on Earth)"
+          />
+          <Step
+            title="Paper Notification Deadline"
+            description="May 13th, 2024"
           />
           <Step
             title="Challenge Submission Deadlines"
@@ -958,12 +962,12 @@ export default function Home({ data }) {
                       <Speaker
                         organizations={["AI2"]}
                         name="Aniruddha Kembhavi"
-                        // fixedImg={data.saurabh.childImageSharp.fixed}
+                        fixedImg={data.kembhavi.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>TBD</p>
+                      <p>Ani Kembhavi is the Senior Director of Computer Vision at the Allen Institute for AI (AI2) in Seattle, and is also an Affiliate Associate Professor at the Computer Science & Engineering department at the University of Washington. His work over two decades spans computer vision, robotics and natural language processing.</p>
                       <Abstract
-                        text="TBD"
+                        text="Aniruddha Kembhavi will be speaking on Generative AI for Embodied AI, especially the ProcTHOR procedural generation system."
                         />                      
                     </Timeline.Item>
 
@@ -974,48 +978,47 @@ export default function Home({ data }) {
                       <br />
                       <Time time="10:30 - 11:00 AM PT" />
                       <Speaker
-                        organizations={["TBD"]}
-                        name="TBD"
+                        organizations={[""]}
+                        name="Speaker TBD"
                         // fixedImg={data.fei.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>TBD.</p>                     
                       <Abstract
-                        text="TBD"
+                        text="This talk will discuss generative AI for Embodied AI."
                         />                      
                     </Timeline.Item>
 
                     <Timeline.Item>
                       <b>Invited Talk - Language Model Planning: </b>
                       <br />
-                      <i>TBD</i>
+                      <i>Title TBD</i>
                       <br />
                       <Time time="11:00 - 11:30 AM PT" />
                       <Speaker
-                        organizations={["Google"]}
+                        organizations={["Physical Intelligence"]}
                         name="Brian Ichter"
-                        // fixedImg={data.ruslan.childImageSharp.fixed}
+                        fixedImg={data.ichter.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>TBD.</p>
+                      <p>Brian Ichter is one of the founders of Physical Intelligence. At Google Brain, he pioneered work on language model planning for robotic control.</p>
                       <Abstract
-                        text="TBD"
+                        text="Brian Ichter will share his thoughts on using language models for robotic control."
                         />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       <b>Sponsor Talk - Project Aria: </b>
                       <br />
-                      <i>TBD</i>
+                      <i>Augmented Reality for Embodied AI</i>
                       <br />
                       <Time time="11:30 AM - 12:00 NOON PT" />
                       <Speaker
                         organizations={["Meta"]}
-                        name="TBD"
-                        // fixedImg={data.ruslan.childImageSharp.fixed}
+                        name="Speaker TBD"
+                        fixedImg={data.aria.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>TBD.</p>
+                      <p>Project Aria glasses gather information from the user’s perspective for egocentric research in machine perception and augmented reality..</p>
                       <Abstract
                         text="Project ARIA will share some details of the use of ARIA devices in the field of embodied AI."
                         />
@@ -1024,7 +1027,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Lunch</b>
                       <br />
-                      TBD
+                      Location TBD
                       <br />
                       <Time time="12:00 NOON - 1:00 PM PT" />
                     </Timeline.Item>
@@ -1032,7 +1035,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Accepted Papers Poster Session</b>
                       <br />
-                      TBD
+                      Location TBD
                       <br />
                       <Time time="1:00 PM - 2:00 PM PT" />
                     </Timeline.Item>
@@ -1059,15 +1062,14 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Embodied Mobile Manipulation: </b>
                       <br />
-                      <i>TBD</i>
+                      <i>Robotics and Embodied Artificial Intelligence</i>
                       <br />
-                      TBD
                       <br />
                       <Time time="3:30 - 4:00 PM PT" />
                       <Speaker
                         organizations={["Stanford University"]}
                         name="Shuran Song"
-                        // fixedImg={data.jeannette.childImageSharp.fixed}
+                        fixedImg={data.song.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <p>Shuran Song leads the Robotics and Embodied AI Lab at Stanford University ( REAL@Stanford ). She is interested in developing algorithms that enable intelligent systems to learn from their interactions with the physical world, and autonomously acquire the perception and manipulation skills necessary to execute complex tasks and assist people.</p>
@@ -1079,18 +1081,18 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Embodied Mobile Manipulation: </b>
                       <br />
-                      <i>TBD</i>
+                      <i>Open Vocabulary Mobile Manipulation</i>
                       <br />
                       <Time time="4:00 - 4:30 PM PT" />
                       <Speaker
                         organizations={["Meta AI"]}
                         name="Chris Paxton"
-                        //fixedImg={data.chris.childImageSharp.fixed}
+                        fixedImg={data.paxton.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>TBD.</p>
+                      <p>Chris Paxton is a robotics research scientist the Embodied AI team at FAIR Labs. His work has looked at how we can make robots into useful, general-purposem mobile manipulators in homes.</p>
                       <Abstract
-                        text="TBD."
+                        text="Chris will discuss his work on enabling robots to work alongside humans to perform complex, multi-step tasks, using a combination of learning and planning. In particular, will discuss the open-vocabulary mobile manipulation challenge, or OVMM, which says robots should be able to pick and place any object in any environment."
                         />                      
                     </Timeline.Item>
 
@@ -1103,7 +1105,7 @@ export default function Home({ data }) {
                       <Speaker
                         organizations={["1X Technologies"]}
                         name="Eric Jang"
-                        // fixedImg={data.kristen.childImageSharp.fixed}
+                        fixedImg={data.jang.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <p>Eric leads the AI team at 1X Technologies, a vertically-integrated humanoid robot company. His research background is on end-to-end mobile manipulation and generative models. Eric recently authored a book on the future of AI and Robotics, titled “AI is Good for You”.</p>
@@ -1505,6 +1507,24 @@ export const query = graphql`
       ...FaceThumbnail
     }
     carolina: file(relativePath: { eq: "cvpr2022/carolina.jpg" }) {
+      ...FaceThumbnail
+    }
+    ichter: file(relativePath: { eq: "cvpr2024/brian_ichter.png" }) {
+      ...FaceThumbnail
+    }
+    kembhavi: file(relativePath: { eq: "cvpr2024/ani_kembhavi.jpg" }) {
+      ...FaceThumbnail
+    }
+    paxton: file(relativePath: { eq: "cvpr2024/chris_paxton.png" }) {
+      ...FaceThumbnail
+    }
+    song: file(relativePath: { eq: "cvpr2024/shuran_song.jpg" }) {
+      ...FaceThumbnail
+    }
+    jang: file(relativePath: { eq: "cvpr2024/eric_jang.jpg" }) {
+      ...FaceThumbnail
+    }
+    aria: file(relativePath: { eq: "sponsors/project_aria.png" }) {
       ...FaceThumbnail
     }
 
