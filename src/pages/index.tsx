@@ -1346,7 +1346,7 @@ export default function Home({ data }) {
         </p>
         <SubSection title="Submission">
           <p>
-            The submission deadline is April 15th (
+            The submission deadline is <b>May 4th</b> (
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
             in the{" "}
