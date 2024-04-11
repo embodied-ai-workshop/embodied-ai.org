@@ -1355,7 +1355,9 @@ export default function Home({ data }) {
             </a>.
             <uL>
               <li>
-              The paper submission link will be available soon.
+              <a href="https://openreview.net/group?id=thecvf.com/CVPR/2024/Workshop/EAI">
+              Paper submissions are now OPEN through May 4th, 2024
+              </a>
               {/* The <a href="https://openreview.net/group?id=thecvf.com/CVPR/2023/Workshop/EAI">paper submission link is LIVE.</a> */}
               </li>
             </uL>
