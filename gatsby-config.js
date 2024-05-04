@@ -8,6 +8,16 @@ module.exports = {
       organizers: [
         {
           challenge: false,
+          imageId: "adeFamoti",
+          name: "Ade Famoti",
+          oc: true,
+          lo: false,
+          organization: "Microsoft",
+          sab: false,
+          site: "https://www.microsoft.com/en-us/research/people/adfamoti/",
+        },
+        {
+          challenge: false,
           imageId: "alexander",
           name: "Alexander Toshev",
           oc: false,
@@ -15,6 +25,16 @@ module.exports = {
           organization: "Apple",
           sab: true,
           site: "https://sites.google.com/view/alextoshev",
+        },
+        {
+          challenge: false,
+          imageId: "andreyKolobov",
+          name: "Andrey Kolobov",
+          oc: false,
+          lo: false,
+          organization: "Microsoft",
+          sab: true,
+          site: "https://www.microsoft.com/en-us/research/people/akolobov/",
         },
         {
           challenge: true,
@@ -158,6 +178,16 @@ module.exports = {
         },
         {
           challenge: true,
+          imageId: "haoDong",
+          name: "Hao Dong",
+          oc: false,
+          lo: false,
+          organization: "PKU",
+          sab: false,
+          site: "https://zsdonghao.github.io/",
+        },
+        {
+          challenge: true,
           imageId: "jiayuan",
           name: "Jiayuan Gu",
           oc: false,
@@ -183,8 +213,18 @@ module.exports = {
           oc: false,
           lo: false,
           organization: "GaTech",
-          sab: false,
+          sab: true,
           site: "https://www.joannetruong.com/",
+        },
+        {
+          challenge: false,
+          imageId: "joelJang",
+          name: "Joel Jang",
+          oc: true,
+          lo: false,
+          organization: "U Washington",
+          sab: false,
+          site: "https://joeljang.github.io/",
         },
         {
           challenge: false,
@@ -275,6 +315,16 @@ module.exports = {
           organization: "UCLA",
           sab: false,
           site: "https://nikepupu.github.io/",
+        },
+        {
+          challenge: true,
+          imageId: "richardHeBai",
+          name: "Richard He Bai",
+          oc: false,
+          lo: false,
+          organization: "Apple",
+          sab: false,
+          site: "https://richardbaihe.github.io/",
         },
         {
           challenge: false,
@@ -378,6 +428,16 @@ module.exports = {
         },
         {
           challenge: true,
+          imageId: "yangLiu",
+          name: "Yang Liu",
+          oc: false,
+          lo: false,
+          organization: "SRC-B",
+          sab: false,
+          site: "",
+        },
+        {
+          challenge: true,
           imageId: "yonatan",
           name: "Yonatan Bisk",
           oc: true,
@@ -386,7 +446,16 @@ module.exports = {
           sab: false,
           site: "https://yonatanbisk.com/",
         },
-
+        {
+          challenge: true,
+          imageId: "zhuoqunXu",
+          name: "Zhuoqun Xu",
+          oc: false,
+          lo: false,
+          organization: "PRS",
+          sab: false,
+          site: "https://zhqunxu.github.io/",
+        },
       ]
     },
     cvpr2023: {

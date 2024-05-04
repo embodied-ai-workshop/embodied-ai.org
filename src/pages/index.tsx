@@ -881,7 +881,7 @@ export default function Home({ data }) {
                   Seattle Convention Center
                 </a>{" "}
                 <br />
-                Monday, June 18, 2024
+                Tuesday, June 18, 2024
                 <br />
                 8:50 AM - 6:00 PM PT<br />
                 TBD <br />
@@ -923,9 +923,7 @@ export default function Home({ data }) {
                   <Timeline>
                     <Timeline.Item>
                       <b>Workshop Introduction: Embodied AI</b>
-                      <br />
-                      TBD
-                      <br />
+                      <br/>
                       <Time time="8:50 - 9:00 AM PT" />
                       <Speaker
                          organizations={["Logical Robotics"]}
@@ -955,9 +953,7 @@ export default function Home({ data }) {
 
                     <Timeline.Item>
                       <b>Invited Talk - Generative AI for Embodied AI: </b>
-                      <br />
-                      <i>TBD</i>
-                      <br />
+                      <br/>
                       <Time time="10:00 - 10:30 AM PT" />
                       <Speaker
                         organizations={["AI2"]}
@@ -972,27 +968,23 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                    <b>Invited Talk - Generative AI for Embodied AI: </b>
-                      <br />
-                      <i>TBD</i>
-                      <br />
+                    <b>Invited Panel - Embodied AI in Industry, Academia and Robotics </b>
+                      <br/>
                       <Time time="10:30 - 11:00 AM PT" />
                       <Speaker
-                        organizations={[""]}
-                        name="Speaker TBD"
+                        organizations={["Microsoft"]}
+                        name="Speakers TBD"
                         // fixedImg={data.fei.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Abstract
-                        text="This talk will discuss generative AI for Embodied AI."
+                        text="This panel will discuss Embodied AI collaborations between corporate research, academic research, and industrial robotics."
                         />                      
                     </Timeline.Item>
 
                     <Timeline.Item>
                       <b>Invited Talk - Language Model Planning: </b>
-                      <br />
-                      <i>Title TBD</i>
-                      <br />
+                      <br/>
                       <Time time="11:00 - 11:30 AM PT" />
                       <Speaker
                         organizations={["Physical Intelligence"]}
@@ -1007,7 +999,7 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Sponsor Talk - Project Aria: </b>
+                      <b>Invited Talk - Project Aria: </b>
                       <br />
                       <i>Augmented Reality for Embodied AI</i>
                       <br />
@@ -1063,7 +1055,6 @@ export default function Home({ data }) {
                       <b>Invited Talk - Embodied Mobile Manipulation: </b>
                       <br />
                       <i>Robotics and Embodied Artificial Intelligence</i>
-                      <br />
                       <br />
                       <Time time="3:30 - 4:00 PM PT" />
                       <Speaker
@@ -1389,9 +1380,27 @@ export default function Home({ data }) {
         <p>The Embodied AI 2024 Workshop is sponsored by the following organizations:</p>
         <p>
           <center>
-            <a href="https://logicalrobotics.com/">
-              <img src="/images/sponsors/logical-robotics.png" width="400" alt="Logical Robotics"/>
+                <a href="https://logicalrobotics.com/">
+              <img src="/images/sponsors/logical-robotics.png" height="150" alt="Logical Robotics"/>
             </a>
+
+                <a href="https://microsoft.com/">
+              <img src="/images/sponsors/microsoft-logo.png" height="300" alt="Microsoft"/>
+            </a>
+                <table>
+              <tr>
+                <td>
+                  <center>
+
+                <a href="https://www.projectaria.com/">
+              <img src="/images/sponsors/project_aria.png" height="150" alt="Project Aria"/>
+              <br></br>
+              Project Aria
+               </a>
+               </center>
+                </td>
+              </tr>
+            </table>
           </center>
         </p>
         </Section>
@@ -1412,7 +1421,7 @@ export default function Home({ data }) {
         <SubSection title="Organizing Committee">
           <OrganizerPics
             organizers={data.allSite.nodes[0].siteMetadata.cvpr2024.organizers
-              .filter((organizer: any) => organizer.oc === true)
+              .filter((organizer: any) => organizer.oc === true && organizer.lo === false)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
           />
@@ -1527,6 +1536,9 @@ export const query = graphql`
       ...FaceThumbnail
     }
     aria: file(relativePath: { eq: "sponsors/project_aria.png" }) {
+      ...FaceThumbnail
+    }
+    microsoft: file(relativePath: { eq: "sponsors/microsoft.png" }) {
       ...FaceThumbnail
     }
 
@@ -1784,7 +1796,28 @@ export const query = graphql`
     baoxiongJiaOrg: file(relativePath: { eq: "organizers/Baoxiong_Jia.png" }) {
       ...FluidImage
     }
-
+    andreyKolobovOrg: file(relativePath: { eq: "organizers/andrey-kolobov.png" }) {
+      ...FluidImage
+    }
+    adeFamotiOrg: file(relativePath: { eq: "organizers/ade-famoti.png" }) {
+      ...FluidImage
+    }
+    zhuoqunXuOrg: file(relativePath: { eq: "organizers/zhuoqun-xu.png" }) {
+      ...FluidImage
+    }
+    haoDongOrg: file(relativePath: { eq: "organizers/hao-dong.png" }) {
+      ...FluidImage
+    }
+    richardHeBaiOrg: file(relativePath: { eq: "organizers/richard-he-bai.jpg" }) {
+      ...FluidImage
+    }
+    yangLiuOrg: file(relativePath: { eq: "organizers/yang-liu.jpg" }) {
+      ...FluidImage
+    }
+    joelJangOrg: file(relativePath: { eq: "organizers/joel-jang.jpg" }) {
+      ...FluidImage
+    }
+    
     # Other pictures
     metaDemo: file(relativePath: { eq: "cvpr2023/meta-demo.png" }) {
       ...FluidImage
