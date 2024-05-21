@@ -859,7 +859,7 @@ export default function Home({ data }) {
         />
         </Section>
         <Section title="Timeline">
-      <Steps progressDot current={0} direction="vertical">
+      <Steps progressDot current={2} direction="vertical">
           <Step title="Workshop Announced" description="March 29, 2024" />
           <Step
             title="Paper Submission Deadline"
@@ -867,7 +867,7 @@ export default function Home({ data }) {
           />
           <Step
             title="Paper Notification Deadline"
-            description="May 13th, 2024"
+            description="May 27th, 2024"
           />
           <Step
             title="Challenge Submission Deadlines"
@@ -968,17 +968,41 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                    <b>Invited Panel - Embodied AI in Industry, Academia and Robotics </b>
+                      <b>Invited Panel - Advancing Embodied AI: Towards Seamless Integration of Perception and Action</b>
                       <br/>
                       <Time time="10:30 - 11:00 AM PT" />
                       <Speaker
                         organizations={["Microsoft"]}
-                        name="Speakers TBD"
-                        // fixedImg={data.fei.childImageSharp.fixed}
+                        name="Stevie Bathiche"
+                        fixedImg={data.stevieBathiche.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Speaker
+                        organizations={["Microsoft"]}
+                        name="Ashley Llorens"
+                        fixedImg={data.ashleyLlorens.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Speaker
+                        organizations={["Sanctuary AI"]}
+                        name="Geordie Rose"
+                        fixedImg={data.geordieRose.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Speaker
+                        organizations={["Microsoft"]}
+                        name="Ade Famoti"
+                        fixedImg={data.adeFamotiOrg.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Speaker
+                        organizations={["Microsoft"]}
+                        name="Andrey Kolobov"
+                        fixedImg={data.andreyKolobovOrg.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Abstract
-                        text="This panel will discuss Embodied AI collaborations between corporate research, academic research, and industrial robotics."
+                        text="Embodied Artificial Intelligence (AI) represents a pivotal frontier in the quest to endow machines with capabilities to perceive, reason, and act in complex environments. The panel will delve into the multifaceted research landscape shaping the future of embodied AI. Focusing on pivotal research directions and emerging challenges."
                         />                      
                     </Timeline.Item>
 
@@ -1815,6 +1839,15 @@ export const query = graphql`
       ...FluidImage
     }
     joelJangOrg: file(relativePath: { eq: "organizers/joel-jang.jpg" }) {
+      ...FluidImage
+    }
+    geordieRose: file(relativePath: { eq: "cvpr2024/geordieRose.png" }) {
+      ...FluidImage
+    }
+    ashleyLlorens: file(relativePath: { eq: "cvpr2024/ashleyLlorens.png" }) {
+      ...FluidImage
+    }
+    stevieBathiche: file(relativePath: { eq: "cvpr2024/stevieBathiche.png" }) {
       ...FluidImage
     }
     
