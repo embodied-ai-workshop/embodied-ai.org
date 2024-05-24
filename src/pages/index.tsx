@@ -968,13 +968,27 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Invited Panel - Advancing Embodied AI: Towards Seamless Integration of Perception and Action</b>
+                      <b>Invited Panel - Advancing Embodied AI</b>
+                      <br/>
+                      <i>Towards Seamless Integration of Perception and Action</i>
                       <br/>
                       <Time time="10:30 - 11:00 AM PT" />
                       <Speaker
                         organizations={["Microsoft"]}
                         name="Stevie Bathiche"
                         fixedImg={data.stevieBathiche.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Speaker
+                        organizations={["Microsoft"]}
+                        name="Ade Famoti"
+                        fixedImg={data.adeFamoti.childImageSharp.fixed}
+                        noMargin={true}
+                      />
+                      <Speaker
+                        organizations={["Microsoft"]}
+                        name="Andrey Kolobov"
+                        fixedImg={data.andreyKolobov.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Speaker
@@ -987,18 +1001,6 @@ export default function Home({ data }) {
                         organizations={["Sanctuary AI"]}
                         name="Geordie Rose"
                         fixedImg={data.geordieRose.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Speaker
-                        organizations={["Microsoft"]}
-                        name="Ade Famoti"
-                        fixedImg={data.adeFamotiOrg.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Speaker
-                        organizations={["Microsoft"]}
-                        name="Andrey Kolobov"
-                        fixedImg={data.andreyKolobovOrg.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Abstract
@@ -1842,13 +1844,19 @@ export const query = graphql`
       ...FluidImage
     }
     geordieRose: file(relativePath: { eq: "cvpr2024/geordieRose.png" }) {
-      ...FluidImage
+      ...FaceThumbnail
     }
     ashleyLlorens: file(relativePath: { eq: "cvpr2024/ashleyLlorens.png" }) {
-      ...FluidImage
+      ...FaceThumbnail
     }
     stevieBathiche: file(relativePath: { eq: "cvpr2024/stevieBathiche.png" }) {
-      ...FluidImage
+      ...FaceThumbnail
+    }
+    andreyKolobov: file(relativePath: { eq: "organizers/andrey-kolobov.png" }) {
+      ...FaceThumbnail
+    }
+    adeFamoti: file(relativePath: { eq: "organizers/ade-famoti.png" }) {
+      ...FaceThumbnail
     }
     
     # Other pictures
