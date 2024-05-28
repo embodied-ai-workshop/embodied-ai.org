@@ -300,7 +300,7 @@ module.exports = {
           challenge: true,
           imageId: "ram",
           name: "Ram Ramrakhya",
-          oc: false,
+          oc: true,
           lo: false,
           organization: "Gatech",
           sab: false,
