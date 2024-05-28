@@ -867,7 +867,7 @@ export default function Home({ data }) {
           />
           <Step
             title="Paper Notification Deadline"
-            description="May 27th, 2024"
+            description="May 29th, 2024"
           />
           <Step
             title="Challenge Submission Deadlines"
