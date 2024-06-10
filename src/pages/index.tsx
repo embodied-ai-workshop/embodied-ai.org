@@ -1092,18 +1092,18 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Embodied Mobile Manipulation: </b>
                       <br />
-                      <i>Open Vocabulary Mobile Manipulation</i>
+                      <i>Towards Home Robots: Open Vocabulary Mobile Manipulation in Unstructured Environments</i>
                       <br />
                       <Time time="3:30 - 4:00 PM PT" />
                       <Speaker
-                        organizations={["Meta AI"]}
+                        organizations={["Hello Robot"]}
                         name="Chris Paxton"
                         fixedImg={data.paxton.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Chris Paxton is a robotics research scientist the Embodied AI team at FAIR Labs. His work has looked at how we can make robots into useful, general-purposem mobile manipulators in homes.</p>
+                      <p>Chris Paxton is a roboticist who has worked for FAIR labs at Meta and at NVIDIA research. He got his PhD in Computer Science in 2019 from the Johns Hopkins University in Baltimore, Maryland, focusing on using learning to create powerful task and motion planning capabilities for robots operating in human environments. His work won the ICRA 2021 best human-robot interaction paper award, and was nominated for best systems paper at CoRL 2021, among other things. His research looks at using language, perception, planning, and policy learning to make robots into general-purpose assistants. He's now leading embodied AI at Hello Robot to build practical in-home mobile robots.</p>
                       <Abstract
-                        text="Chris will discuss his work on enabling robots to work alongside humans to perform complex, multi-step tasks, using a combination of learning and planning. In particular, will discuss the open-vocabulary mobile manipulation challenge, or OVMM, which says robots should be able to pick and place any object in any environment."
+                        text="Robots are increasingly an important part of our world, from working in factories and hospitals to driving on city streets. As robots move into more unstructured environments such as homes, however, we need new techniques that allow robots to perform complex operations with less information about the world around them. We propose a motivating north star: Open Vocabulary Mobile Manipulation, wherein robots must be able to reliably perform pick and place tasks of any object in any location in an unknown environment. Currently, a variety of powerful approaches exist for learning low-level skills or performing long-horizon manipulation, but these often assume access to model-based object detection and grasp generation. However, new approaches exist which allow for robots to plan and manipulate novel objects - building structures and rearranging scenes - while reducing these assumptions about task and object knowledge. In this talk, I will discuss recent work on how to learn these representations, combine them with robot task and motion planning, and use them to work towards robots that can operate in complex, human environments. Finally, I will discuss how we can benchmark robotics research in home environments, with a look at the HomeRobot challenge."
                         />                      
                     </Timeline.Item>
 
