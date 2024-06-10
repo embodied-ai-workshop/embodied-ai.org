@@ -859,7 +859,7 @@ export default function Home({ data }) {
         />
         </Section>
         <Section title="Timeline">
-      <Steps progressDot current={2} direction="vertical">
+      <Steps progressDot current={3} direction="vertical">
           <Step title="Workshop Announced" description="March 29, 2024" />
           <Step
             title="Paper Submission Deadline"
@@ -938,7 +938,7 @@ export default function Home({ data }) {
                       <br />
                       (MultiOn, HAZARD, PRS Challenge)
                       <br />
-                      <Time time="9:10 - 10:00 AM PT" />
+                      <Time time="9:00 - 9:30 AM PT" />
                       <ul>
                         <li>9:00: MultiOn</li>
                         <li>9:10: HAZARD</li>
@@ -1057,7 +1057,7 @@ export default function Home({ data }) {
                       <br />
                       ManiSkill, ARNOLD, HomeRobot OVMM
                       <br />
-                      <Time time="2:30 - 3:00 PM PT" />
+                      <Time time="2:30 - 2:30 PM PT" />
                       <ul>
                         <li>2:00: ManiSkill</li>
                         <li>2:10: ARNOLD</li>
@@ -1068,7 +1068,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Mobile Manipulation Challenge Q&A Panel</b>
                       <br />
-                      <Time time="3:00 - 3:30 PM PT" />
+                      <Time time="2:30 - 3:00 PM PT" />
                     </Timeline.Item>
                     
                     <Timeline.Item>
@@ -1076,7 +1076,7 @@ export default function Home({ data }) {
                       <br />
                       <i>Robotics and Embodied Artificial Intelligence</i>
                       <br />
-                      <Time time="3:30 - 4:00 PM PT" />
+                      <Time time="3:00 - 3:30 PM PT" />
                       <Speaker
                         organizations={["Stanford University"]}
                         name="Shuran Song"
@@ -1094,7 +1094,7 @@ export default function Home({ data }) {
                       <br />
                       <i>Open Vocabulary Mobile Manipulation</i>
                       <br />
-                      <Time time="4:00 - 4:30 PM PT" />
+                      <Time time="3:30 - 4:00 PM PT" />
                       <Speaker
                         organizations={["Meta AI"]}
                         name="Chris Paxton"
@@ -1112,7 +1112,7 @@ export default function Home({ data }) {
                       <br />
                       <i>Foundation Models for Humanoid Robots</i>
                       <br />
-                      <Time time="4:30 - 5:00 PM PT" />
+                      <Time time="4:00 - 4:30 PM PT" />
                       <Speaker
                         organizations={["1X Technologies"]}
                         name="Eric Jang"
@@ -1129,7 +1129,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Speaker Panel</b>
                       <br />
-                      <Time time="5:00 - 5:30 PM PT" />
+                      <Time time="4:30 - 5:30 PM PT" />
                       <br />
                       <Speaker
                          organizations={["NVIDIA"]}
