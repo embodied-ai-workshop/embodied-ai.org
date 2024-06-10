@@ -974,33 +974,27 @@ export default function Home({ data }) {
                       <br/>
                       <Time time="10:30 - 11:00 AM PT" />
                       <Speaker
-                        organizations={["Microsoft"]}
+                        organizations={["Technical Fellow, Microsoft Applied Science Group (E+D)"]}
                         name="Stevie Bathiche"
                         fixedImg={data.stevieBathiche.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Speaker
-                        organizations={["Microsoft"]}
+                        organizations={["Senior Director & Principal PM – Microsoft Research"]}
                         name="Ade Famoti"
                         fixedImg={data.adeFamoti.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Speaker
-                        organizations={["Microsoft"]}
-                        name="Andrey Kolobov"
-                        fixedImg={data.andreyKolobov.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Speaker
-                        organizations={["Microsoft"]}
+                        organizations={["Corporate Vice President & MD – Microsoft Research"]}
                         name="Ashley Llorens"
                         fixedImg={data.ashleyLlorens.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Speaker
-                        organizations={["Sanctuary AI"]}
-                        name="Geordie Rose"
-                        fixedImg={data.geordieRose.childImageSharp.fixed}
+                        organizations={["CTO, Sanctuary AI"]}
+                        name="Olivia Norton"
+                        fixedImg={data.oliviaNorton.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <Abstract
@@ -1027,18 +1021,18 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Project Aria: </b>
                       <br />
-                      <i>Augmented Reality for Embodied AI</i>
+                      <i>The path to Always-on Contextual AI </i>
                       <br />
                       <Time time="11:30 AM - 12:00 NOON PT" />
                       <Speaker
                         organizations={["Meta"]}
-                        name="Speaker TBD"
-                        fixedImg={data.aria.childImageSharp.fixed}
+                        name="Richard Newcombe"
+                        fixedImg={data.richardNewcombe.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Project Aria glasses gather information from the user’s perspective for egocentric research in machine perception and augmented reality..</p>
+                      <p>Richard Newcombe is VP of Research Science at Meta Reality Labs leading the Surreal team in Reality Labs Research. The Surreal team has developed the key technologies for always-on 3D device location, scene understanding and contextual AI and pioneered Project Aria - a new generation of machine perception glasses devices that provides a new generation of data for ego-centric multimodal and contextual AI research. Richard received his undergraduate in Computer Science, and masters in Robotics and Intelligent Machines from the University of Essex in England, his PhD from Imperial College in London with a Postdoc at the University of Washington. Richard went on to co-found Surreal Vision, Ltd. that was acquired by Meta in 2015. As a research scientist his original work introduced the Dense SLAM paradigm demonstrated in KinectFusion and DynamicFusion that influenced a generation of real-time and interactive systems in AR/VR and robotics by enabling systems to efficiently understand the geometry of the environment. Richard received the best paper award at ISMAR 2011, best demo award ICCV 2011, best paper award at CVPR 2015 and best robotic vision paper award at ICRA 2017. In 2021, Richard received the ICCV Helmholtz award for research with DTAM, and the ISMAR and UIST test of time awards for KinectFusion.</p>
                       <Abstract
-                        text="Project ARIA will share some details of the use of ARIA devices in the field of embodied AI."
+                        text="In this session, Richard will share Meta's vision towards building Always-on Contextual AI. Project Aria will be introduced in the session as a research tool to gather data from users' perspectives to accelerate machine perception and AI research."
                         />
                     </Timeline.Item>
 
@@ -1856,6 +1850,12 @@ export const query = graphql`
       ...FaceThumbnail
     }
     adeFamoti: file(relativePath: { eq: "organizers/ade-famoti.png" }) {
+      ...FaceThumbnail
+    }
+    oliviaNorton: file(relativePath: { eq: "cvpr2024/olivia-norton.jpg" }) {
+      ...FaceThumbnail
+    }
+    richardNewcombe: file(relativePath: { eq: "cvpr2024/richard-newcombe.jpg" }) {
       ...FaceThumbnail
     }
     
