@@ -69,7 +69,7 @@ module.exports = {
         {
           challenge: true,
           imageId: "baoxiongJia",
-          name: "Baixiong Jia",
+          name: "Baoxiong Jia",
           oc: false,
           lo: false,
           organization: "BIGAI",

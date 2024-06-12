@@ -1019,9 +1019,9 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Invited Talk - Project Aria: </b>
+                      <b>Invited Talk - Project Aria from Meta: </b>
                       <br />
-                      <i>The path to Always-on Contextual AI </i>
+                      <i>The Path to Always-on Contextual AI </i>
                       <br />
                       <Time time="11:30 AM - 12:00 NOON PT" />
                       <Speaker
@@ -1053,11 +1053,11 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Mobile Manipulation Challenge Presentations</b>
+                      <b>Manipulation and Vision Challenge Presentations</b>
                       <br />
                       ManiSkill, ARNOLD, HomeRobot OVMM
                       <br />
-                      <Time time="2:30 - 2:30 PM PT" />
+                      <Time time="2:00 - 2:30 PM PT" />
                       <ul>
                         <li>2:00: ManiSkill</li>
                         <li>2:10: ARNOLD</li>
@@ -1066,7 +1066,7 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Mobile Manipulation Challenge Q&A Panel</b>
+                      <b>Manipulation and Vision Challenge Q&A Panel</b>
                       <br />
                       <Time time="2:30 - 3:00 PM PT" />
                     </Timeline.Item>
@@ -1121,7 +1121,7 @@ export default function Home({ data }) {
                       />
                       <p>Eric leads the AI team at 1X Technologies, a vertically-integrated humanoid robot company. His research background is on end-to-end mobile manipulation and generative models. Eric recently authored a book on the future of AI and Robotics, titled “AI is Good for You”.</p>
                       <Abstract
-                        text="1X’s mission is to create an abundant supply of physical labor through androids that work alongside humans. I will share some of the progress 1X has been making towards general-purpose mobile manipulation. We have scaled up the number of tasks our androids can do by combining an end-to-end learning strategy with a no-code system to add new robotic capabilities. Our Android Operations team trains their own models on the data they gather themselves, producing an extremely high-quality “farm-to-table” dataset that can be used to learn extremely capable behaviors. I’ll also share some of the progress we’ve been making towards a generalist foundation model for humanoid robots."
+                        text="1X's mission is to create an abundant supply of physical labor through androids that work alongside humans. In this talk we'll be sharing an exciting new project."
                         />
                     
                     </Timeline.Item>
