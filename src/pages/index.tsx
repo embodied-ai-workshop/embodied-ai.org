@@ -1005,6 +1005,8 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Language Model Planning: </b>
                       <br/>
+                      <i>Foundation Models for Robotics and Robotics for Foundation Models</i>
+                      <br/>
                       <Time time="11:00 - 11:30 AM PT" />
                       <Speaker
                         organizations={["Physical Intelligence"]}
@@ -1012,9 +1014,9 @@ export default function Home({ data }) {
                         fixedImg={data.ichter.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Brian Ichter is one of the founders of Physical Intelligence. At Google Brain, he pioneered work on language model planning for robotic control.</p>
+                      <p>Brian recently founded Physical Intelligence, a company focused on scaling robotics and foundation models. Prior to that Brian was a Research Scientist at Google DeepMind on the Robotics team and received his PhD from Stanford. Generally, his research interests lie in enabling mobile robotic systems to perform complex skills and plan long-horizon tasks in real-world environments through machine learning and large-scale models.</p>
                       <Abstract
-                        text="Brian Ichter will share his thoughts on using language models for robotic control."
+                        text="Foundation models have a number of properties that are promising for robotics, and robotics has a number of lessons that can help improve foundation models. This talk will cover a number of recent works along these axes, highlighting both their benefits and limitations. Finally, it will present a forward looking view of scaled robotics in a world of improving VLMs."
                         />
                     </Timeline.Item>
 
