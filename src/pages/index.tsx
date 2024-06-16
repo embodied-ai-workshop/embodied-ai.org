@@ -756,8 +756,8 @@ export default function Home({ data }) {
         <b> Tuesday, June 18 from 8:50am to 5:30pm Pacific </b> 
         in conjunction with <a href="https://cvpr.thecvf.com/">CVPR 2024</a>.
         <ul>
-          <li>The physical workshop will be held in Summit 428.</li>
-          <li>The workshop will also be <a href="https://cvpr.thecvf.com/virtual/2024/workshop/23598">livestreamed</a> for CVPR virtual attendees.</li>
+          <li>The physical workshop will be held in meeting room <i>Summit 428.</i></li>
+          <li>The workshop will also be <a href="https://cvpr.thecvf.com/virtual/2024/workshop/23598">on Zoom</a> for CVPR virtual attendees.</li>
         </ul>
         Please join us at Embodied AI #5!
       </Section>
