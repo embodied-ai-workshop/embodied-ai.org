@@ -751,6 +751,16 @@ export default function Home({ data }) {
           />
         }
       >
+      <Section title="Attending">
+        The Fifth Annual Embodied AI Workshop will be held 
+        <b> Tuesday, June 18 from 8:50am to 5:30pm Pacific </b> 
+        in conjunction with <a href="https://cvpr.thecvf.com/">CVPR 2024</a>.
+        <ul>
+          <li>The physical workshop will be held in meeting room <i>Summit 428.</i></li>
+          <li>The workshop will also be <a href="https://cvpr.thecvf.com/virtual/2024/workshop/23598">on Zoom</a> for CVPR virtual attendees.</li>
+        </ul>
+        Please join us at Embodied AI #5!
+      </Section>
       <Section title="Overview">
         <p>
           Minds live in bodies, and bodies move through a changing world.
@@ -954,6 +964,8 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Generative AI for Embodied AI: </b>
                       <br/>
+                      <i>The Blueprint for Truly Generalizable Robots: Scale, Scale, and Scale</i>
+                      <br/>
                       <Time time="10:00 - 10:30 AM PT" />
                       <Speaker
                         organizations={["AI2"]}
@@ -961,9 +973,9 @@ export default function Home({ data }) {
                         fixedImg={data.kembhavi.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Ani Kembhavi is the Senior Director of Computer Vision at the Allen Institute for AI (AI2) in Seattle, and is also an Affiliate Associate Professor at the Computer Science & Engineering department at the University of Washington. His work over two decades spans computer vision, robotics and natural language processing.</p>
+                      <p>Ani Kembhavi is the Senior Director of Computer Vision at the Allen Institute for Artificial Intelligence (AI2) in Seattle. He is also an Affiliate Associate Professor at the Computer Science & Engineering department at the University of Washington. He obtained his PhD at the University of Maryland, College Park and spent 5 years at Microsoft. His research interests lie at the intersection of computer vision, natural language processing and embodiment. His work has been awarded a Best Paper Award at CVPR 2023, an Outstanding Paper Award at Neurips 2022, an AI2 Test of Time award in 2020 and an NVIDIA Pioneer Award in 2018.</p>
                       <Abstract
-                        text="Aniruddha Kembhavi will be speaking on Generative AI for Embodied AI, especially the ProcTHOR procedural generation system."
+                        text="Ani will speak about his team's recent advances showing how scaling simulation data enables masterful navigation and manipulation agents who work in the real world without any adaptation or finetuning."
                         />                      
                     </Timeline.Item>
 
@@ -1149,11 +1161,14 @@ export default function Home({ data }) {
                   </Timeline>
                 </div>
       </Section>
-      <Section title="Demos">
+      <Section title="Partner Events">
         <p>
-          In association with the Embodied AI Workshop, our partners and sponsors
-          will present demos, date and times TBD.
+          The Embodied AI Workshop is proud to highlight the following events
+          associated with our sponsors and partners:
         </p>
+        <ul>
+          <li><b>Meta:</b>Stop by Meta's Expo Booth #1423 from 6/19-6/21 to see how Project Aria powers machine perception and AI research</li>
+        </ul>
         <br />
       </Section>
       <Section title="Challenges">
