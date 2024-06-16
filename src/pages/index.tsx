@@ -1088,7 +1088,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Embodied Mobile Manipulation: </b>
                       <br />
-                      <i>Robotics and Embodied Artificial Intelligence</i>
+                      <i>In-The-Wild Robot Teaching without In-The-Wild Robots</i>
                       <br />
                       <Time time="3:00 - 3:30 PM PT" />
                       <Speaker
