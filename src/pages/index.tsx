@@ -636,7 +636,7 @@ export default function Home({ data }) {
         observations: "RGB-D, Proprioception",
         actionSpace: "Continuous",
         stochasticAcuation: "✓",
-        winner: "TBD",
+        winner: "Robot AI",
       },
       {
         challenge: challengePageMap["HAZARD"],
@@ -660,7 +660,7 @@ export default function Home({ data }) {
         observations: "RGB-D",
         actionSpace: "Continuous",
         stochasticAcuation: "",
-        winner: "TBD",
+        winner: "UniTeam",
       },
       {
         challenge: challengePageMap["ManiSkillViTac"],
@@ -672,7 +672,7 @@ export default function Home({ data }) {
         observations: "RGB-D, Proproioception, Localization",
         actionSpace: "Continuous / Discrete for ViTac",
         stochasticAcuation: "",
-        winner: "TBD",
+        winner: "Illusion",
       },
       {
         challenge: challengePageMap["MultiOn"],
@@ -684,7 +684,7 @@ export default function Home({ data }) {
         actionSpace: "Discrete",
         observations: "RGB-D, Localization",
         stochasticAcuation: "",
-        winner: "TBD",
+        winner: "IntelliGO",
       },
       {
         challenge: challengePageMap["PRS"],
@@ -696,7 +696,7 @@ export default function Home({ data }) {
         actionSpace: "Continuous",
         observations: "RGB-D, Sensors, Pose Data, Tactile Sensors",
         stochasticAcuation: "",
-        winner: "TBD",
+        winner: "PDA",
       },
     ];
   
