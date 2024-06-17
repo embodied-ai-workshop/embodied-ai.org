@@ -757,6 +757,7 @@ export default function Home({ data }) {
         in conjunction with <a href="https://cvpr.thecvf.com/">CVPR 2024</a>.
         <ul>
           <li>The physical workshop will be held in meeting room <i>Summit 428.</i></li>
+          <li>The physical poster session will be held in room <i>Arch 4E</i> posters 50-81.</li>
           <li>The workshop will also be <a href="https://cvpr.thecvf.com/virtual/2024/workshop/23598">on Zoom</a> for CVPR virtual attendees.</li>
         </ul>
         Please join us at Embodied AI #5!
@@ -914,8 +915,8 @@ export default function Home({ data }) {
         
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
         <ul>
-          <li><b>Workshop Talks: 8:50AM-5:30PM PT - TBD</b></li>
-          <li><b>Poster Session: 1:00PM-2:00PM PT - TBD</b></li>
+          <li><b>Workshop Talks: 8:50AM-5:30PM PT - Summit 428</b></li>
+          <li><b>Poster Session: 1:00PM-2:00PM PT - Arch 4E posters 50-81</b></li>
         </ul>
         Zoom information is available on <a href="https://cvpr.thecvf.com/Conferences/2024">the CVPR virtual platform for registered attendees</a>.
         <br />
@@ -935,6 +936,8 @@ export default function Home({ data }) {
                       <b>Workshop Introduction: Embodied AI</b>
                       <br/>
                       <Time time="8:50 - 9:00 AM PT" />
+                      <br />
+                      Location: Summit 428
                       <Speaker
                          organizations={["Logical Robotics"]}
                          name="Moderator - Anthony Francis"
@@ -1053,7 +1056,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Lunch</b>
                       <br />
-                      Location TBD
+                      Location: Summit ExHall 
                       <br />
                       <Time time="12:00 NOON - 1:00 PM PT" />
                     </Timeline.Item>
@@ -1061,15 +1064,17 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Accepted Papers Poster Session</b>
                       <br />
-                      Location TBD
-                      <br />
                       <Time time="1:00 PM - 2:00 PM PT" />
+                      <br />
+                      Location: Arch 4E posters 50-81
                     </Timeline.Item>
 
                     <Timeline.Item>
                       <b>Manipulation and Vision Challenge Presentations</b>
                       <br />
                       ManiSkill, ARNOLD, HomeRobot OVMM
+                      <br />
+                      Location: Summit 428
                       <br />
                       <Time time="2:00 - 2:30 PM PT" />
                       <ul>
