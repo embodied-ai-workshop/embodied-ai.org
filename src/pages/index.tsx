@@ -1069,6 +1069,12 @@ export default function Home({ data }) {
                       <Time time="1:00 PM - 2:00 PM PT" />
                       <br />
                       Location: Arch 4E posters 50-81
+                      <ul>
+                       <li>Posters will be in ARCH 4E, posters 50 to 81 from 1pm to 2pm on Tuesday the 18th.</li>
+                       <li>Poster numbers are assigned to your paper number plus 50, i.e. paper 1 is poster 51.</li>
+                       <li>Materials for attaching posters to the poster stands will be provided on-site.</li>
+                       <li>Posters can only be put up during our allotted time.</li> 
+                      </ul>
                     </Timeline.Item>
 
                     <Timeline.Item>
