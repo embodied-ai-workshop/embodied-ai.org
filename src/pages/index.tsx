@@ -763,6 +763,10 @@ export default function Home({ data }) {
         Remote and in-person attendees are welcome to ask questions via Slack:  
         <InlineSlack />
         Please join us at Embodied AI #5!
+        <p>
+          <Img fluid={data.workshopLocation.childImageSharp.fluid} alt="Workshop Location"/>
+        </p>
+
       </Section>
       <Section title="Overview">
         <p>
@@ -1174,15 +1178,19 @@ export default function Home({ data }) {
                   </Timeline>
                 </div>
       </Section>
-      <Section title="Partner Events">
+      <Section title="Sponsor Events">
         <p>
           The Embodied AI Workshop is proud to highlight the following events
-          associated with our sponsors and partners:
+          associated with our sponsors:
         </p>
         <ul>
-          <li><b>Meta:</b>Stop by Meta's Expo Booth #1423 from 6/19-6/21 to see how Project Aria powers machine perception and AI research</li>
+          <li><b>Meta:</b> top by Meta's Expo Booth #1423 from 6/19-6/21 to see how Project Aria powers machine perception and AI research.</li>
+          <li><b>Microsoft:</b> Check out Microsoft's Expo Booth #1445 from 6/19-6/21 to see Microsoft's latest advances!</li>
         </ul>
         <br />
+        <center>
+          <Img fluid={data.ariaDemo.childImageSharp.fluid} alt="Aria Demo"/>
+        </center>
       </Section>
       <Section title="Challenges">
         <p>
@@ -1890,10 +1898,10 @@ export const query = graphql`
     }
     
     # Other pictures
-    metaDemo: file(relativePath: { eq: "cvpr2023/meta-demo.png" }) {
+    ariaDemo: file(relativePath: { eq: "cvpr2024/aria-demo.jpg" }) {
       ...FluidImage
     }
-    workshopLocation: file(relativePath: { eq: "cvpr2023/workshop-location.jpg" }) {
+    workshopLocation: file(relativePath: { eq: "cvpr2024/workshop-location.png" }) {
       ...FluidImage
     }
   }
