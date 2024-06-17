@@ -895,7 +895,7 @@ export default function Home({ data }) {
                 Tuesday, June 18, 2024
                 <br />
                 8:50 AM - 6:00 PM PT<br />
-                TBD <br />
+                Summit 428 <br />
                 <span
                   css={css`
                     color: ${color.gray7};
