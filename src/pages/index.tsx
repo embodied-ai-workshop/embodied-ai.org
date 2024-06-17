@@ -760,6 +760,8 @@ export default function Home({ data }) {
           <li>The physical poster session will be held in room <i>Arch 4E</i> posters 50-81.</li>
           <li>The workshop will also be <a href="https://cvpr.thecvf.com/virtual/2024/workshop/23598">on Zoom</a> for CVPR virtual attendees.</li>
         </ul>
+        Remote and in-person attendees are welcome to ask questions via Slack:  
+        <InlineSlack />
         Please join us at Embodied AI #5!
       </Section>
       <Section title="Overview">
@@ -918,9 +920,9 @@ export default function Home({ data }) {
           <li><b>Workshop Talks: 8:50AM-5:30PM PT - Summit 428</b></li>
           <li><b>Poster Session: 1:00PM-2:00PM PT - Arch 4E posters 50-81</b></li>
         </ul>
-        Zoom information is available on <a href="https://cvpr.thecvf.com/Conferences/2024">the CVPR virtual platform for registered attendees</a>.
+        Zoom information is available on <a href="https://cvpr.thecvf.com/virtual/2024/workshop/23598">the CVPR virtual platform for registered attendees</a>.
         <br />
-        Remote and in-person attendees are welcome to as questions via Slack:  
+        Remote and in-person attendees are welcome to ask questions via Slack:  
         <br />
 
                       <InlineSlack />
