@@ -474,8 +474,421 @@ function Paper(props: {
 }
 
 let acceptedPapers = [
-];
-
+  <Paper
+    title="NavProg: Compositional Embodied Visual Navigation Without Training"
+    abstract="Large Language Models (LLMs) are revolutionizing AI, demonstrating excellent reasoning capabilities in composing modules to perform complex image-based tasks. In this article, we propose an approach that extends the concept of program composition through LLMs for images, aiming to integrate them into embodied agents. Specifically, by employing a PointGoal Navigation model as a foundational primitive for guiding an agent through the world, we illustrate how a single model can address diverse tasks without additional training. We delegate primitive composition to an LLM, with only a few in-context examples given alongside the prompt. We evaluate our approach on three popular Embodied AI tasks: ObjectGoal Navigation, Instance-Image Goal Navigation, and Embodied Question Answering, demonstrating competitive results without any specific fine-tuning and establishing efficacy in a zero-shot context."
+    authors={{
+    "Filippo Ziliotto":[],
+    "Tommaso Campari":[],
+    "Luciano Serafini":[],
+    "Lamberto Ballan":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/1_NavProg_Compositional_Embodi.pdf"
+   />,
+  <Paper
+    title="STEVE Series: Step-by-Step Construction of Agent Systems in Minecraft"
+    abstract="Building an embodied agent system with a large language model (LLM) as its core is a promising direction. Due to the significant costs and uncontrollable factors associated with deploying and training such agents in the real world, we have decided to begin our exploration within the Minecraft environment. Our STEVE Series agents can complete basic tasks in a virtual environment and more challenging tasks such as navigation and even creative tasks, with an efficiency far exceeding previous state-of-the-art methods by a factor of 2.5×to 7.3×. We begin our exploration with a vanilla large language model, augmenting it with a vision encoder and an action codebase trained on our collected high-quality dataset STEVE-21K. Subsequently, we enhanced it with a Critic and memory to transform it into a complex system. Finally, we constructed a hierarchical multi-agent system. Our recent work explored how to prune the agent system through knowledge distillation. In the future, we will explore more potential applications of STEVE agents in the real world. The code, data, and models are available at https://rese1f.github.io/STEVE/. "
+    authors={{
+      "Zhonghan Zhao":[],
+      "Wenhao Chai":[],
+      "Xuan Wang":[],
+      "Ke Ma":[],
+      "Shengyu Hao":[],
+      "Meiqi Sun":[],
+      "Boyi Li":[],
+      "Kewei Chen":[],
+      "Dongxu Guo":[],
+      "Yinfei Ma":[],
+      "Yao Chaohua":[],
+      "Tian Ye":[],
+      "Yanting Zhang":[],
+      "Hongwei Wang":[],
+      "Gaoang Wang":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/2_STEVE_Series_Step_by_Step_Co.pdf"
+   />,
+  <Paper
+    title="RoboEXP: Action-Conditioned Scene Graph via Interactive Exploration for Robotic Manipulation"
+    abstract="In this work, we investigate the interactive scene exploration task, where the goal is to efficiently identify all objects, including those that are directly observable and those that can only be discovered through interaction between the robot and the environment. Towards this goal, we present a novel scene representation called action-conditioned 3D scene graph (ACSG). Unlike conventional 3D scene graphs that focus on encoding static relations, ACSG encodes both spatial relationships and logical associations indicative of action effects (e.g., opening a fridge will reveal an apple inside). We then show that interactive scene exploration can be formulated as a problem of action-conditioned 3D scene graph construction and traversal."
+    authors={{
+    "Hanxiao Jiang":[],
+    "Binghao Huang":[],
+    "Ruihai Wu":[],
+    "Zhuoran Li":[],
+    "Shubham Garg":[],
+    "Hooshang Nayyeri":[],
+    "Shenlong Wang":[],
+    "Yunzhu Li":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/3_RoboEXP_Action_Conditioned_S.pdf"
+   />,
+  <Paper
+    title="EXTRACT: Efficient Policy Learning by Extracting Transferrable Robot Skills"
+    abstract="Reinforcement learning (RL) agents equipped with useful, temporally extended skills can learn new tasks more easily. Prior work in skill-based RL either requires expert supervision to define useful skills or creates nonsemantically aligned skills from offline data through heuristics, which is difficult for a downstream RL agent to use for learning new tasks. Instead, our approach, EXTRACT, utilizes pretrained vision models to extract a discrete set of semantically meaningful skills from offline data, each of which is parameterized by continuous arguments, without human supervision. This skill parameterization allows robots to learn new tasks more quickly by only needing to learn when to select a specific skill and how to modify its arguments for the specific task. We demonstrate through experiments in sparse-reward, image-based, robot manipulation environments, both in simulation and in the real world, that EXTRACT can more quickly learn new tasks than prior skill-based RL, with up to a 10× gain in sample efficiency."
+    authors={{
+    "Jesse Zhang":[],
+    "Minho Heo":[],
+    "Zuxin Liu":[],
+    "Erdem Biyik":[],
+    "Joseph J Lim":[],
+    "Yao Liu":[],
+    "Rasool Fakoor":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/4_EXTRACT_Efficient_Policy_Lea.pdf"
+   />,
+  <Paper
+    title="Adaptive Mobile Manipulation for Articulated Objects In the Open World"
+    abstract="Deploying robots in open-ended unstructured environments such as homes has been a long-standing research problem. However, robots are often studied only in closed-off lab settings, and prior mobile manipulation work is restricted to pick-move-place, which is arguably just the tip of the iceberg in this area. In this paper, we introduce Open-World Mobile Manipulation System, a full-stack approach to tackle realistic articulated object operation, e.g. real-world doors, cabinets, drawers, and refrigerators in open-ended unstructured environments. The robot utilizes an adaptive learning framework to initially learns from a small set of data through behavior cloning, followed by learning from online practice on novel objects that fall outside the training distribution. We also develop a low-cost mobile manipulation hardware platform capable of safe and autonomous online adaptation in unstructured environments with a cost of around 25, 000 USD. In our experiments we utilize 20 articulate objects across 4 build-ings in the CMU campus. With less than an hour of online learning for each object, the system is able to increase success rate from 50% of BC pre-training to 95% using online adaptation. Video results at https://open-world-mobilemanip.github.io/."
+    authors={{
+    "Haoyu Xiong":[],
+    "Russell Mendonca":[],
+    "Kenneth Shaw":[],
+    "Deepak Pathak":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/5_Adaptive_Mobile_Manipulation.pdf"
+   />,
+  <Paper
+    title="Mind the Error! Detection and Localization of Instruction Errors in Vision-and-Language Navigation"
+    abstract="In Vision-and-Language Navigation in Continuous Environments (VLN-CE), agents have to navigate towards a target goal by executing a set of low-level actions, following a series of natural language instructions. All VLN-CE methods in the literature assume that language instructions are exact. However, in practice, instructions given by humans can contain errors. For the first time, we propose a novel benchmark dataset that introduces various types of instruction errors considering potential human causes, providing valuable insight into the robustness of VLN-CE agents. Moreover, we formally define the task of Instruction Error Detection and Localization, and propose a method that achieves best performances compared to baselines. Project page at https://intelligolabs.github.io/R2RIE-CE"
+    authors={{
+    "Francesco Taioli":[],
+    "Stefano Rosa":[],
+    "Alberto Castellini":[],
+    "Lorenzo Natale":[],
+    "Alessio Del Bue":[],
+    "Alessandro Farinelli":[],
+    "Marco Cristani":[],
+    "Yiming Wang":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/6_Mind_the_Error_Detection_and.pdf"
+   />,
+  <Paper
+    title="LIT: Large Language Model Driven Intention Tracking for Proactive Human-Robot Collaboration - A Robot Sous-Chef Application"
+    abstract="Large Language Models (LLM) and Vision Language Models (VLM) enable robots to ground natural language prompts into control actions to achieve tasks in an open world. However, when applied to a long-horizon collaborative task, this formulation results in excessive prompting for initiating or clarifying robot actions at every task step. We propose Language-driven Intention Tracking (LIT), leveraging LLMs and VLMs to model the human user’s long-term behavior and to predict the next human intention to guide the robot for proactive collaboration. We demonstrate smooth coordination between a LIT-based collaborative robot and a human in collaborative cooking tasks."
+    authors={{
+    "Zhe Huang":[],
+    "John Pohovey":[],
+    "Ananya Yammanuru":[],
+    "Katherine Driggs-Campbell":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/7_LIT_Large_Language_Model_Dri.pdf"
+   />,
+  <Paper
+    title="Following the Human Thread in Social Navigation"
+    abstract="The paper proposes a Social Dynamics Adaptation model (SDA) for Social Navigation, which involves a robot’s ability to navigate human-centric environments while maintaining a safe distance and adhering to social norms. The key challenge is to process human trajectories, which are partially observable from the robot’s perspective and complex to compute. The proposed SDA model uses a two-stage Reinforcement Learning framework: the first stage involves learning to encode human trajectories and the second stage infers social dynamics from the robot’s state-action history. This approach has been tested on the Habitat 3.0 platform, achieving state-of-the-art performance in finding and following humans. The extended version of this work is available at: https://arxiv.org/abs/2404.11327."
+    authors={{
+    "Luca Scofano":[],
+    "Alessio Sampieri":[],
+    "Tommaso Campari":[],
+    "Valentino Sacco":[],
+    "Indro Spinelli":[],
+    "Lamberto Ballan":[],
+    "Fabio Galasso":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/8_Following_the_Human_Thread_i.pdf"
+   />,
+  <Paper
+    title="3D Semantic MapNet: Building Maps for Multi-Object Re-Identification in 3D"
+    abstract="We study the task of 3D multi-object re-identification from embodied tours. Specifically, an agent is given two tours of an environment (e.g. an apartment) under two different layouts (e.g. arrangements of furniture). Its task is to detect and re-identify objects in 3D – e.g. a ‘sofa’ moved from location A to B, a new ‘chair’ in the second layout at location C, or a ‘lamp’ from location D in the first layout missing in the second. To support this task, we create an automated infrastructure to generate paired egocentric tours of initial/modified layouts in the Habitat simulator using Matterport3D scenes, YCB and Google-scanned objects. We present 3D Semantic MapNet (3D-SMNet) – a two-stage re-identification model consisting of (1) a 3D object detector that operates on RGB-D videos with known pose, and (2) a differentiable object matching module that solves correspondence estimation between two sets of 3D bounding boxes. Overall, 3D-SMNet builds object-based maps of each layout and then uses a differentiable matcher to re-identify objects across the tours. After training 3D-SMNet on our generated episodes, we demonstrate zero-shot transfer to real-world rearrangement scenarios by instantiating our task in Replica, and RIO environments depicting rearrangements. On all datasets, we find 3D-SMNet outperforms competitive baselines. Further, we show jointly training on real and generated episodes can lead to significant improvements over training on real data alone."
+    authors={{
+    "Vincent Cartillier":[],
+    "Neha Jain":[],
+    "Irfan Essa":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/9_3D_Semantic_MapNet_Building_.pdf"
+   />,
+  <Paper
+    title="UniDoorManip: Learning Universal Door Manipulation Policy Over Large-scale and Diverse Door Manipulation Environments"
+    abstract="Door manipulation holds significant importance due to the frequent need to open or close doors in various scenarios. While previous works have focused primarily on interior doors, we aim to extend doors to a more general setting, e.g., doors in windows, cars, and safes. In the above broad scenarios, the door manipulation task covers doors with diverse types, geometries and manipulation mechanisms, which poses a great challenge to learn a universal door manipulation policy. Due to the limited datasets and unrealistic simulation environments, previous works fail to achieve good performance across various doors. In this work, we build a novel door manipulation environment reflecting different realistic door manipulation mechanisms, and further equip this environment with a large-scale door dataset covering 6 door categories with hundreds of door bodies and handles, making up thousands of different door instances. Additionally, to better emulate real-world scenarios, we introduce a mobile robot as the agent and use the partial and occluded point cloud as the observation, which are not considered in previous works while possessing significance for real-world implementations. We conduct detailed comparisons between our proposed environment and dataset and others. To learn a universal policy over diverse doors, we propose a novel framework disentangling the whole manipulation process into three stages, and integrating them by training in the reversed order of inference. Extensive experiments validate the effectiveness of our designs and demon strate our framework’s strong performance. Code, data and videos are avaible on https://unidoormanip.github.io/."
+    authors={{
+    "Yu Li":[],
+    "Xiaojie Zhang":[],
+    "Ruihai Wu":[],
+    "Zilong Zhang":[],
+    "Yiran Geng":[],
+    "Hao Dong":[],
+    "Zhaofeng He":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/10_UniDoorManip_Learning_Unive.pdf"
+   />,
+  <Paper
+    title="Feudal Networks for Visual Navigation"
+    abstract="We introduce a novel no-RL, no-graph, no-odometry approach to visual navigation using feudal learning. This architecture employs a hierarchy of agents that each see a different aspect of the task and operate at different spatial and temporal scales. We develop two unique modules in this framework: (1) a memory proxy map learned in a self-supervised manner that is used to record prior observations, and (2) a waypoint network that outputs intermediate subgoals by learning to imitate human waypoint selection during local navigation. This waypoint network is pre-trained using a dataset [1] of teleoperation sequences made publicly available in our prior work. The resulting feudal navigation network achieves SOTA performance on the image goal navigation task."
+    authors={{
+    "Faith M Johnson":[],
+    "Bryan Bo Cao":[],
+    "Ashwin Ashok":[],
+    "Shubham Jain":[],
+    "Kristin Dana":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/11_Feudal_Networks_for_Visual_.pdf"
+   />,
+  <Paper
+    title="Opening Cabinets and Drawers in the Real World using a Commodity Mobile Manipulator"
+    abstract="Pulling open cabinets and drawers presents many difficult technical challenges in perception (inferring articulation parameters for objects from onboard sensors), planning (producing motion plans that conform to tight task constraints), and control (making and maintaining contact while applying forces on the environment). In this work, we build an end-to-end system that enables a commodity mobile manipulator (Stretch RE2) to pull open cabinets and drawers in diverse previously unseen real world environments. We conduct 4 days of real world testing of this system spanning 31 different objects from across 13 different real world environments. Our system achieves a success rate of 61% on opening novel cabinets and drawers in unseen environments zero-shot. An analysis of the failure modes suggests that errors in perception are the most significant challenge for our system. We will open source code and models for others to replicate and build upon our system."
+    authors={{
+    "Arjun Gupta":[],
+    "Michelle Zhang":[],
+    "Rishik Sathua":[],
+    "Saurabh Gupta":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/12_Opening_Cabinets_and_Drawer.pdf"
+   />,
+  <Paper
+    title="Selective Visual Representations Improve Convergence and Generalization for Embodied AI"
+    abstract="Embodied AI models often employ off the shelf vision backbones like CLIP to encode their visual observations. Although such general purpose representations encode rich syntactic and semantic information about the scene, much of this information is often irrelevant to the task at hand. This introduces noise within the learning process and distracts the agent’s focus from task-relevant visual cues. Inspired by selective attention in humans—the process through which people filter their perception based on their task at hand—we introduce a parameter-efficient approach to filter visual stimuli for embodied AI. Our approach induces a task-conditioned bottleneck using a small learnable codebook module. This codebook is trained jointly to optimize task reward and acts as a task-conditioned selective filter over the visual observation. Our experiments showcase state-of-the-art performance for object goal navigation and object displacement across 5 benchmarks, ProcTHOR, ArchitecTHOR, RoboTHOR, AI2-iTHOR, and ManipulaTHOR. The filtered representations produced by the codebook also generalize better and converge faster when adapted to other simulation environments such as Habitat. Our qualitative analyses show that agents explore their environments more effectively and their representations retain task-relevant information like target object recognition while ignoring superfluous information about other objects. "
+    authors={{
+    "Ainaz Eftekhar":[],
+    "Kuo-Hao Zeng":[],
+    "Jiafei Duan":[],
+    "Ali Farhadi":[],
+    "Aniruddha Kembhavi":[],
+    "Ranjay Krishna":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/13_Selective_Visual_Representa.pdf"
+   />,
+  <Paper
+    title="From Observation to Abstractions: Efficient In-Context Learning from Human Feedback and Visual Demonstrations for VLM Agents"
+    abstract="We propose an efficient method, In-Context Abstraction Learning (ICAL), to improve in-context VLM agents from sub-optimal demonstrations and human feedback. Specifically, given a noisy demonstration for a task in a new domain, LLMs/VLMs are used to fix inefficient actions and annotate four types of cognitive abstractions. These abstractions are then refined  by executing the trajectory in the environment, guided by natural language feedback from humans. We demonstrate that this method rapidly learns useful experience abstractions. Our ICAL agent improves on the state-of-the-art when tested in dialogue-based instruction following in household environments in TEACh, action anticipation in Ego4D, and in multimodal autonomous web agents in Visual-WebArena. In TEACh, we improve on the state-of-the-art by 12.6% in goal-condition success, outperforming LLM agents that use the raw visual demonstrations as in context examples without abstraction learning. In VisualWebArena, we improve on the state-of-the-art by an absolute 8.4% and relative 58.74% in task success, outperforming VLM agents that use hand-written examples. In Ego4D, we improve 6.4 noun and 1.7 action edit distance over few-shot GPT4V. Lastly, we find that weight fine-tuning and in-context abstraction learning complement each other, with their combination yielding the best performance."
+    authors={{
+    "Gabriel Herbert Sarch":[],
+    "Lawrence Jang":[],
+    "Michael J. Tarr":[],
+    "William W. Cohen":[],
+    "Kenneth Marino":[],
+    "Katerina Fragkiadaki":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/14_From_Observation_to_Abstrac.pdf"
+   />,
+  <Paper
+    title="An Intuitive Voice Interface for a UV disinfecting Mobile Manipulator Robot"
+    abstract="In the wake of the global health crises caused by the COVID-19 pandemic, there is a pressing need for innovative disinfection methods that are both effective and user-friendly to a broad user base. This paper introduces an approach that allows a user to instruct tasks to a UV disinfection robot via speech. The implementation of a voice interface offers a hands-free operation and caters to non-technical users who require a simple and effective way to command the robot. Through a combination of object recognition, natural language processing using a large language model (LLM), and task planning, our system has the potential to execute tasks more effectively since it is more context-aware of its sanitizing duties."
+    authors={{
+    "Alan G. Sanchez":[],
+    "William Smart":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/15_An_Intuitive_Voice_Interfac.pdf"
+   />,
+  <Paper
+    title="RoboVerse: A Unified Simulation Framework for Scaling Vision-Language Manipulation"
+    abstract="The importance of diverse, high-quality datasets is underscored by their role in training foundational models, especially in fields like natural language processing and computer vision. However, scaling up data and models for robotics presents unique challenges due to the confinement of prior models to specific datasets and domains and the limitations inherent in collecting diverse real-world demonstrations. To overcome these limitations, we propose leveraging simulators as an alternative. Simulators can generate vast, diverse datasets and allow for flexible manipulation of various elements, such as observation representations and action formats, thereby offering a scalable and adaptable approach for training robotic models. To this end, we propose RoboVerse benchmark, in which we provide a unified infrastructure for diverse tasks, extensive demonstrations, and different robot embodiments. We also collect a large-scale dataset merging both existing benchmarks and newly designed tasks. Furthermore, our framework exhibits remarkable flexibility, allowing for utilization across different observation modalities, diverse randomization strategies, and scalable data augmentation."
+    authors={{
+    "Haoran Geng":[],
+    "Yuyang Li":[],
+    "Jie Yang":[],
+    "Feishi Wang":[],
+    "Ran Gong":[],
+    "Peiyuan Zhi":[],
+    "Puhao Li":[],
+    "Ruimao Zhang":[],
+    "Yixin Zhu":[],
+    "Baoxiong Jia":[],
+    "Siyuan Huang":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/16_RoboVerse_A_Unified_Simulat.pdf"
+   />,
+  <Paper
+    title="SPIN: Simultanoeous Perception, Interaction and Navigation"
+    abstract="While there has been remarkable progress recently in the fields of manipulation and locomotion, embodied mobile manipulation remains a long-standing challenge. Compared to locomotion or static manipulation, a mobile system makes a diverse range of long-horizon tasks feasible in unstructured and dynamic environments. Prior works use disentangled modular skills for mobility and manipulation that are trivially tied together, causing several limitations such as compounding errors, delays in decision-making, and no whole-body coordination. We present a reactive mobile manipulation framework that uses an active visual system to consciously perceive and react to its environment using only ego-vision, without any mapping or planning, similar to how humans leverage whole-body and hand-eye coordination. Videos are available at https://spin-robot.github.io"
+    authors={{
+    "Shagun Uppal":[],
+    "Ananye Agarwal":[],
+    "Haoyu Xiong":[],
+    "Kenneth Shaw":[],
+    "Deepak Pathak":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/17_SPIN_Simultanoeous_Percepti.pdf"
+   />,
+  <Paper
+    title="GenH2R: Learning Generalizable Human-to-Robot Handover via Scalable Simulation, Demonstration, and Imitation"
+    abstract="Recently the AI community focuses on empowering robots to collaborate with humans, notably in receiving objects handed over by humans. This human-to-robot (H2R) handover capability enables seamless collaboration in various tasks like cooking and furniture assembly. However, due to unique challenges, scalable learning of H2R handover lags behind human-free robot manipulation. Real-world human interaction training is costly and risky, urging simulation-based pre-training. However, creating sufficient simulated assets for handover tasks is challenging. In addition, scaling up demonstrations inspired by the success of large language model poses additional challenges. It is very costly and unscalable to collect robot demonstrations. In this work, we aim to learn generalizable H2R handover at scale by tackling the above challenges. We present a comprehensive solution that scales up both the assets and demonstrations and effectively learns a closed-loop visuomotor policy through a novel imitation learning algorithm."
+    authors={{
+    "Zifan Wang":[],
+    "Junyu Chen":[],
+    "Ziqing Chen":[],
+    "Pengwei Xie":[],
+    "Rui Chen":[],
+    "Li Yi":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/18_GenH2R_Learning_Generalizab.pdf"
+   />,
+  <Paper
+    title="Zero-Shot Vision-and-Language Navigation with Collision Mitigation in Continuous Environment"
+    abstract="We explore Zero-Shot Vision-and-Language Navigation in Continuous Environment, where agents navigate using natural language instructions without any training data. Collecting instruction-path annotation data is an expensive task. Additionally, humans can navigate without prior learning about the environment. Equipping an embodied agent with this ability is an important task for creating a general-purpose agent that can perform tasks in a variety of unfamiliar environments. In discrete environments, Vision-and-Language Navigation (VLN) is performed through graph traversal, assuming collision-free movement between nodes. However, in continuous environments, navigation must be done through low-level actions to the destination, considering possible collisions. We propose the zero-shot Vision-and-Language Navigation with Collision Mitigation (VLN-CM), which takes these considerations. VLN-CM is composed of four modules and predicts the direction and distance of the next movement at each step. We utilize large foundation models for each modules. To select the direction, we use the Attention Spot Predictor (ASP), View Selector (VS), and Progress Monitor (PM). The ASP employs a Large Language Model (e.g. ChatGPT) to split navigation instructions into attention spots, which are objects or scenes at the location to move to (e.g. a yellow door). The VS selects from panorama images provided at 30-degree intervals the one that includes the attention spot, using CLIP similarity. We then choose the angle of the selected image as the direction to move in. The PM uses a rule-based approach to decide which attention spot to focus on next, among multiple spots derived from the instructions. If the similarity between the current attention spot and the visual observations decreases consecutively at each step, the PM determines that the agent has passed the current spot and moves on to the next one. For selecting the distance to move, we employed the Open Map Predictor (OMP). The OMP uses panorama depth information to predict an occupancy mask. We then selected a collision-free distance in the predicted direction based on the occupancy mask. We evaluated our method using the validation data of VLN-CE. Our approach showed better performance than several baseline methods, and the OPM was effective in mitigating collisions for the agent."
+    authors={{
+    "SeongJun Jeong":[],
+    "Gi-Cheon Kang":[],
+    "Joochan Kim":[],
+    "Byoung-Tak Zhang":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/19_Zero_Shot_Vision_and_Langua.pdf"
+   />,
+  <Paper
+    title="From NeRFs to Gaussian Splats, and Back"
+    abstract="For robotics applications where there is a limited number of (typically ego-centric) views, parametric representations such as neural radiance fields (NeRFs) generalize better than non-parametric ones such as Gaussian splatting (GS) to views that are very different from those in the training data; GS however can render much faster than NeRFs. We develop a procedure to convert back and forth between the two. Our approach achieves the best of both NeRFs (superior PSNR, SSIM, and LPIPS on dissimilar views, and a compact representation) and GS (real-time rendering and ability for easily modifying the representation); the computational cost of these conversions is minor compared to training the two from scratch."
+    authors={{
+    "Siming He":[],
+    "Zach Osman":[],
+    "Pratik Chaudhari":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/20_From_NeRFs_to_Gaussian_Spla.pdf"
+   />,
+  <Paper
+    title="Learning Mobile Manipulation Skills via Autonomous Exploration"
+    abstract="To build generalist robots capable of executing a wide array of tasks across diverse environments, robots must be endowed with the ability to engage directly with the real world to acquire and refine skills without extensive instrumentation or human supervision. This work presents a fully autonomous real-world reinforcement learning framework for mobile manipulation that can both independently gather data and refine policies through accumulated experience in the real world. It has several key components: 1) automated data collection strategies by guiding the robot’s exploration toward object interactions, 2) using goal cycles for real world RL such that the robot changes goals once it has made sufficient progress, where the different goals serve as resets for one another, 3) efficient control by leveraging basic task knowledge present in behavior priors in conjunction with policy learning and 4) formulating generic rewards that combine human-interpretable semantic infor- mation with low-level, fine-grained state information. We demonstrate our approach on Boston Dynamics Spot robots in continually improving performance on a set of four challenging mobile manipulation tasks and show that this enables competent policy learning, obtaining an average success rate of 80% across tasks, a 3-4× improvement over existing approaches."
+    authors={{
+    "Russell Mendonca":[],
+    "Deepak Pathak":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/21_Learning_Mobile_Manipulatio.pdf"
+   />,
+  <Paper
+    title="Multimodal Datasets and Benchmarks for Reasoning about Dynamic Spatio-Temporality in Everyday Environment"
+    abstract="We used a 3D simulator to create artificial video data with standardized annotations, aiming to aid in the development of Embodied AI. Our question answering (QA) dataset measures the extent to which a robot can understand human behavior and the environment in a home setting. Preliminary experiments suggest our dataset is useful in measuring AI’s comprehension of daily life."
+    authors={{
+    "Takanori Ugai":[],
+    "Kensho Hara":[],
+    "Shusaku Egami":[],
+    "Ken Fukuda":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/22_Multimodal_Datasets_and_Ben.pdf"
+   />,
+  <Paper
+    title="LEAP HAND V2: Low-cost Anthropomorphic Hybrid Rigid Soft Hand for Robot Learning"
+    abstract="The human hand is a marvel of biology, providing both great versatility and precision. They are strong and precise, allowing us to manipulate complex tools and do very fine-grained dexterous motions but they are also soft, safe, and compliant. The combination of incredible strength, a tight kinematic structure with many degrees of freedom, and soft compliance makes them the perfect manipulator. Emulating the capabilities of the human hand through a robot has been a long-standing challenge. Robot hands have fallen into one of two categories: soft or rigid. Soft hands, while compliant and safe lack the precision and strength of human hands. Conversely, while rigid robot hands can match the precision and power of human hands, they can easily break and are not safe to deploy. Our proposed solution is to build a robotic hand, that can bridge the gap between these two categories. It is soft when required and strong enough to apply power. We call this hand LEAP Hand v2, a dexterous, low-cost anthropomorphic soft hand. LEAP Hand v2 features three distinctive elements that allow it to be a hybrid between rigid and soft hands, all the while remaining simple to produce and under $3000. Firstly, it achieves a balance of human-hand-like softness and stiffness, via a 3d printed soft exterior combined with a 3d printed internal bone structure. Moreover, LEAP Hand v2 incorporates two powered articulations in the foldable palm: one spanning the four fingers and another near the thumb—mimicking the essential palm flexibility for human-like grasping. Lastly, LEAP Hand v2 boasts a dexterous Metacarpophalangeal (MCP) kinematic structure, making it highly human-like, easy to assemble, and versatile for various tasks. Through thorough real-world experiments, we show that LEAP Hand v2 exceeds the capabilities of many existing robot hands for grasping, teleoperated control, and imitation learning. We plan to release 3D printer files and assembly instructions by the end of the summer."
+    authors={{
+    "Kenneth Shaw":[],
+    "Deepak Pathak":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/23_LEAP_HAND_V2_Low_cost_Anthr.pdf"
+   />,
+  <Paper
+    title="Language Model Guided Sim-To-Real Transfer"
+    abstract="Transferring policies learned in simulation to the real world is a promising strategy for acquiring robot skills at scale. However, sim-to-real approaches typically rely on manual design and tuning of the task reward function as well as the simulation physics parameters, rendering the process slow and human-labor intensive. In this paper, we investigate using Large Language Models (LLMs) to automate and accelerate sim-to-real design. Our LLM-guided sim-to-real approach requires only the physics simulation for the target task and automatically constructs suitable reward functions and domain randomization distributions to support real-world transfer. We first demonstrate our approach can discover sim-to-real configurations that are competitive with existing human-designed ones on quadruped locomotion and dexterous manipulation tasks. Then, we showcase that our approach is capable of solving novel robot tasks, such as quadruped balancing and walking atop a yoga ball, without iterative manual design."
+    authors={{
+    "Yecheng Jason Ma":[],
+    "William Liang":[],
+    "Hung-Ju Wang":[],
+    "Sam Wang":[],
+    "Yuke Zhu":[],
+    "Linxi Fan":[],
+    "Osbert Bastani":[],
+    "Dinesh Jayaraman":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/24_Language_Model_Guided_Sim_T.pdf"
+   />,
+  <Paper
+    title="DKPROMPT: Domain Knowledge Prompting Vision-Language Models"
+    abstract="Prompting foundation models such as large language models (LLMs) and vision-language models (VLMs) requires extensive domain knowledge and manual efforts, resulting in the so-called “prompt engineering” problem. One can provide examples explicitly or implicitly, or encourage intermediate reasoning steps to improve the performance of foundation models. However, those methods as applied to LLMs and VLMs still lack the theoretical guarantee and provable correctness. Our idea is to leverage the foundation of classical AI, i.e., knowledge representation and reasoning, to develop a prompting strategy that enables the VLMs to verify the correctness of an agent’s behavior at execution time, in the real world. Given the natural connection between planning symbols and human language, this paper investigates how pre-trained VLMs can assist the robot in realizing symbolic plans generated by classical planners, while avoiding the engineering efforts of checking the outcomes of each action. Specifically, we propose a novel closed-loop task planning and execution framework called DKPROMPT, which prompts VLMs using domain knowledge in PDDL, generating visually grounded, provably correct task plans. DKPROMPT leverages VLMs to detect action failures and verify action affordances towards successful plan execution. We take the advantage of the domain knowledge encoded in classical planners, including the actions defined by their effects and preconditions. By simply querying current observations against the action knowledge, similar to applying VLMs to Visual Question Answering (VQA) tasks, DKPROMPT can trigger the robot to repeat an unsuccessful action recovering from previous failures, or call the symbolic planner to generate a new valid plan. We conducted quantitative evaluations in the OmniGibson simulator, where we reused some tasks from the Behavior-1K benchmark. We provided predefined parameterized actions for DKPROMPT, as well as other baselines, and these actions are imperfect by nature, frequently causing situations. Experimental results demonstrate that DKPROMPT is able to recover from action failures and re-plan when situations occur. As a result, our approach outperforms competitive baselines from the literature, achieving the highest task completion rate."
+    authors={{
+    "Xiaohan Zhang":[], 
+    "Zainab Altaweel":[], 
+    "Yohei Hayamizu":[], 
+    "Yan Ding":[], 
+    "Saeid Amiri":[], 
+    "Shiqi Zhang":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/25_DKPROMPT_Domain_Knowledge_P.pdf"
+   />,
+  <Paper
+    title="What do we learn from using text captions as a form of 3D scene representation?"
+    abstract="Large language models (LLMs) encode a wealth of semantic knowledge about the world, which could be useful for embodied agents to understand their environment. However, current LLMs are not grounded in the real world and cannot directly perceive it. This work investigates the extent to which representing 3D scenes with text descriptions (scene captions) can bridge this gap; we focus on the Embodied Question Answering (EQA) task, explore different types of scene captioning and evaluate the performance of LLMs on a subset the OpenEQA benchmark episodes. Our findings show that (1) detailed captions explicitly describing object attributes, spatial relationships, and potential interactions provide significant benefits in EQA performance, even surpassing the state-of-the-art method in OpenEQA (GPT4-V); and (2) despite this great performance, even the best textual representations fall short of the perceptual and reasoning abilities demonstrated by humans when given visual data. These results suggest inherent limitations in using purely text-based scene descriptions and highlight the need for multimodal approaches that integrate visual data for more robust scene understanding."
+    authors={{
+    "Vladyslav Humennyy":[],
+    "Volodymyr Kuzma":[],
+    "Ruslan Partsey":[],
+    "Sergio Arnaud":[],
+    "Franziska Meier":[],
+    "Oleksandr Maksymets":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/26_What_do_we_learn_from_using.pdf"
+   />,
+  <Paper
+    title="THE COLOSSEUM: A Benchmark for Evaluating Generalization for Robotic Manipulation"
+    abstract="To realize effective large-scale, real-world robotic applications, we must evaluate how well our robot policies adapt to changes in environmental conditions. Unfortunately, a majority of studies evaluate robot performance in environments closely resembling or even identical to the training setup. We present THE COLOSSEUM, a novel simulation benchmark, with 20 diverse manipulation tasks, that enables systematical evaluation of models across 14 axes of environmental perturbations. These perturbations in- clude changes in color, texture, and size of objects, tabletops, and backgrounds; we also vary lighting, distractors, physical properties perturbations and camera pose. Using THE COLOSSEUM, we compare 5 state-of-the-art manipulation models to reveal that their success rate degrades between 30-50% across these perturbation factors. When multiple perturbations are applied in unison, the success rate degrades ≥75%. We identify that changing the number of distractor objects, target object color, or lighting conditions are the perturbations that reduce model performance the most. To verify the ecological validity of our results, we show that our results in simulation are correlated (¯ R2 = 0.614) to similar perturbations in real-world experiments. We open source code for others to use THE COLOSSEUM, and also release code to 3D print the objects used to replicate the real-world perturbations. Ultimately, we hope that THE COLOSSEUM will serve as a benchmark to identify modeling decisions that systematically improve generalization for manipulation."
+    authors={{
+    "Wilbert Pumacay":[],
+    "Ishika Singh":[],
+    "Jiafei Duan":[],
+    "Ranjay Krishna":[],
+    "Jesse Thomason":[],
+    "Dieter Fox":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/27_THE_COLOSSEUM_A_Benchmark_f.pdf"
+   />,
+  <Paper
+    title="Sim2Real Transfer for Audio-Visual Navigation with Frequency-Adaptive Acoustic Field Prediction"
+    abstract="Sim2real transfer has received increasing attention lately due to the success of learning robotic tasks in simulation end-to-end. While there has been a lot of progress in transferring vision-based navigation policies, the existing sim2real strategy for audio-visual navigation performs data augmentation empirically without measuring the acoustic gap. The sound differs from light in that it spans across much wider frequencies and thus requires a different solution for sim2real. We propose the first treatment of sim2real for audio-visual navigation by disentangling it into acoustic field prediction (AFP) and waypoint navigation. We first validate our design choice in the SoundSpaces simulator and show improvement on the Continuous AudioGoal navigation benchmark. We then collect real-world data to measure the spectral difference between the simulation and the real world by training AFP models that only take a specific frequency subband as input. We further propose a frequency-adaptive strategy that intelligently selects the best frequency band for prediction based on both the measured spectral difference and the energy distribution of the received audio, which improves the performance on the real data. Lastly, we build a real robot platform and show that the transferred policy can successfully navigate to sounding objects. This work demonstrates the potential of building intelligent agents that can see, hear, and act entirely from simulation, and transferring them to the real world."
+    authors={{
+    "Changan Chen":[],
+    "Jordi Ramos":[],
+    "Anshul Tomar":[],
+    "Kristen Grauman":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/28_Sim2Real_Transfer_for_Audio.pdf"
+   />,
+  <Paper
+    title="Environmental Understanding Generation with M-LLM for Embodied AI"
+    abstract="Recent advancements in large language models (LLMs) have demonstrated their capability to be applied to various Embodied AI environments, operating more flexibly through planning without the need for training. However, it is difficult for LLMs to immediately understand environments that are new and have not been observed without fine-tuning, and even using the supervised data samples as in-context input does not considerably improve the performance. Existing LLM agent studies have aimed to enhance performance by augmenting memory, leveraging environmental textual information, or utilizing predefined action knowledge. However, these approaches have limitations; memory contents are not entirely understandable texts, they require textual environmental data, and they incur high costs. To address these issues, we propose environmental understanding generation using a multi-modal large language model (M-LLM). It interacts directly with environments, stores experiences in memory, and generates action understanding based on these experiences. These generated understandings aid LLMs in task-based action planning. Our contributions are as follows: We propose a novel approach to generating action understanding from M-LLM to augment LLM in embodied AI tasks. We introduce a method that M-LLM directly interacts with the environment through information from multiple modules stored in memory. Furthermore, we summarize the constructed memory to build action understanding. In experimental results, our approach outperforms baselines by utilizing generative action understanding."
+    authors={{
+    "Jinsik Bang":[],
+    "Taehwan Kim":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/29_Environmental_Understanding.pdf"
+   />,
+  <Paper
+    title="Curriculum Learning for GPS-Free Indoor Social Navigation"
+    abstract="Tasks involving human-robot interaction demand seamless collaboration between the two within indoor settings. Habitat 3.0 [11] introduced a novel Social Navigation task where agents find, track, and follow humans while avoiding collisions. Their baselines show that performance relies heavily on human GPS availability. However, indoor GPS sensors are rarely reliable in real-life and it may be impractical to provide GPS for every human in the scene. In this work, we tackle the issue of realistic social navigation by relaxing the human GPS requirement at every time step. We achieve this via a curriculum learning strategy for training an RL policy capable of finding and tracking humans with sparse or no reliance on human GPS observations. Our experiments demonstrate the effectiveness of our curriculum strategy, achieving comparable performance to the baselines with lesser samples, using a single GPS observation at the beginning of the episode. The project website and videos can be found at gchhablani.github.io/socnav-curr."
+    authors={{
+    "Gunjan Chhablani":[],
+    "Madhura Keshava Ummettuguli":[],
+    "Siva Kailas":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/30_Curriculum_Learning_for_GPS.pdf"
+   />,
+  <Paper
+    title="AmbiK: Dataset of Ambiguous Tasks in Kitchen Environment"
+    abstract="The use of Large Language Models (LLMs), which demonstrate impressive capabilities in natural language understanding and reasoning, in Embodied AI is a rapidly developing area. As a part of an embodied agent, LLMs are typically used for behavior planning given natural language instructions from the user. However, dealing with ambiguous instructions in real-world environments remains a challenge for LLMs. Various methods for task disambiguation have been proposed. However, it is difficult to compare them because they work with different data. To address this issue and further advance this area of research, a specialized benchmark is needed. We propose AmbiK, the fully textual dataset of ambiguous commands addressed to a robot in a kitchen environment. AmbiK was collected with the assistance of LLMs and is human-validated. It comprises 250 pairs of ambiguous tasks and their unambiguous counterparts, categorized by ambiguity type, with additional information, for a total of 500 tasks."
+    authors={{
+    "Anastasia Ivanova":[],
+    "Alexey Kovalev":[],
+    "Aleksandr Panov":[],
+    }}
+    affiliations={[]}
+    pdf="/papers/2024/31_AmbiK_Dataset_of_Ambiguous_.pdf"
+   />,
+  ];
+  
 const Time = (props: { time: string }) => (
   <span
     css={css`
