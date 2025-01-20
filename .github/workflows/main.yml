@@ -12,6 +12,6 @@ jobs:
       - uses: actions/checkout@v1
       - uses: enriikke/gatsby-gh-pages-action@v2
         with:
-          access-token: ${{ secrets.GATSBY }}
+          access-token: ${{ secrets.PUSH_GATSBY }}
           deploy-branch: generated-static-pages
           gatsby-args: --prefix-paths
