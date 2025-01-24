@@ -71,10 +71,17 @@ export const OtherYears = (props: { onConference: string }) => (
       content={
         <div>
           <div>
+            {props.onConference === "CVPR 2025" ? (
+              <>CVPR 2025</>
+            ) : (
+              <Link to="/cvpr2025">CVPR 2025</Link>
+            )}
+          </div>
+          <div>
             {props.onConference === "CVPR 2024" ? (
               <>CVPR 2024</>
             ) : (
-              <Link to="/">CVPR 2024</Link>
+              <Link to="/cvpr2024">CVPR 2024</Link>
             )}
           </div>
           <div>
@@ -138,6 +145,7 @@ export const Header = (props: {
   imageContent: any;
   headerGradient: string;
   headerStyle: any;
+  headerContainer: any;
 }) => (
   <>
     <div
@@ -154,7 +162,9 @@ export const Header = (props: {
           <div className={style.conference}>{props.conference}</div>
         </div>
         {props.rightSide}
-        <div {...props.imageContent} />
+        <div id="headerContainer" {...props.headerContainer}> 
+          <div {...props.imageContent} />
+        </div>
       </div>
     </div>
   </>
