@@ -4,12 +4,15 @@ import * as React from "react";
 import { navigate } from "gatsby";
 
 const IndexPage = () => {
-  const currentYear = new Date().getFullYear();
-  const redirectYear = process.env.GATSBY_REDIRECT_YEAR || currentYear;  // default to the current year
-
+  // Hardwire the year redirector until the new year goes live.
+  // const currentYear = new Date().getFullYear();
+  // const redirectYear = process.env.GATSBY_REDIRECT_YEAR || currentYear; // Default to the current year
+  const redirectYear = "2024";
+  const targetPage = `/cvpr${redirectYear}/`;
+  
   React.useEffect(() => {
-    navigate(`/cvpr${redirectYear}/`);
-  }, [redirectYear]);
+    navigate(targetPage);
+  }, [targetPage]);
   
   return <p>Redirecting to CVPR {redirectYear} ...</p>
 };
