@@ -806,40 +806,44 @@ export default function Home({ data }) {
           The goal of the Embodied AI workshop is to bring together researchers
           from computer vision, language, graphics, and robotics to share
           and discuss the latest advances in embodied intelligent agents.
-          
-          The overarching theme of this year's workshop is <b>Open World Embodied AI: </b> 
-          Being an embodied agent in a world that contains objects and concepts
-          unseen during training. This theme applies the “open set” problem of
-           many individual tasks to embodied AI as a whole. We feel that truly
-           effective embodied AI agents should be able to deal with tasks, 
-           objects, and situations markedly different from those that they 
-           have been trained on. 
+          EAI 2025’s overaching theme 
+          is <b>Real-World Applications:</b> creating embodied AI solutions that are
+          deployed in real-world environments, ideally in the service of real-world tasks.
+          Embodied AI agents are maturing, and the community should promote work that
+          transfers this research out of simulation and laboratory environments into
+          real-world settings.
            
-           This umbrella theme is divided into three topics:
+           This umbrella theme is divided into four topics:
            <ul>
+            <li>             
+              <b>Embodied AI Solutions</b> As embodied AI solutions become more powerful, we should
+              demand of them that they
+              solve more complex problems - particularly real-world problems outside of simulation
+              and the laboratory. While scientific advances are of interest, we are actively
+              seeking work that applies embodied AI to real-world industry applications.
+              </li>
             <li>
-              <b>Embodied Mobile Manipulation</b> We go places to do things, and to do things we have to go places.
-              Many interesting embodied tasks combine manipulation and navigation
-              to solve problems that cannot be done with either manipulation or
-              navigation alone. This builds on embodied navigation and 
-              manipulation topics from previous years and makes them more 
-              challenging.
-            </li>
+              <b>Advances in Simulation</b> Advances in simulation have enabled many embodied AI
+               algorithms. Procedural
+              simulation, parameterized simulation, differentiable simulation and world
+              models are of interest, as are simulations based on the increasing numbers
+              of large embodied datasets.
+              </li>
             <li>
-              <b>Generative AI for Embodied AI</b>  Generative AI isn't just a hot topic, it's an important tool
-              researchers are using to support embodied artificial intelligence 
-              research. Topics such as generative AI for simulation, generative 
-              AI for data generation, and generative AI for policies (e.g., 
-              diffusion policies and world models) are of great interest.
-            </li>
+              <b>Generative Methods for Embodied AI</b> Generative AI is becoming an increasingly
+              important for embodied artificial
+              intelligence research. Topics such as generative AI for simulation, generative
+              AI for data generation, and generative AI for policies (e.g., diffusion policies
+              and world models) are of great interest.
+              </li>
             <li>
-              <b>Language Model Planning</b> When we go somewhere to do something we do it for a purpose. 
-              Language model planning uses large language models (LLMs), 
-              vision-language models (VLMs), and multimodal foundation 
-              models to turn arbitrary language commands into plans and 
-              sequences for action - a key feature needed to make embodied 
-              artificial intelligence systems useful for performing the 
-              tasks in open worlds.
+              <b>Foundation Models</b> Large-scale pretrained models adaptable to new tasks
+               first came to the
+              forefront in the domains of language, speech, and vision, but increasingly
+              foundation models are being developed in robotics domains including action,
+              perception, problem solving, and simulation. We invite both language model
+              planning research that adapts existing models to embodied problems as well
+              as embodied foundation models that are trained directly on embodied problems.
             </li>
            </ul>
 
@@ -858,32 +862,30 @@ export default function Home({ data }) {
         />
         </Section>
         <Section title="Timeline">
-      <Steps progressDot current={3} direction="vertical">
-          <Step title="Workshop Announced" description="March 29, 2024" />
+      <Steps progressDot current={1} direction="vertical">
+          <Step title="Workshop Announced" description="February 15, 2025" />
           <Step
             title="Paper Submission Deadline"
-            description="May 4th, 2024 (Anywhere on Earth)"
+            description="May 2025 (Date TBD)"
           />
           <Step
             title="Paper Notification Deadline"
-            description="May 29th, 2024"
+            description="End of May 2025"
           />
           <Step
             title="Challenge Submission Deadlines"
-            description="May 2024. Check each challenge for the specific date."
+            description="May 2025. Check each challenge for the specific date."
           />
           <Step
-            title="Fifth Annual Embodied AI Workshop at CVPR"
+            title="Sixth Annual Embodied AI Workshop at CVPR"
             description={
               <>
                 <a href={"https://cvpr.thecvf.com/Conferences/2025"} target="_blank">
-                  Seattle Convention Center
+                  Nashville, Tennessee
                 </a>{" "}
                 <br />
-                Tuesday, June 18, 2024
+                June 2025
                 <br />
-                8:50 AM - 6:00 PM PT<br />
-                Summit 428 <br />
                 <span
                   css={css`
                     color: ${color.gray7};
@@ -895,7 +897,7 @@ export default function Home({ data }) {
           ></Step>
           <Step
             title="Challenge Winners Announced"
-            description="June 18, 2024 at the workshop. Check each challenge for specifics."
+            description="At the workshop. Check each challenge for specifics."
           />
                </Steps>
       </Section>
@@ -903,10 +905,10 @@ export default function Home({ data }) {
         
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
         <ul>
-          <li><b>Workshop Talks: 8:50AM-5:30PM PT - Summit 428</b></li>
-          <li><b>Poster Session: 1:00PM-2:00PM PT - Arch 4E posters 50-81</b></li>
+          <li><b>Workshop Talks: 8:50AM-5:30PM PT - TBD</b></li>
+          <li><b>Poster Session: 1:00PM-2:00PM PT - TBD</b></li>
         </ul>
-        Zoom information is available on <a href="https://cvpr.thecvf.com/virtual/2024/workshop/23598">the CVPR virtual platform for registered attendees</a>.
+        Zoom information is forthcoming.
         <br />
         Remote and in-person attendees are welcome to ask questions via Slack:  
         <br />
