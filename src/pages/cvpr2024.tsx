@@ -1289,7 +1289,7 @@ export default function Home({ data }) {
         />
         </Section>
         <Section title="Timeline">
-      <Steps progressDot current={3} direction="vertical">
+      <Steps progressDot current={5} direction="vertical">
           <Step title="Workshop Announced" description="March 29, 2024" />
           <Step
             title="Paper Submission Deadline"
