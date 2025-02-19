@@ -148,7 +148,8 @@ packages, so it can be useful to wrap all your work in something like a `conda` 
 This is not strictly required, however.
 
 ### 1. Install [Node.js](https://www.npmjs.com/get-npm). 
-The installation can be confirmed by typing the following into a:
+Follow the instructions at the above link.
+The installation can be confirmed by typing the following into the command line:
 
 ```
 npm -v
@@ -158,6 +159,11 @@ into a command line.
 
 ### 2. Install [yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable)
 This makes it easy to install gatsby dependencies (in my experience, over using NPM directly).
+The installation can be confirmed by typing the following into the command line:
+
+```
+yarn --version
+```
 
 ### 3. Clone the repo
 Get a local copy of the repo and `cd` into it.
