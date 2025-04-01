@@ -96,28 +96,18 @@ const challengePageMap = {
     </a>
   ),
   HAZARD: (
-    <a href="https://vis-www.cs.umass.edu/hazard/" target="_blank">
+    <a href="https://embodied-agi.cs.umass.edu/hazard" target="_blank">
       HAZARD
     </a>
   ),
-  HomeRobotOVMM: (
-    <a href="https://ovmm.github.io/" target="_blank">
-      HomeRobot OVMM
-    </a>
-  ),
   ManiSkillViTac: (
-    <a href="https://ai-workshops.github.io/maniskill-vitac-challenge-2024/" target="_blank">
+    <a href="https://ai-workshops.github.io/maniskill-vitac-challenge-2025/" target="_blank">
       ManiSkill-ViTac
     </a>
   ),
-  MultiOn: (
-    <a href="http://multion-challenge.cs.sfu.ca" target="_blank">
-      MultiON
-    </a>
-  ),
-  PRS: (
-    <a href="https://prsorg.github.io/" target="_blank">
-      PRS
+  SMM: (
+    <a href="https://1018weijia.github.io/CVPR2025Workshop-SMM.github.io" target="_blank">
+      Social Mobile Manipulation
     </a>
   ),
 };
@@ -635,7 +625,7 @@ export default function Home({ data }) {
         observations: "RGB-D, Proprioception",
         actionSpace: "Continuous",
         stochasticAcuation: "✓",
-        winner: "Robot AI",
+        winner: "",
       },
       {
         challenge: challengePageMap["HAZARD"],
@@ -647,19 +637,7 @@ export default function Home({ data }) {
         observations: "RGB-D, Sensors, Temperature",
         actionSpace: "Discrete",
         stochasticAcuation: "",
-        winner: "TBD",
-      },
-      {
-        challenge: challengePageMap["HomeRobotOVMM"],
-        key: "homerobotovmm",
-        task: "Open Vocabulary Mobile Manipulation",
-        interactiveActions: "✓",
-        simulationPlatform: "Habitat",
-        sceneDataset: "OVMM Dataset",
-        observations: "RGB-D",
-        actionSpace: "Continuous",
-        stochasticAcuation: "",
-        winner: "UniTeam",
+        winner: "",
       },
       {
         challenge: challengePageMap["ManiSkillViTac"],
@@ -671,31 +649,19 @@ export default function Home({ data }) {
         observations: "RGB-D, Proproioception, Localization",
         actionSpace: "Continuous / Discrete for ViTac",
         stochasticAcuation: "",
-        winner: "Illusion",
+        winner: "",
       },
       {
-        challenge: challengePageMap["MultiOn"],
-        key: "multion",
-        task: "Multi-Object Navigation",
-        interactiveActions: "",
-        simulationPlatform: "Habitat",
-        sceneDataset: "HM3D Semantics",
-        actionSpace: "Discrete",
-        observations: "RGB-D, Localization",
-        stochasticAcuation: "",
-        winner: "IntelliGO",
-      },
-      {
-        challenge: challengePageMap["PRS"],
-        key: "multion",
-        task: "Human Society Integration",
+        challenge: challengePageMap["SMM"],
+        key: "SMM",
+        task: "Social Mobile Manipulation",
         interactiveActions: "✓",
-        simulationPlatform: "PRS Environment",
-        sceneDataset: "PRS Dataset",
+        simulationPlatform: "TBD",
+        sceneDataset: "TBD",
         actionSpace: "Continuous",
         observations: "RGB-D, Sensors, Pose Data, Tactile Sensors",
         stochasticAcuation: "",
-        winner: "PDA",
+        winner: "",
       },
     ];
   
@@ -863,10 +829,10 @@ export default function Home({ data }) {
         </Section>
         <Section title="Timeline">
       <Steps progressDot current={1} direction="vertical">
-          <Step title="Workshop Announced" description="February 15, 2025" />
+          <Step title="Workshop Announced" description="March 31st, 2025" />
           <Step
             title="Paper Submission Deadline"
-            description="May 2025 (Date TBD)"
+            description="May 4th, 2025"
           />
           <Step
             title="Paper Notification Deadline"
@@ -874,7 +840,7 @@ export default function Home({ data }) {
           />
           <Step
             title="Challenge Submission Deadlines"
-            description="May 2025. Check each challenge for the specific date."
+            description="May-June 2025. Check each challenge for the specific date."
           />
           <Step
             title="Sixth Annual Embodied AI Workshop at CVPR"
@@ -884,7 +850,7 @@ export default function Home({ data }) {
                   Nashville, Tennessee
                 </a>{" "}
                 <br />
-                June 2025
+                June 12, 2025
                 <br />
                 <span
                   css={css`
@@ -921,266 +887,19 @@ export default function Home({ data }) {
                     margin-top: 20px;
                   `}
                 >
-                  <Timeline>
-                    <Timeline.Item>
-                      <b>Workshop Introduction: Embodied AI</b>
-                      <br/>
-                      <Time time="8:50 - 9:00 AM PT" />
-                      <br />
-                      Location: Summit 428
-                      <Speaker
-                         organizations={["Logical Robotics"]}
-                         name="Moderator - Anthony Francis"
-                         fixedImg={data.anthony.childImageSharp.fixed}
-                         noMargin={true}
-                      />
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Navigation & Social Challenge Presentations</b>
-                      <br />
-                      (MultiOn, HAZARD, PRS Challenge)
-                      <br />
-                      <Time time="9:00 - 9:30 AM PT" />
-                      <ul>
-                        <li>9:00: MultiOn</li>
-                        <li>9:10: HAZARD</li>
-                        <li>9:20: PRS Challenge</li>
-                      </ul>
-                    </Timeline.Item>
-                    <Timeline.Item>
-                      <b>Navigation & Social Challenge Q&A Panel</b>
-                      <br/>
-                      <Time time="9:30 - 10:00 AM PT" />
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Invited Talk - Generative AI for Embodied AI: </b>
-                      <br/>
-                      <i>The Blueprint for Truly Generalizable Robots: Scale, Scale, and Scale</i>
-                      <br/>
-                      <Time time="10:00 - 10:30 AM PT" />
-                      <Speaker
-                        organizations={["AI2"]}
-                        name="Aniruddha Kembhavi"
-                        fixedImg={data.kembhavi.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <p>Ani Kembhavi is the Senior Director of Computer Vision at the Allen Institute for Artificial Intelligence (AI2) in Seattle. He is also an Affiliate Associate Professor at the Computer Science & Engineering department at the University of Washington. He obtained his PhD at the University of Maryland, College Park and spent 5 years at Microsoft. His research interests lie at the intersection of computer vision, natural language processing and embodiment. His work has been awarded a Best Paper Award at CVPR 2023, an Outstanding Paper Award at Neurips 2022, an AI2 Test of Time award in 2020 and an NVIDIA Pioneer Award in 2018.</p>
-                      <Abstract
-                        text="Ani will speak about his team's recent advances showing how scaling simulation data enables masterful navigation and manipulation agents who work in the real world without any adaptation or finetuning."
-                        />                      
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Invited Panel - Advancing Embodied AI</b>
-                      <br/>
-                      <i>Towards Seamless Integration of Perception and Action</i>
-                      <br/>
-                      <Time time="10:30 - 11:00 AM PT" />
-                      <Speaker
-                        organizations={["Technical Fellow, Microsoft Applied Science Group (E+D)"]}
-                        name="Stevie Bathiche"
-                        fixedImg={data.stevieBathiche.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Speaker
-                        organizations={["Senior Director & Principal PM – Microsoft Research"]}
-                        name="Ade Famoti"
-                        fixedImg={data.adeFamoti.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Speaker
-                        organizations={["Corporate Vice President & MD – Microsoft Research"]}
-                        name="Ashley Llorens"
-                        fixedImg={data.ashleyLlorens.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Speaker
-                        organizations={["CTO, Sanctuary AI"]}
-                        name="Olivia Norton"
-                        fixedImg={data.oliviaNorton.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <Abstract
-                        text="Embodied Artificial Intelligence (AI) represents a pivotal frontier in the quest to endow machines with capabilities to perceive, reason, and act in complex environments. The panel will delve into the multifaceted research landscape shaping the future of embodied AI. Focusing on pivotal research directions and emerging challenges."
-                        />                      
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Invited Talk - Language Model Planning: </b>
-                      <br/>
-                      <i>Foundation Models for Robotics and Robotics for Foundation Models</i>
-                      <br/>
-                      <Time time="11:00 - 11:30 AM PT" />
-                      <Speaker
-                        organizations={["Physical Intelligence"]}
-                        name="Brian Ichter"
-                        fixedImg={data.ichter.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <p>Brian recently founded Physical Intelligence, a company focused on scaling robotics and foundation models. Prior to that Brian was a Research Scientist at Google DeepMind on the Robotics team and received his PhD from Stanford. Generally, his research interests lie in enabling mobile robotic systems to perform complex skills and plan long-horizon tasks in real-world environments through machine learning and large-scale models.</p>
-                      <Abstract
-                        text="Foundation models have a number of properties that are promising for robotics, and robotics has a number of lessons that can help improve foundation models. This talk will cover a number of recent works along these axes, highlighting both their benefits and limitations. Finally, it will present a forward looking view of scaled robotics in a world of improving VLMs."
-                        />
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Invited Talk - Project Aria from Meta: </b>
-                      <br />
-                      <i>The Path to Always-on Contextual AI </i>
-                      <br />
-                      <Time time="11:30 AM - 12:00 NOON PT" />
-                      <Speaker
-                        organizations={["Meta"]}
-                        name="Richard Newcombe"
-                        fixedImg={data.richardNewcombe.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <p>Richard Newcombe is VP of Research Science at Meta Reality Labs leading the Surreal team in Reality Labs Research. The Surreal team has developed the key technologies for always-on 3D device location, scene understanding and contextual AI and pioneered Project Aria - a new generation of machine perception glasses devices that provides a new generation of data for ego-centric multimodal and contextual AI research. Richard received his undergraduate in Computer Science, and masters in Robotics and Intelligent Machines from the University of Essex in England, his PhD from Imperial College in London with a Postdoc at the University of Washington. Richard went on to co-found Surreal Vision, Ltd. that was acquired by Meta in 2015. As a research scientist his original work introduced the Dense SLAM paradigm demonstrated in KinectFusion and DynamicFusion that influenced a generation of real-time and interactive systems in AR/VR and robotics by enabling systems to efficiently understand the geometry of the environment. Richard received the best paper award at ISMAR 2011, best demo award ICCV 2011, best paper award at CVPR 2015 and best robotic vision paper award at ICRA 2017. In 2021, Richard received the ICCV Helmholtz award for research with DTAM, and the ISMAR and UIST test of time awards for KinectFusion.</p>
-                      <Abstract
-                        text="In this session, Richard will share Meta's vision towards building Always-on Contextual AI. Project Aria will be introduced in the session as a research tool to gather data from users' perspectives to accelerate machine perception and AI research."
-                        />
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Lunch</b>
-                      <br />
-                      Location: Summit ExHall 
-                      <br />
-                      <Time time="12:00 NOON - 1:00 PM PT" />
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Accepted Papers Poster Session</b>
-                      <br />
-                      <Time time="1:00 PM - 2:00 PM PT" />
-                      <br />
-                      Location: Arch 4E posters 50-81
-                      <ul>
-                       <li>Posters will be in ARCH 4E, posters 50 to 81 from 1pm to 2pm on Tuesday the 18th.</li>
-                       <li>Poster numbers are assigned to your paper number plus 50, i.e. paper 1 is poster 51.</li>
-                       <li>Materials for attaching posters to the poster stands will be provided on-site.</li>
-                       <li>Posters can only be put up during our allotted time.</li> 
-                      </ul>
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Manipulation and Vision Challenge Presentations</b>
-                      <br />
-                      ManiSkill, ARNOLD, HomeRobot OVMM
-                      <br />
-                      Location: Summit 428
-                      <br />
-                      <Time time="2:00 - 2:30 PM PT" />
-                      <ul>
-                        <li>2:00: ManiSkill</li>
-                        <li>2:10: ARNOLD</li>
-                        <li>2:20: HomeRobot OVMM</li>
-                      </ul>
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Manipulation and Vision Challenge Q&A Panel</b>
-                      <br />
-                      <Time time="2:30 - 3:00 PM PT" />
-                    </Timeline.Item>
-                    
-                    <Timeline.Item>
-                      <b>Invited Talk - Embodied Mobile Manipulation: </b>
-                      <br />
-                      <i>In-The-Wild Robot Teaching without In-The-Wild Robots</i>
-                      <br />
-                      <Time time="3:00 - 3:30 PM PT" />
-                      <Speaker
-                        organizations={["Stanford University"]}
-                        name="Shuran Song"
-                        fixedImg={data.song.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <p>Shuran Song leads the Robotics and Embodied AI Lab at Stanford University ( REAL@Stanford ). She is interested in developing algorithms that enable intelligent systems to learn from their interactions with the physical world, and autonomously acquire the perception and manipulation skills necessary to execute complex tasks and assist people.</p>
-                      <Abstract
-                        text="Shuran Song will be speaking on Embodied Mobile Manipulation."
-                        />
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Invited Talk - Embodied Mobile Manipulation: </b>
-                      <br />
-                      <i>Towards Home Robots: Open Vocabulary Mobile Manipulation in Unstructured Environments</i>
-                      <br />
-                      <Time time="3:30 - 4:00 PM PT" />
-                      <Speaker
-                        organizations={["Hello Robot"]}
-                        name="Chris Paxton"
-                        fixedImg={data.paxton.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <p>Chris Paxton is a roboticist who has worked for FAIR labs at Meta and at NVIDIA research. He got his PhD in Computer Science in 2019 from the Johns Hopkins University in Baltimore, Maryland, focusing on using learning to create powerful task and motion planning capabilities for robots operating in human environments. His work won the ICRA 2021 best human-robot interaction paper award, and was nominated for best systems paper at CoRL 2021, among other things. His research looks at using language, perception, planning, and policy learning to make robots into general-purpose assistants. He's now leading embodied AI at Hello Robot to build practical in-home mobile robots.</p>
-                      <Abstract
-                        text="Robots are increasingly an important part of our world, from working in factories and hospitals to driving on city streets. As robots move into more unstructured environments such as homes, however, we need new techniques that allow robots to perform complex operations with less information about the world around them. We propose a motivating north star: Open Vocabulary Mobile Manipulation, wherein robots must be able to reliably perform pick and place tasks of any object in any location in an unknown environment. Currently, a variety of powerful approaches exist for learning low-level skills or performing long-horizon manipulation, but these often assume access to model-based object detection and grasp generation. However, new approaches exist which allow for robots to plan and manipulate novel objects - building structures and rearranging scenes - while reducing these assumptions about task and object knowledge. In this talk, I will discuss recent work on how to learn these representations, combine them with robot task and motion planning, and use them to work towards robots that can operate in complex, human environments. Finally, I will discuss how we can benchmark robotics research in home environments, with a look at the HomeRobot challenge."
-                        />                      
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Invited Talk - Humanoid Robots</b>
-                      <br />
-                      <i>Foundation Models for Humanoid Robots</i>
-                      <br />
-                      <Time time="4:00 - 4:30 PM PT" />
-                      <Speaker
-                        organizations={["1X Technologies"]}
-                        name="Eric Jang"
-                        fixedImg={data.jang.childImageSharp.fixed}
-                        noMargin={true}
-                      />
-                      <p>Eric leads the AI team at 1X Technologies, a vertically-integrated humanoid robot company. His research background is on end-to-end mobile manipulation and generative models. Eric recently authored a book on the future of AI and Robotics, titled “AI is Good for You”.</p>
-                      <Abstract
-                        text="1X's mission is to create an abundant supply of physical labor through androids that work alongside humans. In this talk we'll be sharing an exciting new project."
-                        />
-                    
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Invited Speaker Panel</b>
-                      <br />
-                      <Time time="4:30 - 5:30 PM PT" />
-                      <br />
-                      <Speaker
-                         organizations={["NVIDIA"]}
-                         name="Claudia Perez D'Arpino"
-                         fixedImg={data.claudia.childImageSharp.fixed}
-                         noMargin={true}
-                      />
-                    </Timeline.Item>
-
-                    <Timeline.Item>
-                      <b>Workshop Concludes</b>
-                      <br />
-                      <Time time="5:30 PM PT" />
-                    </Timeline.Item>
-                  </Timeline>
+                  Detailed schedule forthcoming.
                 </div>
       </Section>
       <Section title="Sponsor Events">
         <p>
-          The Embodied AI Workshop is proud to highlight the following events
-          associated with our sponsors:
-        </p>
-        <ul>
-          <li><b>Meta:</b> top by Meta's Expo Booth #1423 from 6/19-6/21 to see how Project Aria powers machine perception and AI research.</li>
-          <li><b>Microsoft:</b> Check out Microsoft's Expo Booth #1445 from 6/19-6/21 to see Microsoft's latest advances!</li>
-        </ul>
+          Stay tuned for information about events associated with our sponsors!
+          </p>
         <br />
-        <center>
-          <Img fluid={data.ariaDemo.childImageSharp.fluid} alt="Aria Demo"/>
-        </center>
       </Section>
       <Section title="Challenges">
         <p>
           The Embodied AI 2025 workshop is hosting many exciting challenges
-          covering a wide range of topics such as rearrangement, visual
-          navigation, vision-and-language, and audio-visual navigation. More
+          covering a wide range of topics. More
           details regarding data, submission instructions, and timelines can be
           found on the individual challenge websites.
         </p>
@@ -1333,35 +1052,34 @@ export default function Home({ data }) {
           especially in areas relevant to the themes of this year's workshop:
           <ul>
             <li>
-              Open-World AI for Embodied AI
+              Embodied AI Solutions
             </li>
             <li>
-              Generative AI for Embodied AI
+              Advances in Simulation
             </li>
             <li>
-              Embodied Mobile Manipulation
+              Generative Methods for Embodied AI
             </li>
             <li>
-              Language Model Planning
+              Foundation Models
             </li>
           </ul>
           as well as themes related to embodied AI in general:
           <ul>
             <li>
-              Simulation
-              Environments
-            </li>
-            <li>
               Visual Navigation
             </li>
             <li>
-              Rearrangement
+              Embodied Mobile Manipulation
             </li>
             <li>
               Embodied Question Answering
             </li>
             <li>
               Embodied Vision &amp; Language
+            </li>
+            <li>
+              Language Model Planning
             </li>
           </ul>
           Accepted papers will be presented as posters or spotlight talks at the
@@ -1389,7 +1107,7 @@ export default function Home({ data }) {
             <uL>
               <li>
               <a href="https://openreview.net/group?id=thecvf.com/CVPR/2025/Workshop/EAI">
-              Paper submissions are now OPEN through May 4th, 2024
+              Paper submissions are now OPEN through May 4th, 2024.
               </a>
               {/* The <a href="https://openreview.net/group?id=thecvf.com/CVPR/2023/Workshop/EAI">paper submission link is LIVE.</a> */}
               </li>
@@ -1454,7 +1172,7 @@ export default function Home({ data }) {
         and scientific advisors.
         <SubSection title="Lead Organizers">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2024.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2025.organizers
               .filter((organizer: any) => organizer.lo === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1462,7 +1180,7 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Organizing Committee">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2024.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2025.organizers
               .filter((organizer: any) => organizer.oc === true && organizer.lo === false)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1470,7 +1188,7 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Challenge Organizers">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2024.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2025.organizers
               .filter((organizer: any) => organizer.challenge === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1478,7 +1196,7 @@ export default function Home({ data }) {
         </SubSection>
         <SubSection title="Scientific Advisory Board">
           <OrganizerPics
-            organizers={data.allSite.nodes[0].siteMetadata.cvpr2024.organizers
+            organizers={data.allSite.nodes[0].siteMetadata.cvpr2025.organizers
               .filter((organizer: any) => organizer.sab === true)
               .sort((a, b) => a.name.localeCompare(b.name))}
             data={data}
@@ -1527,7 +1245,7 @@ export const query = graphql`
     allSite {
       nodes {
         siteMetadata {
-          cvpr2024 {
+          cvpr2025 {
             organizers {
               name
               imageId
@@ -1879,6 +1597,27 @@ export const query = graphql`
     }
     richardNewcombe: file(relativePath: { eq: "cvpr2024/richard-newcombe.jpg" }) {
       ...FaceThumbnail
+    }
+    unknownOrg: file(relativePath: { eq: "organizers/unknown.png" }) {
+      ...FluidImage
+    }
+    vivanOrg: file(relativePath: { eq: "organizers/Vivan-Amin.jpg" }) {
+      ...FluidImage
+    }
+    rachithOrg: file(relativePath: { eq: "organizers/rachith-prakash.png" }) {
+      ...FluidImage
+    }
+    jiaolongOrg: file(relativePath: { eq: "organizers/jiaolong-yang.jpg" }) {
+      ...FluidImage
+    }
+    minyoungOrg: file(relativePath: { eq: "organizers/minyoung-hwang.png" }) {
+      ...FluidImage
+    }
+    larsOrg: file(relativePath: { eq: "organizers/Lars_Johannsmeier.jpg" }) {
+      ...FluidImage
+    }
+    cemOrg: file(relativePath: { eq: "organizers/cem-gokmen.jpg" }) {
+      ...FluidImage
     }
     
     # Other pictures
