@@ -63,7 +63,7 @@ cvpr2025metadata = {
       name: "Changan Chen",
       oc: true,
       lo: false,
-      organization: "UT Austin",
+      organization: "Stanford",
       sab: false,
       site: "https://changan.io/",
     },
