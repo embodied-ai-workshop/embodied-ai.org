@@ -832,11 +832,11 @@ export default function Home({ data }) {
           <Step title="Workshop Announced" description="March 31st, 2025" />
           <Step
             title="Paper Submission Deadline"
-            description="May 4th, 2025"
+            description="Friday May 16th, 2025"
           />
           <Step
             title="Paper Notification Deadline"
-            description="End of May 2025"
+            description="Monday May 26th, 2025"
           />
           <Step
             title="Challenge Submission Deadlines"
@@ -1104,14 +1104,16 @@ export default function Home({ data }) {
             <a href="https://cvpr.thecvf.com/Conferences/2025/AuthorGuidelines" target="_blank">
               CVPR format
             </a>.
-            <uL>
+            <ul>
               <li>
               <a href="https://openreview.net/group?id=thecvf.com/CVPR/2025/Workshop/EAI">
-              Paper submissions are now OPEN through May 4th, 2024.
+              Paper submissions are now OPEN through May 16th, 2025.
               </a>
+              <br></br>
+              Notifications will be sent by May 26th, 2025.
               {/* The <a href="https://openreview.net/group?id=thecvf.com/CVPR/2023/Workshop/EAI">paper submission link is LIVE.</a> */}
               </li>
-            </uL>
+            </ul>
             
           </p>
         </SubSection>
