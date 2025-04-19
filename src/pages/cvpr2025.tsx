@@ -818,9 +818,12 @@ export default function Home({ data }) {
           in Nashville, Tennessee. It will feature a host of invited
           talks covering a variety of topics in Embodied AI, many exciting 
           Embodied AI challenges, a poster session, and panel discussions.
+          
           For more information on the Embodied AI Workshop series, see our 
           {" "}<a href="https://arxiv.org/abs/2210.06849">Retrospectives</a>{" "}
-          paper on the first three years of the workshop.
+          paper on the first three years of the workshop. For the latest updates,
+          follow the Embodied AI Medium blog at
+          {" "}<a  href="https://medium.com/embodied-artificial-intelligence">medium.com/embodied-artificial-intelligence</a>.
         </p>
         <EmailSubscription
           actionIdentifier="1FAIpQLSeIZrn-tk7Oain2R8gc_Q0HzLMLQ9XXwqu3KecK_E5kALpiug"

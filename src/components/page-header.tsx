@@ -112,6 +112,13 @@ export const OtherYears = (props: { onConference: string }) => (
               <Link to="/cvpr2020">CVPR 2020</Link>
             )}
           </div>
+          <div>
+            {props.onConference === "EAI Blog" ? (
+              <>EAI Blog</>
+            ) : (
+              <Link to="https://medium.com/embodied-artificial-intelligence">EAI Blog</Link>
+            )}
+            </div>
         </div>
       }
       trigger="hover"
