@@ -203,7 +203,7 @@ cvpr2025metadata = {
       name: "Mike Roberts",
       oc: true,
       lo: false,
-      organization: "Intel",
+      organization: "Adobe",
       sab: false,
       site: "https://mikeroberts3000.github.io/",
     },

@@ -106,7 +106,7 @@ const challengePageMap = {
     </a>
   ),
   SMM: (
-    <a href="https://1018weijia.github.io/CVPR2025Workshop-SMM.github.io" target="_blank">
+    <a href="https://smm-challenge.github.io/" target="_blank">
       Social Mobile Manipulation
     </a>
   ),
@@ -1100,7 +1100,7 @@ export default function Home({ data }) {
         </p>
         <SubSection title="Submission">
           <p>
-            The submission deadline is <b>May 4th</b> (
+            The submission deadline is <b>May 16th</b> (
             <a href="//time.is/Anywhere_on_Earth">Anywhere on Earth</a>). Papers
             should be no longer than 2 pages (excluding references) and styled
             in the{" "}
