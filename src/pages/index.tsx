@@ -14,7 +14,7 @@ const IndexPage = () => {
     navigate(targetPage);
   }, [targetPage]);
   
-  return <p>Redirecting to CVPR {redirectYear} ...</p>
+  return <p>Redirecting to <a href="{targetPage}">CVPR {redirectYear}</a> ...</p>
 };
 
 export default IndexPage;
