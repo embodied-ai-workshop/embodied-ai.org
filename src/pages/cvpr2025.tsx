@@ -1145,18 +1145,42 @@ export default function Home({ data }) {
         <p>The Embodied AI 2025 Workshop is sponsored by the following organizations:</p>
         <p>
           <center>
+            <table>
+              <tr>
+                <td>
+                <center>
+ 
                 <a href="https://logicalrobotics.com/">
               <img src="/images/sponsors/logical-robotics.png" height="150" alt="Logical Robotics"/>
             </a>
-
+               </center>
+ 
+                </td>
+                <td>
+                                    <center>
+ 
                 <a href="https://microsoft.com/">
               <img src="/images/sponsors/microsoft-logo.png" height="300" alt="Microsoft"/>
             </a>
+                   </center>
+                  
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <center>
+             <a href="https://nvidia.com/">
+              <img src="/images/sponsors/nvidia.svg" height="150" alt="NVIDIA"/>
+            </a>
+                  </center>
+ 
+                </td>
+                <td>
+                  <center>
                 <table>
               <tr>
                 <td>
                   <center>
-
                 <a href="https://www.projectaria.com/">
               <img src="/images/sponsors/project_aria.png" height="150" alt="Project Aria"/>
               <br></br>
@@ -1166,6 +1190,14 @@ export default function Home({ data }) {
                 </td>
               </tr>
             </table>
+                  </center>
+                  
+                </td>
+              </tr>
+            </table>
+
+
+            
           </center>
         </p>
         </Section>
