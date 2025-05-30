@@ -895,8 +895,14 @@ export default function Home({ data }) {
       </Section>
       <Section title="Sponsor Events">
         <p>
-          Stay tuned for information about events associated with our sponsors!
-          </p>
+        <ul>
+          <li><b>NVIDIA:</b> Check the <a href={"https://www.nvidia.com/en-us/events/cvpr/"} target="_blank">NVIDIA event page</a>{" "} for the full list of events sponsored by NVIDIA at CVPR.
+          Also, remember to checkout the <a href={"https://events.nvidia.com/nvcvprresearchercelebration"} target="_blank">NVIDIA party!</a>{" "}
+          </li>
+          
+        </ul>
+          
+        </p>
         <br />
       </Section>
       <Section title="Challenges">
