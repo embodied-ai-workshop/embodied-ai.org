@@ -831,11 +831,11 @@ export default function Home({ data }) {
         />
         </Section>
         <Section title="Timeline">
-      <Steps progressDot current={1} direction="vertical">
+      <Steps progressDot current={2} direction="vertical">
           <Step title="Workshop Announced" description="March 31st, 2025" />
           <Step
             title="Paper Submission Deadline"
-            description="EXTENDED - Friday May 23rd, 2025"
+            description="CLOSED - Friday May 23rd, 2025"
           />
           <Step
             title="Paper Notification Deadline"
@@ -874,7 +874,7 @@ export default function Home({ data }) {
         
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
         <ul>
-          <li><b>Workshop Talks: 8:50AM-5:30PM PT - TBD</b></li>
+          <li><b>Workshop Talks: 9:00AM-5:30PM PT - TBD</b></li>
           <li><b>Poster Session: 1:00PM-2:00PM PT - TBD</b></li>
         </ul>
         Zoom information is forthcoming.
@@ -890,7 +890,213 @@ export default function Home({ data }) {
                     margin-top: 20px;
                   `}
                 >
-                  Detailed schedule forthcoming.
+                  <Timeline>
+                    <Timeline.Item>
+                      <b>Workshop Introduction: Embodied AI</b>
+                      <br/>
+                      <Time time="9:00 - 9:10 AM CDT" />
+                      <br />
+                      Location: TBD
+                      <Speaker
+                         organizations={["NVIDIA"]}
+                         name="Claudia Perez D'Arpino"
+                         fixedImg={data.claudia.childImageSharp.fixed}
+                         noMargin={true}
+                      />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Challenge Presentations - Winning Methods</b>
+                      <br />
+                      (ARNOLD, HAZARD, ManiSkill-ViTac, SMM)
+                      <br />
+                      <Time time="9:10 - 10:00 AM CDT" />
+                      <ul>
+                        <li>9:10: <a href="https://sites.google.com/view/arnoldchallenge/">ARNOLD Challenge</a></li>
+                        <li>9:20: <a href="https://embodied-agi.cs.umass.edu/hazard">HAZARD Challenge</a></li>
+                        <li>9:30: <a href="https://ai-workshops.github.io/maniskill-vitac-challenge-2025/">ManiSkill-ViTac</a></li>
+                        <li>9:40: <a href="https://smm-challenge.github.io/">SMM Challenge</a></li>
+                      </ul>
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Challenge Q&A</b>
+                      <br/>
+                      <Time time="10:00 - 10:30 AM CDT" />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Invited Talk - Embodied AI Applications</b>
+                      <br/>
+                      <i>Title: TBD</i>
+                      <br/>
+                      <Time time="10:30 - 11:00 AM CDT" />
+                      <Speaker
+                        organizations={["NYU"]}
+                        name="Lerrel Pinto"
+                        noMargin={true}
+                      />
+                      <p>Bio: Lerrel Pinto is an Assistant Professor of Computer Science at NYU Courant and part of the CILVR group. Lerrel runs the General-purpose Robotics and AI Lab (GRAIL) with the goal of getting robots to generalize and adapt in the messy world we live in.</p>
+                      <Abstract
+                        text="Abstract: TBD"
+                        />                      
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Invited Talk - Foundation Models for Embodied AI </b>
+                      <br/>
+                      <i>Towards Multimodal Embodied AI Agents that Can See, Talk and Act</i>
+                      <br/>
+                      <Time time="11:00 - 11:30 AM CDT" />
+                      <Speaker
+                        organizations={["Microsoft Research"]}
+                        name="Jianwei Yang"
+                        noMargin={true}
+                      />
+                      <p>Bio: Jianwei Yang is a principal researcher in Deep Learning Group at Microsoft Research, Redmond, led by Jianfeng Gao(opens in new tab). My research interests generally span in computer vision, multi-modality, and machine learning. Currently, I am focusing on building next-generation vision and multi-modal foundations.</p>
+                      <Abstract
+                        text="The development of multimodal AI agents marks a pivotal step toward creating systems capable of understanding, reasoning, and interacting with the world in human-like ways. Building such agents requires models that not only comprehend multi-sensory observations but also act adaptively to achieve goals within their environments. In this talk, I will present my research journey toward this grand goal across three key dimensions. First, I will explore how to bridge the gap between core vision understanding and multimodal learning through unified frameworks at various granularities. Next, I will discuss connecting vision-language models with large language models (LLMs) to create intelligent conversational systems. Finally, I will delve into recent advancements that extend multimodal LLMs into vision-language-action models, forming the foundation for general-purpose robotics policies. Together, these lead to an aspiration of building the next generation of multimodal and embodied AI agents capable of seeing, talking, and acting across diverse scenarios."
+                        />                      
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Invited Talk - Simulation for Embodied AI</b>
+                      <br/>
+                      <i>Title: TBD</i>
+                      <br/>
+                      <Time time="11:30 AM - 12:00 PM CDT" />
+                      <Speaker
+                        organizations={["Caltech"]}
+                        name="Jiayun (Peter) Wang"
+                        noMargin={true}
+                      />
+                      <p>Bio: Jiayun (Peter) Wang is a postdoctoral researcher in the Computing + Mathematical Sciences Department at the California Institute of Technology, working with Anima Anandkumar. Peter's research lies at the intersection of machine learning, computer vision and AI for healthcare. </p>
+                      <Abstract
+                        text="Abstract: TBD"
+                        />                      
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Lunch / Accepted Papers Poster Session</b>
+                      <br />
+                      <Time time="12:00 PM - 1:30 PM CDT" />
+                      <br />
+                      Location: TBD
+                      <ul>
+                       <li>Posters will be in TBD.</li>
+                      </ul>
+                    </Timeline.Item>
+                    
+                    <Timeline.Item>
+                      <b>Invited Talk - Robotics and Embodied AI</b>
+                      <br />
+                      <i>Title: TBD</i>
+                      <br />
+                      <Time time="1:30 - 2:00 PM CDT" />
+                      <Speaker
+                        organizations={["TBD"]}
+                        name="Rika Antonova"
+                        noMargin={true}
+                      />
+                      <p>Bio: Rika Antonova is an Associate Professor at the University of Cambridge. Rika's work focuses on robotics and reinforcement learning, especially data-efficient RL, active learning and exploration, and decision-making for scientific & environmental domains as well.</p>
+                      <Abstract
+                        text="Abstract: TBD"
+                        />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Invited Talk - Rares</b>
+                      <br />
+                      <i>Title: TBD</i>
+                      <br />
+                      <Time time="2:00 - 2:30 PM CDT" />
+                      <Speaker
+                        organizations={["TRI"]}
+                        name="Rareș Ambruș"
+                        noMargin={true}
+                      />
+                      <p>Bio: Dr. Rareș Ambruș is a senior manager in the Large Behavior Models division at Toyota Research Institute (TRI). His research interests lie at the intersection of robotics, computer vision and machine learning with the aim of discovering visual representations for embodied applications in areas such as automated driving and robotics. Dr. Ambruș received his Ph.D. in 2017 from the Royal Institute of Technology (KTH), Sweden, focusing on self-supervised perception and mapping for mobile robots. He has more than 100 publications and patents at top AI venues covering fundamental topics in computer vision, machine learning and robotics.</p>
+                      <Abstract
+                        text="Abstract: TBD"
+                        />                      
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Invited Talk - Generative AI for Embodied AI</b>
+                      <br />
+                      <i>MAGMA</i>
+                      <br />
+                      <Time time="2:30 - 3:00 PM CDT" />
+                      <Speaker
+                        organizations={["Wayve"]}
+                        name="Nikhil Mohan"
+                        noMargin={true}
+                      />
+                      <p>Bio: Nikhil Mohan is a scientist at Wayve</p>
+                      <Abstract
+                        text="Abstract: Nikhil's talk will focus on using World Models to produce data at scale for Embodied AI in the context of self driving."
+                        />
+                    </Timeline.Item>
+                   <Timeline.Item>
+                      <b>Invited Talk - TBD</b>
+                      <br />
+                      <i>Title: TBD</i>
+                      <br />
+                      <Time time="3:00 - 3:30 PM CDT" />
+                      <Speaker
+                        organizations={["TBD"]}
+                        name="TBD"
+                        noMargin={true}
+                      />
+                      <p>Rares.</p>
+                      <Abstract
+                        text="TBD."
+                        />                      
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Accepted Paper Highlighgts</b>
+                      <br />
+                      <Time time="3:30 - 4:00 PM PT" />
+                      <br />
+                      <Speaker
+                         organizations={["TBD"]}
+                         noMargin={true}
+                      />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Invited Speaker Panel</b>
+                      <br />
+                      <Time time="4:00 - 4:30 PM PT" />
+                      <br />
+                      <Speaker
+                         organizations={["Logical Robotics"]}
+                         name="Anthony Francis"
+                         fixedImg={data.anthony.childImageSharp.fixed}
+                         noMargin={true}
+                      />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Debate on the Future of Embodied AI</b>
+                      <br />
+                      <Time time="4:30 - 5:00 PM CDT" />
+                      <br />
+                      <Speaker
+                         organizations={["Vercept"]}
+                         name="Luca Weiss"
+                         fixedImg={data.luca.childImageSharp.fixed}
+                         noMargin={true}
+                      />
+                    </Timeline.Item>
+
+                    <Timeline.Item>
+                      <b>Workshop Concludes</b>
+                      <br />
+                      <Time time="5:00 PM CDT" />
+                    </Timeline.Item>
+                  </Timeline>
                 </div>
       </Section>
       <Section title="Sponsor Events">
@@ -1106,7 +1312,7 @@ export default function Home({ data }) {
         </p>
         <SubSection title="Submission">
           <p>
-            The submission deadline is EXTENDED to <b>May 23rd</b> (
+            The submission deadline CLOSED on <b>May 23rd</b> (
             Anywhere on Earth - for clarity, 2025/05/24 00:01 in GMT as computed by OpenReview).
             Papers should be no longer than 2 pages (excluding references) and styled
             in the{" "}
@@ -1116,7 +1322,7 @@ export default function Home({ data }) {
             <ul>
               <li>
               <a href="https://openreview.net/group?id=thecvf.com/CVPR/2025/Workshop/EAI">
-              Paper submissions are now EXTENDED through May 23rd, 2025.
+              Paper submissions are CLOSED as of May 23rd, 2025.
               </a>
               <br></br>
               Notifications will be sent by June 2nd, 2025.
@@ -1173,15 +1379,7 @@ export default function Home({ data }) {
                 </td>
               </tr>
               <tr>
-                <td>
-                  <center>
-             <a href="https://nvidia.com/">
-              <img src="/images/sponsors/nvidia.svg" height="150" alt="NVIDIA"/>
-            </a>
-                  </center>
- 
-                </td>
-                <td>
+                <td colspan="2">
                   <center>
                 <table>
               <tr>
@@ -1352,6 +1550,9 @@ export const query = graphql`
       ...FaceThumbnail
     }
     dieter: file(relativePath: { eq: "cvpr2023/dieter.jpg" }) {
+      ...FaceThumbnail
+    }
+    luca: file(relativePath: { eq: "organizers/luca.jpg" }) {
       ...FaceThumbnail
     }
     ruslan: file(relativePath: { eq: "cvpr2023/ruslan.jpg" }) {
