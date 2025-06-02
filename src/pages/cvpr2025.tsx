@@ -934,6 +934,7 @@ export default function Home({ data }) {
                       <Speaker
                         organizations={["NYU"]}
                         name="Lerrel Pinto"
+                        fixedImg={data.lerrelPinto.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <p>Bio: Lerrel Pinto is an Assistant Professor of Computer Science at NYU Courant and part of the CILVR group. Lerrel runs the General-purpose Robotics and AI Lab (GRAIL) with the goal of getting robots to generalize and adapt in the messy world we live in.</p>
@@ -951,6 +952,7 @@ export default function Home({ data }) {
                       <Speaker
                         organizations={["Microsoft Research"]}
                         name="Jianwei Yang"
+                        fixedImg={data.jianweiYang.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <p>Bio: Jianwei Yang is a principal researcher in Deep Learning Group at Microsoft Research, Redmond, led by Jianfeng Gao. My research interests generally span in computer vision, multi-modality, and machine learning. Currently, I am focusing on building next-generation vision and multi-modal foundations.</p>
@@ -996,6 +998,7 @@ export default function Home({ data }) {
                       <Speaker
                         organizations={["TBD"]}
                         name="Rika Antonova"
+                        fixedImg={data.rikaAntonova.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <p>Bio: Rika Antonova is an Associate Professor at the University of Cambridge. Rika's work focuses on robotics and reinforcement learning, especially data-efficient RL, active learning and exploration, and decision-making for scientific & environmental domains as well.</p>
@@ -1005,7 +1008,7 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Invited Talk - Rares</b>
+                      <b>Invited Talk - Foundation Models for Embodied AI</b>
                       <br />
                       <i>Title: TBD</i>
                       <br />
@@ -1013,6 +1016,7 @@ export default function Home({ data }) {
                       <Speaker
                         organizations={["TRI"]}
                         name="Rareș Ambruș"
+                        fixedImg={data.raresAmbrus.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <p>Bio: Dr. Rareș Ambruș is a senior manager in the Large Behavior Models division at Toyota Research Institute (TRI). His research interests lie at the intersection of robotics, computer vision and machine learning with the aim of discovering visual representations for embodied applications in areas such as automated driving and robotics. Dr. Ambruș received his Ph.D. in 2017 from the Royal Institute of Technology (KTH), Sweden, focusing on self-supervised perception and mapping for mobile robots. He has more than 100 publications and patents at top AI venues covering fundamental topics in computer vision, machine learning and robotics.</p>
@@ -1048,7 +1052,6 @@ export default function Home({ data }) {
                         name="TBD"
                         noMargin={true}
                       />
-                      <p>Rares.</p>
                       <Abstract
                         text="TBD."
                         />                      
@@ -1085,7 +1088,7 @@ export default function Home({ data }) {
                       <br />
                       <Speaker
                          organizations={["Vercept"]}
-                         name="Luca Weiss"
+                         name="Luca Weihs"
                          fixedImg={data.luca.childImageSharp.fixed}
                          noMargin={true}
                       />
@@ -1862,6 +1865,18 @@ export const query = graphql`
     }
     cemOrg: file(relativePath: { eq: "organizers/cem-gokmen.jpg" }) {
       ...FluidImage
+    }
+    jianweiYang: file(relativePath: { eq: "cvpr2025/jianwei-yang.jpg" }) {
+      ...FaceThumbnail
+    }
+    lerrelPinto: file(relativePath: { eq: "cvpr2025/lerrel-pinto.jpg" }) {
+      ...FaceThumbnail
+    }
+    raresAmbrus: file(relativePath: { eq: "cvpr2025/rares-ambrus.jpg" }) {
+      ...FaceThumbnail
+    }
+    rikaAntonova: file(relativePath: { eq: "cvpr2025/rika-antonova.jpg" }) {
+      ...FaceThumbnail
     }
     
     # Other pictures
