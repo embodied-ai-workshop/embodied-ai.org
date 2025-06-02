@@ -1034,6 +1034,7 @@ export default function Home({ data }) {
                       <Speaker
                         organizations={["Wayve"]}
                         name="Nikhil Mohan"
+                        fixedImg={data.nikhilMohan.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <p>Bio: Nikhil Mohan is a scientist at Wayve</p>
@@ -1876,6 +1877,9 @@ export const query = graphql`
       ...FaceThumbnail
     }
     rikaAntonova: file(relativePath: { eq: "cvpr2025/rika-antonova.jpg" }) {
+      ...FaceThumbnail
+    }
+    nikhilMohan: file(relativePath: { eq: "cvpr2025/nikhil-mohan.png" }) {
       ...FaceThumbnail
     }
     
