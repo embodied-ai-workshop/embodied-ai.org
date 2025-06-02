@@ -992,7 +992,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Robotics and Embodied AI</b>
                       <br />
-                      <i>Title: TBD</i>
+                      <i>Title: The Ingredients for Efficient Robot Learning and Exploration</i>
                       <br />
                       <Time time="1:30 - 2:00 PM CDT" />
                       <Speaker
@@ -1001,9 +1001,10 @@ export default function Home({ data }) {
                         fixedImg={data.rikaAntonova.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Bio: Rika Antonova is an Associate Professor at the University of Cambridge. Rika's work focuses on robotics and reinforcement learning, especially data-efficient RL, active learning and exploration, and decision-making for scientific & environmental domains as well.</p>
+                      <p>Bio: Rika Antonova is an Associate Professor at the University of Cambridge. Her research interests include data-efficient reinforcement learning algorithms, robotics, active learning & exploration​. Earlier, Rika was a postdoctoral scholar at Stanford University upon receiving the Computing Innovation Fellowship from the US National Science Foundation. Rikacompleted her PhD at KTH, and earlier she obtained a research Master's degree from the Robotics Institute at Carnegie Mellon University. Before that, Rika was a senior software engineer at Google.</p>
                       <Abstract
-                        text="Abstract: TBD"
+                        text="Abstract: In this talk, I will outline the ingredients for enabling efficient robot learning. First, I will demonstrate how large vision-language models can enhance scene understanding and generalization, allowing robots to learn general rules from specific examples for handling everyday objects. Next, I will describe methods for leveraging equivariance to significantly reduce the amount of training data needed for learning from human demonstrations.
+Moving beyond demonstrations, I will discuss how simulation can enable robots to learn autonomously. I will describe the challenges and opportunities of aligning differentiable simulators with reality, and also introduce methods for facilitating reinforcement learning with 'black-box' simulators. To further expand robot capabilities we need adaptive hardware. I will demonstrate how differentiable simulation can be used for learning tool morphology to automatically adapt tools for robots. I will also outline experiments with new affordable and robust sensors. Finally, I will share plans for our new project on co-design of hardware and policy learning, which will leverage global optimization, rapid prototyping, and real-to-sim transfer to jointly search the vast space of hardware designs and reinforcement learning methods."
                         />
                     </Timeline.Item>
 
@@ -1028,7 +1029,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Generative AI for Embodied AI</b>
                       <br />
-                      <i>MAGMA</i>
+                      <i>Title: World Models at Scale for Embodied Driving</i>
                       <br />
                       <Time time="2:30 - 3:00 PM CDT" />
                       <Speaker
