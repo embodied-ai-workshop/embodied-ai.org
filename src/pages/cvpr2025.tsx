@@ -1360,54 +1360,27 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
       </Section>
       <Section title="Sponsors">
         <p>The Embodied AI 2025 Workshop is sponsored by the following organizations:</p>
-        <p>
-          <center>
-            <table>
-              <tr>
-                <td>
-                <center>
- 
-                <a href="https://logicalrobotics.com/">
-              <img src="/images/sponsors/logical-robotics.png" height="150" alt="Logical Robotics"/>
-            </a>
-               </center>
- 
-                </td>
-                <td>
-                                    <center>
- 
-                <a href="https://microsoft.com/">
-              <img src="/images/sponsors/microsoft-logo.png" height="300" alt="Microsoft"/>
-            </a>
-                   </center>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td colspan="2">
-                  <center>
-                <table>
-              <tr>
-                <td>
-                  <center>
-                <a href="https://www.projectaria.com/">
-              <img src="/images/sponsors/project_aria.png" height="150" alt="Project Aria"/>
-              <br></br>
-              Project Aria
-               </a>
-               </center>
-                </td>
-              </tr>
-            </table>
-                  </center>
-                  
-                </td>
-              </tr>
-            </table>
+        <p style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between"
+        }}>
+          <a href="https://logicalrobotics.com/">
+            <img src="/images/sponsors/logical-robotics.png" height="60" alt="Logical Robotics"/>
+          </a>
 
+          <a href="https://microsoft.com/">
+            <img src="/images/sponsors/microsoft-logo.png" height="200" alt="Microsoft"/>
+          </a>
 
-            
-          </center>
+          <a href="https://www.nvidia.com/">
+            <img src="/images/sponsors/nvidia.svg" height="75" alt="NVIDIA"/>
+          </a>
+
+          <a href="https://wayve.ai/">
+            <img src="/images/sponsors/wayve.webp" height="65" alt="Wayve"/>
+          </a>
+
         </p>
         </Section>
       <Section title="Organizers">
