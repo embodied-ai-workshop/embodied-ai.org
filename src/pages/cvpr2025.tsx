@@ -831,7 +831,7 @@ export default function Home({ data }) {
         />
         </Section>
         <Section title="Timeline">
-      <Steps progressDot current={2} direction="vertical">
+      <Steps progressDot current={4} direction="vertical">
           <Step title="Workshop Announced" description="March 31st, 2025" />
           <Step
             title="Paper Submission Deadline"
@@ -839,11 +839,15 @@ export default function Home({ data }) {
           />
           <Step
             title="Paper Notification Deadline"
-            description="Monday June 2nd, 2025"
+            description="CLOSED - Monday June 4nd, 2025"
           />
           <Step
             title="Challenge Submission Deadlines"
             description="May-June 2025. Check each challenge for the specific date."
+          />
+          <Step
+            title="Camera Ready Copy Deadline"
+            description="Tuesday June 11th, 2025"
           />
           <Step
             title="Sixth Annual Embodied AI Workshop at CVPR"
@@ -874,7 +878,7 @@ export default function Home({ data }) {
         
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
         <ul>
-          <li><b>Workshop Talks: 9:00AM-5:30PM PT - TBD</b></li>
+          <li><b>Workshop Talks: 9:00AM-5:00PM PT - Room 101D</b></li>
           <li><b>Poster Session: 1:00PM-2:00PM PT - TBD</b></li>
         </ul>
         Zoom information is forthcoming.
@@ -896,7 +900,7 @@ export default function Home({ data }) {
                       <br/>
                       <Time time="9:00 - 9:10 AM CDT" />
                       <br />
-                      Location: TBD
+                      Location: Room 101D
                       <Speaker
                          organizations={["NVIDIA"]}
                          name="Claudia Perez D'Arpino"
@@ -1038,7 +1042,7 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
                         fixedImg={data.nikhilMohan.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Bio: Nikhil Mohan is a scientist at Wayve</p>
+                      <p>Bio: Nikhil Mohan is a Lead Scientist at Wayve workign on neural simulators in autonomous driving.</p>
                       <Abstract
                         text="Abstract: Nikhil's talk will focus on using World Models to produce data at scale for Embodied AI in the context of self driving."
                         />
@@ -1062,7 +1066,7 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
                     <Timeline.Item>
                       <b>Accepted Paper Highlighgts</b>
                       <br />
-                      <Time time="3:30 - 4:00 PM PT" />
+                      <Time time="3:30 - 4:00 PM CDT" />
                       <br />
                       <Speaker
                          organizations={["TBD"]}
@@ -1073,7 +1077,7 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
                     <Timeline.Item>
                       <b>Invited Speaker Panel</b>
                       <br />
-                      <Time time="4:00 - 4:30 PM PT" />
+                      <Time time="4:00 - 4:30 PM CDT" />
                       <br />
                       <Speaker
                          organizations={["Logical Robotics"]}
