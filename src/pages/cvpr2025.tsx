@@ -463,7 +463,219 @@ function Paper(props: {
   );
 }
 
-let acceptedPapers = [];
+let acceptedPapers = [
+  <Paper
+    title="Real-Time Multimodal Processing for Interpreting Embodied Actions"
+    abstract="In this paper, we demonstrate how real-time integration of language with embodied gesture and action in a collaborative task enables the generation of AI agent interventions that result in ”positive friction”, or reflection, deliberation, and more mindful collaboration. Further, we demonstrate how the same framework can be adapted toward agent action generation for real-time task guidance."
+    authors={{
+    "Hannah VanderHoeven":[],
+    "Videep Venkatesha":[],
+    "Abhijnan Nath":[],
+    "Nikhil Krishnaswamy":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="On the use of Pre-trained Visual Representations in Visuo-Motor Robot Learning"
+    abstract="The use of pre-trained visual representations (PVRs) in visuo-motor robot learning offers an alternative to training encoders from scratch but we discover that it faces challenges such as temporal entanglement and poor generalisation to minor scene changes. These issues hinder performance in tasks requiring temporal awareness and scene robustness. We address these limitations by: (1) augmenting PVR features with temporal perception and task completion signals to disentangle them over time, and (2) introducing a module that selectively attends to task-relevant local features, improving robustness in out-of-distribution scenes. Our approach, particularly effective for PVRs trained with masking objectives, shows significant performance gains."
+    authors={{
+    "Nikolaos Tsagkas":[],
+    "Andreas Sochopoulos":[],
+    "Duolikun Danier":[],
+    "Sethu Vijayakumar":[],
+    "Chris Xiaoxuan Lu":[],
+    "Oisin Mac Aodha":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="H^3 DP: Triply‑Hierarchical Diffusion Policy for Visuomotor Learning"
+    abstract="We introduce Triply-Hierarchical Diffusion Policy (H^3DP), a novel visuomotor learning framework that explicitly incorporates hierarchical structures to strengthen the integration between visual features and action generation. H$^{3}$DP contains $\mathbf{3}$ levels of hierarchy: (1) depth-aware input layering; (2) multi-scale visual representations; and (3) a hierarchically conditioned diffusion process. Extensive experiments demonstrate that H$^{3}$DP yields a $\mathbf{+27.5}$% average relative improvement over baselines across $\mathbf{44}$ simulation tasks and achieves superior performance in $\mathbf{4}$ challenging bimanual real-world manipulation tasks. Project Page: https://lyy-iiis.github.io/h3dp/."
+    authors={{
+    "Yiyang Lu":[],
+    "Yufeng Tian":[],
+    "Zhecheng Yuan":[],
+    "Xianbang Wang":[],
+    "Pu Hua":[],
+    "Zhengrong Xue":[],
+    "Huazhe Xu":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="Multi-Step Guided Diffusion for Image Restoration on Edge Devices: Toward Lightweight Perception in Embodied AI"
+    abstract="Diffusion models have shown remarkable flexibility for solving inverse problems without task-specific retraining. However, existing approaches like Manifold Preserving Guided Diffusion (MPGD) apply only a single gradient update per denoising step, limiting restoration fidelity and robustness—especially in embedded or out-of-distribution settings. In this work, we introduce a multi-step optimization strategy within each denoising timestep, significantly enhancing image quality, perceptual accuracy, and generalization. Our experiments on 4× super-resolution and Gaussian deblurring demonstrate that increasing the number of gradient updates per step improves LPIPS and PSNR, with minimal latency overhead. Notably, we validate this approach on a Jetson Orin Nano using degraded ImageNet and UAV123 aerial imagery, showing that MPGD—originally trained on face datasets—generalizes effectively to natural and aerial scenes. Our findings highlight MPGD’s potential as a lightweight, plug-and-play restoration module for real-time visual perception in embodied AI agents such as drones and mobile robots."
+    authors={{
+    "Aditya Chakravarty":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="EED: Embodied Environment Description through Robotic Visual Exploration"
+    abstract="The optimal way to convey information about a real environment to humans is through natural language descriptions. With the remarkable advancements in large language models and the field of Embodied AI in recent years, it has become possible for robots to autonomously navigate environments while recognizing and understanding their surroundings, much like humans do. In this paper, we propose a new Embodied AI task in which an autonomous mobile robot explores an environment and summarizes the entire environment in natural language. To properly evaluate this task, we use a crowdsourcing service to collect human-generated environment descriptions and construct a benchmark dataset. Additionally, the evaluation is conducted through a crowdsourcing service. Furthermore, we propose a baseline reinforcement learning method for the robot's environment exploration behavior to perform this task, demonstrating its superior performance compared to existing visual exploration methods."
+    authors={{
+    "Kohei Matsumoto":[],
+    "Asako Kanezaki":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="R-EQA: Retrieval-Augmented Generation for Embodied Question Answering"
+    abstract="Embodied Question Answering (EQA) is a task where an agent explores its environment, gathers visual information and responds to natural language questions based on that information. The accuracy of the answer depends on which visual information is sampled for a given question. This study introduces R-EQA, a framework that uses Retrieval-Augmented Generation to evaluate the effectiveness of sampling semantically relevant visual information in the EQA setting. Experiments using the OpenEQA benchmark show that R-EQA achieves 10\% higher performance compared to uniform sampling. This indicates that selective sampling of question-relevant information plays a critical role in improving answer quality in EQA."
+    authors={{
+    "Hyobin Ong":[],
+    "Minsu Jang":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="Uncertainty Modeling in Autonomous Vehicle Trajectory Prediction: A Comprehensive Survey"
+    abstract="Agent Behavior prediction is a critical component in autonomous driving systems, requiring the modeling of inherent uncertainties in an agent's future motion. This survey provides a comprehensive overview of uncertainty quantification approaches in agent behavior prediction, categorizing them into three main paradigms: probabilistic distribution-based models, generative models, and heatmap-based representations. We analyze how these paradigms address different aspects of uncertainty - including intent ambiguity, control variations, and inter-agent interactions - and evaluate their performance across standard benchmarks. Our comparison reveals the trade-offs between model expressiveness, computational efficiency, and deployment practicality. We conclude by identifying promising research directions that could advance uncertainty-aware trajectory prediction, ultimately contributing to safer and more reliable autonomous driving systems in complex real-world environments."
+    authors={{
+    "Siddharth Raina":[],
+    "Jeshwanth Challagundla":[],
+    "Mantek Singh":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="ThinkSafe++: A Semantic Risk Score Framework for Safety-Aware Long-Horizon Planning"
+    abstract="ThinkSafe++ is a safety framework for long-horizon task planning in embodied agents. While LLMs can generate flexible plans, they often lack fine-grained safety reasoning, which may lead to hazardous behavior. Prior methods, such as SafeAgentBench, use binary filters that tend to over-reject and fail to distinguish between different types of risk. To address these limitations, ThinkSafe++ assigns continuous risk scores to each action step and leverages risk-type-specific distributions to guide filtering decisions. This enables more adaptive and semantically grounded safety control. We introduce two filtering strategies: (1) Global Risk-Score Filtering and (2) Risk-Type-Based Filtering. Experiments show that ThinkSafe++ improves safe task completion by 5.9 percentage points and reduces residual risk from 6.8% to 1.25%, achieving gains in both safety and efficiency."
+    authors={{
+    "Yejin Jo":[],
+    "Minsu Jang":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="View-Imagination: Enhancing Visuomotor Control with Adaptive View Synthesis"
+    abstract="In robotic manipulation tasks, visuomotor control suffers from limited spatial understanding problems with limited camera installation and visual imperfections, such as occlusion. In this paper, we propose view-imagination, a novel framework with incorporating viewpoint policy. We train a dynamic scene NeRF and a learnable viewpoint policy, enabling the robot to generate a maximum value viewpoint to improve affordance. In experiments, we demonstrate that view-imagination outperforms across various training configurations."
+    authors={{
+    "Dohyeok Lee":[],
+    "Munkyung Kim":[],
+    "Jung Min Lee":[],
+    "Seungyub Han":[],
+    "Jungwoo Lee":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="Dynamics-Aligned Flow Matching Policy for Robot Learning"
+    abstract=" Behavior cloning methods for robot learning suffer from poor generalization due to limited data support beyond expert demonstrations. While recent approaches leverage video prediction models to implicitly capture dynamics, they lack explicit action conditioning, leading to averaged predictions over actions that lose critical dynamics information. We propose a Dynamics-Aligned Flow Matching Policy that integrates dynamics predictions into policy learning through iterative flow generation. Our method introduces a novel architecture where policy and dynamics models share intermediate generation samples during training, enabling self-correction and improved generalization. Theoretical analysis demonstrates that conditioning on predicted dynamics leads to improved approximation to optimal actions, with empirical validation on Robomimic benchmarks."
+    authors={{
+    "Dohyeok Lee":[],
+    "Jung Min Lee":[],
+    "Munkyung Kim":[],
+    "Seokhun Ju":[],
+    "Seungyub Han":[],
+    "Jin Woo Koo":[],
+    "Jungwoo Lee":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="Data Augmentation in Diffusion Inversion Space"
+    abstract="Visual imitation learning methods have demonstrated strong performance and potential, but their generalization ability to unseen environments remains limited. Although data augmentation offers an effective solution to this problem, current approaches depend on complex preprocessing procedures, require substantial hardware resources, are time-consuming, and struggle to comprehensively account for all possible environments. Our goal is to develop a data augmentation method that is simple, efficient, plug-and-play, and incurs no additional computational overhead. Our core idea is that, instead of performing data augmentation in the raw image space, conducting it in the diffusion inversion space can significantly simplify the augmentation process — to the extent that inserting simple geometric shapes is sufficient to achieve broader coverage of environmental variations. We designed a simple industrial-style scenario experiment to preliminarily validate our idea."
+    authors={{
+    "Junfeng Wei":[],
+    "Rongsen Luo":[],
+    "Ziming Cheng":[],
+    "An Mo":[],
+    "Chao Ji":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="Sim2real Image Translation Enables Viewpoint-Robust Policies from Fixed-Camera Datasets"
+    abstract="Vision-based policies for robot manipulation have achieved significant recent success, but are still brittle to distribution shifts such as camera viewpoint variations. One reason is that robot demonstration data used to train such policies often lacks appropriate variation in camera viewpoints. Simulation offers a way to collect robot demonstrations at scale with comprehensive coverage of different viewpoints, but presents a visual sim2real challenge. To bridge this gap, we propose an unpaired image translation method with a novel segmentation-conditioned InfoNCE loss, a highly-regularized discriminator design, and a modified PatchNCE loss. We find that these elements are crucial for maintaining viewpoint consistency during translation. For image translator training, we use only real-world robot play data from a single fixed camera but show that our method can generate diverse unseen viewpoints. We observe up to a 46% absolute improvement in manipulation success rates under viewpoint shift when we augment real data with our sim2real translated data."
+    authors={{
+    "Jeremiah Coholich":[],
+    "Justin Wit":[],
+    "Zsolt Kira":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="EmbodiedSplat: Personalized Real-to-Sim-to-Real Navigation with Gaussian Splats from a Mobile Device"
+    abstract=" Sim-to-real transfer and personalization remains a core challenge in Embodied AI due to a trade-off between synthetic environments lacking realism and costly real-world captures. We present EmbodiedSplat, a method that personalizes policy training by reconstructing deployment environments using a mobile device and 3D Gaussian Splatting, enabling efficient fine-tuning in realistic scenes via Habitat-Sim. Our analysis of training strategies and reconstruction techniques shows that EmbodiedSplat achieves significant gains—improving real-world ImageNav success by 20–40% over pre-trained policies in an out-of-domain scene—and exhibits strong sim-to-real correlation (0.87–0.97). Code and data will be made public."
+    authors={{
+    "Gunjan Chhablani":[],
+    "Xiaomeng Ye":[],
+    "Rynaa Grover":[],
+    "Muhammad Zubair Irshad":[],
+    "Zsolt Kira":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="Benchmarking Arbitrary Natural Language Tasks in 3D Open Worlds"
+    abstract="3D-embodied autonomy toward arbitrary task outcomes is a long-standing goal in AI and Robotics. However, programmatically verifying arbitrary outcomes in open worlds is a challenge. This work proposes: (1) giving Minecraft agents the ability to capture screenshots as evidence for task completion and (2) having vision-language models (VLMs) evaluate these screenshots. We also present SemanticSteve, a high-level Minecraft skill library that includes a 'take screenshot' skill. We use an expert-annotated dataset of tricky task-screenshot pairs to evaluate the capabilities of GPT-4.1 in our proposed screenshot-evaluation role and find that it is indeed fit for the task. We make both the SemanticSteve library as well as the code and data for our experiments publicly available at https://github.com/sonnygeorge/semantic-steve."
+    authors={{
+    "Sonny George":[],
+    "Chris Sypherd":[],
+    "Rocco Ahching":[],
+    "Dylan Cashman":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="BePo: Efficient Dual Representation for 3D Scene Understanding"
+    abstract="3D scene understanding fundamentally underlies autonomous systems that power a variety of important applications such as Autonomous Driving, Robotics, and AR/VR. Designing an expressive and compact scene representation is key to its goal of recovering detailed geometry and semantics of the surrounding environment from sensory images. Previous methods have adopted dense grids which are resource intensive and unable to handle diverse object scales. More recent efforts explore sparse points-based representations that are more object-centric but inefficient at modeling the entire scene. We present an efficient dual representation, termed BePo, that addresses these shortcomings and demonstrate the superiority of such representation through 3D occupancy prediction, a central task in 3D scene understanding."
+    authors={{
+    "Yunxiao Shi":[],
+    "Hong Cai":[],
+    "Jisoo Jeong":[],
+    "Yinhao Zhu":[],
+    "Shizhong Han":[],
+    "Amin Ansari":[],
+    "Fatih Porikli":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="LLM-Enhanced Rapid-Reflex Async-Reflect Framework for Real-Time Decision Making in Dynamically Changing Environments"
+    abstract=" In the realm of embodied intelligence, the evolution of large language models (LLMs) has markedly enhanced agent decision making. Consequently, researchers have begun evaluating agent performance in dynamically changing high-risk scenarios, i.e., fire, flood, and wind scenarios in the HAZARD benchmark. Under these extreme conditions, the delay in decision making emerges as a crucial yet insufficiently studied issue. We propose a Time Conversion Mechanism (TCM) that translates decision-making delays into equivalent simulation frames, thus aligning cognitive and physical costs under a single FPS-based metric. By extending HAZARD with Respond Latency (RL) and Latency-to-Action Ratio (LAR), we deliver a fully latency-aware evaluation protocol. Moreover, we present the Rapid-Reflex Async-Reflect Framework (RRARF), which couples a lightweight LLM-guided feedback module with a rule-based agent to enable immediate reactive behaviors and asynchronous reflective refinements in situ. Experiments on HAZARD show that RRARF substantially outperforms existing baselines in latency-sensitive scenarios."
+    authors={{
+    "Yangqing Zheng":[],
+    "Shunqi Mao":[],
+    "Dingxin Zhang":[],
+    "Weidong Cai":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="What matters in ImageNav: architecture, pre-training, sim settings, pose"
+    abstract="State-of-the-art image goal navigation methods either rely on dedicated image-matching or pre-training of vision modules on relative pose estimation or image reconstruction. Recent findings suggest that ImageNav can be solved by very low-capacity ResNet with channel-wise stacking and RL-training alone, without pre-training. These results raise interesting questions: can directional information, crucial to tackle ImageNav, be learned by RL alone, and by comparably simple architectures? In this study we investigate the effect of architectural choices like late fusion, channel stacking and cross-attention, and find that: (i) Pre-training and early patch-wise fusion are essential for strong performance, compared to late fusion. (ii) Success of recent frugal channel stacking architectures is likely due to a simulator setting allowing agents to slide along obstacles. Interestingly, capabilities learned in this regime can be transferred to realistic settings if the transfer includes weights of perception network. (iii) Navigation and (emerging) relative pose estimation performance are correlated."
+    authors={{
+    "Gianluca Monaci":[],
+    "Philippe Weinzaepfel":[],
+    "Christian Wolf":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="Object Retrieval-Guided Vision Language Modeling for Embodied Interaction"
+    abstract="Vision-language model (VLM)-based agents often struggle to name specific or unseen objects in hand-object interactions. We propose a zero-shot, real-time method that enhances VLM outputs by retrieving object features from a custom database and injecting prior knowledge into the captioning process during hand-object interactions. Our proposed approach enables users to guide an agent towards object-aware descriptions with task or job-specific objects, which are returned as speech output running in real time, as shown on GTEA and a smartphone-based user study with our collected dataset. The code is available on GitHub."
+    authors={{
+    "Constantin Patsch":[],
+    "Yuankai Wu":[],
+    "Marsil Zakour":[],
+    "Eckehard Steinbach":[],
+    }}
+    affiliations={[]}
+    />,
+  <Paper
+    title="MotIF: Motion Instruction Fine-tuning"
+    abstract="While success in many robotics tasks can be determined by only observing the final state and how it differs from the initial state -- e.g., if an apple is picked up -- many tasks require observing the full motion of the robot to correctly determine success. For example, brushing hair requires repeated strokes that correspond to the contours and type of hair. Prior works often use off-the-shelf vision-language models (VLMs) as success detectors; however, when success depends on the full trajectory, VLMs struggle to make correct judgments for two reasons. First, modern VLMs often use single frames, and thus cannot capture changes over a full trajectory. Second, even if we provide state-of-the-art VLMs with an input of multiple frames, they still fail to correctly detect success due to a lack of robot data. Our key idea is to fine-tune VLMs using abstract representations that are able to capture trajectory-level information such as the path the robot takes by overlaying keypoint trajectories on the final image. We propose motion instruction fine-tuning (MotIF), a method that fine-tunes VLMs using the aforementioned abstract representations to semantically ground the robot's behavior in the environment. To benchmark and fine-tune VLMs for robotic motion understanding, we introduce the MotIF-1K dataset containing 653 human and 369 robot demonstrations across 13 task categories with motion descriptions. MotIF assesses the success of robot motion given ask and motion instructions. Our model significantly outperforms state-of-the-art API-based single-frame VLMs and video LMs by at least twice in F1 score with high precision and recall, generalizing across unseen motions, tasks, and environments. Finally, we demonstrate practical applications of MotIF in ranking trajectories on how they align with task and motion descriptions. Dataset, code, and checkpoints are in https://motif-1k.github.io/"
+    authors={{
+    "Minyoung Hwang":[],
+    "Joey Hejna":[],
+    "Dorsa Sadigh":[],
+    "Yonatan Bisk":[],
+    }}
+    affiliations={[]}
+    />,
+  ];
   
 const Time = (props: { time: string }) => (
   <span
@@ -716,6 +928,21 @@ export default function Home({ data }) {
           />
         }
       >
+      <Section title="Attending">
+        <p>
+          The Embodied AI workshop will be held in-person at CVPR 2025 in Nashville, Tennessee
+          on June 12th from 9 to 5 CDT:
+          <ul>
+            <li>Workshop talks and panels will be held in room 101 D from 9-noon and 1:30-5 CDT.
+            </li>
+            <li>Posters will be in ExHall D from 12:00 PM to 1:30 PM CDT at boards #140 to #169.
+            </li>
+          </ul>
+          For late-breaking updates from CVPR, see the workshop's~
+          <a href="https://cvpr.thecvf.com/virtual/2025/workshop/32284">CVPR page</a>.
+          </p>
+      </Section>
+          
       <Section title="Overview">
         <p>
           Minds live in bodies, and bodies move through a changing world.
@@ -902,9 +1129,9 @@ export default function Home({ data }) {
                       <br />
                       Location: Room 101D
                       <Speaker
-                         organizations={["NVIDIA"]}
-                         name="Claudia Perez D'Arpino"
-                         fixedImg={data.claudia.childImageSharp.fixed}
+                         organizations={["Logical Robotics"]}
+                         name="Anthony Francis"
+                         fixedImg={data.anthony.childImageSharp.fixed}
                          noMargin={true}
                       />
                     </Timeline.Item>
@@ -915,6 +1142,15 @@ export default function Home({ data }) {
                       (ARNOLD, HAZARD, ManiSkill-ViTac, SMM)
                       <br />
                       <Time time="9:10 - 10:00 AM CDT" />
+                      <br />
+                      Location: Room 101D
+                      <Speaker
+                         organizations={["CSIRO"]}
+                         name="Moderator - David Hall"
+                         fixedImg={data.davidH.childImageSharp.fixed}
+                         noMargin={true}
+                      />
+                      
                       <ul>
                         <li>9:10: <a href="https://sites.google.com/view/arnoldchallenge/">ARNOLD Challenge</a></li>
                         <li>9:20: <a href="https://embodied-agi.cs.umass.edu/hazard">HAZARD Challenge</a></li>
@@ -927,6 +1163,8 @@ export default function Home({ data }) {
                       <b>Challenge Q&A</b>
                       <br/>
                       <Time time="10:00 - 10:30 AM CDT" />
+                      <br />
+                      Location: Room 101D
                     </Timeline.Item>
 
                     <Timeline.Item>
@@ -935,6 +1173,8 @@ export default function Home({ data }) {
                       <i>Title: TBD</i>
                       <br/>
                       <Time time="10:30 - 11:00 AM CDT" />
+                      <br />
+                      Location: Room 101D
                       <Speaker
                         organizations={["NYU"]}
                         name="Lerrel Pinto"
@@ -953,6 +1193,8 @@ export default function Home({ data }) {
                       <i>Towards Multimodal Embodied AI Agents that Can See, Talk and Act</i>
                       <br/>
                       <Time time="11:00 - 11:30 AM CDT" />
+                      <br />
+                      Location: Room 101D
                       <Speaker
                         organizations={["Microsoft Research"]}
                         name="Jianwei Yang"
@@ -968,17 +1210,20 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Simulation for Embodied AI</b>
                       <br/>
-                      <i>Title: TBD</i>
+                      <i>Title: Geometry and Physics Bias in Embodied AI</i>
                       <br/>
                       <Time time="11:30 AM - 12:00 PM CDT" />
+                      <br />
+                      Location: Room 101D
                       <Speaker
                         organizations={["Caltech"]}
                         name="Jiayun (Peter) Wang"
+                        fixedImg={data.jiayunWang.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Bio: Jiayun (Peter) Wang is a postdoctoral researcher in the Computing + Mathematical Sciences Department at the California Institute of Technology, working with Anima Anandkumar. Peter's research lies at the intersection of machine learning, computer vision and AI for healthcare. </p>
+                      <p>Bio: Jiayun (Peter) Wang is a postdoctoral researcher at the California Institute of Technology, working with Prof. Anima Anandkumar. He received his PhD from UC Berkeley in 2023, advised by Prof. Stella Yu. His research develops novel machine learning and computer vision methodologies that address challenges of data scarcity and computational cost, with real-world applications like healthcare. More information can be found at his website: https://pwang.pw/. </p>
                       <Abstract
-                        text="Abstract: TBD"
+                        text="Abstract: Embodied AI demands agents that see the world with geometric fidelity, anticipate and interact with it with physical rigor. The talk will present a three-stage ladder—Perceive, Predict, Control—showing how carefully chosen geometry and physics biases enable that climb with minimal supervision. 1) Perceive. Pose-Aware Self-Supervised Learning learns semantic and geometric features from unlabeled videos. By regularizing along the agent’s own viewpoint trajectory, the network acquires a 3-D understanding without a single human label. 2) Predict and control. Controlling aerodynamic forces in turbulent conditions is crucial for UAV operation. We show AI enables realtime fluid flow prediction and turbulence control for wall friction reduction, which outperforms existing methods requiring expensive simulations of turbulent fluid dynamics. We further close the loop with FALCON, a model-based reinforcement learning framework for effective modeling and control of aerodynamic forces under turbulent flows. FALCON learns to control the underlying nonlinear dynamics when tested in the Caltech wind tunnel under highly turbulent conditions. Together, these works illustrate a unifying recipe: geometry grounds perception, physics grounds prediction and their composition unlocks fast, sample-efficient control."
                         />                      
                     </Timeline.Item>
 
@@ -987,9 +1232,9 @@ export default function Home({ data }) {
                       <br />
                       <Time time="12:00 PM - 1:30 PM CDT" />
                       <br />
-                      Location: TBD
+                      Location: ExHall D
                       <ul>
-                       <li>Posters will be in TBD.</li>
+                       <li>EAI's posters will be at boards #140 to #169.</li>
                       </ul>
                     </Timeline.Item>
                     
@@ -999,25 +1244,28 @@ export default function Home({ data }) {
                       <i>Title: The Ingredients for Efficient Robot Learning and Exploration</i>
                       <br />
                       <Time time="1:30 - 2:00 PM CDT" />
+                      <br />
+                      Location: Room 101D
                       <Speaker
-                        organizations={["TBD"]}
+                        organizations={["University of Cambridge"]}
                         name="Rika Antonova"
                         fixedImg={data.rikaAntonova.childImageSharp.fixed}
                         noMargin={true}
                       />
                       <p>Bio: Rika Antonova is an Associate Professor at the University of Cambridge. Her research interests include data-efficient reinforcement learning algorithms, robotics, active learning & exploration​. Earlier, Rika was a postdoctoral scholar at Stanford University upon receiving the Computing Innovation Fellowship from the US National Science Foundation. Rikacompleted her PhD at KTH, and earlier she obtained a research Master's degree from the Robotics Institute at Carnegie Mellon University. Before that, Rika was a senior software engineer at Google.</p>
                       <Abstract
-                        text="Abstract: In this talk, I will outline the ingredients for enabling efficient robot learning. First, I will demonstrate how large vision-language models can enhance scene understanding and generalization, allowing robots to learn general rules from specific examples for handling everyday objects. Next, I will describe methods for leveraging equivariance to significantly reduce the amount of training data needed for learning from human demonstrations.
-Moving beyond demonstrations, I will discuss how simulation can enable robots to learn autonomously. I will describe the challenges and opportunities of aligning differentiable simulators with reality, and also introduce methods for facilitating reinforcement learning with 'black-box' simulators. To further expand robot capabilities we need adaptive hardware. I will demonstrate how differentiable simulation can be used for learning tool morphology to automatically adapt tools for robots. I will also outline experiments with new affordable and robust sensors. Finally, I will share plans for our new project on co-design of hardware and policy learning, which will leverage global optimization, rapid prototyping, and real-to-sim transfer to jointly search the vast space of hardware designs and reinforcement learning methods."
+                        text="Abstract: In this talk, I will outline the ingredients for enabling efficient robot learning. First, I will demonstrate how large vision-language models can enhance scene understanding and generalization, allowing robots to learn general rules from specific examples for handling everyday objects. Next, I will describe methods for leveraging equivariance to significantly reduce the amount of training data needed for learning from human demonstrations. Moving beyond demonstrations, I will discuss how simulation can enable robots to learn autonomously. I will describe the challenges and opportunities of aligning differentiable simulators with reality, and also introduce methods for facilitating reinforcement learning with 'black-box' simulators. To further expand robot capabilities we need adaptive hardware. I will demonstrate how differentiable simulation can be used for learning tool morphology to automatically adapt tools for robots. I will also outline experiments with new affordable and robust sensors. Finally, I will share plans for our new project on co-design of hardware and policy learning, which will leverage global optimization, rapid prototyping, and real-to-sim transfer to jointly search the vast space of hardware designs and reinforcement learning methods."
                         />
                     </Timeline.Item>
 
                     <Timeline.Item>
                       <b>Invited Talk - Foundation Models for Embodied AI</b>
                       <br />
-                      <i>Title: TBD</i>
+                      <i>Title: Large Behavior Models</i>
                       <br />
                       <Time time="2:00 - 2:30 PM CDT" />
+                      <br />
+                      Location: Room 101D
                       <Speaker
                         organizations={["TRI"]}
                         name="Rareș Ambruș"
@@ -1026,7 +1274,7 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
                       />
                       <p>Bio: Dr. Rareș Ambruș is a senior manager in the Large Behavior Models division at Toyota Research Institute (TRI). His research interests lie at the intersection of robotics, computer vision and machine learning with the aim of discovering visual representations for embodied applications in areas such as automated driving and robotics. Dr. Ambruș received his Ph.D. in 2017 from the Royal Institute of Technology (KTH), Sweden, focusing on self-supervised perception and mapping for mobile robots. He has more than 100 publications and patents at top AI venues covering fundamental topics in computer vision, machine learning and robotics.</p>
                       <Abstract
-                        text="Abstract: TBD"
+                        text="Abstract: Dr. Ambruș's talk will focus on the use of foundation models for Embodied AI, particularly advances in large behavior models."
                         />                      
                     </Timeline.Item>
 
@@ -1036,30 +1284,34 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
                       <i>Title: World Models at Scale for Embodied Driving</i>
                       <br />
                       <Time time="2:30 - 3:00 PM CDT" />
+                      <br />
+                      Location: Room 101D
                       <Speaker
                         organizations={["Wayve"]}
                         name="Nikhil Mohan"
                         fixedImg={data.nikhilMohan.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Bio: Nikhil Mohan is a Lead Scientist at Wayve workign on neural simulators in autonomous driving.</p>
+                      <p>Bio: Nikhil Mohan is a Lead Scientist at Wayve, where he focuses on leveraging data-driven techniques for simulation in autonomous driving. His work spans Neural Radiance Fields (NeRFs), Gaussian Splatting, and generative models, emphasizing their application to improve and evaluate Wayve’s AI Driver performance. Before turning his attention to simulation, Nikhil led Wayve’s production driving team, where they shipped research prototypes into the production system. Prior to joining Wayve, he earned his Master’s degree at Carnegie Mellon University, concentrating in machine learning and signal processing.</p>
                       <Abstract
                         text="Abstract: Nikhil's talk will focus on using World Models to produce data at scale for Embodied AI in the context of self driving."
                         />
                     </Timeline.Item>
                    <Timeline.Item>
-                      <b>Invited Talk - TBD</b>
+                      <b>Invited Talk - Generative AI for Embodied AI</b>
                       <br />
-                      <i>Title: TBD</i>
+                      <i>Title: NVIDIA Cosmos World Foundation Models</i>
                       <br />
                       <Time time="3:00 - 3:30 PM CDT" />
                       <Speaker
-                        organizations={["TBD"]}
-                        name="TBD"
+                        organizations={["NVIDIA"]}
+                        name="Huan Ling"
+                        fixedImg={data.huanLing.childImageSharp.fixed}
                         noMargin={true}
                       />
+                      <p>Bio: Huan Ling is a senior Research Scientist at NVIDIA Spatial Intelligence (TorontoAI) Lab. His research focuses on building foundational generative models. I aim to develop models capable of simulating and generating realistic, diverse, and controllable environments—including video and 3D dynamic scenes — with a focus on enabling physical AI scene-level generation, and new forms of generation and interaction of creative content.</p>
                       <Abstract
-                        text="TBD."
+                        text="Abstract: Huan's talk will focus on using generative AI to produce data at scale for Embodied AI with NVIDIA's Cosmos models."
                         />                      
                     </Timeline.Item>
 
@@ -1069,7 +1321,9 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
                       <Time time="3:30 - 4:00 PM CDT" />
                       <br />
                       <Speaker
-                         organizations={["TBD"]}
+                         organizations={["CSIRO"]}
+                         name="Moderator - David Hall"
+                         fixedImg={data.davidH.childImageSharp.fixed}
                          noMargin={true}
                       />
                     </Timeline.Item>
@@ -1081,7 +1335,7 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
                       <br />
                       <Speaker
                          organizations={["Logical Robotics"]}
-                         name="Anthony Francis"
+                         name="Moderator - Anthony Francis"
                          fixedImg={data.anthony.childImageSharp.fixed}
                          noMargin={true}
                       />
@@ -1093,9 +1347,9 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
                       <Time time="4:30 - 5:00 PM CDT" />
                       <br />
                       <Speaker
-                         organizations={["Vercept"]}
-                         name="Luca Weihs"
-                         fixedImg={data.luca.childImageSharp.fixed}
+                         organizations={["Logical Robotics"]}
+                         name="Moderator - Anthony Francis"
+                         fixedImg={data.anthony.childImageSharp.fixed}
                          noMargin={true}
                       />
                     </Timeline.Item>
@@ -1333,9 +1587,13 @@ Moving beyond demonstrations, I will discuss how simulation can enable robots to
               <a href="https://openreview.net/group?id=thecvf.com/CVPR/2025/Workshop/EAI">
               Paper submissions are CLOSED as of May 23rd, 2025.
               </a>
-              <br></br>
-              Notifications will be sent by June 2nd, 2025.
+              </li>
+              <li>
+              Notifications were sent on June 4th, 2025.
               {/* The <a href="https://openreview.net/group?id=thecvf.com/CVPR/2023/Workshop/EAI">paper submission link is LIVE.</a> */}
+              </li>
+              <li>
+              Camera-ready copies of accepted papers are due by June 11th, 2025.
               </li>
             </ul>
             
@@ -1529,6 +1787,9 @@ export const query = graphql`
       ...FaceThumbnail
     }
     jeannette: file(relativePath: { eq: "cvpr2023/jeannette.png" }) {
+      ...FaceThumbnail
+    }
+    davidH: file(relativePath: { eq: "organizers/davidH.jpg" }) {
       ...FaceThumbnail
     }
     dieter: file(relativePath: { eq: "cvpr2023/dieter.jpg" }) {
@@ -1858,6 +2119,12 @@ export const query = graphql`
       ...FaceThumbnail
     }
     nikhilMohan: file(relativePath: { eq: "cvpr2025/nikhil-mohan.png" }) {
+      ...FaceThumbnail
+    }
+    jiayunWang: file(relativePath: { eq: "cvpr2025/jiayun-wang.jpg" }) {
+      ...FaceThumbnail
+    }
+    huanLing: file(relativePath: { eq: "cvpr2025/huan-ling.png" }) {
       ...FaceThumbnail
     }
     
