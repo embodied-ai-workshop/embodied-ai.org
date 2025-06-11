@@ -941,6 +941,9 @@ export default function Home({ data }) {
           </ul>
           For late-breaking updates from CVPR, see the workshop's <a href="https://cvpr.thecvf.com/virtual/2025/workshop/32284">CVPR page</a>.
           </p>
+        <p>
+          <Img fluid={data.workshopLocation.childImageSharp.fluid} alt="Workshop Location"/>
+        </p>
       </Section>
           
       <Section title="Overview">
@@ -1170,7 +1173,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Embodied AI Applications</b>
                       <br/>
-                      <i>Title: TBD</i>
+                      <i>Title: Learning from Humans with Vision and Touch</i>
                       <br/>
                       <Time time="10:30 - 11:00 AM CDT" />
                       <br />
@@ -1183,7 +1186,7 @@ export default function Home({ data }) {
                       />
                       <p>Bio: Lerrel Pinto is an Assistant Professor of Computer Science at NYU Courant and part of the CILVR group. Lerrel runs the General-purpose Robotics and AI Lab (GRAIL) with the goal of getting robots to generalize and adapt in the messy world we live in.</p>
                       <Abstract
-                        text="Abstract: TBD"
+                        text="Abstract:  Despite rapid advances in robotics, robots still struggle to achieve the dexterity and adaptability of humans in real-world manipulation tasks. This talk explores how learning directly from humans—leveraging both vision and touch—can bridge this gap and unlock more robust, generalizable robot skills. I will present recent research that harnesses egocentric visual demonstrations, captured with wearable smart glasses, to extract robot-executable actions and enable closed-loop policy learning that generalizes across different robot morphologies and environments. Building on this, I will discuss new approaches for force-sensitive manipulation that combine vision-based hand pose estimation with tactile data from sensorized gloves, enabling robots to predict and control fine-grained contact forces with high precision. Finally, I will introduce AnySkin, a versatile and easily replaceable tactile sensor that supports cross-instance generalization of manipulation policies, making tactile learning scalable and practical for real-world deployment."
                         />                      
                     </Timeline.Item>
 
@@ -1300,7 +1303,7 @@ export default function Home({ data }) {
                    <Timeline.Item>
                       <b>Invited Talk - Generative AI for Embodied AI</b>
                       <br />
-                      <i>Title: NVIDIA Cosmos World Foundation Models</i>
+                      <i>Title: Cosmos-Drive-Dreams: Scalable Synthetic Driving Data Generation with World Foundation Models</i>
                       <br />
                       <Time time="3:00 - 3:30 PM CDT" />
                       <Speaker
@@ -1309,9 +1312,9 @@ export default function Home({ data }) {
                         fixedImg={data.huanLing.childImageSharp.fixed}
                         noMargin={true}
                       />
-                      <p>Bio: Huan Ling is a senior Research Scientist at NVIDIA Spatial Intelligence (TorontoAI) Lab. His research focuses on building foundational generative models. I aim to develop models capable of simulating and generating realistic, diverse, and controllable environments—including video and 3D dynamic scenes — with a focus on enabling physical AI scene-level generation, and new forms of generation and interaction of creative content.</p>
+                      <p>Bio: Huan Ling is a Senior Research Scientist at NVIDIA’s Spatial Intelligence (TorontoAI) Lab. His research focuses on developing foundational generative models that enable realistic and controllable environments—spanning video synthesis,  3D/4D scene generation and reconstruction. His work aims for building scalable systems that support real world applications.  Huan’s research has been featured at top conferences such as CVPR and NeurIPS, and he actively collaborates across disciplines to advance the frontier of generative AI for real-world applications. He has contributed to the development and large-scale training of video foundation model products, including NVIDIA-COSMOS and COSMOS-Drive-Dreams, which enable high-fidelity, controllable video generation for physicalAI related scenarios like autonomous driving.</p>
                       <Abstract
-                        text="Abstract: Huan's talk will focus on using generative AI to produce data at scale for Embodied AI with NVIDIA's Cosmos models."
+                        text="Abstract: Collecting and annotating real-world data for safety-critical physical AI systems, such as Autonomous Vehicle (AV), is time-consuming and costly. It is especially challenging to capture rare edge cases, which play a critical role in training and testing of an AV system. To address this challenge, we introduce the Cosmos-Drive-Dreams - a synthetic data generation (SDG) pipeline that aims to generate challenging scenarios to facilitate downstream tasks such as perception and driving policy training. Powering this pipeline is Cosmos-Drive-Dreams, a suite of models specialized from NVIDIA Cosmos world foundation model for the driving domain and are capable of controllable, high-fidelity, multi-view, and spatiotemporally consistent driving video generation. We showcase the utility of these models by applying Cosmos-Drive-Dreams to scale the quantity and diversity of driving datasets with high-fidelity and challenging scenarios. Experimentally, we demonstrate that our generated data helps in mitigating long-tail distribution problems and enhances generalization in downstream tasks such as 3D lane detection, 3D object detection and driving policy learning. We open source our model weights through the NVIDIA’s Cosmos platform, pipeline toolkit, and a synthetic dataset which consists of 79,880 clips."
                         />                      
                     </Timeline.Item>
 
@@ -2132,7 +2135,7 @@ export const query = graphql`
     ariaDemo: file(relativePath: { eq: "cvpr2024/aria-demo.jpg" }) {
       ...FluidImage
     }
-    workshopLocation: file(relativePath: { eq: "cvpr2024/workshop-location.png" }) {
+    workshopLocation: file(relativePath: { eq: "cvpr2025/workshop-location.png" }) {
       ...FluidImage
     }
   }
