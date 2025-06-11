@@ -937,6 +937,7 @@ export default function Home({ data }) {
             </li>
             <li>Posters will be in ExHall D from 12:00 PM to 1:30 PM CDT at boards #140 to #169.
             </li>
+            <li>Information on <a href="https://cvpr.thecvf.com/Conferences/2025/PosterPrintingInformation">poster printing</a> is available on CVPR's website.</li>
           </ul>
           For late-breaking updates from CVPR, see the workshop's <a href="https://cvpr.thecvf.com/virtual/2025/workshop/32284">CVPR page</a>.
           </p>
