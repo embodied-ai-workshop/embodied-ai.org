@@ -1330,7 +1330,7 @@ export default function Home({ data }) {
                       <br />
                       <ul>
                       <li>
-                      #2: Real-Time Multimodal Processing for Interpreting Embodied Actions
+                      #2: On the use of Pre-trained Visual Representations in Visuo-Motor Robot Learning
                       </li>
                       <li>
                       #6: R-EQA: Retrieval-Augmented Generation for Embodied Question Answering
