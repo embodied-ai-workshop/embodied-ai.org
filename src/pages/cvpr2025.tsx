@@ -933,11 +933,15 @@ export default function Home({ data }) {
           The Embodied AI workshop will be held in-person at CVPR 2025 in Nashville, Tennessee
           on June 12th from 9 to 5 CDT:
           <ul>
-            <li>Workshop talks and panels will be held in room 101 D from 9-noon and 1:30-5 CDT.
+            <li><b>In-Person:</b> Workshop talks and panels will be held in room 101 D from 9-noon and 1:30-5 CDT.              
             </li>
-            <li>Posters will be in ExHall D from 12:00 PM to 1:30 PM CDT at boards #140 to #169.
+            <li><b>Remote:</b>Zoom info for remote CVPR attendees can be found on our <a href="https://cvpr.thecvf.com/virtual/2025/workshop/32284">official CVPR workshop page</a>.
+                Questions can be asked via Slack at<InlineSlack />
             </li>
-            <li>Information on <a href="https://cvpr.thecvf.com/Conferences/2025/PosterPrintingInformation">poster printing</a> is available on CVPR's website.</li>
+            <li><b>Posters:</b> Posters will be in ExHall D from 12:00 PM to 1:30 PM CDT at boards #140 to #169.
+            Oral presentations will be in room 101 D from 3:30-4:00 PM CDT.
+            </li>
+            <li><b>Printing:</b> Information on <a href="https://cvpr.thecvf.com/Conferences/2025/PosterPrintingInformation">poster printing</a> is available on CVPR's website.</li>
           </ul>
           For late-breaking updates from CVPR, see the workshop's <a href="https://cvpr.thecvf.com/virtual/2025/workshop/32284">CVPR page</a>.
           </p>
@@ -1111,7 +1115,8 @@ export default function Home({ data }) {
           <li><b>Workshop Talks: 9:00AM-5:00PM PT - Room 101D</b></li>
           <li><b>Poster Session: 1:00PM-2:00PM PT - TBD</b></li>
         </ul>
-        Zoom information is forthcoming.
+        Zoom information can be found for CVPR attendees on
+        our <a href="https://cvpr.thecvf.com/virtual/2025/workshop/32284">official CVPR workshop page</a>.
         <br />
         Remote and in-person attendees are welcome to ask questions via Slack:  
         <br />
@@ -1319,7 +1324,7 @@ export default function Home({ data }) {
                     </Timeline.Item>
 
                     <Timeline.Item>
-                      <b>Accepted Paper Highlighgts</b>
+                      <b>Accepted Paper Highlights</b>
                       <br />
                       <Time time="3:30 - 4:00 PM CDT" />
                       <br />
