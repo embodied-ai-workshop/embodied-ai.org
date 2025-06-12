@@ -386,6 +386,16 @@ cvpr2025metadata = {
       sab: false,
       site: "https://yonatanbisk.com/",
     },
+    {
+      challenge: false,
+      imageId: "alexander",
+      name: "Alexander Toshev",
+      oc: false,
+      lo: false,
+      organization: "Apple",
+      sab: true,
+      site: "https://sites.google.com/view/alextoshev",
+    },
   ]
 };
 
