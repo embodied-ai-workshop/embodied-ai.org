@@ -1112,8 +1112,8 @@ export default function Home({ data }) {
         
         Embodied AI will be a <b>hybrid</b> workshop, with both in-person talks and streaming via zoom.
         <ul>
-          <li><b>Workshop Talks: 9:00AM-5:00PM PT - Room 101D</b></li>
-          <li><b>Poster Session: 1:00PM-2:00PM PT - TBD</b></li>
+          <li><b>Workshop Talks: 9:00AM-5:00PM CDT - Room 101D</b></li>
+          <li><b>Poster Session: 12:00PM-1:30PM CDT - ExHall D boards #140 to #169</b></li>
         </ul>
         Zoom information can be found for CVPR attendees on
         our <a href="https://cvpr.thecvf.com/virtual/2025/workshop/32284">official CVPR workshop page</a>.
