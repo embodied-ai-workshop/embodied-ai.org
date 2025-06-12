@@ -1061,7 +1061,7 @@ export default function Home({ data }) {
         />
         </Section>
         <Section title="Timeline">
-      <Steps progressDot current={4} direction="vertical">
+      <Steps progressDot current={5} direction="vertical">
           <Step title="Workshop Announced" description="March 31st, 2025" />
           <Step
             title="Paper Submission Deadline"
@@ -1264,7 +1264,7 @@ export default function Home({ data }) {
                     <Timeline.Item>
                       <b>Invited Talk - Foundation Models for Embodied AI</b>
                       <br />
-                      <i>Title: Large Behavior Models</i>
+                      <i>Title: Large Behavior Models for Dexterous Manipulation</i>
                       <br />
                       <Time time="2:00 - 2:30 PM CDT" />
                       <br />
@@ -1277,7 +1277,7 @@ export default function Home({ data }) {
                       />
                       <p>Bio: Dr. Rareș Ambruș is a senior manager in the Large Behavior Models division at Toyota Research Institute (TRI). His research interests lie at the intersection of robotics, computer vision and machine learning with the aim of discovering visual representations for embodied applications in areas such as automated driving and robotics. Dr. Ambruș received his Ph.D. in 2017 from the Royal Institute of Technology (KTH), Sweden, focusing on self-supervised perception and mapping for mobile robots. He has more than 100 publications and patents at top AI venues covering fundamental topics in computer vision, machine learning and robotics.</p>
                       <Abstract
-                        text="Abstract: Dr. Ambruș's talk will focus on the use of foundation models for Embodied AI, particularly advances in large behavior models."
+                        text="Abstract: Dexterous manipulation has seen tremendous progress in recent years, with imitation learning policies enabling successful performance of dexterous and hard-to-model tasks. Concurrently, scaling data and model size has led to the development of capable language and vision foundation models, motivating large-scale efforts to create general-purpose robot foundation models. In this talk, I'll describe our efforts at TRI at building Large Behavior Models: multi-task visuomotor policies for scalable dexterous manipulation. I’ll talk about some of our latest results when deploying these models for complex, dexterous and long horizon tasks and I’ll highlight the challenges associated with rigorous evaluation in the real world as well as some of the tools and experimental protocols we’ve built in order to measure progress in the real-world with confidence."
                         />                      
                     </Timeline.Item>
 
@@ -1323,6 +1323,27 @@ export default function Home({ data }) {
                       <br />
                       <Time time="3:30 - 4:00 PM CDT" />
                       <br />
+                      <ul>
+                      <li>
+                      #2: Real-Time Multimodal Processing for Interpreting Embodied Actions
+                      </li>
+                      <li>
+                      #6: R-EQA: Retrieval-Augmented Generation for Embodied Question Answering
+                      </li>
+                      <li>
+                      #7: Uncertainty Modeling in Autonomous Vehicle Trajectory Prediction: A Comprehensive Survey
+                      </li>
+                      <li>
+                      #15: Benchmarking Arbitrary Natural Language Tasks in 3D Open Worlds
+                      </li>
+                      <li>
+                      #19: What matters in ImageNav: architecture, pre-training, sim settings, pose
+                      </li>
+                      <li>
+                      #23: MotIF: Motion Instruction Fine-tuning
+                      </li>
+                      </ul>
+
                       <Speaker
                          organizations={["CSIRO"]}
                          name="Moderator - David Hall"
